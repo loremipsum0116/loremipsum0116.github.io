@@ -15,9 +15,9 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-default_lang             : en-US
-languages                : ["en-US", "ko", "ja"]
+locale                   : "en"
+default_lang             : en
+languages                : ["en", "ko", "ja"]
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Lorem Tech Blog"
 title_separator          : "-"
