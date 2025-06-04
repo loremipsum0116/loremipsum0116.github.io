@@ -332,40 +332,40 @@ compress_html:
 defaults:
   # 영어 포스트
   - scope:
-      path: ""
+      path: "en"
       type: posts
-      lang: "en"
     values:
       layout: single
+      lang: "en"
+      permalink: /en/:title/
       author_profile: true
       read_time: true
       share: true
       related: true
-      permalink: /en/:title/
 
   # 한국어 포스트
   - scope:
-      path: ""
+      path: "ko"
       type: posts
-      lang: "ko"
     values:
       layout: single
+      lang: "ko"
+      permalink: /ko/:title/
       author_profile: true
       read_time: true
       share: true
       related: true
-      permalink: /ko/:title/
 
   # 일본어 포스트
   - scope:
-      path: ""
+      path: "ja"
       type: posts
-      lang: "ja"
     values:
       layout: single
+      lang: "ja"
+      permalink: /ja/:title/
       author_profile: true
       read_time: true
       share: true
       related: true
-      permalink: /ja/:title/
 
