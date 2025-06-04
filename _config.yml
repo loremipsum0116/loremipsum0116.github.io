@@ -16,6 +16,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
+default_lang             : en-US
+languages                : ["en-US", "ko", "ja"]
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Lorem Tech Blog"
 title_separator          : "-"
@@ -315,15 +317,55 @@ compress_html:
 
 
 # Defaults
+# defaults:
+#   # _posts
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: single
+#       author_profile: true
+#       read_time: true
+#       comments: # true
+#       share: true
+#       related: true
 defaults:
-  # _posts
+  # 영어 포스트
   - scope:
       path: ""
       type: posts
+      lang: "en"
     values:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
       share: true
       related: true
+      permalink: /en/:title/
+
+  # 한국어 포스트
+  - scope:
+      path: ""
+      type: posts
+      lang: "ko"
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      permalink: /ko/:title/
+
+  # 일본어 포스트
+  - scope:
+      path: ""
+      type: posts
+      lang: "ja"
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      permalink: /ja/:title/
+
