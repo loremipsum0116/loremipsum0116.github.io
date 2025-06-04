@@ -1,0 +1,10 @@
+lorem:
+  name: "Lorem"
+  avatar: "/assets/images/lorem_avatar.png"
+  bio: "I'm a backend developer currently studying **Java**, **Spring**, and **JPA**."
+  location: "Korea"
+  email: loremipsum0115@gmail.com
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/loremipsum0116"
