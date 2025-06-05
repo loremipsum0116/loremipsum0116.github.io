@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: "한국어 섹션"
 permalink: /ko/
 lang: ko
@@ -10,3 +10,15 @@ paginate_path: /ko/page:num/
 ---
 
 ## 최근 게시글
+
+<ul>
+  {% for post in site.posts %}
+    {% if post.lang == "ko" %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
+        <small>{{ post.date | date: "%Y년 %m월 %d일" }}</small><br/>
+        {{ post.excerpt }}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
