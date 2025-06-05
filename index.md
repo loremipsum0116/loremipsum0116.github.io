@@ -18,3 +18,12 @@ show_excerpts: false
 - [English](/en/)
 - [한국어](/ko/)
 - [日本語](/ja/)
+
+
+{::nomarkdown}
+<style>
+.archive__subtitle {
+  display: none;
+}
+</style>
+{:/}
