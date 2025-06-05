@@ -1,11 +1,8 @@
 --- 
-layout: home 
-title: "Welcome to Lorem Tech Blog!" 
-permalink: / 
+layout: splash
+title: "Welcome to Lorem Tech Blog!"
+permalink: /
 author_profile: true
-entries_layout: none
-show_excerpts: false
-paginate: false
 --- 
  
 ## Please select a language:
