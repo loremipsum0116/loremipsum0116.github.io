@@ -1,6 +1,6 @@
 --- 
 layout: home 
-title: "Wehlcomd" 
+title: "Welcome" 
 permalink: / 
 --- 
  
