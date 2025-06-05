@@ -264,11 +264,11 @@ pagination:
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
-  - jekyll-include-cache
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -368,5 +368,5 @@ defaults:
       read_time: true
       share: true
       related: true
-# trigger rebuild
+
 
