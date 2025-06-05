@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "日本語セクション"
 permalink: /ja/
 lang: ja
@@ -9,7 +9,6 @@ paginate: true
 paginate_path: /ja/page:num/
 ---
 
-## 最近の投稿
 
 <ul>
   {% for post in site.posts %}

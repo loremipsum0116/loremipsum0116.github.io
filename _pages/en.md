@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "English Section"
 permalink: /en/
 lang: en
@@ -9,7 +9,6 @@ paginate: true
 paginate_path: /en/page:num/
 ---
 
-## Recent Posts
 
 <ul>
   {% for post in site.posts %}
