@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: "한국어 섹션"
 permalink: /ko/
 lang: ko

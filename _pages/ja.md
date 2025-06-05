@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: "日本語セクション"
 permalink: /ja/
 lang: ja
