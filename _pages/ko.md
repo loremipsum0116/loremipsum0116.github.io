@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: active
 title: "한국어 섹션"
 permalink: /ko/
 lang: ko
@@ -9,14 +9,12 @@ paginate: true
 paginate_path: /ko/page:num/
 ---
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.lang == "ko" %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
-        <small>{{ post.date | date: "%Y년 %m월 %d일" }}</small><br/>
-        {{ post.excerpt }}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+{% assign filtered_posts = site.posts | where: "lang", "ko" %}
+
+{% for post in filtered_posts %}
+  <article>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p><small>{{ post.date | date: "%Y년 %m월 %d일" }}</small></p>
+    {{ post.excerpt }}
+  </article>
+{% endfor %}

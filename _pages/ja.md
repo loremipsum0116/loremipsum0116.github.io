@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: active
 title: "日本語セクション"
 permalink: /ja/
 lang: ja
@@ -10,14 +10,12 @@ paginate_path: /ja/page:num/
 ---
 
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.lang == "ja" %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
-        <small>{{ post.date | date: "%Y年%m月%d日" }}</small><br/>
-        {{ post.excerpt }}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+{% assign filtered_posts = site.posts | where: "lang", "ja" %}
+
+{% for post in filtered_posts %}
+<article>
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p><small>{{ post.date | date: "%Y年%m月%d日" }}</small></p>
+  {{ post.excerpt }}
+</article>
+{% endfor %}

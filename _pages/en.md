@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: active
 title: "English Section"
 permalink: /en/
 lang: en
@@ -10,14 +10,12 @@ paginate_path: /en/page:num/
 ---
 
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.lang == "en" %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
-        <small>{{ post.date | date: "%B %d, %Y" }}</small><br/>
-        {{ post.excerpt }}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+{% assign filtered_posts = site.posts | where: "lang", "en" %}
+
+{% for post in filtered_posts %}
+<article>
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+  {{ post.excerpt }}
+</article>
+{% endfor %}
