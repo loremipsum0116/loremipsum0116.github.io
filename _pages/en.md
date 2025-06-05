@@ -1,14 +1,11 @@
 ---
-layout: active
+layout: archive
 title: "English Section"
 permalink: /en/
 lang: en
 author_profile: true
 entries_layout: list
-paginate: true
-paginate_path: /en/page:num/
 ---
-
 
 {% assign filtered_posts = site.posts | where: "lang", "en" %}
 

@@ -1,14 +1,11 @@
 ---
-layout: active
+layout: archive
 title: "日本語セクション"
 permalink: /ja/
 lang: ja
 author_profile: true
 entries_layout: list
-paginate: true
-paginate_path: /ja/page:num/
 ---
-
 
 {% assign filtered_posts = site.posts | where: "lang", "ja" %}
 
