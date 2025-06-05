@@ -13,3 +13,11 @@ Here you’ll find articles written in English on topics such as **Java**, **Spr
 
 This blog provides valuable insights for those aiming to grow as backend developers.
 
+---
+
+## 🆕 Latest Posts
+
+{% assign lang_posts = site.posts | where: "lang", "en" | slice: 0, 5 %}
+{% for post in lang_posts %}
+- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
+{% endfor %}

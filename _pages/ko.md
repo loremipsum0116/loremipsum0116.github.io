@@ -13,4 +13,11 @@ author_profile: true
 
 백엔드 개발자로 성장하고자 하는 여러분을 위한 정보를 제공합니다.
 
+---
 
+## 최신 포스트
+
+{% assign lang_posts = site.posts | where: "lang", "ko" | slice: 0, 5 %}
+{% for post in lang_posts %}
+- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
+{% endfor %}
