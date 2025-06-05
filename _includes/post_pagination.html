@@ -43,21 +43,24 @@
   </nav>
 {% endif %} -->
 
-
 {% assign lang_posts = site.posts | where: "lang", page.lang | sort: "date" %}
 {% assign prev_post = nil %}
 {% assign next_post = nil %}
-{% assign found = false %}
 
-{% for p in lang_posts %}
-  {% if found %}
-    {% assign next_post = p %}
+{% for i in (0..lang_posts.size) %}
+  {% assign current = lang_posts[i] %}
+  {% if current.url == page.url %}
+    {% assign prev_index = i | minus: 1 %}
+    {% assign next_index = i | plus: 1 %}
+
+    {% if prev_index >= 0 %}
+      {% assign prev_post = lang_posts[prev_index] %}
+    {% endif %}
+    {% if next_index < lang_posts.size %}
+      {% assign next_post = lang_posts[next_index] %}
+    {% endif %}
+
     {% break %}
-  {% endif %}
-  {% if p.id == page.id %}
-    {% assign found = true %}
-  {% else %}
-    {% assign prev_post = p %}
   {% endif %}
 {% endfor %}
 
