@@ -330,23 +330,8 @@ compress_html:
 #       share: true
 #       related: true
 defaults:
-  # 영어 포스트
   - scope:
-      path: "en"
-      type: posts
-    values:
-      layout: single
-      lang: "en"
-      permalink: /en/:title/
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-
-  # 한국어 포스트
-  - scope:
-      path: "ko"
-      type: posts
+      path: "_posts/ko"
     values:
       layout: single
       lang: "ko"
@@ -356,10 +341,19 @@ defaults:
       share: true
       related: true
 
-  # 일본어 포스트
   - scope:
-      path: "ja"
-      type: posts
+      path: "_posts/en"
+    values:
+      layout: single
+      lang: "en"
+      permalink: /en/:title/
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+
+  - scope:
+      path: "_posts/ja"
     values:
       layout: single
       lang: "ja"
