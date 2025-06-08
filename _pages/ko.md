@@ -12,7 +12,13 @@ author_profile: true
 **Java**, **Spring**, **JPA** 등의 주제로 작성된 글들을 한국어로 만나보실 수 있습니다.
 
 ---
+카테고리별로 기술 글들을 확인해보세요:
 
+- [Java](/ko/categories/java/)
+- [JPA](/ko/categories/jpa/)
+- [Spring](/ko/categories/spring/)
+
+---
 ## 🆕 최신 글
 
 {% assign lang_posts = site.posts | where: "lang", "ko" | sort: "date" | reverse | slice: 0, 5 %}
@@ -21,8 +27,3 @@ author_profile: true
 {% endfor %}
 
 
-카테고리별로 기술 글들을 확인해보세요:
-
-- [Java](/ko/categories/java/)
-- [JPA](/ko/categories/jpa/)
-- [Spring](/ko/categories/spring/)
