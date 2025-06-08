@@ -5,4 +5,5 @@ permalink: /ko/categories/jpa/
 lang: ko
 author_profile: true
 category: jpa
+taxonomy: category
 ---

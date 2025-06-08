@@ -5,4 +5,5 @@ permalink: /ko/categories/spring/
 lang: ko
 author_profile: true
 category: spring
+taxonomy: category
 ---
