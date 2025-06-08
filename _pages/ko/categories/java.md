@@ -1,19 +1,27 @@
 ---
-layout: default
+layout: archive
 title: "Java 관련 글"
 permalink: /ko/categories/java/
 lang: ko
+author_profile: true
 ---
 
-<h1>Java 관련 글</h1>
+{% assign java_posts = site.categories.java | where: "lang", "ko" %}
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.lang == "ko" and post.categories contains "java" %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <span> - {{ post.date | date: "%Y-%m-%d" }}</span>
-      </li>
-    {% endif %}
+<div class="entries-grid">
+  {% for post in java_posts %}
+    <article class="archive__item">
+      {% if post.teaser %}
+        <div class="archive__item-teaser">
+          <img src="{{ post.teaser | relative_url }}" alt="{{ post.title }}">
+        </div>
+      {% endif %}
+      <h2 class="archive__item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+      {% endif %}
+    </article>
   {% endfor %}
-</ul>
+</div>
