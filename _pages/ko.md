@@ -38,7 +38,7 @@ author_profile: true
 
 ## 📘 Java 관련 글
 
-{% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'java'" %}
+{% assign java_posts = site.posts | where: "lang", "ko" | where: "categories", "java" %}
 {% if java_posts.size > 0 %}
 <ul>
   {% for post in java_posts %}
@@ -53,7 +53,7 @@ author_profile: true
 
 ## 🌱 Spring 관련 글
 
-{% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'spring'" %}
+{% assign spring_posts = site.posts | where: "lang", "ko" | where: "categories", "spring" %}
 {% if spring_posts.size > 0 %}
 <ul>
   {% for post in spring_posts %}
@@ -68,7 +68,7 @@ author_profile: true
 
 ## 🗂️ JPA 관련 글
 
-{% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'jpa'" %}
+{% assign jpa_posts = site.posts | where: "lang", "ko" | where: "categories", "jpa" %}
 {% if jpa_posts.size > 0 %}
 <ul>
   {% for post in jpa_posts %}
