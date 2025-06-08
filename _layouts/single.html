@@ -21,27 +21,19 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %}lang="{{ page.locale }}"{% endif %}>
-    {% if page.title %}
-      <meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">
-    {% endif %}
-    {% if page.excerpt %}
-      <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
-    {% endif %}
-    {% if page.date %}
-      <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
-    {% endif %}
-    {% if page.last_modified_at %}
-      <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
-    {% endif %}
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% if page.title -%}
-            <h1 id="page-title" class="page__title" itemprop="headline">
-              <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-            </h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+          </h1>
           {%- endif %}
           {% include page__meta.html %}
         </header>
@@ -58,23 +50,19 @@ layout: default
         {% endif %}
 
         {{ content }}
-
-        {% if page.categories and page.categories.size > 0 %}
-          {% assign lang_prefix = page.lang | prepend: "/" %}
-          <div class="category-button" style="margin: 1.5rem 0 1rem 0; text-align: left;">
-            {% for category in page.categories %}
-              <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
-                style="display: inline-block; padding: 0.45rem 1rem; font-size: 0.9rem; background-color: #007acc; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600;">
-                {{ category | capitalize }} 목록으로 이동
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        {% if page.link %}
-          <div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
-        {% endif %}
       </section>
+
+      {% if page.categories and page.categories.size > 0 %}
+        {% assign lang_prefix = page.lang | prepend: "/" %}
+        <div style="margin: 1.5rem 0; text-align: center;">
+          {% for category in page.categories %}
+          <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
+            style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.95rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
+            {{ category | capitalize }} 목록으로 이동
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
@@ -118,18 +106,23 @@ layout: default
           {% endif %}
 
           {% if previous_post or next_post %}
-            <nav class="pagination" style="margin-top: 2rem;">
-              {% if previous_post %}
-                <div class="pagination--pager pagination--pager-prev">
-                  <a href="{{ previous_post.url | relative_url }}">&larr; {{ previous_post.title }}</a>
-                </div>
-              {% endif %}
-              {% if next_post %}
-                <div class="pagination--pager pagination--pager-next">
-                  <a href="{{ next_post.url | relative_url }}">{{ next_post.title }} &rarr;</a>
-                </div>
-              {% endif %}
-            </nav>
+          <nav class="pagination" style="margin-top: 2rem; display: flex; justify-content: space-between; gap: 1rem;">
+            {% if previous_post %}
+            <div class="pagination--pager pagination--pager-prev">
+              <a href="{{ previous_post.url | relative_url }}">
+                &larr; {{ previous_post.title }}
+              </a>
+            </div>
+            {% endif %}
+
+            {% if next_post %}
+            <div class="pagination--pager pagination--pager-next">
+              <a href="{{ next_post.url | relative_url }}">
+                {{ next_post.title }} &rarr;
+              </a>
+            </div>
+            {% endif %}
+          </nav>
           {% endif %}
         {% endif %}
       {% endif %}
@@ -138,9 +131,13 @@ layout: default
         {% if jekyll.environment == 'production' %}
           {% include comments.html %}
         {% else %}
-          <p>Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>, but are disabled in non-production environments.</p>
+          <p>
+            Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
+            but are disabled in non-production environments.
+          </p>
         {% endif %}
       {% endif %}
+
     </div>
   </article>
 
