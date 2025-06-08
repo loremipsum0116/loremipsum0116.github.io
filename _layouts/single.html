@@ -62,7 +62,6 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
 
       <!-- Custom same-category + same-lang navigation -->
 {% assign current_category = page.categories[0] %}
@@ -80,28 +79,40 @@ layout: default
   {% endfor %}
 
   {% if sorted_posts.size > 1 and index != nil %}
-    <nav class="pagination">
-      <div class="pagination--pager">
-        {% if index > 0 %}
-          {% assign prev_index = index | minus: 1 %}
-          {% assign previous_post = sorted_posts[prev_index] %}
-          <a href="{{ previous_post.url | relative_url }}" class="pagination--pager-prev">
+    {% assign last_index = sorted_posts.size | minus: 1 %}
+    {% assign prev_index = index | minus: 1 %}
+    {% assign next_index = index | plus: 1 %}
+
+    {% assign previous_post = nil %}
+    {% assign next_post = nil %}
+
+    {% if index > 0 %}
+      {% assign previous_post = sorted_posts[prev_index] %}
+    {% endif %}
+
+    {% if index < last_index %}
+      {% assign next_post = sorted_posts[next_index] %}
+    {% endif %}
+
+    {% if previous_post or next_post %}
+    <nav class="pagination" style="margin-top: 2rem;">
+      {% if previous_post %}
+        <div class="pagination--pager pagination--pager-prev">
+          <a href="{{ previous_post.url | relative_url }}">
             &larr; {{ previous_post.title }}
           </a>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
 
-      <div class="pagination--pager">
-        {% assign last_index = sorted_posts.size | minus: 1 %}
-        {% if index < last_index %}
-          {% assign next_index = index | plus: 1 %}
-          {% assign next_post = sorted_posts[next_index] %}
-          <a href="{{ next_post.url | relative_url }}" class="pagination--pager-next">
+      {% if next_post %}
+        <div class="pagination--pager pagination--pager-next">
+          <a href="{{ next_post.url | relative_url }}">
             {{ next_post.title }} &rarr;
           </a>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
     </nav>
+    {% endif %}
   {% endif %}
 {% endif %}
 
