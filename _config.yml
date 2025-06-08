@@ -10,6 +10,14 @@
 # Review documentation to determine if you should use theme or remote_theme
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
+collections:
+  en:
+    output: true
+  ko:
+    output: true
+  ja:
+    output: true
+
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
@@ -362,11 +370,3 @@ defaults:
       read_time: true
       share: true
       related: true
-
-collections:
-  en:
-    output: true
-  ko:
-    output: true
-  ja:
-    output: true

@@ -37,8 +37,7 @@ author_profile: true
 ---
 
 ## 📘 Java 관련 글
-
-{% assign java_posts = site.posts | where: "lang", "ko" | where: "category", "java" %}
+{% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'java'" %}
 {% for post in java_posts %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
 {% endfor %}
@@ -46,8 +45,7 @@ author_profile: true
 ---
 
 ## 🌱 Spring 관련 글
-
-{% assign spring_posts = site.posts | where: "lang", "ko" | where: "category", "spring" %}
+{% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'spring'" %}
 {% for post in spring_posts %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
 {% endfor %}
@@ -55,8 +53,7 @@ author_profile: true
 ---
 
 ## 🗂️ JPA 관련 글
-
-{% assign jpa_posts = site.posts | where: "lang", "ko" | where: "category", "jpa" %}
+{% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'jpa'" %}
 {% for post in jpa_posts %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
 {% endfor %}
@@ -64,7 +61,6 @@ author_profile: true
 ---
 
 ## 🕒 최신 포스트
-
 {% assign lang_posts = site.posts | where: "lang", "ko" | sort: "date" | reverse | slice: 0, 5 %}
 {% for post in lang_posts %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
