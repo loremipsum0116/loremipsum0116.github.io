@@ -37,7 +37,7 @@ output: true
 
 ---
 
-## Java 관련 글
+## 📘 Java 관련 글
 
 {% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'java'" %}
 {% if java_posts.size > 0 %}
@@ -52,7 +52,7 @@ output: true
 
 ---
 
-## Spring 관련 글
+## 🌱 Spring 관련 글
 
 {% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'spring'" %}
 {% if spring_posts.size > 0 %}
@@ -67,7 +67,7 @@ output: true
 
 ---
 
-## JPA 관련 글
+## 🗂️ JPA 관련 글
 
 {% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'jpa'" %}
 {% if jpa_posts.size > 0 %}
