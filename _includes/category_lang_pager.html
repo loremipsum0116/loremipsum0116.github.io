@@ -1,7 +1,7 @@
 {% assign current_category = page.categories[0] %}
 {% assign category_posts_unsorted = site.categories[current_category] %}
 {% if category_posts_unsorted %}
-  {% assign category_posts = category_posts_unsorted | sort: "date" %}
+  {% assign category_posts = category_posts_unsorted | where: "lang", page.lang | sort: "date" %}
   {% assign index = 0 %}
 
   {% for post in category_posts %}
