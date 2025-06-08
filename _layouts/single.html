@@ -21,7 +21,7 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %}lang="{{ page.locale }}"{% endif %}>
     {% if page.title %}
       <meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">
     {% endif %}
@@ -38,11 +38,11 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}
+          {% if page.title -%}
             <h1 id="page-title" class="page__title" itemprop="headline">
               <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
             </h1>
-          {% endif %}
+          {%- endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}
@@ -51,9 +51,7 @@ layout: default
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc">
-              <header>
-                <h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
-              </header>
+              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
             </nav>
           </aside>
@@ -61,24 +59,20 @@ layout: default
 
         {{ content }}
 
-        {% if page.link %}
-          <div>
-            <a href="{{ page.link }}" class="btn btn--primary">
-              {{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}
-            </a>
-          </div>
-        {% endif %}
-
         {% if page.categories and page.categories.size > 0 %}
           {% assign lang_prefix = page.lang | prepend: "/" %}
-          <div style="margin: 1.5rem 0;">
+          <div class="category-button" style="margin: 1.5rem 0 1rem 0; text-align: left;">
             {% for category in page.categories %}
               <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
-                style="display: inline-block; padding: 0.5rem 1.2rem; font-size: 0.95rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600;">
+                style="display: inline-block; padding: 0.45rem 1rem; font-size: 0.9rem; background-color: #007acc; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600;">
                 {{ category | capitalize }} 목록으로 이동
               </a>
             {% endfor %}
           </div>
+        {% endif %}
+
+        {% if page.link %}
+          <div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
         {% endif %}
       </section>
 
@@ -90,33 +84,39 @@ layout: default
         {% include page__date.html %}
       </footer>
 
-      {% if page.share %}
-        {% include social-share.html %}
-      {% endif %}
+      {% if page.share %}{% include social-share.html %}{% endif %}
 
+      <!-- Custom same-category + same-lang navigation -->
       {% assign current_category = page.categories[0] %}
       {% assign base_posts = site.categories[current_category] %}
+
       {% if base_posts and base_posts.size > 0 %}
         {% assign filtered_posts = base_posts | where: "lang", page.lang %}
         {% assign sorted_posts = filtered_posts | sort: "date" %}
+
         {% assign index = nil %}
         {% for post in sorted_posts %}
           {% if post.url == page.url %}
             {% assign index = forloop.index0 %}
           {% endif %}
         {% endfor %}
+
         {% if sorted_posts.size > 1 and index != nil %}
           {% assign last_index = sorted_posts.size | minus: 1 %}
           {% assign prev_index = index | minus: 1 %}
           {% assign next_index = index | plus: 1 %}
+
           {% assign previous_post = nil %}
           {% assign next_post = nil %}
+
           {% if index > 0 %}
             {% assign previous_post = sorted_posts[prev_index] %}
           {% endif %}
+
           {% if index < last_index %}
             {% assign next_post = sorted_posts[next_index] %}
           {% endif %}
+
           {% if previous_post or next_post %}
             <nav class="pagination" style="margin-top: 2rem;">
               {% if previous_post %}
@@ -138,10 +138,7 @@ layout: default
         {% if jekyll.environment == 'production' %}
           {% include comments.html %}
         {% else %}
-          <p>
-            Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
-            but are disabled in non-production environments.
-          </p>
+          <p>Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>, but are disabled in non-production environments.</p>
         {% endif %}
       {% endif %}
     </div>
