@@ -37,31 +37,59 @@ author_profile: true
 ---
 
 ## 📘 Java 관련 글
+
 {% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'java'" %}
-{% for post in java_posts %}
-- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
-{% endfor %}
+{% if java_posts.size > 0 %}
+<ul>
+  {% for post in java_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>아직 등록된 Java 관련 글이 없습니다.</p>
+{% endif %}
 
 ---
 
 ## 🌱 Spring 관련 글
+
 {% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'spring'" %}
-{% for post in spring_posts %}
-- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
-{% endfor %}
+{% if spring_posts.size > 0 %}
+<ul>
+  {% for post in spring_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>아직 등록된 Spring 관련 글이 없습니다.</p>
+{% endif %}
 
 ---
 
 ## 🗂️ JPA 관련 글
+
 {% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'jpa'" %}
-{% for post in jpa_posts %}
-- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
-{% endfor %}
+{% if jpa_posts.size > 0 %}
+<ul>
+  {% for post in jpa_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>아직 등록된 JPA 관련 글이 없습니다.</p>
+{% endif %}
 
 ---
 
 ## 🕒 최신 포스트
+
 {% assign lang_posts = site.posts | where: "lang", "ko" | sort: "date" | reverse | slice: 0, 5 %}
-{% for post in lang_posts %}
-- [{{ post.title }}]({{ post.url }}) ({{ post.date | date: "%Y-%m-%d" }})
-{% endfor %}
+{% if lang_posts.size > 0 %}
+<ul>
+  {% for post in lang_posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>등록된 게시물이 없습니다.</p>
+{% endif %}
