@@ -392,44 +392,4 @@ defaults:
       read_time: true
       share: true
       related: true
-#       related: true
-# defaults:
-#   - scope:
-#       path: "_posts/ko"
-#     values:
-#       layout: single
-#       lang: "ko"
-#       permalink: /ko/:title/
-#       author_profile: true
-#       read_time: true
-#       share: true
-#       related: true
-
-#   - scope:
-#       path: "_posts/en"
-#     values:
-#       layout: single
-#       lang: "en"
-#       permalink: /en/:title/
-#       author_profile: true
-#       read_time: true
-#       share: true
-#       related: true
-
-#   - scope:
-#       path: "_posts/ja"
-#     values:
-#       layout: single
-#       lang: "ja"
-#       permalink: /ja/:title/
-#       author_profile: true
-#       read_time: true
-#       share: true
-#       related: true
-# jekyll-archives:
-#   enabled:
-#     - categories
-#   layouts:
-#     category: archive
-#   permalinks:
-#     category: /:lang/categories/:name/
+future: true
