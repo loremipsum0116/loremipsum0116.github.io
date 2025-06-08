@@ -11,11 +11,6 @@ author_profile: true
 <div class="entries-grid">
   {% for post in java_posts %}
     <article class="archive__item">
-      {% if post.teaser %}
-        <div class="archive__item-teaser">
-          <img src="{{ post.teaser | relative_url }}" alt="{{ post.title }}">
-        </div>
-      {% endif %}
       <h2 class="archive__item-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>

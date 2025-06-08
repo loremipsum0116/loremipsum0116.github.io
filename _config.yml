@@ -15,6 +15,11 @@
 #     output: true
 #     permalink: /:path/
 
+collections:
+  posts:
+    output: true
+
+
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
