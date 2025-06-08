@@ -2,10 +2,12 @@
 
 <div class="category-button-wrapper" style="margin-top: 1.5rem;">
   {% for category in page.categories %}
-    <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
-       class="btn btn--primary"
-       style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
-      {{ category | capitalize }} 목록으로 이동
-    </a>
+    {% if category == "java" %}
+      <a href="{{ lang_prefix }}/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    {% endif %}
   {% endfor %}
 </div>
