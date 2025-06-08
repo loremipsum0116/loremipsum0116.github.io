@@ -8,33 +8,31 @@ layout: default
   {% include page__hero_video.html %}
 {% endif %}
 
-{% assign breadcrumbs_enabled = site.breadcrumbs %}
-{% if page.breadcrumbs != null %}
-  {% assign breadcrumbs_enabled = page.breadcrumbs %}
-{% endif %}
-{% if page.url != "/" and breadcrumbs_enabled %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
 <div id="main" role="main">
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+    {% if page.title %}
+      <meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.excerpt %}
+      <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.date %}
+      <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+    {% endif %}
+    {% if page.last_modified_at %}
+      <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+    {% endif %}
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title -%}
-          <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | strip_html | strip_newlines | escape_once }}</a>
-          </h1>
-          {%- endif %}
+          {% if page.title %}
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title }}</a>
+            </h1>
+          {% endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}
@@ -50,19 +48,11 @@ layout: default
         {% endif %}
 
         {{ content }}
-      </section>
 
-      {% if page.categories and page.categories.size > 0 %}
-        {% assign lang_prefix = page.lang | prepend: "/" %}
-        <div style="margin: 1.5rem 0; text-align: center;">
-          {% for category in page.categories %}
-          <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
-            style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.95rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
-            {{ category | capitalize }} 목록으로 이동
-          </a>
-          {% endfor %}
-        </div>
-      {% endif %}
+        {% if page.link %}
+          <div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
+        {% endif %}
+      </section>
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
@@ -72,59 +62,8 @@ layout: default
         {% include page__date.html %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
-
-      <!-- Custom same-category + same-lang navigation -->
-      {% assign current_category = page.categories[0] %}
-      {% assign base_posts = site.categories[current_category] %}
-
-      {% if base_posts and base_posts.size > 0 %}
-        {% assign filtered_posts = base_posts | where: "lang", page.lang %}
-        {% assign sorted_posts = filtered_posts | sort: "date" %}
-
-        {% assign index = nil %}
-        {% for post in sorted_posts %}
-          {% if post.url == page.url %}
-            {% assign index = forloop.index0 %}
-          {% endif %}
-        {% endfor %}
-
-        {% if sorted_posts.size > 1 and index != nil %}
-          {% assign last_index = sorted_posts.size | minus: 1 %}
-          {% assign prev_index = index | minus: 1 %}
-          {% assign next_index = index | plus: 1 %}
-
-          {% assign previous_post = nil %}
-          {% assign next_post = nil %}
-
-          {% if index > 0 %}
-            {% assign previous_post = sorted_posts[prev_index] %}
-          {% endif %}
-
-          {% if index < last_index %}
-            {% assign next_post = sorted_posts[next_index] %}
-          {% endif %}
-
-          {% if previous_post or next_post %}
-          <nav class="pagination" style="margin-top: 2rem; display: flex; justify-content: space-between; gap: 1rem;">
-            {% if previous_post %}
-            <div class="pagination--pager pagination--pager-prev">
-              <a href="{{ previous_post.url | relative_url }}">
-                &larr; {{ previous_post.title }}
-              </a>
-            </div>
-            {% endif %}
-
-            {% if next_post %}
-            <div class="pagination--pager pagination--pager-next">
-              <a href="{{ next_post.url | relative_url }}">
-                {{ next_post.title }} &rarr;
-              </a>
-            </div>
-            {% endif %}
-          </nav>
-          {% endif %}
-        {% endif %}
+      {% if page.share %}
+        {% include social-share.html %}
       {% endif %}
 
       {% if site.comments.provider and page.comments %}
@@ -137,7 +76,6 @@ layout: default
           </p>
         {% endif %}
       {% endif %}
-
     </div>
   </article>
 
