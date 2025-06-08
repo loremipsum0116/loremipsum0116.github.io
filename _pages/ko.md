@@ -27,19 +27,18 @@ title: "한국어 섹션"
 permalink: /ko/
 lang: ko
 author_profile: true
-output: true
 ---
 
 ## **로렘 기술 블로그에 오신 걸 환영합니다**
 
-**로렘 기술 블로그**의 한국어 섹션에 오신 걸 환영합니다.  
+**로렘 기술 블로그**의 한국어 섹션에 오신 걸 환영합니다.  
 이곳에서는 **자바, 스프링, JPA** 등 다양한 주제에 대해 한국어로 작성된 글들을 보실 수 있습니다.
 
 ---
 
 ## Java 관련 글
 
-{% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko'" | where_exp: "post", "post.categories contains 'java'" %}
+{% assign java_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'java'" | sort: "date" | reverse %}
 {% if java_posts.size > 0 %}
 <ul>
   {% for post in java_posts %}
@@ -54,7 +53,7 @@ output: true
 
 ## Spring 관련 글
 
-{% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko'" | where_exp: "post", "post.categories contains 'spring'" %}
+{% assign spring_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'spring'" | sort: "date" | reverse %}
 {% if spring_posts.size > 0 %}
 <ul>
   {% for post in spring_posts %}
@@ -69,7 +68,7 @@ output: true
 
 ## JPA 관련 글
 
-{% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko'" | where_exp: "post", "post.categories contains 'jpa'" %}
+{% assign jpa_posts = site.posts | where_exp: "post", "post.lang == 'ko' and post.categories contains 'jpa'" | sort: "date" | reverse %}
 {% if jpa_posts.size > 0 %}
 <ul>
   {% for post in jpa_posts %}
