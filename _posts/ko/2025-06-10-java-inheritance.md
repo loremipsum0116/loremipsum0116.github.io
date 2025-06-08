@@ -6,15 +6,3 @@ lang: ko
 ---
 자바에서 상속은 `extends` 키워드를 통해 구현되며, 부모 클래스의 필드와 메서드를 자식 클래스가 사용할 수 있게 합니다.
 
-```java
-class Animal {
-    void sound() {
-        System.out.println("소리낸다");
-    }
-}
-
-class Dog extends Animal {
-    void bark() {
-        System.out.println("멍멍");
-    }
-}
