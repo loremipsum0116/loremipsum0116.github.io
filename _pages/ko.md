@@ -27,6 +27,7 @@ title: "한국어 섹션"
 permalink: /ko/
 lang: ko
 author_profile: true
+output: true
 ---
 
 ## **로렘 기술 블로그에 오신 걸 환영합니다**
