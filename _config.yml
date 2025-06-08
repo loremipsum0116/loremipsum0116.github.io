@@ -274,6 +274,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-github-metadata
+  - jekyll-archives
+
 
 
 # mimic GitHub Pages with --safe
@@ -419,3 +421,10 @@ defaults:
 #       read_time: true
 #       share: true
 #       related: true
+jekyll-archives:
+  enabled:
+    - categories
+  layouts:
+    category: archive
+  permalinks:
+    category: /:lang/categories/:name/
