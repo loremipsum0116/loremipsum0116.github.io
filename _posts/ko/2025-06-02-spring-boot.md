@@ -3,7 +3,7 @@ title: "스프링 부트란 무엇인가"
 date: 2025-06-02
 layout: single
 lang: ko
-category: spring
+categories: [ko, spring]
 permalink: /ko/spring-boot/
 ---
 

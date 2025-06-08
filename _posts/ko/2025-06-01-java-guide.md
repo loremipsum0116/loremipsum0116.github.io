@@ -3,7 +3,7 @@ title: "자바 입문 가이드"
 date: 2025-06-01
 layout: single
 lang: ko
-category: java
+categories: [ko, java]
 permalink: /ko/java-guide/
 ---
 
