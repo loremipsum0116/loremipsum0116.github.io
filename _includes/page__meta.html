@@ -29,3 +29,16 @@
     {% endif %}
   </p>
 {% endif %}
+
+{%- if document.categories and document.categories != empty -%}
+  {% assign lang_prefix = document.lang | default: site.lang | prepend: "/" %}
+
+  <div class="category-button-wrapper" style="margin-top: 1rem;">
+    {% for category in document.categories %}
+      <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/"
+         style="display:inline-block; padding: 0.6rem 1.2rem; font-size: 1rem; font-weight: 600; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        {{ category | capitalize }} 목록으로 이동
+      </a>
+    {% endfor %}
+  </div>
+{%- endif -%}
