@@ -52,76 +52,71 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <!-- {% include category_lang_pager.html %} -->
-
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
         {% include page__date.html %}
-        <!-- {% include category_lang_pager.html %} -->
-
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
 
-<!-- Custom same-category + same-lang navigation -->
-{% assign current_category = page.categories[0] %}
-{% assign filtered_posts = site.categories[current_category] | default: empty | where: "lang", page.lang %}
-{% assign sorted_posts = filtered_posts | sort: "date" %}
+      <!-- Custom same-category + same-lang navigation -->
+      {% assign current_category = page.categories[0] %}
+      {% assign base_posts = site.categories[current_category] | where_exp: "p", "p != nil and p.lang != nil" %}
+      {% assign filtered_posts = base_posts | where: "lang", page.lang %}
+      {% assign sorted_posts = filtered_posts | sort: "date" %}
 
-{% assign index = nil %}
-{% for post in sorted_posts %}
-  {% if post.url == page.url %}
-    {% assign index = forloop.index0 %}
-  {% endif %}
-{% endfor %}
+      {% assign index = nil %}
+      {% for post in sorted_posts %}
+        {% if post.url == page.url %}
+          {% assign index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
 
-{% if sorted_posts.size > 1 and index != nil %}
-<nav class="pagination">
-  <div class="pagination--pager">
-    {% if index > 0 %}
-      {% assign prev_index = index | minus: 1 %}
-      {% assign previous_post = sorted_posts[prev_index] %}
-      <a href="{{ previous_post.url | relative_url }}" class="pagination--pager-prev">
-        &larr; {{ previous_post.title }}
-      </a>
-    {% endif %}
-  </div>
+      {% if sorted_posts.size > 1 and index != nil %}
+      <nav class="pagination">
+        <div class="pagination--pager">
+          {% if index > 0 %}
+            {% assign prev_index = index | minus: 1 %}
+            {% assign previous_post = sorted_posts[prev_index] %}
+            <a href="{{ previous_post.url | relative_url }}" class="pagination--pager-prev">
+              &larr; {{ previous_post.title }}
+            </a>
+          {% endif %}
+        </div>
 
-  <div class="pagination--pager">
-    {% assign last_index = sorted_posts.size | minus: 1 %}
-    {% if index < last_index %}
-      {% assign next_index = index | plus: 1 %}
-      {% assign next_post = sorted_posts[next_index] %}
-      <a href="{{ next_post.url | relative_url }}" class="pagination--pager-next">
-        {{ next_post.title }} &rarr;
-      </a>
-    {% endif %}
-  </div>
-</nav>
-{% endif %}
-
-
-    {% if site.comments.provider and page.comments %}
-      {% if jekyll.environment == 'production' %}
-        {% include comments.html %}
-      {% else %}
-        <p>
-          Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
-          but are disabled in non-production environments.
-        </p>
+        <div class="pagination--pager">
+          {% assign last_index = sorted_posts.size | minus: 1 %}
+          {% if index < last_index %}
+            {% assign next_index = index | plus: 1 %}
+            {% assign next_post = sorted_posts[next_index] %}
+            <a href="{{ next_post.url | relative_url }}" class="pagination--pager-next">
+              {{ next_post.title }} &rarr;
+            </a>
+          {% endif %}
+        </div>
+      </nav>
       {% endif %}
-    {% endif %}
+
+      {% if site.comments.provider and page.comments %}
+        {% if jekyll.environment == 'production' %}
+          {% include comments.html %}
+        {% else %}
+          <p>
+            Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
+            but are disabled in non-production environments.
+          </p>
+        {% endif %}
+      {% endif %}
+    </div>
   </article>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     {% include page__related.html posts=site.related_posts %}
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   {% elsif page.id and page.related %}
     {% include page__related.html posts=site.posts %}
   {% endif %}
