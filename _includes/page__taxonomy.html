@@ -1,7 +1,15 @@
-{% if site.tag_archive.type and page.tags[0] %}
+<!-- {% if site.tag_archive.type and page.tags[0] %}
   {% include tag-list.html %}
 {% endif %}
 
 {% if site.category_archive.type and page.categories[0] %}
   {% include category-list.html %}
-{% endif %}
+{% endif %} -->
+
+{% assign lang_prefix = page.lang | prepend: "/" %}
+
+<div class="taxonomy__categories">
+  {% for category in page.categories %}
+    <a href="{{ lang_prefix }}/categories/{{ category | slugify | uri_escape }}/" class="taxonomy__item">{{ category }}</a>
+  {% endfor %}
+</div>
