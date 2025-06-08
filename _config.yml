@@ -10,10 +10,10 @@
 # Review documentation to determine if you should use theme or remote_theme
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-collections:
-  pages:
-    output: true
-    permalink: /:path/
+# collections:
+#   pages:
+#     output: true
+#     permalink: /:path/
 
 
 # theme                  : "minimal-mistakes-jekyll"
