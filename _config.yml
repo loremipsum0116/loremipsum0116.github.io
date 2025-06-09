@@ -280,8 +280,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-github-metadata
+  - jekyll-gist
+  - jekyll-include-cache
   - jekyll-archives
   - jekyll-paginate-v2
+
 
 
 # mimic GitHub Pages with --safe
