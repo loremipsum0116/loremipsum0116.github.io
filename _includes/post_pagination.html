@@ -4,7 +4,6 @@
 
   {% assign filtered_posts = site.posts | where: "lang", current_lang %}
   {% assign category_filtered_posts = "" | split: "" %}
-
   {% for post in filtered_posts %}
     {% if post.categories contains current_category %}
       {% assign category_filtered_posts = category_filtered_posts | push: post %}
@@ -12,36 +11,38 @@
   {% endfor %}
 
   {% assign sorted_posts = category_filtered_posts | sort: "date" %}
-  {% assign current_index = -1 %}
 
-  {% for i in (0..sorted_posts.size) %}
-    {% assign p = sorted_posts[i] %}
-    {% if p.url == page.url %}
-      {% assign current_index = i %}
+  {% assign previous_post = nil %}
+  {% assign next_post = nil %}
+  {% for post in sorted_posts %}
+    {% if found_current %}
+      {% assign next_post = post %}
+      {% break %}
+    {% endif %}
+    {% if post.url == page.url %}
+      {% assign found_current = true %}
+    {% else %}
+      {% assign previous_post = post %}
     {% endif %}
   {% endfor %}
 
-  {% if current_index != -1 %}
-    <nav class="pagination" style="margin-top: 2rem;">
-      <ul>
-        {% if current_index > 0 %}
-          {% assign previous_post = sorted_posts[current_index | minus: 1] %}
-          <li class="pagination--pager">
-            <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
-              ← {{ previous_post.title }}
-            </a>
-          </li>
-        {% endif %}
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      {% if previous_post %}
+        <li class="pagination--pager">
+          <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
+            ← {{ previous_post.title }}
+          </a>
+        </li>
+      {% endif %}
 
-        {% if current_index < sorted_posts.size | minus: 1 %}
-          {% assign next_post = sorted_posts[current_index | plus: 1] %}
-          <li class="pagination--pager">
-            <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
-              {{ next_post.title }} →
-            </a>
-          </li>
-        {% endif %}
-      </ul>
-    </nav>
-  {% endif %}
+      {% if next_post %}
+        <li class="pagination--pager">
+          <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
+            {{ next_post.title }} →
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
 {% endif %}
