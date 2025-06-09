@@ -4,47 +4,73 @@
   {% assign current_page = paginator.page %}
   {% assign total_pages = paginator.total_pages %}
 
-  {%- comment -%}
-    Java 카테고리만 base_url 고정
-  {%- endcomment -%}
-  {% if page.title == "Java 관련 글" %}
-    {% assign base_url = "/ko/categories/java" %}
-  {% elsif paginator %}
-    {% assign base_url = paginator.permalink | replace: '/page:num', '' %}
-  {% else %}
-    {% assign base_url = page.url | replace: '/index.html', '' %}
+  {% capture path %}{{ page.permalink | default: page.url }}{% endcapture %}
+
+  {% assign is_java = false %}
+  {% assign is_jpa = false %}
+  {% assign is_spring = false %}
+
+  {% if path contains '/ko/categories/java' %}
+    {% assign is_java = true %}
+  {% elsif path contains '/ko/categories/jpa' %}
+    {% assign is_jpa = true %}
+  {% elsif path contains '/ko/categories/spring' %}
+    {% assign is_spring = true %}
   {% endif %}
+
+  {% assign java_root = '/ko/categories/java/' %}
+  {% assign jpa_root = '/ko/categories/jpa/' %}
+  {% assign spring_root = '/ko/categories/spring/' %}
+
+  {% assign base_url = path | replace: '/index.html', '' | replace: '/page1', '' | replace: '/page2', '' | remove: '/page:num' %}
 
   <div class="pagination--container">
 
+    <!-- 이전 버튼 -->
     {% if current_page > 1 %}
-      {% assign prev_page = current_page | minus: 1 %}
-      {% if prev_page == 1 and page.title == "Java 관련 글" %}
-        <a class="pagination--prev" href="{{ base_url }}/">&laquo; 이전</a>
+      {% assign prev = current_page | minus: 1 %}
+      {% if prev == 1 %}
+        {% if is_java %}
+          <a class="pagination--prev" href="{{ java_root }}">&laquo; 이전</a>
+        {% elsif is_jpa %}
+          <a class="pagination--prev" href="{{ jpa_root }}">&laquo; 이전</a>
+        {% elsif is_spring %}
+          <a class="pagination--prev" href="{{ spring_root }}">&laquo; 이전</a>
+        {% else %}
+          <a class="pagination--prev" href="{{ base_url }}">&laquo; 이전</a>
+        {% endif %}
       {% else %}
-        <a class="pagination--prev" href="{{ base_url }}/page{{ prev_page }}/">&laquo; 이전</a>
+        <a class="pagination--prev" href="{{ base_url }}/page{{ prev }}/">&laquo; 이전</a>
       {% endif %}
     {% endif %}
 
+    <!-- 페이지 번호 -->
     {% for i in (1..total_pages) %}
       {% if i == current_page %}
         <span class="pagination--page current">{{ i }}</span>
       {% else %}
-        {% if i == 1 and page.title == "Java 관련 글" %}
-          <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
+        {% if i == 1 %}
+          {% if is_java %}
+            <a class="pagination--page" href="{{ java_root }}">{{ i }}</a>
+          {% elsif is_jpa %}
+            <a class="pagination--page" href="{{ jpa_root }}">{{ i }}</a>
+          {% elsif is_spring %}
+            <a class="pagination--page" href="{{ spring_root }}">{{ i }}</a>
+          {% else %}
+            <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
+          {% endif %}
         {% else %}
           <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
         {% endif %}
       {% endif %}
     {% endfor %}
 
+    <!-- 다음 버튼 -->
     {% if current_page < total_pages %}
-      {% assign next_page = current_page | plus: 1 %}
-      <a class="pagination--next" href="{{ base_url }}/page{{ next_page }}/">다음 &raquo;</a>
+      {% assign next = current_page | plus: 1 %}
+      <a class="pagination--next" href="{{ base_url }}/page{{ next }}/">다음 &raquo;</a>
     {% endif %}
 
   </div>
 </nav>
 {% endif %}
-
-
