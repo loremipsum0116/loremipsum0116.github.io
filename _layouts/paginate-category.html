@@ -27,3 +27,9 @@ layout: default
         {% include pagination.html %}
     </div>
 </div>
+<h3>디버그: paginator.posts</h3>
+<ul>
+{% for post in paginator.posts %}
+  <li>{{ post.title }} | {{ post.lang }} | {{ post.categories }}</li>
+{% endfor %}
+</ul>
