@@ -3,7 +3,7 @@ name: Build Jekyll site and deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master  # 또는 master, 당신의 기본 브랜치명에 맞게 수정
 
 jobs:
   jekyll:
@@ -29,3 +29,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: gh-pages  # ✅ 이 줄 추가
