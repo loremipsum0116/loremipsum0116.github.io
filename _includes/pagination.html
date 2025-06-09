@@ -1,66 +1,35 @@
-{% if page.category == "java" %}
-  {% assign base_url = "/ko/categories/java" %}
-{% elsif page.category == "jpa" %}
-  {% assign base_url = "/ko/categories/jpa" %}
-{% elsif page.category == "spring" %}
-  {% assign base_url = "/ko/categories/spring" %}
-{% else %}
-  {% assign base_url = "/ko/categories/unknown" %}
-{% endif %}
-
 {% if paginator.total_pages > 1 %}
-<nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
+<nav class="pagination" role="navigation">
 
-  <!-- 기술 인덱스로 버튼 -->
-  <div style="margin-bottom: 1rem;">
-    <a href="/ko/" class="btn btn--primary"
-       style="padding: 0.5rem 1rem; font-size: 1rem; border-radius: 6px; background-color: #007acc; color: white; text-decoration: none;">
-      기술 인덱스로
-    </a>
-  </div>
+  {% assign current_page = paginator.page %}
+  {% assign total_pages = paginator.total_pages %}
+  {% if paginator %}
+    {% assign base_url = paginator.permalink | replace: '/page:num', '' %}
+  {% else %}
+    {% assign base_url = page.url | replace: '/index.html', '' %}
+  {% endif %}
 
-  <!-- 페이지네이션 숫자 버튼 -->
-  <ul class="pagination__list"
-      style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+  <div class="pagination--container">
 
-    {% if paginator.previous_page %}
-      <li>
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev"
-           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">← 이전</a>
-      </li>
+    <!-- 이전 버튼 -->
+    {% if current_page > 1 %}
+      <a class="pagination--prev" href="{{ base_url }}/page{{ current_page | minus: 1 }}/">&laquo; 이전</a>
     {% endif %}
 
-    {% for page_num in (1..paginator.total_pages) %}
-      {% if page_num == 1 %}
-        {% assign page_url = base_url | append: "/" %}
+    <!-- 숫자 인덱스 버튼 -->
+    {% for i in (1..total_pages) %}
+      {% if i == current_page %}
+        <span class="pagination--page current">{{ i }}</span>
       {% else %}
-        {% assign page_url = base_url | append: "/page" | append: page_num | append: "/" %}
-      {% endif %}
-
-      {% if page_num == paginator.page %}
-        <li>
-          <span class="pagination__page pagination__page--current"
-                style="padding: 0.5rem 0.75rem; background-color: #007acc; color: white; border-radius: 5px;">
-            {{ page_num }}
-          </span>
-        </li>
-      {% else %}
-        <li>
-          <a href="{{ page_url | relative_url }}" class="pagination__page"
-             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
-            {{ page_num }}
-          </a>
-        </li>
+        <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
       {% endif %}
     {% endfor %}
 
-    {% if paginator.next_page %}
-      <li>
-        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next"
-           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">다음 →</a>
-      </li>
+    <!-- 다음 버튼 -->
+    {% if current_page < total_pages %}
+      <a class="pagination--next" href="{{ base_url }}/page{{ current_page | plus: 1 }}/">다음 &raquo;</a>
     {% endif %}
 
-  </ul>
+  </div>
 </nav>
 {% endif %}

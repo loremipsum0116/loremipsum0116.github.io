@@ -14,7 +14,7 @@
 #   pages:
 #     output: true
 #     permalink: /:path/
-permalink: pretty
+# permalink: /:categories/:title/
 
 collections:
   posts:
@@ -271,7 +271,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 pagination:
   enabled: true
-  debug: false
+  debug: true
   collection: posts
   per_page: 5
   sort_field: 'date'
@@ -279,22 +279,25 @@ pagination:
   generator:
     - scope:
         path: '_pages/ko/categories/java.md'
+      permalink: '/ko/categories/java/page:num/'
       values:
         category: 'java'
         locale: 'ko'
-        permalink: '/ko/categories/java/page:num/'
+
     - scope:
         path: '_pages/ko/categories/jpa.md'
+      permalink: '/ko/categories/jpa/page:num/'
       values:
         category: 'jpa'
         locale: 'ko'
-        permalink: '/ko/categories/jpa/page:num/'
+
     - scope:
         path: '_pages/ko/categories/spring.md'
+      permalink: '/ko/categories/spring/page:num/'
       values:
         category: 'spring'
         locale: 'ko'
-        permalink: '/ko/categories/spring/page:num/'
+
 
 # Plugins (previously gems:)
 plugins:
