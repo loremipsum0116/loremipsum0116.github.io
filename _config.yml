@@ -331,17 +331,28 @@ compress_html:
 # Defaults
 # Defaults
 defaults:
-  # 기본 게시물 설정 (기존 _posts 에 적용될 수 있도록)
+  # ✅ 전체 posts 에 대한 기본값
   - scope:
-      path: "" # 전체 파일 경로 (site root)
-      type: "posts" # 게시물 타입에만 적용
+      path: ""  # 전체 경로
+      type: "posts"
     values:
-      layout: "single" # 기본 레이아웃 (Minimal Mistakes 기본값)
+      layout: "single"
       author_profile: true
       read_time: true
-      comments: true # 필요에 따라 주석 처리 또는 false
+      comments: true
       share: true
       related: true
+
+  # ✅ 카테고리 페이지 (Java) 전용 설정 추가
+  - scope:
+      path: "_pages/ko/categories/java.md"
+    values:
+      layout: paginate-category
+      pagination:
+        enabled: true
+        category: java
+        locale: ko
+
 
   # _pages 폴더 내부의 페이지들에 대한 설정 (이 부분이 중요)
   - scope:
