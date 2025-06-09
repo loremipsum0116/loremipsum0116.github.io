@@ -17,9 +17,10 @@ group :jekyll_plugins do
   gem "jekyll-gist", "~> 1.5"
   gem "jekyll-include-cache", "~> 0.2"
   gem "jekyll-paginate", "~> 1.1"
-
-  # 🔥 여기 추가
   gem "jekyll-archives", "~> 2.2"
+
+  # ✅ 여기에 추가 (제일 아래)
+  gem "jekyll-paginate-v2"
 end
 
 # 개발 환경을 위한 추가 패키지
