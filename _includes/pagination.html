@@ -1,15 +1,7 @@
 {% comment %}
-  카테고리별 base_url을 하드코딩으로 지정
+  카테고리별 base_url은 더 이상 사용하지 않고,
+  paginator.page_path 기반으로 정확한 URL 생성
 {% endcomment %}
-{% if page.category == "java" %}
-  {% assign base_url = "/ko/categories/java" %}
-{% elsif page.category == "jpa" %}
-  {% assign base_url = "/ko/categories/jpa" %}
-{% elsif page.category == "spring" %}
-  {% assign base_url = "/ko/categories/spring" %}
-{% else %}
-  {% assign base_url = "/ko/categories/unknown" %}
-{% endif %}
 
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
@@ -33,24 +25,21 @@
       </li>
     {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
-      {% assign target_url = base_url %}
-      {% if page > 1 %}
-        {% assign target_url = base_url | append: "/page" | append: page | append: "/" %}
-      {% endif %}
+    {% for page_num in (1..paginator.total_pages) %}
+      {% assign page_path = paginator.page_path | replace: ':num', page_num %}
 
-      {% if page == paginator.page %}
+      {% if page_num == paginator.page %}
         <li>
           <span class="pagination__page pagination__page--current"
                 style="padding: 0.5rem 0.75rem; background-color: #007acc; color: white; border-radius: 5px;">
-            {{ page }}
+            {{ page_num }}
           </span>
         </li>
       {% else %}
         <li>
-          <a href="{{ target_url | relative_url }}" class="pagination__page"
+          <a href="{{ page_path | relative_url }}" class="pagination__page"
              style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
-            {{ page }}
+            {{ page_num }}
           </a>
         </li>
       {% endif %}
