@@ -4,23 +4,13 @@
 <nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
   <ul class="pagination__list" style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem;">
 
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <li>
-          <a href="/ko/" class="pagination__prev"
-             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
-            ← 이전
-          </a>
-        </li>
-      {% else %}
-        <li>
-          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev"
-             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
-            ← 이전
-          </a>
-        </li>
-      {% endif %}
-    {% endif %}
+    <!-- 🔹 기술 인덱스로 이동 버튼 (항상 보이게) -->
+    <li>
+      <a href="/ko/" class="pagination__index"
+         style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-weight: bold;">
+        기술 인덱스로
+      </a>
+    </li>
 
     {% for page in (1..paginator.total_pages) %}
       {% assign target_url = base_url %}
@@ -48,7 +38,9 @@
     {% if paginator.next_page %}
       <li>
         <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next"
-           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">다음 →</a>
+           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
+          다음 →
+        </a>
       </li>
     {% endif %}
 
