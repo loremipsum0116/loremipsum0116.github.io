@@ -32,3 +32,9 @@ layout: default
     {% endif %}
   </div>
 </div>
+<h2 style="color:red">Debug 정보</h2>
+<ul>
+  <li>paginator 존재 여부: {{ paginator != null }}</li>
+  <li>paginator.posts size: {{ paginator.posts | size }}</li>
+  <li>현재 페이지 번호: {{ paginator.page }}</li>
+</ul>
