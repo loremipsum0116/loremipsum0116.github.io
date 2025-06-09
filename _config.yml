@@ -255,19 +255,18 @@ paginate_path: /:lang/page:num/
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
 #   for configuration details
 pagination:
-  # Set enabled to true to use paginate v2
-  # enabled: true
+  enabled: true
   debug: false
   collection: 'posts'
-  per_page: 10
-  permalink: '/page/:num/'
-  title: ':title - page :num'
+  per_page: 5
+  permalink: '/ko/categories/java/page:num/'
+  title: 'Java 관련 글 - page :num'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
-  category: 'posts'
+  category: 'java'
   tag: ''
-  locale: ''
+  locale: 'ko'
   trail:
     before: 2
     after: 2
@@ -280,7 +279,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-github-metadata
   - jekyll-archives
-
+  - jekyll-paginate-v2
 
 
 # mimic GitHub Pages with --safe

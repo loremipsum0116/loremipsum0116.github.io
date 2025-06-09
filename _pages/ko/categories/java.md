@@ -1,10 +1,15 @@
 ---
-layout: archive
+layout: paginate-category
 title: "Java 관련 글"
 permalink: /ko/categories/java/
+pagination:
+  enabled: true
+  category: java
+  locale: ko
 lang: ko
 author_profile: true
 ---
+
 
 {% assign java_posts = site.categories.java | where: "lang", "ko" %}
 
