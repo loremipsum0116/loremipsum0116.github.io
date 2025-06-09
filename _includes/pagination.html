@@ -1,0 +1,27 @@
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" role="navigation">
+  <ul class="pagination__list">
+
+    {% if paginator.previous_page %}
+      <li>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev">← 이전</a>
+      </li>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li><span class="pagination__page pagination__page--current">{{ page }}</span></li>
+      {% else %}
+        <li><a href="{{ paginator.paginate_path | replace: ':num', page | relative_url }}" class="pagination__page">{{ page }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <li>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next">다음 →</a>
+      </li>
+    {% endif %}
+
+  </ul>
+</nav>
+{% endif %}
