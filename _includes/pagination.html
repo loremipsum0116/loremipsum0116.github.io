@@ -24,7 +24,7 @@
 
   {% assign base_url = path | replace: '/index.html', '' | replace: '/page1', '' | replace: '/page2', '' | remove: '/page:num' %}
 
-  <div class="pagination--container">
+  <div class="pagination--container" style="text-align: center;">
 
     <!-- 이전 버튼 -->
     {% if current_page > 1 %}
@@ -71,11 +71,6 @@
       <a class="pagination--next" href="{{ base_url }}/page{{ next }}/">다음 &raquo;</a>
     {% endif %}
 
-  </div>
-
-  <!-- 기술 인덱스로 버튼 (적절한 여백 포함) -->
-  <div style="margin-top: 2rem;">
-    <a href="/ko/tech-index/" class="btn btn--primary">← 기술 인덱스로</a>
   </div>
 
 </nav>
