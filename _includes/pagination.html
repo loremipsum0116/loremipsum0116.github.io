@@ -1,17 +1,30 @@
-{% assign base_url = "/ko/categories/java" %}
+{% comment %}
+  카테고리별 base_url을 하드코딩으로 지정
+{% endcomment %}
+{% if page.category == "java" %}
+  {% assign base_url = "/ko/categories/java" %}
+{% elsif page.category == "jpa" %}
+  {% assign base_url = "/ko/categories/jpa" %}
+{% elsif page.category == "spring" %}
+  {% assign base_url = "/ko/categories/spring" %}
+{% else %}
+  {% assign base_url = "/ko/categories/unknown" %}
+{% endif %}
 
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
 
-  <!-- 기술 인덱스로 버튼 (상단 독립 배치) -->
+  <!-- 기술 인덱스로 버튼 -->
   <div style="margin-bottom: 1rem;">
-    <a href="/ko/" class="btn btn--primary" style="padding: 0.5rem 1rem; font-size: 1rem; border-radius: 6px; background-color: #007acc; color: white; text-decoration: none;">
+    <a href="/ko/" class="btn btn--primary"
+       style="padding: 0.5rem 1rem; font-size: 1rem; border-radius: 6px; background-color: #007acc; color: white; text-decoration: none;">
       기술 인덱스로
     </a>
   </div>
 
   <!-- 페이지네이션 숫자 버튼 -->
-  <ul class="pagination__list" style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+  <ul class="pagination__list"
+      style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
 
     {% if paginator.previous_page %}
       <li>
