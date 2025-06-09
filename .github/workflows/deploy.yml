@@ -3,7 +3,7 @@ name: Deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - master  # 또는 main, 당신의 기본 브랜치에 따라
+      - master  # 또는 main, 사용 중인 기본 브랜치로 변경
 
 jobs:
   build-and-deploy:
@@ -23,10 +23,14 @@ jobs:
         run: bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: |
+          echo "Building site in production mode..."
+          JEKYLL_ENV=production bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: gh-pages  # 없으면 peaceiris가 자동 생성해줌
+          force_orphan: true        # 이걸 통해 깔끔하게 배포됨 (선택)
