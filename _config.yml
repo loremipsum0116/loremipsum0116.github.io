@@ -20,16 +20,12 @@ collections:
   posts:
     output: true
 
-
-
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en"
-default_lang             : en
-languages                : ["en", "ko", "ja"]
+locale                   : "ko"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Lorem Tech Blog"
 title_separator          : "-"
@@ -50,52 +46,50 @@ copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            :
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server               :
   facebook:
-    # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    num_posts            :
+    colorscheme          :
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                :
+    issue_term           :
   giscus:
-    repo_id              : # Shown during giscus setup at https://giscus.app
-    category_name        : # Full text name of the category
-    category_id          : # Shown during giscus setup at https://giscus.app
-    discussion_term      : # "pathname" (default), "url", "title", "og:title"
-    reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
-    strict               : # 1 for enabled, 0 for disabled (default)
-    input_position       : # "top", "bottom" # The comment input box will be placed above or below the comments
-    emit_metadata        : # 1 for enabled, 0 for disabled (default) # https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage
-    lang                 : # "en" (default)
-    lazy                 : # true, false # Loading of the comments will be deferred until the user scrolls near the comments container.
+    repo_id              :
+    category_name        :
+    category_id          :
+    discussion_term      :
+    reactions_enabled    :
+    theme                :
+    strict               :
+    input_position       :
+    emit_metadata        :
+    lang                 :
+    lazy                 :
   staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    branch               :
+    endpoint             :
 reCaptcha:
   siteKey                :
   secret                 :
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  path                   :
+  hide                   :
 search                   : # true, false (default)
-search_full_content      : # true, false (default)
+search_full_content      :
 search_provider          : # lunr (default), algolia, google
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages    :
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id         :
+  index_name             :
+  search_only_api_key    :
+  powered_by             :
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
-# SEO Related
+  search_engine_id       :
+  instant_search         :
 google_site_verification :
 bing_site_verification   :
 naver_site_verification  :
@@ -109,21 +103,18 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+og_image                 :
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   :
+  name                   :
+  links:
 
 # Analytics
 analytics:
-  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               :
   google:
     tracking_id          :
-    anonymize_ip         : # true, false (default)
-
+    anonymize_ip         :
 
 # Site Author
 author:
@@ -135,32 +126,23 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/loremipsum0116"
-
 
 # Reading Files
 include:
@@ -192,14 +174,13 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
+  - /docs
+  - /test
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
 
 # Conversion
 markdown: kramdown
@@ -207,7 +188,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -220,39 +200,16 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
+  style: compressed
 
 # Outputting
 # permalink: /:categories/:title/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Pagination with jekyll-paginate
-# paginate: 5 # amount of posts to show
-# paginate_path: /:lang/page:num/
+timezone:
 
 # Pagination with jekyll-paginate-v2
-# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
-#   for configuration details
-
-# pagination:
-#   enabled: true
-#   collection: posts
-#   per_page: 5
-#   generator:
-#     - scope:
-#         path: '_pages/ko/categories/java.md'
-#       values:
-#         category: 'java'
-#         locale: 'ko'  # 🔥 이 필터를 쓰면 포스트에 반드시 `locale: ko`가 있어야 함!
-#         permalink: '/ko/categories/java/page:num/'
-#   # ✅ 반드시 이렇게 (슬래시 포함)
-
 pagination:
   enabled: true
   collection: posts
@@ -279,7 +236,6 @@ pagination:
         locale: 'ko'
         permalink: '/ko/categories/spring/page:num/'
 
-
 # Plugins (previously gems:)
 plugins:
   - jekyll-feed
@@ -291,8 +247,6 @@ plugins:
   - jekyll-archives
   - jekyll-paginate-v2
 
-
-
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
@@ -301,48 +255,22 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-
 # Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
 
 # HTML Compression
-# - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
 
-
-# Defaults
 # Defaults
 defaults:
-  # ✅ 전체 posts 에 대한 기본값
   - scope:
       path: ""  # 전체 경로
       type: "posts"
@@ -355,7 +283,6 @@ defaults:
       related: true
       locale: ko
 
-  # ✅ 카테고리 페이지 (Java) 전용 설정 추가
   - scope:
       path: "_pages/ko/categories/java.md"
     values:
@@ -365,18 +292,13 @@ defaults:
         category: java
         locale: ko
 
-
-  # _pages 폴더 내부의 페이지들에 대한 설정 (이 부분이 중요)
   - scope:
-      path: "_pages" # _pages 폴더에 있는 파일들
-      type: "pages" # 페이지 타입에만 적용
+      path: "_pages"
+      type: "pages"
     values:
-      layout: "archive" # ko.md의 layout과 일치시킵니다. (다른 페이지는 다른 레이아웃 가능)
-      author_profile: true # ko.md에서 이미 명시했지만, 기본값으로 설정해두면 좋습니다.
-      # lang: ko # ko.md 자체에 lang: ko 가 있으므로 여기서 강제할 필요는 없습니다.
-      # permalink: /ko/ # ko.md 자체에 permalink: /ko/ 가 있으므로 여기서 강제할 필요는 없습니다.
+      layout: "archive"
+      author_profile: true
 
-  # 한국어 게시물 설정 (기존 _posts/ko 에만 적용)
   - scope:
       path: "_posts/ko"
       type: "posts"
@@ -389,29 +311,4 @@ defaults:
       share: true
       related: true
 
-  # 영어 게시물 설정
-  - scope:
-      path: "_posts/en"
-      type: "posts"
-    values:
-      layout: "single"
-      lang: "en"
-      permalink: /en/:title/
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-
-  # 일본어 게시물 설정
-  - scope:
-      path: "_posts/ja"
-      type: "posts"
-    values:
-      layout: "single"
-      lang: "ja"
-      permalink: /ja/:title/
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
 future: true
