@@ -10,11 +10,8 @@ lang: ko
 author_profile: true
 ---
 
-
-{% assign java_posts = site.categories.java | where: "lang", "ko" %}
-
 <div class="entries-grid">
-  {% for post in java_posts %}
+  {% for post in paginator.posts %}
     <article class="archive__item">
       <h2 class="archive__item-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -28,3 +25,5 @@ author_profile: true
     </article>
   {% endfor %}
 </div>
+
+{% include pagination.html %}
