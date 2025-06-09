@@ -5,10 +5,21 @@
   <ul class="pagination__list" style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem;">
 
     {% if paginator.previous_page %}
-      <li>
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev"
-           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">← 이전</a>
-      </li>
+      {% if paginator.previous_page == 1 %}
+        <li>
+          <a href="/ko/" class="pagination__prev"
+             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
+            ← 이전
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev"
+             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
+            ← 이전
+          </a>
+        </li>
+      {% endif %}
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
