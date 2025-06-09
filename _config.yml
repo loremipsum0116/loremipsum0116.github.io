@@ -258,21 +258,16 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 pagination:
   enabled: true
-  debug: true
   collection: posts
   per_page: 5
-  sort_field: 'date'
-  sort_reverse: true
-  trail:
-    before: 2
-    after: 2
   generator:
     - scope:
         path: '_pages/ko/categories/java.md'
       values:
         category: 'java'
-        locale: 'ko'
-        permalink: '/ko/categories/java/page:num/'  # ✅ 반드시 이렇게 (슬래시 포함)
+        locale: 'ko'  # 🔥 이 필터를 쓰면 포스트에 반드시 `locale: ko`가 있어야 함!
+        permalink: '/ko/categories/java/page:num/'
+  # ✅ 반드시 이렇게 (슬래시 포함)
 
 # Plugins (previously gems:)
 plugins:
