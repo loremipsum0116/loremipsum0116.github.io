@@ -1,136 +1,47 @@
-<!-- {% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html | strip}}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+{% if page.lang and page.categories.size > 0 %}
+  {% assign current_lang = page.lang %}
+  {% assign current_category = page.categories[0] %}
+
+  {% assign filtered_posts = site.posts | where: "lang", current_lang %}
+  {% assign category_filtered_posts = "" | split: "" %}
+
+  {% for post in filtered_posts %}
+    {% if post.categories contains current_category %}
+      {% assign category_filtered_posts = category_filtered_posts | push: post %}
     {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html | strip}}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+  {% endfor %}
+
+  {% assign sorted_posts = category_filtered_posts | sort: "date" %}
+  {% assign current_index = -1 %}
+
+  {% for i in (0..sorted_posts.size) %}
+    {% assign p = sorted_posts[i] %}
+    {% if p.url == page.url %}
+      {% assign current_index = i %}
     {% endif %}
-  </nav>
-{% endif %} -->
+  {% endfor %}
 
+  {% if current_index != -1 %}
+    <nav class="pagination" style="margin-top: 2rem;">
+      <ul>
+        {% if current_index > 0 %}
+          {% assign previous_post = sorted_posts[current_index | minus: 1] %}
+          <li class="pagination--pager">
+            <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
+              ← {{ previous_post.title }}
+            </a>
+          </li>
+        {% endif %}
 
-<!-- {% assign lang_posts = site.posts | where: "lang", page.lang | sort: "date" %}
-{% assign index = lang_posts | index_of: page %}
-{% assign prev_post = lang_posts[index | minus: 1] %}
-{% assign next_post = lang_posts[index | plus: 1] %}
-
-{% if prev_post or next_post %}
-  <nav class="pagination">
-    {% if prev_post %}
-      <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html | strip }}">
-        {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
-      </a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">
-        {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
-      </a>
-    {% endif %}
-
-    {% if next_post %}
-      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html | strip }}">
-        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
-      </a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">
-        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
-      </a>
-    {% endif %}
-  </nav>
-{% endif %} -->
-
-<!-- {% assign lang_posts = site.posts | where: "lang", page.lang | sort: "date" %}
-{% assign prev_post = nil %}
-{% assign next_post = nil %}
-
-{% for i in (0..lang_posts.size) %}
-  {% assign current = lang_posts[i] %}
-  {% if current.url == page.url %}
-    {% assign prev_index = i | minus: 1 %}
-    {% assign next_index = i | plus: 1 %}
-
-    {% if prev_index >= 0 %}
-      {% assign prev_post = lang_posts[prev_index] %}
-    {% endif %}
-    {% if next_index < lang_posts.size %}
-      {% assign next_post = lang_posts[next_index] %}
-    {% endif %}
-
-    {% break %}
+        {% if current_index < sorted_posts.size | minus: 1 %}
+          {% assign next_post = sorted_posts[current_index | plus: 1] %}
+          <li class="pagination--pager">
+            <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
+              {{ next_post.title }} →
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
   {% endif %}
-{% endfor %}
-
-{% if prev_post or next_post %}
-  <nav class="pagination">
-    {% if prev_post %}
-      <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html | strip }}">
-        {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
-      </a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">
-        {{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
-      </a>
-    {% endif %}
-
-    {% if next_post %}
-      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html | strip }}">
-        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
-      </a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">
-        {{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
-      </a>
-    {% endif %}
-  </nav>
-{% endif %} -->
-
-
-{% if page.categories and page.categories.size > 0 %}
-{% assign current_category = page.categories[0] %}
-{% assign category_posts = site.categories[current_category] %}
-{% if category_posts %}
-{% assign filtered_posts = category_posts | where: "lang", page.lang | sort: "date" %}
-{% assign index = 0 %}
-
-<!-- {% for post in filtered_posts %}
-      {% if post.url == page.url %}
-        {% break %}
-      {% endif %}
-      {% assign index = index | plus: 1 %}
-    {% endfor %} -->
-
-{% assign current_url = page.url | relative_url %}
-{% for post in filtered_posts %}
-{% if post.url | relative_url == current_url %}
-{% break %}
-{% endif %}
-{% assign index = index | plus: 1 %}
-{% endfor %}
-
-
-<nav class="pagination">
-  <ul>
-    {% if index > 0 %}
-    {% assign previous_post = filtered_posts[index | minus: 1] %}
-    <li class="pagination--pager">
-      <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
-        ← Previous
-      </a>
-    </li>
-    {% endif %}
-
-    {% if index < filtered_posts.size | minus: 1 %} {% assign next_post=filtered_posts[index | plus: 1] %} <li
-      class="pagination--pager">
-      <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
-        Next →
-      </a>
-      </li>
-      {% endif %}
-  </ul>
-</nav>
-{% endif %}
 {% endif %}
