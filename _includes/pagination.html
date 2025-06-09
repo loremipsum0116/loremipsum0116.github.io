@@ -1,3 +1,13 @@
+{% if page.category == "java" %}
+  {% assign base_url = "/ko/categories/java" %}
+{% elsif page.category == "jpa" %}
+  {% assign base_url = "/ko/categories/jpa" %}
+{% elsif page.category == "spring" %}
+  {% assign base_url = "/ko/categories/spring" %}
+{% else %}
+  {% assign base_url = "/ko/categories/unknown" %}
+{% endif %}
+
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
 
@@ -21,7 +31,11 @@
     {% endif %}
 
     {% for page_num in (1..paginator.total_pages) %}
-      {% assign page_path = paginator.page_path | replace: ':num', page_num %}
+      {% if page_num == 1 %}
+        {% assign page_url = base_url | append: "/" %}
+      {% else %}
+        {% assign page_url = base_url | append: "/page" | append: page_num | append: "/" %}
+      {% endif %}
 
       {% if page_num == paginator.page %}
         <li>
@@ -32,7 +46,7 @@
         </li>
       {% else %}
         <li>
-          <a href="{{ page_path | relative_url }}" class="pagination__page"
+          <a href="{{ page_url | relative_url }}" class="pagination__page"
              style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
             {{ page_num }}
           </a>
