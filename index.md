@@ -1,11 +1,29 @@
---- 
-layout: home 
-title: "Wehlcomd" 
-permalink: / 
---- 
- 
-## ?? ¾ð¾î¸¦ ¼±ÅÃÇÏ¼¼¿ä: 
- 
-- ???? [English](/en/) 
-- ???? [ÇÑ±¹¾î](/ko/) 
-- ???? [ìíÜâåÞ](/ja/) 
+---
+layout: home
+title: "Welcome to Lorem Tech Blog!"
+permalink: /
+author_profile: true
+entries_layout: grid
+paginate: false
+show_excerpts: false
+---
+
+{::nomarkdown}
+<style>
+  .archive__item { display: none !important; }
+</style>
+{:/}
+## Please select a language:
+
+- [English](/en/)
+- [í•œêµ­ì–´](/ko/)
+- [æ—¥æœ¬èªž](/ja/)
+
+
+{::nomarkdown}
+<style>
+.archive__subtitle {
+  display: none;
+}
+</style>
+{:/}

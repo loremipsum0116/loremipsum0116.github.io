@@ -1,0 +1,25 @@
+{% assign current_category = page.categories[0] %}
+{% assign filtered_posts = site.categories[current_category] | where: "lang", page.lang %}
+{% assign sorted_posts = filtered_posts | sort: "date" %}
+
+{% for post in sorted_posts %}
+  {% if post.url == page.url %}
+    {% assign index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+<nav class="pagination">
+  <div class="pagination--pager">
+    {% if index > 0 %}
+      {% assign previous_post = sorted_posts[index | minus: 1] %}
+      <a href="{{ previous_post.url | relative_url }}" class="pagination--pager-prev">&larr; {{ previous_post.title }}</a>
+    {% endif %}
+  </div>
+
+  <div class="pagination--pager">
+    {% if index < sorted_posts.size | minus: 1 %}
+      {% assign next_post = sorted_posts[index | plus: 1] %}
+      <a href="{{ next_post.url | relative_url }}" class="pagination--pager-next">{{ next_post.title }} &rarr;</a>
+    {% endif %}
+  </div>
+</nav>

@@ -10,8 +10,19 @@
 # Review documentation to determine if you should use theme or remote_theme
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
+# collections:
+#   pages:
+#     output: true
+#     permalink: /:path/
+
+collections:
+  posts:
+    output: true
+
+
+
 # theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -232,13 +243,13 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+# permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /:lang/page:num/
 
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -264,11 +275,13 @@ pagination:
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
-  - jekyll-include-cache
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-archives
+
+
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -317,38 +330,36 @@ compress_html:
 
 
 # Defaults
-# defaults:
-#   # _posts
-#   - scope:
-#       path: ""
-#       type: posts
-#     values:
-#       layout: single
-#       author_profile: true
-#       read_time: true
-#       comments: # true
-#       share: true
-#       related: true
+# Defaults
 defaults:
-  # 영어 포스트
+  # 기본 게시물 설정 (기존 _posts 에 적용될 수 있도록)
   - scope:
-      path: "en"
-      type: posts
+      path: "" # 전체 파일 경로 (site root)
+      type: "posts" # 게시물 타입에만 적용
     values:
-      layout: single
-      lang: "en"
-      permalink: /en/:title/
+      layout: "single" # 기본 레이아웃 (Minimal Mistakes 기본값)
       author_profile: true
       read_time: true
+      comments: true # 필요에 따라 주석 처리 또는 false
       share: true
       related: true
 
-  # 한국어 포스트
+  # _pages 폴더 내부의 페이지들에 대한 설정 (이 부분이 중요)
   - scope:
-      path: "ko"
-      type: posts
+      path: "_pages" # _pages 폴더에 있는 파일들
+      type: "pages" # 페이지 타입에만 적용
     values:
-      layout: single
+      layout: "archive" # ko.md의 layout과 일치시킵니다. (다른 페이지는 다른 레이아웃 가능)
+      author_profile: true # ko.md에서 이미 명시했지만, 기본값으로 설정해두면 좋습니다.
+      # lang: ko # ko.md 자체에 lang: ko 가 있으므로 여기서 강제할 필요는 없습니다.
+      # permalink: /ko/ # ko.md 자체에 permalink: /ko/ 가 있으므로 여기서 강제할 필요는 없습니다.
+
+  # 한국어 게시물 설정 (기존 _posts/ko 에만 적용)
+  - scope:
+      path: "_posts/ko"
+      type: "posts"
+    values:
+      layout: "single"
       lang: "ko"
       permalink: /ko/:title/
       author_profile: true
@@ -356,16 +367,29 @@ defaults:
       share: true
       related: true
 
-  # 일본어 포스트
+  # 영어 게시물 설정
   - scope:
-      path: "ja"
-      type: posts
+      path: "_posts/en"
+      type: "posts"
     values:
-      layout: single
+      layout: "single"
+      lang: "en"
+      permalink: /en/:title/
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+
+  # 일본어 게시물 설정
+  - scope:
+      path: "_posts/ja"
+      type: "posts"
+    values:
+      layout: "single"
       lang: "ja"
       permalink: /ja/:title/
       author_profile: true
       read_time: true
       share: true
       related: true
-
+future: true
