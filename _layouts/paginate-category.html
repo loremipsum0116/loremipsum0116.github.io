@@ -33,3 +33,16 @@ layout: default
   <li>{{ post.title }} | {{ post.lang }} | {{ post.categories }}</li>
 {% endfor %}
 </ul>
+<h3>🔍 디버그: paginator.posts</h3>
+<p>총 포스트 수: {{ paginator.posts | size }}</p>
+
+<ul>
+  {% for post in paginator.posts %}
+    <li>
+      제목: {{ post.title }}<br>
+      카테고리: {{ post.categories }}<br>
+      언어: {{ post.lang }}<br>
+      경로: {{ post.url }}
+    </li>
+  {% endfor %}
+</ul>
