@@ -1,29 +1,43 @@
+{% assign base_url = "/ko/categories/java" %}
+
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="navigation" style="margin-top: 2rem; text-align: center;">
   <ul class="pagination__list" style="display: inline-flex; list-style: none; padding-left: 0; gap: 0.5rem;">
 
     {% if paginator.previous_page %}
       <li>
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev" style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">← 이전</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__prev"
+           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">← 이전</a>
       </li>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
+      {% assign target_url = base_url %}
+      {% if page > 1 %}
+        {% assign target_url = base_url | append: "/page" | append: page | append: "/" %}
+      {% endif %}
+
       {% if page == paginator.page %}
         <li>
-          <span class="pagination__page pagination__page--current" style="padding: 0.5rem 0.75rem; background-color: #007acc; color: white; border-radius: 5px;">{{ page }}</span>
+          <span class="pagination__page pagination__page--current"
+                style="padding: 0.5rem 0.75rem; background-color: #007acc; color: white; border-radius: 5px;">
+            {{ page }}
+          </span>
         </li>
       {% else %}
-        {% assign page_url = paginator.page_path | replace: ':num', page %}
         <li>
-          <a href="{{ page_url | relative_url }}" class="pagination__page" style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">{{ page }}</a>
+          <a href="{{ target_url | relative_url }}" class="pagination__page"
+             style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">
+            {{ page }}
+          </a>
         </li>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
       <li>
-        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next" style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">다음 →</a>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__next"
+           style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">다음 →</a>
       </li>
     {% endif %}
 
