@@ -10,7 +10,7 @@ lang: ko
 author_profile: true
 ---
 
-<div class="entries-grid">
+<!-- <div class="entries-grid">
   {% for post in paginator.posts %}
     <article class="archive__item">
       <h2 class="archive__item-title">
@@ -26,4 +26,4 @@ author_profile: true
   {% endfor %}
 </div>
 
-{% include pagination.html %}
+{% include pagination.html %} -->

@@ -3,46 +3,33 @@ layout: default
 ---
 
 <div id="main" role="main">
-    {% include sidebar.html %}
+  {% include sidebar.html %}
 
-    <div class="archive">
-        <h1 class="page__title">{{ page.title }}</h1>
+  <div class="archive">
+    <h1 class="page__title">{{ page.title }}</h1>
 
-        <div class="entries-grid">
-            {% for post in paginator.posts %}
-            <article class="archive__item">
-                <h2 class="archive__item-title">
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </h2>
-                <span class="archive__item-date">
-                    {{ post.date | date: "%Y년 %m월 %d일" }}
-                </span>
-                {% if post.excerpt %}
-                <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 100 }}</p>
-                {% endif %}
-            </article>
-            {% endfor %}
-        </div>
+    {% if paginator.posts and paginator.posts != empty %}
+      <div class="entries-grid">
+        {% for post in paginator.posts %}
+          <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+            <h2 class="archive__item-title" itemprop="headline">
+              <a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a>
+            </h2>
+            <span class="archive__item-date">
+              {{ post.date | date: "%Y년 %m월 %d일" }}
+            </span>
+            {% if post.excerpt %}
+              <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
 
-        {% include pagination.html %}
-    </div>
+      <!-- ✅ 페이지네이션 버튼 출력 -->
+      {% include pagination.html %}
+
+    {% else %}
+      <p><strong>표시할 게시글이 없습니다.</strong></p>
+    {% endif %}
+  </div>
 </div>
-<h3>디버그: paginator.posts</h3>
-<ul>
-{% for post in paginator.posts %}
-  <li>{{ post.title }} | {{ post.lang }} | {{ post.categories }}</li>
-{% endfor %}
-</ul>
-<h3>🔍 디버그: paginator.posts</h3>
-<p>총 포스트 수: {{ paginator.posts | size }}</p>
-
-<ul>
-  {% for post in paginator.posts %}
-    <li>
-      제목: {{ post.title }}<br>
-      카테고리: {{ post.categories }}<br>
-      언어: {{ post.lang }}<br>
-      경로: {{ post.url }}
-    </li>
-  {% endfor %}
-</ul>

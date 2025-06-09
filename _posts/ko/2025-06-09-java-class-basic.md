@@ -3,6 +3,7 @@ title: "자바 클래스 기초"
 date: 2025-06-09
 categories: [java]
 lang: ko
+locale: ko
 ---
 
 자바에서 클래스는 객체를 생성하기 위한 청사진입니다.  
