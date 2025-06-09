@@ -37,11 +37,11 @@
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
-      {% assign custom_url = "/ko/categories/java/page" | append: page | append: "/" %}
+      {% assign page_url = paginator.page_path | replace: ':num', page %}
       {% if page == paginator.page %}
         <li><span class="pagination__page pagination__page--current" style="padding: 0.5rem 0.75rem; background-color: #007acc; color: white; border-radius: 5px;">{{ page }}</span></li>
       {% else %}
-        <li><a href="{{ custom_url | relative_url }}" class="pagination__page" style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">{{ page }}</a></li>
+        <li><a href="{{ page_url | relative_url }}" class="pagination__page" style="padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 5px;">{{ page }}</a></li>
       {% endif %}
     {% endfor %}
 
