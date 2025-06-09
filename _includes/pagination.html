@@ -5,7 +5,7 @@
   {% assign total_pages = paginator.total_pages %}
 
   {%- comment -%}
-    Java 카테고리만 강제 base_url 지정
+    Java 카테고리만 base_url 고정
   {%- endcomment -%}
   {% if page.title == "Java 관련 글" %}
     {% assign base_url = "/ko/categories/java" %}
@@ -18,19 +18,29 @@
   <div class="pagination--container">
 
     {% if current_page > 1 %}
-      <a class="pagination--prev" href="{{ base_url }}/page{{ current_page | minus: 1 }}/">&laquo; 이전</a>
+      {% assign prev_page = current_page | minus: 1 %}
+      {% if prev_page == 1 and page.title == "Java 관련 글" %}
+        <a class="pagination--prev" href="{{ base_url }}/">&laquo; 이전</a>
+      {% else %}
+        <a class="pagination--prev" href="{{ base_url }}/page{{ prev_page }}/">&laquo; 이전</a>
+      {% endif %}
     {% endif %}
 
     {% for i in (1..total_pages) %}
       {% if i == current_page %}
         <span class="pagination--page current">{{ i }}</span>
       {% else %}
-        <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
+        {% if i == 1 and page.title == "Java 관련 글" %}
+          <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
+        {% else %}
+          <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
+        {% endif %}
       {% endif %}
     {% endfor %}
 
     {% if current_page < total_pages %}
-      <a class="pagination--next" href="{{ base_url }}/page{{ current_page | plus: 1 }}/">다음 &raquo;</a>
+      {% assign next_page = current_page | plus: 1 %}
+      <a class="pagination--next" href="{{ base_url }}/page{{ next_page }}/">다음 &raquo;</a>
     {% endif %}
 
   </div>
