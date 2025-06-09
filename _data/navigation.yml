@@ -1,12 +1,12 @@
-# main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "자바"
+    url: /ko/categories/java/
+
+  - title: "스프링"
+    url: /ko/categories/spring/
+
+  - title: "JPA"
+    url: /ko/categories/jpa/
+
+  - title: "기술 인덱스"
+    url: /ko/tech-index/
