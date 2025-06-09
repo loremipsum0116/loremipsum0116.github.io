@@ -1,33 +1,25 @@
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" role="navigation">
-
-  {% assign current_page = paginator.page %}
-  {% assign total_pages = paginator.total_pages %}
-  {% if paginator %}
-    {% assign base_url = paginator.permalink | replace: '/page:num', '' %}
-  {% else %}
-    {% assign base_url = page.url | replace: '/index.html', '' %}
-  {% endif %}
-
   <div class="pagination--container">
 
     <!-- 이전 버튼 -->
-    {% if current_page > 1 %}
-      <a class="pagination--prev" href="{{ base_url }}/page{{ current_page | minus: 1 }}/">&laquo; 이전</a>
+    {% if paginator.previous_page %}
+      <a class="pagination--prev" href="{{ paginator.previous_page_path | relative_url }}">&laquo; 이전</a>
     {% endif %}
 
     <!-- 숫자 인덱스 버튼 -->
-    {% for i in (1..total_pages) %}
-      {% if i == current_page %}
+    {% for i in (1..paginator.total_pages) %}
+      {% assign page_path = paginator.paginate_path | replace: ':num', i %}
+      {% if i == paginator.page %}
         <span class="pagination--page current">{{ i }}</span>
       {% else %}
-        <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
+        <a class="pagination--page" href="{{ page_path | relative_url }}">{{ i }}</a>
       {% endif %}
     {% endfor %}
 
     <!-- 다음 버튼 -->
-    {% if current_page < total_pages %}
-      <a class="pagination--next" href="{{ base_url }}/page{{ current_page | plus: 1 }}/">다음 &raquo;</a>
+    {% if paginator.next_page %}
+      <a class="pagination--next" href="{{ paginator.next_page_path | relative_url }}">다음 &raquo;</a>
     {% endif %}
 
   </div>
