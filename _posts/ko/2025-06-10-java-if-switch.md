@@ -203,15 +203,15 @@ public class DayMessage {
 <details>
 <summary>정답 보기</summary>
 
-**출력 결과:** `즐거운 월요일입니다. 한 주를 시작해요!`
+출력 결과:`즐거운 월요일입니다. 한 주를 시작해요!`<br><br>
 
-**설명:**
-
-1.  `day` 변수는 `"MONDAY"`로 초기화됩니다.
-2.  `switch`문은 `day`의 값과 일치하는 `case`를 찾습니다. 첫 번째 `case "MONDAY"`가 일치합니다.
-3.  해당 블록 내부의 `System.out.println("즐거운 월요일입니다. 한 주를 시작해요!");`가 실행됩니다.
-4.  `break;`를 만나 `switch`문이 종료됩니다.
-
+설명:
+<br><br>
+1.  `day` 변수는 `"MONDAY"`로 초기화됩니다.<br>
+2.  `switch`문은 `day`의 값과 일치하는 `case`를 찾습니다. 첫 번째 `case "MONDAY"`가 일치합니다.<br>
+3.  해당 블록 내부의 `System.out.println("즐거운 월요일입니다. 한 주를 시작해요!");`가 실행됩니다.<br>
+4.  `break;`를 만나 `switch`문이 종료됩니다.<br>
+<br><br>
 (진짜 월요일이 즐겁다고 느끼시는 분이 계시다면... 정말 대단한 멘탈입니다.😅)
 
 </details>

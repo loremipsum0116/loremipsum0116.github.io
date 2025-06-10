@@ -213,7 +213,7 @@ public class Example {
 
 <details>
   <summary>정답 보기</summary>
-
+<br>
 instanceVar, staticVar, paramVar localVar 각각 10, 20, 40, 30의 값이 대입되어 있으므로 정답은 100입니다.
 
 </details>
