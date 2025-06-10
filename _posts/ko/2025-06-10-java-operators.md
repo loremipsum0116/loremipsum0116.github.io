@@ -115,6 +115,31 @@ System.out.println(name + "의 나이는 " + age + "세입니다.");
 
 ---
 
+## 💡 연산자 퀴즈
+
+
+```java
+public class Quiz {
+    public static void main(String[] args) {
+        int a = 3;
+        int b = 4;
+        System.out.println("합계는: " + a + b);
+    }
+}
+
+위 Java 코드의 실행 결과는 무엇일까요? (System.out.println은 오른쪽 괄호 안에 있는 내용을 콘솔에 출력하는 Java 표준 출력 메서드입니다.)
+
+<details> 
+    <summary>정답 보기 ⬇</summary>
+
+"합계는: "는 문자열이므로 +는 문자열 연결 연산자로 동작합니다.
+
+"합계는: " + a → "합계는: 3"
+
+"합계는: 3" + b → "합계는: 34"
+
+즉, 산술 덧셈이 아닌 문자열 결합이 일어난 것이므로 출력 결과는 34가 됩니다.
+</details>
 ## 🔚 마무리
 
 변수는 데이터를 담는 그릇이고, 연산자는 그것을 처리하는 도구입니다.  

@@ -135,7 +135,7 @@ public, private, class, static, void, return, new, final, if, else
 
 ---
 
-## 💡 예제: 변수 4종류 요약
+## 💡 변수 퀴즈
 
 ```java
 public class Example {
