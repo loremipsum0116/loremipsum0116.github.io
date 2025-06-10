@@ -128,7 +128,7 @@ public class Quiz {
 }
 ```
 
-위 Java 코드의 실행 결과는 무엇일까요? (System.out.println은 오른쪽 괄호 안에 있는 내용을 콘솔에 출력하는 Java 표준 출력 메서드입니다.)
+위 Java 코드의 출력 결과는 무엇일까요? (System.out.println은 오른쪽 괄호 안에 있는 내용을 콘솔에 출력하는 Java 표준 출력 메서드입니다.)
 
 <details> 
     <summary>정답 보기 ⬇</summary>
