@@ -30,7 +30,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Lorem Tech Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "현석"
+name                     : "Lorem"
 description              : "Backend-related tech blog."
 url                      : "https://loremipsum0116.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -118,7 +118,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Lorem"
+  name             : "현석"
   avatar           : "/assets/images/lorem_avatar.png"
   bio              : "**Java**, **Spring**, **JPA**를 공부 중인 백엔드 개발자입니다."
   location         : "Korea"
