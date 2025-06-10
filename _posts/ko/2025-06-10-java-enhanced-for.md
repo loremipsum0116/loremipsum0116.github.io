@@ -4,6 +4,7 @@ date: 2025-06-10 13:00:34 +09:00
 categories: [java]
 lang: ko
 locale: ko
+words_per_minute: 30
 ---
 
 ## 향상된 for문 (Enhanced `for` loop)
