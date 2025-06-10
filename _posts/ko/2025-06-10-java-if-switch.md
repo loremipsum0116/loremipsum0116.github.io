@@ -29,7 +29,7 @@ if (조건식) {
 }
 ```
 
-### 📌 for문 퀴즈
+### 📌 if문 퀴즈
 
 ```java
 public class AgeCheck {
