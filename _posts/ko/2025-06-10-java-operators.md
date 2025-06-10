@@ -55,15 +55,36 @@ int b = -a; // b는 -5
 ### ⬆️ 증감 연산자
 
 ```java
-int x = 10;
-x++; // 후위 증가: x는 11
---x; // 전위 감소: x는 10
+public class IncrementExample {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 5;
+
+        int result1 = a++;  // 후위 연산
+        int result2 = ++b;  // 전위 연산
+
+        System.out.println("result1: " + result1); // 출력: 5
+        System.out.println("a (after a++): " + a); // 출력: 6
+
+        System.out.println("result2: " + result2); // 출력: 6
+        System.out.println("b (after ++b): " + b); // 출력: 6
+    }
+}
+```
+출력 결과:
+```
+result1: 5
+a (after a++): 6
+result2: 6
+b (after ++b): 6
 ```
 
 - `++`: 1 증가
 - `--`: 1 감소
 - 전위: 먼저 증가 후 계산
 - 후위: 계산 후 증가
+- 위의 코딩 예시에서와 같이 후위 연산의 경우 a를 result1에 먼저 대입한 뒤 증가시키므로 result1은 증가 이전의 a값을 가짐.
+- 반면 전위 연산의 경우 b를 먼저 증가시킨 후 result2에 대입하므로 result2와 b의 값은 모두 6으로 같음.
 
 ### ❗ 논리 부정 연산자
 
