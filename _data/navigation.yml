@@ -1,12 +1,13 @@
 main:
-  - title: "자바"
+  - title: "Java"
     url: /ko/categories/java/
-
-  - title: "스프링"
-    url: /ko/categories/spring/
 
   - title: "JPA"
     url: /ko/categories/jpa/
+
+  - title: "Spring"
+    url: /ko/categories/spring/
+
 
   - title: "기술 인덱스"
     url: /ko/
