@@ -79,7 +79,7 @@ System.out.print("나이를 입력하세요: ");
 int age = sc.nextInt();
 System.out.println("내년이면 " + (age + 1) + "살이 됩니다.");
 ```
-위 코드의 출력 결과는 무엇일까요?
+age에 25를 대입했다고 가정합시다! 위 코드의 출력 결과는 무엇일까요?
 <details>
 <summary>정답 보기</summary>
 
