@@ -1,5 +1,5 @@
 ---
-title: "향상된 for문"
+title: "자바 향상된 for문"
 date: 2025-06-10 13:00:34 +09:00
 categories: [java]
 lang: ko
