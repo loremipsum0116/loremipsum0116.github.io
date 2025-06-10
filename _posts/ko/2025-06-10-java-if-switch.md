@@ -203,7 +203,7 @@ public class DayMessage {
 <details>
 <summary>정답 보기</summary>
 <br>
-출력 결과: <b>즐거운 월요일입니다. 한 주를 시작해요!<b><br><br>
+출력 결과: 즐거운 월요일입니다. 한 주를 시작해요!<br><br>
 
 설명:
 <br><br>
