@@ -151,7 +151,7 @@ public class Example {
 위 코드에서 **paramVar**에 대입한 숫자가 **40**이라고 가정해 봅시다. 그렇다면 4가지 변수를 모두 더한 값은 얼마일까요?
 
 <details>
-  <summary>정답 보기 ⬇</summary>
+  <summary>정답 보기</summary>
 
 instanceVar, staticVar, paramVar localVar 각각 10, 20, 40, 30의 값이 대입되어 있으므로 정답은 100입니다.
 

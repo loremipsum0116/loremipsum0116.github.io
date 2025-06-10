@@ -155,10 +155,10 @@ public class DayMessage {
 
         switch (day) {
             case "MONDAY":
-                System.out.println("월요일입니다. 한 주를 시작해요!");
+                System.out.println("즐거운 월요일입니다. 한 주를 시작해요!");
                 break;
             case "FRIDAY":
-                System.out.println("금요일입니다. 곧 주말이에요!");
+                System.out.println("신나는 금요일입니다. 곧 주말이에요!");
                 break;
             default:
                 System.out.println("평일입니다.");
@@ -171,8 +171,9 @@ public class DayMessage {
 <summary>정답 보기</summary>
 
 day는 "MONDAY"이므로 첫번째 분기점에 해당하게 됩니다.
-따라서 출력 결과: 월요일입니다. 한 주를 시작해요!
+따라서 출력 결과: 즐거운 월요일입니다. 한 주를 시작해요!
 
+(진짜 저렇게 생각하시는 분은 없겠죠..?)
 </details>
 ---
 
