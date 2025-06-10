@@ -1,6 +1,6 @@
 ---
 title: "향상된 for문"
-date: 
+date: 2025-06-10 13:00:34 +09:00
 categories: [java]
 lang: ko
 locale: ko
