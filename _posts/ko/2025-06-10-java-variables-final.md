@@ -44,7 +44,18 @@ public class Person {
     }
 }
 ```
+## 📌 지역 변수란?
 
+지역 변수(Local Variable)는 특정 블록 안에서 선언되고, 그 블록 안에서만 사용 가능한 변수입니다.
+
+🔍 특징
+메서드, 생성자, 또는 블록 내부에서 선언됨
+
+선언된 블록이 종료되면 자동으로 메모리에서 제거됨
+
+명시적으로 초기화하지 않으면 사용 불가
+
+자바에서는 컴파일 에러 발생
 ---
 
 ## 지역 변수는 반드시 초기화!
@@ -57,7 +68,18 @@ public void printAge() {
     // System.out.println(age); // ❌ 컴파일 에러: 초기화되지 않음
 }
 ```
+```java
+public void printAge() {
+    int age;
+    age = 26;                // 선언 후 26이란 값으로 초기화
+    System.out.println(age); // ✅ 초기화 되었으므로 정상 출력!
+}
+```
+출력 결과:
 
+```
+26
+```
 ---
 
 ## 자바의 기본형 변수 (Primitive Types)
