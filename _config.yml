@@ -15,7 +15,7 @@
 #     output: true
 #     permalink: /:path/
 # permalink: /:categories/:title/
-
+show_debug: false
 collections:
   posts:
     output: true
