@@ -91,18 +91,4 @@ layout: default
     {% include page__related.html posts=site.posts %}
   {% endif %}
 </div>
-<hr>
-<h3>🔍 디버깅 정보</h3>
-<p>현재 글: {{ page.title }} ({{ page.url }})</p>
-<p>lang: {{ page.lang }}</p>
-<p>category[0]: {{ page.categories[0] }}</p>
 
-<h4>Filtered Posts</h4>
-<ul>
-{% assign filtered_posts = site.posts | where: "lang", page.lang %}
-{% for post in filtered_posts %}
-  {% if post.categories contains page.categories[0] %}
-    <li>{{ post.title }} | {{ post.url }} {% if post.url == page.url %} ✅ {% endif %}</li>
-  {% endif %}
-{% endfor %}
-</ul>
