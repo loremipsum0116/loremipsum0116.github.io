@@ -30,8 +30,8 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Lorem Tech Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Lorem"
-description              : "An amazing website."
+name                     : "현석"
+description              : "Backend-related tech blog."
 url                      : "https://loremipsum0116.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "loremipsum0116/loremipsum0116.github.io"
