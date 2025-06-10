@@ -4,7 +4,7 @@ date: 2025-06-10 11:53:01 +09:00
 categories: [java]
 lang: ko
 locale: ko
-words_per_minute: 20
+words_per_minute: 30
 ---
 
 > 자바에서 조건문은 프로그램의 흐름을 제어하는 가장 기본적인 구조입니다.  
