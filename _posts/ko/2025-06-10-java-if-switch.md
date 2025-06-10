@@ -1,6 +1,6 @@
 ---
 title: "자바 조건문: if문과 switch문"
-date: 
+date: 2025-06-10 11:53:01 +09:00
 categories: [java]
 lang: ko
 locale: ko
