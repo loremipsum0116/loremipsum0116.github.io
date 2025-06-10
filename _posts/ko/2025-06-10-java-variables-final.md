@@ -132,7 +132,7 @@ public, private, class, static, void, return, new, final, if, else
 ```
 
 > ❌ 예:  
-> `int int = 5;` → 컴파일 오류 발생
+> `int int = 5;` → 컴파일 오류 발생!
 
 ---
 
