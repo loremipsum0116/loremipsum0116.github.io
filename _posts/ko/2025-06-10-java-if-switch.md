@@ -67,10 +67,10 @@ public class AgeCheck {
 <br><br>
 설명:
 <br>
-1.  `age` 변수는 `17`로 초기화됩니다.<br>
-2.  첫 번째 `if (age >= 20)` 조건식은 `(17 >= 20)`이므로 `false`입니다.<br>
-3.  `else if (age >= 14)` 조건식이 평가됩니다. `(17 >= 14)`는 `true`이므로, 이 블록 내부의 `System.out.println("청소년입니다.");`가 실행됩니다.<br>
-4.  하나의 조건이 `true`로 판별되어 블록이 실행되면, 나머지 `else if`나 `else` 블록은 건너뛰고 `if`문 전체가 종료됩니다.<br>
+1.  age 변수는 17로 초기화됩니다.<br>
+2.  첫 번째 if (age >= 20) 조건식은 (17 >= 20)이므로 false입니다.<br>
+3.  else if (age >= 14) 조건식이 평가됩니다. (17 >= 14)는 true이므로, 이 블록 내부의 System.out.println("청소년입니다.");가 실행됩니다.<br>
+4.  하나의 조건이 true로 판별되어 블록이 실행되면, 나머지 else if`나 else 블록은 건너뛰고 if문 전체가 종료됩니다.<br>
 
 </details>
 
