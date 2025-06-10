@@ -4,6 +4,7 @@ date: 2025-06-10 10:06:48 +09:00
 categories: [java]
 lang: ko
 locale: ko
+words_per_minute: 20
 ---
 
 > 자바에서 변수란 데이터를 저장하기 위한 **메모리 공간에 이름을 붙인 것**입니다.  
