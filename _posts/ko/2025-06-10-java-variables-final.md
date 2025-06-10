@@ -94,7 +94,7 @@ final int MAX_USERS = 100;
 
 ---
 
-### 자바 예약어는 변수명으로 사용할 수 없습니다
+###❌ 자바 예약어는 변수명으로 사용할 수 없습니다
 
 다음은 변수로 **사용이 불가능한 자바 키워드** 목록 중 일부입니다:
 
@@ -108,7 +108,7 @@ public, private, class, static, void, return, new, final, if, else
 
 ---
 
-### 요약 정리
+###📌 요약 정리
 
 - 변수는 **문자/언더스코어/달러 기호로 시작**해야 하며, 숫자로 시작하면 안 됨
 - **대소문자 구분**이 있으므로 `count`와 `Count`는 다른 변수
@@ -118,7 +118,7 @@ public, private, class, static, void, return, new, final, if, else
 
 ---
 
-## 실무 팁
+##📌 실무 팁
 
 - `final`을 사용하면 불변성 유지 가능 → 디버깅 효율 ↑
 - `static` 변수는 **공유 자원**이므로 멀티스레드 환경에서 주의
