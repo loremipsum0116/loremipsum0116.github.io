@@ -1,9 +1,0 @@
----
-title: "자바 기초 개념 정리"
-date: 2025-06-08
-categories: [java]
-lang: ko
-locale: ko
----
-
-이 포스트는 자바 카테고리의 테스트용 더미 포스트입니다.
