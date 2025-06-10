@@ -163,7 +163,7 @@ public, private, class, static, void, return, new, final, if, else
 - 변수는 **문자/언더스코어/달러 기호로 시작**해야 하며, 숫자로 시작하면 안 됨
 - **대소문자 구분**이 있으므로 `count`와 `Count`는 다른 변수
 - **자바 예약어 사용 금지** → `public`, `class`, `static` 등
-- **camelCase** 명명 규칙을 따르는 것이 가독성과 유지보수에 도움됨
+- **camelCase** 명명 규칙을 따르는 것이 가독성과 유지보수에 도움됨 (camelCase란, `helloWorld`, `mySweetHome` 과 같이 맨 앞에 소문자가 오며 맞붙는 다른 단어의 첫 글자를 대문자로 쓰는 명명규칙을 말합니다.)
 - 명확한 의미를 담은 변수명이 바람직함
 
 ---
