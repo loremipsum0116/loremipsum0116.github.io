@@ -81,9 +81,9 @@ public class StringListExample {
 출력 결과:
 
 ```
-`Apple`
-`Banana`
-`Cherry`
+Apple
+Banana
+Cherry
 ```
 ---
 
