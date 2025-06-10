@@ -296,7 +296,7 @@ public class Quiz {
 위 Java 코드의 출력 결과는 무엇일까요? 이전에 배운 문자열 연결 연산자의 규칙을 떠올려 보세요\!
 
 <details>
-    <summary>정답 보기<summary\>
+    <summary>정답 보기</summary>
 
 정답은 `"합계는: 34"` 입니다.
 
