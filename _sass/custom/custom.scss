@@ -12,7 +12,7 @@
   text-decoration: none;
   display: inline-block;
 }
-
+// 이 아래로는 gpt가 생성한 코드임. 
 .page, .page__content, .entry {
   max-width: 1200px !important;
   width: 120% !important;
@@ -26,4 +26,34 @@
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* 본문이 사이드바 아래로 밀리는 현상 방지용 */
+.page {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.page__content {
+  flex: 1;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.sidebar__left,
+.sidebar__right {
+  flex-shrink: 0;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .page__content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
