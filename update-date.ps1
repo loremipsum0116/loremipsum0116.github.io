@@ -14,7 +14,7 @@ foreach ($file in $files) {
     }
 
     # 만약 date:가 없거나 공백이라면 새로 삽입
-    if ($dateLineIndex -eq -1 -or $content[$dateLineIndex] -match "^date:\s*$") {
+    if ($dateLineIndex -eq -1 -or ($content[$dateLineIndex] -match "^date:\s*$") -or ($content[$dateLineIndex].Trim() -eq "date:")) {
         $now = Get-Date
         $newDate = $now.ToString("yyyy-MM-dd HH:mm:ss zzz")
 
