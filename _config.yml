@@ -241,6 +241,12 @@ pagination:
         category: 'sql'
         locale: 'ko'
         permalink: '/ko/categories/sql/page:num/'
+    - scope:
+        path: '_pages/ko/categories/jsp.md'
+      values:
+        category: 'jsp'
+        locale: 'ko'
+        permalink: '/ko/categories/jsp/page:num/'
 
 # Plugins (previously gems:)
 plugins:
