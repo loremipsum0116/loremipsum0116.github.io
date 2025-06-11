@@ -9,6 +9,7 @@
   {% assign is_java = false %}
   {% assign is_jpa = false %}
   {% assign is_spring = false %}
+  {% assign is_sql = false %}   <!-- ✅ SQL 추가 -->
 
   {% if path contains '/ko/categories/java' %}
     {% assign is_java = true %}
@@ -16,11 +17,14 @@
     {% assign is_jpa = true %}
   {% elsif path contains '/ko/categories/spring' %}
     {% assign is_spring = true %}
+  {% elsif path contains '/ko/categories/sql' %}  <!-- ✅ SQL 분기 추가 -->
+    {% assign is_sql = true %}
   {% endif %}
 
   {% assign java_root = '/ko/categories/java/' %}
   {% assign jpa_root = '/ko/categories/jpa/' %}
   {% assign spring_root = '/ko/categories/spring/' %}
+  {% assign sql_root = '/ko/categories/sql/' %}  <!-- ✅ SQL 루트 경로 추가 -->
 
   {% assign base_url = path | replace: '/index.html', '' | replace: '/page1', '' | replace: '/page2', '' | remove: '/page:num' %}
 
@@ -36,6 +40,8 @@
           <a class="pagination--prev" href="{{ jpa_root }}">&laquo; 이전</a>
         {% elsif is_spring %}
           <a class="pagination--prev" href="{{ spring_root }}">&laquo; 이전</a>
+        {% elsif is_sql %} <!-- ✅ SQL 이전 버튼 -->
+          <a class="pagination--prev" href="{{ sql_root }}">&laquo; 이전</a>
         {% else %}
           <a class="pagination--prev" href="{{ base_url }}">&laquo; 이전</a>
         {% endif %}
@@ -56,6 +62,8 @@
             <a class="pagination--page" href="{{ jpa_root }}">{{ i }}</a>
           {% elsif is_spring %}
             <a class="pagination--page" href="{{ spring_root }}">{{ i }}</a>
+          {% elsif is_sql %} <!-- ✅ SQL 첫 페이지 링크 -->
+            <a class="pagination--page" href="{{ sql_root }}">{{ i }}</a>
           {% else %}
             <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
           {% endif %}

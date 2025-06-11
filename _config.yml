@@ -235,6 +235,12 @@ pagination:
         category: 'spring'
         locale: 'ko'
         permalink: '/ko/categories/spring/page:num/'
+    - scope:
+        path: '_pages/ko/categories/sql.md'
+      values:
+        category: 'sql'
+        locale: 'ko'
+        permalink: '/ko/categories/sql/page:num/'
 
 # Plugins (previously gems:)
 plugins:

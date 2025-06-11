@@ -8,6 +8,8 @@ main:
   - title: "Spring"
     url: /ko/categories/spring/
 
+  - title: "SQL"         
+    url: /ko/categories/sql/
 
   - title: "기술 인덱스"
     url: /ko/
