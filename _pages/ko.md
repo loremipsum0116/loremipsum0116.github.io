@@ -16,6 +16,7 @@ author_profile: true
 
 - [Java](/ko/categories/java/)
 - [JPA](/ko/categories/jpa/)
+- [JSP](/ko/categories/jsp/)
 - [Spring](/ko/categories/spring/)
 - [SQL](/ko/categories/sql/)
 

@@ -5,6 +5,9 @@ main:
   - title: "JPA"
     url: /ko/categories/jpa/
 
+  - title: "JSP"
+    url: /ko/categories/jsp/
+
   - title: "Spring"
     url: /ko/categories/spring/
 
