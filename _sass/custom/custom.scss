@@ -28,22 +28,22 @@
   margin: 0 auto;
 }
 
-/* 사이드바-본문 병렬 배치 복구 */
-.page {
-  display: grid;
-  grid-template-columns: minmax(220px, auto) 1fr;
-  align-items: start;
+/* 사이드바-본문 병렬 배치 복구 (Minimal Mistakes 기준) */
+.page__inner-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
-/* 왼쪽 사이드바 고정 크기 */
-.sidebar__left {
-  grid-column: 1;
-  align-self: start;
+/* 왼쪽 사이드바 */
+.sidebar__left,
+.sidebar__right {
+  flex-shrink: 0;
 }
 
-/* 메인 콘텐츠 오른쪽에 */
+/* 메인 콘텐츠 영역 */
 .page__content {
-  grid-column: 2;
+  flex: 1;
   max-width: 1200px !important;
   width: 100% !important;
   margin: 0 auto;
@@ -53,7 +53,7 @@
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
-  .page {
+  .page__inner-wrap {
     display: block;
   }
 
@@ -62,3 +62,4 @@
     margin-right: auto;
   }
 }
+
