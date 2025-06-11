@@ -12,3 +12,9 @@
   text-decoration: none;
   display: inline-block;
 }
+
+.page, .page__content, .entry {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
