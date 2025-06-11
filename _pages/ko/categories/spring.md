@@ -1,6 +1,6 @@
 ---
 layout: paginate-category
-title: "Spring 관련 글"
+title: "Spring"
 permalink: /ko/categories/spring/
 pagination:
   enabled: true

@@ -1,6 +1,6 @@
 ---
 layout: paginate-category
-title: "JPA 관련 글"
+title: "JPA"
 permalink: /ko/categories/jpa/
 pagination:
   enabled: true
