@@ -1,185 +1,53 @@
 {% if paginator.total_pages > 1 %}
-
 <nav class="pagination" role="navigation">
 
-
-
-  {% assign current_page = paginator.page %}
-
-  {% assign total_pages = paginator.total_pages %}
-
-
-
-  {% capture path %}{{ page.permalink | default: page.url }}{% endcapture %}
-
-
-
-  {% assign is_java = false %}
-
-  {% assign is_jpa = false %}
-
-  {% assign is_spring = false %}
-
-  {% assign is_sql = false %}
-
-  {% assign is_jsp = false %} <!-- ✅ JSP 추가 -->
-
-
-
-  {% if path contains '/ko/categories/java' %}
-
-    {% assign is_java = true %}
-
-  {% elsif path contains '/ko/categories/jpa' %}
-
-    {% assign is_jpa = true %}
-
-  {% elsif path contains '/ko/categories/spring' %}
-
-    {% assign is_spring = true %}
-
-  {% elsif path contains '/ko/categories/sql' %}
-
-    {% assign is_sql = true %}
-
-  {% elsif path contains '/ko/categories/jsp' %} <!-- ✅ JSP 분기 -->
-
-    {% assign is_jsp = true %}
-
-  {% endif %}
-
-
-
-  {% assign java_root = '/ko/categories/java/' %}
-
-  {% assign jpa_root = '/ko/categories/jpa/' %}
-
-  {% assign spring_root = '/ko/categories/spring/' %}
-
-  {% assign sql_root = '/ko/categories/sql/' %}
-
-  {% assign jsp_root = '/ko/categories/jsp/' %} <!-- ✅ JSP 루트 경로 -->
-
-
-
-  {% assign base_url = path | replace: '/index.html', '' | replace: '/page1', '' | replace: '/page2', '' | remove: '/page:num' %}
-
-
-
-  <div class="pagination--container" style="text-align: center;">
-
-
-
-    <!-- 이전 버튼 -->
-
-    {% if current_page > 1 %}
-
-      {% assign prev = current_page | minus: 1 %}
-
-      {% if prev == 1 %}
-
-        {% if is_java %}
-
-          <a class="pagination--prev" href="{{ java_root }}">&laquo; 이전</a>
-
-        {% elsif is_jpa %}
-
-          <a class="pagination--prev" href="{{ jpa_root }}">&laquo; 이전</a>
-
-        {% elsif is_spring %}
-
-          <a class="pagination--prev" href="{{ spring_root }}">&laquo; 이전</a>
-
-        {% elsif is_sql %}
-
-          <a class="pagination--prev" href="{{ sql_root }}">&laquo; 이전</a>
-
-        {% elsif is_jsp %} <!-- ✅ JSP 이전 버튼 -->
-
-          <a class="pagination--prev" href="{{ jsp_root }}">&laquo; 이전</a>
-
-        {% else %}
-
-          <a class="pagination--prev" href="{{ base_url }}">&laquo; 이전</a>
-
-        {% endif %}
-
-      {% else %}
-
-        <a class="pagination--prev" href="{{ base_url }}/page{{ prev }}/">&laquo; 이전</a>
-
-      {% endif %}
-
-    {% endif %}
-
-
-
-    <!-- 페이지 번호 -->
-
-    {% for i in (1..total_pages) %}
-
-      {% if i == current_page %}
-
-        <span class="pagination--page current">{{ i }}</span>
-
-      {% else %}
-
-        {% if i == 1 %}
-
-          {% if is_java %}
-
-            <a class="pagination--page" href="{{ java_root }}">{{ i }}</a>
-
-          {% elsif is_jpa %}
-
-            <a class="pagination--page" href="{{ jpa_root }}">{{ i }}</a>
-
-          {% elsif is_spring %}
-
-            <a class="pagination--page" href="{{ spring_root }}">{{ i }}</a>
-
-          {% elsif is_sql %}
-
-            <a class="pagination--page" href="{{ sql_root }}">{{ i }}</a>
-
-          {% elsif is_jsp %} <!-- ✅ JSP 첫 페이지 링크 -->
-
-            <a class="pagination--page" href="{{ jsp_root }}">{{ i }}</a>
-
-          {% else %}
-
-            <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
-
-          {% endif %}
-
-        {% else %}
-
-          <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
-
-        {% endif %}
-
-      {% endif %}
-
-    {% endfor %}
-
-
-
-    <!-- 다음 버튼 -->
-
-    {% if current_page < total_pages %}
-
-      {% assign next = current_page | plus: 1 %}
-
-      <a class="pagination--next" href="{{ base_url }}/page{{ next }}/">다음 &raquo;</a>
-
-    {% endif %}
-
-
-
-  </div>
-
-
+  {% assign current_page = paginator.page %}
+  {% assign total_pages = paginator.total_pages %}
+
+  <div class="pagination--container" style="text-align: center;">
+
+    {% comment %} 이전 버튼 (site.url과 site.baseurl을 명시적으로 붙여 절대 경로 생성) {% endcomment %}
+    {% if paginator.previous_page %}
+      <a class="pagination--prev" href="{{ site.url }}{{ site.baseurl }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
+    {% endif %}
+
+    {% comment %} 페이지 번호 (하드코딩 방식으로 완전한 절대 URL 생성) {% endcomment %}
+    {% for i in (1..total_pages) %}
+      {% assign final_page_url = '' %}
+      
+      {% comment %} 현재 페이지의 카테고리를 기반으로 기본 경로 파트 생성 {% endcomment %}
+      {% if page.category %}
+        {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
+      {% else %}
+        {% comment %} page.category가 없을 경우를 대비 (일반 태그/아카이브 페이지 등) {% endcomment %}
+        {% assign base_category_path_part = page.url | split: 'page' | first %}
+        {% if base_category_path_part contains '/index.html' %}
+          {% assign base_category_path_part = base_category_path_part | replace: 'index.html', '' %}
+        {% endif %}
+        {% if base_category_path_part == '' %}{% assign base_category_path_part = '/' %}{% endif %}
+      {% endif %}
+
+      {% if i == 1 %}
+        {% comment %} 첫 페이지 (page1)는 '/page1/' 없이 카테고리 루트 경로로 이동 {% endcomment %}
+        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part %}
+      {% else %}
+        {% comment %} 2페이지 이상은 '/pageN/'을 포함한 경로로 이동 {% endcomment %}
+        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part | append: 'page' | append: i | append: '/' %}
+      {% endif %}
+
+      {% if i == current_page %}
+        <span class="pagination--page current">{{ i }}</span>
+      {% else %}
+        <a class="pagination--page" href="{{ final_page_url }}">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% comment %} 다음 버튼 (site.url과 site.baseurl을 명시적으로 붙여 절대 경로 생성) {% endcomment %}
+    {% if paginator.next_page %}
+      <a class="pagination--next" href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}">다음 &raquo;</a>
+    {% endif %}
+
+  </div>
 
 </nav>
-
 {% endif %}

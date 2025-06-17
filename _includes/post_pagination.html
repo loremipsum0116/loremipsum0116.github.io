@@ -1,60 +1,48 @@
-{% if paginator.total_pages > 1 %}
-<nav class="pagination" role="navigation">
+{% if page.lang and page.categories.size > 0 %}
+  {% assign current_lang = page.lang %}
+  {% assign current_category = page.categories[0] %}
 
-  {% assign current_page = paginator.page %}
-  {% assign total_pages = paginator.total_pages %}
-
-  <div class="pagination--container" style="text-align: center;">
-
-    {% comment %}
-      이전 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경)
-    {% endcomment %}
-    {% if paginator.previous_page %}
-      <a class="pagination--prev" href="{{ site.url }}{{ site.baseurl }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
+  {% assign filtered_posts = site.posts | where: "lang", current_lang %}
+  {% assign category_filtered_posts = "" | split: "" %}
+  {% for post in filtered_posts %}
+    {% if post.categories contains current_category %}
+      {% assign category_filtered_posts = category_filtered_posts | push: post %}
     {% endif %}
+  {% endfor %}
 
-    {% comment %}
-      페이지 번호 (하드코딩 방식으로 완전한 절대 URL 생성)
-    {% endcomment %}
-    {% for i in (1..total_pages) %}
-      {% assign final_page_url = '' %}
+  {% assign sorted_posts = category_filtered_posts | sort: "date" %}
 
-      {% comment %}
-        모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성
-      {% endcomment %}
-      {% if page.category %}
-        {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
-      {% else %}
-        {% assign base_category_path_part = '/' %}
-      {% endif %}
-
-      {% if i == 1 %}
-        {% comment %}
-          첫 페이지는 '/page1/' 없이 카테고리 루트 경로로 이동
-        {% endcomment %}
-        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part %}
-      {% else %}
-        {% comment %}
-          2페이지 이상은 '/pageN/'을 포함한 경로로 이동
-        {% endcomment %}
-        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part | append: 'page' | append: i | append: '/' %}
-      {% endif %}
-
-      {% if i == current_page %}
-        <span class="pagination--page current">{{ i }}</span>
-      {% else %}
-        <a class="pagination--page" href="{{ final_page_url }}">{{ i }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% comment %}
-      다음 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경)
-    {% endcomment %}
-    {% if paginator.next_page %}
-      <a class="pagination--next" href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}">다음 &raquo;</a>
+  {% assign previous_post = nil %}
+  {% assign next_post = nil %}
+  {% for post in sorted_posts %}
+    {% if found_current %}
+      {% assign next_post = post %}
+      {% break %}
     {% endif %}
+    {% if post.url == page.url %}
+      {% assign found_current = true %}
+    {% else %}
+      {% assign previous_post = post %}
+    {% endif %}
+  {% endfor %}
 
-  </div>
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      {% if previous_post %}
+        <li class="pagination--pager">
+          <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
+            ← {{ previous_post.title }}
+          </a>
+        </li>
+      {% endif %}
 
-</nav>
+      {% if next_post %}
+        <li class="pagination--pager">
+          <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
+            {{ next_post.title }} →
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
 {% endif %}
