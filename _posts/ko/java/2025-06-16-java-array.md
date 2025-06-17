@@ -128,9 +128,9 @@ public class ArrayQuiz {
 설명:<br>
 배열의 인덱스는 0부터 시작합니다.
 greetings[4]는 'o' (인덱스 4)
-greetings[3]는 'l' (인덱스 1)
-greetings[2]는 'l' (인덱스 3)
-greetings[1]는 'e' (인덱스 3)
+greetings[3]는 'l' (인덱스 3)
+greetings[2]는 'l' (인덱스 2)
+greetings[1]는 'e' (인덱스 1)
 greetings[0]는 'H' (인덱스 0)
 
 따라서 출력되는 순서는 'o', 'l', 'l', 'e', 'H'가 됩니다. System.out.print는 줄바꿈을 하지 않으므로 모두 한 줄에 이어서 출력됩니다.
