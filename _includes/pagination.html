@@ -1,48 +1,185 @@
-{% if page.lang and page.categories.size > 0 %}
-  {% assign current_lang = page.lang %}
-  {% assign current_category = page.categories[0] %}
+{% if paginator.total_pages > 1 %}
 
-  {% assign filtered_posts = site.posts | where: "lang", current_lang %}
-  {% assign category_filtered_posts = "" | split: "" %}
-  {% for post in filtered_posts %}
-    {% if post.categories contains current_category %}
-      {% assign category_filtered_posts = category_filtered_posts | push: post %}
-    {% endif %}
-  {% endfor %}
+<nav class="pagination" role="navigation">
 
-  {% assign sorted_posts = category_filtered_posts | sort: "date" %}
 
-  {% assign previous_post = nil %}
-  {% assign next_post = nil %}
-  {% for post in sorted_posts %}
-    {% if found_current %}
-      {% assign next_post = post %}
-      {% break %}
-    {% endif %}
-    {% if post.url == page.url %}
-      {% assign found_current = true %}
-    {% else %}
-      {% assign previous_post = post %}
-    {% endif %}
-  {% endfor %}
 
-  <nav class="pagination" style="margin-top: 2rem;">
-    <ul>
-      {% if previous_post %}
-        <li class="pagination--pager">
-          <a href="{{ previous_post.url | relative_url }}" class="btn btn--inverse" rel="prev">
-            ← {{ previous_post.title }}
-          </a>
-        </li>
-      {% endif %}
+  {% assign current_page = paginator.page %}
 
-      {% if next_post %}
-        <li class="pagination--pager">
-          <a href="{{ next_post.url | relative_url }}" class="btn btn--inverse" rel="next">
-            {{ next_post.title }} →
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-  </nav>
+  {% assign total_pages = paginator.total_pages %}
+
+
+
+  {% capture path %}{{ page.permalink | default: page.url }}{% endcapture %}
+
+
+
+  {% assign is_java = false %}
+
+  {% assign is_jpa = false %}
+
+  {% assign is_spring = false %}
+
+  {% assign is_sql = false %}
+
+  {% assign is_jsp = false %} <!-- ✅ JSP 추가 -->
+
+
+
+  {% if path contains '/ko/categories/java' %}
+
+    {% assign is_java = true %}
+
+  {% elsif path contains '/ko/categories/jpa' %}
+
+    {% assign is_jpa = true %}
+
+  {% elsif path contains '/ko/categories/spring' %}
+
+    {% assign is_spring = true %}
+
+  {% elsif path contains '/ko/categories/sql' %}
+
+    {% assign is_sql = true %}
+
+  {% elsif path contains '/ko/categories/jsp' %} <!-- ✅ JSP 분기 -->
+
+    {% assign is_jsp = true %}
+
+  {% endif %}
+
+
+
+  {% assign java_root = '/ko/categories/java/' %}
+
+  {% assign jpa_root = '/ko/categories/jpa/' %}
+
+  {% assign spring_root = '/ko/categories/spring/' %}
+
+  {% assign sql_root = '/ko/categories/sql/' %}
+
+  {% assign jsp_root = '/ko/categories/jsp/' %} <!-- ✅ JSP 루트 경로 -->
+
+
+
+  {% assign base_url = path | replace: '/index.html', '' | replace: '/page1', '' | replace: '/page2', '' | remove: '/page:num' %}
+
+
+
+  <div class="pagination--container" style="text-align: center;">
+
+
+
+    <!-- 이전 버튼 -->
+
+    {% if current_page > 1 %}
+
+      {% assign prev = current_page | minus: 1 %}
+
+      {% if prev == 1 %}
+
+        {% if is_java %}
+
+          <a class="pagination--prev" href="{{ java_root }}">&laquo; 이전</a>
+
+        {% elsif is_jpa %}
+
+          <a class="pagination--prev" href="{{ jpa_root }}">&laquo; 이전</a>
+
+        {% elsif is_spring %}
+
+          <a class="pagination--prev" href="{{ spring_root }}">&laquo; 이전</a>
+
+        {% elsif is_sql %}
+
+          <a class="pagination--prev" href="{{ sql_root }}">&laquo; 이전</a>
+
+        {% elsif is_jsp %} <!-- ✅ JSP 이전 버튼 -->
+
+          <a class="pagination--prev" href="{{ jsp_root }}">&laquo; 이전</a>
+
+        {% else %}
+
+          <a class="pagination--prev" href="{{ base_url }}">&laquo; 이전</a>
+
+        {% endif %}
+
+      {% else %}
+
+        <a class="pagination--prev" href="{{ base_url }}/page{{ prev }}/">&laquo; 이전</a>
+
+      {% endif %}
+
+    {% endif %}
+
+
+
+    <!-- 페이지 번호 -->
+
+    {% for i in (1..total_pages) %}
+
+      {% if i == current_page %}
+
+        <span class="pagination--page current">{{ i }}</span>
+
+      {% else %}
+
+        {% if i == 1 %}
+
+          {% if is_java %}
+
+            <a class="pagination--page" href="{{ java_root }}">{{ i }}</a>
+
+          {% elsif is_jpa %}
+
+            <a class="pagination--page" href="{{ jpa_root }}">{{ i }}</a>
+
+          {% elsif is_spring %}
+
+            <a class="pagination--page" href="{{ spring_root }}">{{ i }}</a>
+
+          {% elsif is_sql %}
+
+            <a class="pagination--page" href="{{ sql_root }}">{{ i }}</a>
+
+          {% elsif is_jsp %} <!-- ✅ JSP 첫 페이지 링크 -->
+
+            <a class="pagination--page" href="{{ jsp_root }}">{{ i }}</a>
+
+          {% else %}
+
+            <a class="pagination--page" href="{{ base_url }}/">{{ i }}</a>
+
+          {% endif %}
+
+        {% else %}
+
+          <a class="pagination--page" href="{{ base_url }}/page{{ i }}/">{{ i }}</a>
+
+        {% endif %}
+
+      {% endif %}
+
+    {% endfor %}
+
+
+
+    <!-- 다음 버튼 -->
+
+    {% if current_page < total_pages %}
+
+      {% assign next = current_page | plus: 1 %}
+
+      <a class="pagination--next" href="{{ base_url }}/page{{ next }}/">다음 &raquo;</a>
+
+    {% endif %}
+
+
+
+  </div>
+
+
+
+</nav>
+
 {% endif %}
