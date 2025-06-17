@@ -15,7 +15,7 @@
     {% for i in (1..total_pages) %}
       {% assign final_page_url = '' %}
       
-      {% # 모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성 #}
+      {% 모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성 }
       {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
 
       {% if i == 1 %}
