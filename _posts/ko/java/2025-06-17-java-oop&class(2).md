@@ -434,12 +434,12 @@ Galaxy S24 배터리 부족! 폰이 꺼집니다.
 설명:
 <br>
 
-1.  `Smartphone` 객체가 생성될 때, 생성자에 따라 `model`, `color`가 초기화되고 `batteryPercentage`는 100으로 고정 초기화됩니다.
-2.  `model`, `color`, `batteryPercentage` 필드는 `private`으로 선언되어 외부에서 직접 접근하거나 변경할 수 없습니다. (캡슐화 적용)
-3.  `getModel()`, `getColor()`, `getBatteryPercentage()` 메소드를 통해 필드 값을 읽을 수 있습니다.
-4.  `chargeBattery()`와 `useBattery()` 메소드는 `batteryPercentage` 값을 변경하는 역할을 합니다. 이 메소드들 안에는 배터리 값이 0\~100% 범위를 벗어나지 않도록 하거나, 유효하지 않은 입력(음수)을 막는 **유효성 검증 로직**이 포함되어 객체의 상태를 안전하게 유지합니다.
-5.  `myPhone.useBattery(90)` 호출 시, 잔량 85%에서 90% 사용을 시도하므로 잔액 부족 메시지와 함께 배터리가 0%로 설정됩니다.
-6.  `myPhone.chargeBattery(-10)` 호출 시, 음수 충전량에 대한 유효성 검증으로 인해 "충전량은 양수여야 합니다." 메시지가 출력되고 실제 배터리 값은 변경되지 않습니다.
+1.  `Smartphone` 객체가 생성될 때, 생성자에 따라 `model`, `color`가 초기화되고 `batteryPercentage`는 100으로 고정 초기화됩니다.<br><br>
+2.  `model`, `color`, `batteryPercentage` 필드는 `private`으로 선언되어 외부에서 직접 접근하거나 변경할 수 없습니다. (캡슐화 적용)<br><br>
+3.  `getModel()`, `getColor()`, `getBatteryPercentage()` 메소드를 통해 필드 값을 읽을 수 있습니다.<br><br>
+4.  `chargeBattery()`와 `useBattery()` 메소드는 `batteryPercentage` 값을 변경하는 역할을 합니다. 이 메소드들 안에는 배터리 값이 0\~100% 범위를 벗어나지 않도록 하거나, 유효하지 않은 입력(음수)을 막는 **유효성 검증 로직**이 포함되어 객체의 상태를 안전하게 유지합니다.<br><br>
+5.  `myPhone.useBattery(90)` 호출 시, 잔량 85%에서 90% 사용을 시도하므로 잔액 부족 메시지와 함께 배터리가 0%로 설정됩니다.<br><br>
+6.  `myPhone.chargeBattery(-10)` 호출 시, 음수 충전량에 대한 유효성 검증으로 인해 "충전량은 양수여야 합니다." 메시지가 출력되고 실제 배터리 값은 변경되지 않습니다.<br>
 
 </details>
 
