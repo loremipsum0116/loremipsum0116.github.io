@@ -9,10 +9,6 @@ words_per_minute: 30
 
 -----
 
-## title: "자바 객체지향 - 상속과 생성자 호출 순서" date: 2025-06-17 11:49:10 +09:00 categories: [java] lang: ko locale: ko words\_per\_minute: 30
-
------
-
 ## 자바 객체지향: 상속과 생성자 호출 순서 (Constructor Chaining)
 
 자바에서 객체가 생성될 때, 우리는 `new` 키워드와 함께 클래스의 \*\*생성자(Constructor)\*\*를 호출합니다. 그런데 만약 클래스들이 **상속 관계**에 있다면, 단 하나의 생성자를 호출하더라도 내부적으로 여러 클래스의 생성자들이 **연쇄적으로 호출**되는 복잡한 과정이 일어납니다. 이 과정을 \*\*생성자 연쇄 호출(Constructor Chaining)\*\*이라고 합니다.
