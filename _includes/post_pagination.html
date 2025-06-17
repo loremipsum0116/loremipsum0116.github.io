@@ -6,28 +6,29 @@
 
   <div class="pagination--container" style="text-align: center;">
 
-    {# 이전 버튼 - 정상 작동하는 로직 #}
+    {# 이전 버튼 #}
     {% if paginator.previous_page %}
-      <a class="pagination--prev" href="{{ paginator.previous_page_path | relative_url }}">&laquo; 이전</a>
+      <a class="pagination--prev" href="{{ site.url }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
     {% endif %}
 
-    {# 페이지 번호 - 변경된 로직 #}
+    {# 페이지 번호 #}
     {% for i in (1..total_pages) %}
-      {% assign page_url_template = site.baseurl | append: '/ko/categories/' | append: page.category | append: '/page:num/' %}
-
+      {% assign final_page_url = '' %}
+      
       {% if i == 1 %}
         {# 첫 페이지는 /page1/ 없이 루트 경로로 #}
-        {% assign final_page_url = site.baseurl | append: '/ko/categories/' | append: page.category | append: '/' %}
+        {% assign final_page_url = site.url | append: site.baseurl | append: '/ko/categories/' | append: page.category | append: '/' %}
       {% else %}
-        {% assign final_page_url = page_url_template | replace: ':num', i %}
+        {# 일반 페이지 링크 (i > 1) #}
+        {% assign final_page_url = site.url | append: site.baseurl | append: '/ko/categories/' | append: page.category | append: '/page' | append: i | append: '/' %}
       {% endif %}
 
-      <a class="pagination--page" href="{{ final_page_url | relative_url }}">{{ i }}</a>
+      <a class="pagination--page" href="{{ final_page_url }}">{{ i }}</a>
     {% endfor %}
 
-    {# 다음 버튼 - 정상 작동하는 로직 #}
+    {# 다음 버튼 #}
     {% if paginator.next_page %}
-      <a class="pagination--next" href="{{ paginator.next_page_path | relative_url }}">다음 &raquo;</a>
+      <a class="pagination--next" href="{{ site.url }}{{ paginator.next_page_path }}">&raquo; 다음</a>
     {% endif %}
 
   </div>
