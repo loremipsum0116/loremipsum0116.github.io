@@ -84,7 +84,7 @@ class Dog implements Soundable {
     public void playMusic(String songName) {
         System.out.println(name + "는 " + songName + " 노래를 들으면 꼬리를 흔듭니다.");
     }
-    
+
     // default 메소드는 구현하지 않아도 되지만, 필요하면 오버라이딩 가능
     @Override
     public void describe() {
@@ -126,12 +126,12 @@ public class InterfaceExample {
 
         myCar.makeSound(); // 테슬라 모델3가 빵빵 경적을 울립니다!
         myCar.playMusic("드라이브 송"); // 테슬라 모델3에서 드라이브 송 노래가 흘러나옵니다.
-        myCar.carDescription(); // 컴파일 에러: Soundable 타입에는 carDescription 메소드가 없음
-                                // (myCar는 Soundable 인터페이스 타입으로 선언되었기 때문에 Soundable에 정의된 메소드만 호출 가능)
+        // myCar.carDescription(); // 컴파일 에러: Soundable 타입에는 carDescription 메소드가 없음
+        // (myCar는 Soundable 인터페이스 타입으로 선언되었기 때문에 Soundable에 정의된 메소드만 호출 가능)
         myCar.describe(); // 이 객체는 소리를 낼 수 있습니다. (기본 default 메소드 호출)
 
         System.out.println("---");
-        
+
         // 인터페이스의 static 메소드 호출
         Soundable.showSoundCapability(); // 모든 Soundable 객체는 소리를 내는 능력을 가집니다.
 
@@ -178,100 +178,76 @@ public class InterfaceExample {
 
 -----
 
-## 💡 인터페이스 활용 퀴즈: 프린터 시스템
+## 💡 인터페이스 심화 퀴즈
 
-다양한 종류의 프린터(레이저 프린터, 잉크젯 프린터)가 있다고 가정하고, 이들이 공통적으로 `print()` 기능을 수행하도록 인터페이스를 설계하고 구현해보세요.
+다음 자바 코드와 설명에 대한 질문입니다.
 
 ```java
-// Printer 인터페이스 정의 (추상 메소드만 포함)
-interface Printer {
-    void print(String document);
-    // 추가로 필요한 메소드를 정의해 보세요.
+interface Flyable {
+    // #1
+    int MAX_ALTITUDE = 10000;
+
+    // #2
+    void takeOff();
+    void land();
+
+    // #3
+    default void accelerate() {
+        System.out.println("가속합니다.");
+    }
+
+    // #4
+    static void describeFlight() {
+        System.out.println("비행 객체의 공통 특성.");
+    }
+
+    // #5
+    // private String type; // 인터페이스 내 인스턴스 변수 선언 시도
 }
 
-// LaserPrinter 클래스: Printer 인터페이스 구현
-class LaserPrinter {
-    // 여기에 Printer 인터페이스를 구현하는 코드를 작성하세요.
+abstract class Vehicle implements Flyable {
+    // #6
+    private int speed; // 이 선언은 가능할까?
+
+    @Override
+    public void takeOff() {
+        System.out.println("차량이 이륙합니다.");
+    }
+
+    // land 메소드는 추상으로 남겨둘 수 있다.
 }
 
-// InkjetPrinter 클래스: Printer 인터페이스 구현
-class InkjetPrinter {
-    // 여기에 Printer 인터페이스를 구현하는 코드를 작성하세요.
-}
-
-public class PrinterSystem {
-    public static void main(String[] args) {
-        // 다양한 프린터 객체를 생성하고, 인터페이스 다형성을 활용하여 print 메소드를 호출해 보세요.
+class Airplane extends Vehicle {
+    @Override
+    public void land() {
+        System.out.println("비행기가 착륙합니다.");
     }
 }
 ```
+
+**질문:** 위 코드에서 컴파일 에러가 발생하거나, 인터페이스의 본질적 특성(메소드 및 변수 정의 제한)을 위배하는 주석 처리된 라인은 몇 번일까요? (정답은 하나 이상일 수 있습니다.)
+
+1.  `#1`
+2.  `#2`
+3.  `#3`
+4.  `#4`
+5.  `#5`
+6.  `#6`
 
 <details>
 <summary>정답 보기</summary>
 <br>
+**정답:** 5번<br><br>
 
-```java
-interface Printer {
-    void print(String document);
-    String getPrinterType(); // 프린터 타입을 반환하는 메소드 추가
-}
+**설명:**<br><br>
 
-class LaserPrinter implements Printer {
-    private String model;
-
-    public LaserPrinter(String model) {
-        this.model = model;
-    }
-
-    @Override
-    public void print(String document) {
-        System.out.println(model + " 레이저 프린터가 '" + document + "'를 인쇄합니다. (고속 인쇄)");
-    }
-
-    @Override
-    public String getPrinterType() {
-        return "Laser";
-    }
-}
-
-class InkjetPrinter implements Printer {
-    private String model;
-
-    public InkjetPrinter(String model) {
-        this.model = model;
-    }
-
-    @Override
-    public void print(String document) {
-        System.out.println(model + " 잉크젯 프린터가 '" + document + "'를 인쇄합니다. (컬러 인쇄)");
-    }
-
-    @Override
-    public String getPrinterType() {
-        return "Inkjet";
-    }
-}
-
-public class PrinterSystem {
-    public static void main(String[] args) {
-        Printer laser = new LaserPrinter("HP LaserJet Pro");
-        Printer inkjet = new InkjetPrinter("Epson EcoTank");
-
-        System.out.println(laser.getPrinterType() + " 프린터:");
-        laser.print("보고서.docx");
-
-        System.out.println("\n" + inkjet.getPrinterType() + " 프린터:");
-        inkjet.print("사진.jpg");
-
-        // 다형성을 통해 배열에 담아 일괄 처리 가능
-        Printer[] printers = {new LaserPrinter("Samsung Xpress"), new InkjetPrinter("Canon Pixma")};
-        for (Printer p : printers) {
-            System.out.println("\n--- " + p.getPrinterType() + " 프린터 ---");
-            p.print("공통 문서");
-        }
-    }
-}
-```
+  * **\#5는 컴파일 에러를 발생**시킵니다. 인터페이스는 **인스턴스 변수를 가질 수 없습니다.** 인터페이스 내의 모든 필드는 암묵적으로 `public static final` 상수가 됩니다.<br>
+  * 나머지 옵션들은 유효한 선언입니다:<br>
+      * `#1`은 인터페이스 내 유효한 상수 선언입니다.<br>
+      * `#2`는 인터페이스 내 유효한 추상 메소드 선언입니다.<br>
+      * `#3`은 자바 8부터 허용되는 `default` 메소드 선언입니다.<br>
+      * `#4`는 자바 8부터 허용되는 `static` 메소드 선언입니다.<br>
+      * `#6`은 추상 클래스 `Vehicle` 내의 인스턴스 변수 선언입니다. **추상 클래스는 상태(인스턴스 변수)를 가질 수 있습니다.** 이는 인터페이스와 추상 클래스의 중요한 차이점 중 하나입니다.<br><br>
 
 </details>
 
@@ -281,4 +257,4 @@ public class PrinterSystem {
 
 이번 글에서는 자바 객체지향의 중요한 요소인 **인터페이스**에 대해 깊이 있게 다루었습니다. 인터페이스가 어떻게 **클래스의 행위를 표준화**하고, **다형성을 활용**하여 유연하고 확장 가능한 설계를 가능하게 하는지 이해하셨을 것입니다. 특히 **인터페이스가 추상 메소드의 집합으로 구성되며, 인스턴스 변수나 static 변수를 직접 정의할 수 없고 오직 상수만을 가질 수 있다는 점**은 인터페이스의 본질적인 목적을 이해하는 데 핵심적인 부분입니다.
 
-클래스의 상속이 'is-a' 관계(A는 B이다)를 나타내는 반면, 인터페이스의 구현은 'can-do' 관계(A는 \~를 할 수 있다)를 나타낸다고 흔히 설명합니다. 이러한 차이를 명확히 이해하면 객체지향 설계에서 인터페이스를 언제, 왜 사용해야 하는지 명확히 판단할 수 있습니다.
+클래스의 상속이 'is-a' 관계(A는 B이다)를 나타내며 객체의 상태(필드)를 가질 수 있는 반면, 인터페이스의 구현은 'can-do' 관계(A는 \~를 할 수 있다)를 나타내며 오직 행위(메소드)의 명세만을 제공합니다. 이러한 차이를 명확히 이해하면 객체지향 설계에서 인터페이스를 언제, 왜 사용해야 하는지 명확히 판단할 수 있습니다.
