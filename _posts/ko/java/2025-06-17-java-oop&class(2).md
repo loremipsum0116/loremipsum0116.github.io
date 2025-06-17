@@ -417,18 +417,19 @@ public class Smartphone {
 <details>
 <summary>정답 보기</summary>
 <br>
-출력 결과:
 
-```
-Galaxy S24 스마트폰이 새로 생성되었습니다!
-모델: Galaxy S24, 색상: Black
-초기 배터리: 100%
-Galaxy S24 배터리 30% 사용. 현재: 70%
-Galaxy S24 배터리 15% 충전 완료. 현재: 85%
-Galaxy S24 배터리 부족! 폰이 꺼집니다.
-충전량은 양수여야 합니다.
-최종 배터리: 0%
-```
+출력 결과:
+<br><br>
+
+Galaxy S24 스마트폰이 새로 생성되었습니다!<br>
+모델: Galaxy S24, 색상: Black<br>
+초기 배터리: 100%<br>
+Galaxy S24 배터리 30% 사용. 현재: 70%<br>
+Galaxy S24 배터리 15% 충전 완료. 현재: 85%<br>
+Galaxy S24 배터리 부족! 폰이 꺼집니다.<br>
+충전량은 양수여야 합니다.<br>
+최종 배터리: 0%<br><br>
+
 
 <br>
 설명:
