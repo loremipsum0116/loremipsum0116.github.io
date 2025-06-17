@@ -1,0 +1,1315 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JSP 액션 태그와 JSTL - Lorem Tech Blog</title>
+<meta name="description" content="JSP 액션 태그와 JSTL: 생산성을 높이는 웹 개발 기법">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="JSP 액션 태그와 JSTL">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/jsp-basic(7)/">
+
+
+  <meta property="og:description" content="JSP 액션 태그와 JSTL: 생산성을 높이는 웹 개발 기법">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-12T05:13:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/jsp-basic(7)/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="JSP 액션 태그와 JSTL">
+    
+    
+      <meta itemprop="description" content="JSP 액션 태그와 JSTL: 생산성을 높이는 웹 개발 기법">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-12T05:13:00+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/jsp-basic(7)/" itemprop="url">JSP 액션 태그와 JSTL</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          64 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <h2 id="jsp-액션-태그와-jstl-생산성을-높이는-웹-개발-기법">JSP 액션 태그와 JSTL: 생산성을 높이는 웹 개발 기법</h2>
+
+<p>본 포스팅에서는 JSP 개발의 생산성과 코드 가독성을 극대화하는 <strong>JSP 액션 태그</strong>와 <strong>JSTL(JSP Standard Tag Library)</strong>에 대해 심층적으로 다룹니다. 특히 <strong>JavaBean</strong>과의 연동을 중심으로, 동적 웹 페이지 구현 시 스크립트릿(Scriptlet) 사용을 최소화하고 선언적인 방식으로 개발하는 방법에 초점을 맞출 것입니다.</p>
+
+<hr />
+
+<h3 id="-7-jsp-액션-태그-jspusebean-jspsetproperty-jspgetproperty로-javabean-다루기">🌟 7. JSP 액션 태그: <code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;jsp:setProperty&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;jsp:getProperty&gt;</code>로 JavaBean 다루기</h3>
+
+<p><strong>JSP 액션 태그</strong>는 JSP 페이지 내에서 자바 코드 없이 특정 기능을 수행할 수 있도록 해주는 <strong>XML 문법 기반의 태그</strong>입니다. 이러한 태그들은 웹 컨테이너(WAS)에 의해 특별하게 처리되며, 특히 <strong>JavaBean</strong>과 함께 사용될 때 웹 애플리케이션의 구조를 더욱 명확하고 관리하기 쉽게 만들어줍니다.</p>
+
+<h4 id="javabean이란">JavaBean이란?</h4>
+
+<p><strong>JavaBean</strong>은 특정 규칙을 따르는 자바 클래스를 말합니다. 이 규칙들은 개발자들이 JavaBean을 표준적인 방식으로 사용하고 도구들이 이를 자동으로 인식하고 조작할 수 있도록 돕습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">public</code> <strong>기본 생성자</strong>를 가집니다. (매개변수가 없는 생성자)</li>
+  <li>모든 <strong>속성(property)</strong>은 <code class="language-plaintext highlighter-rouge">private</code>으로 선언됩니다. 이는 정보 은닉(Information Hiding)을 통해 객체 내부 데이터를 보호하는 객체 지향의 원칙을 따릅니다.</li>
+  <li>속성에 접근하고 수정하기 위해 <code class="language-plaintext highlighter-rouge">public</code> <strong><code class="language-plaintext highlighter-rouge">getter</code> 및 <code class="language-plaintext highlighter-rouge">setter</code> 메서드</strong>를 가집니다. 예를 들어, <code class="language-plaintext highlighter-rouge">userName</code> 속성에 대해 <code class="language-plaintext highlighter-rouge">getUserName()</code> 및 <code class="language-plaintext highlighter-rouge">setUserName(String name)</code>과 같은 형식으로 메서드를 제공합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Serializable</code> 인터페이스를 구현하는 것을 <strong>권장</strong>합니다. 이는 JavaBean 객체를 직렬화하여 파일 시스템에 저장하거나 네트워크를 통해 전송할 수 있도록 합니다.</li>
+</ul>
+
+<p>JavaBean은 주로 데이터를 <strong>캡슐화</strong>하고 간단한 <strong>비즈니스 로직</strong>을 포함하는 데 사용되며, JSP 페이지에서는 이 JavaBean의 속성을 손쉽게 다룰 수 있도록 액션 태그를 제공하여 <strong>Model-View-Controller(MVC)</strong> 패턴 구현에 용이합니다.</p>
+
+<h4 id="jspusebean-javabean-인스턴스-생성-또는-참조"><code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code>: JavaBean 인스턴스 생성 또는 참조</h4>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code> 태그는 JSP 페이지에서 JavaBean 객체를 생성하거나 이미 존재하는 객체를 참조할 때 사용합니다. 이는 스크립트릿에서 <code class="language-plaintext highlighter-rouge">User user = new User();</code>와 같은 코드를 작성하는 대신 선언적으로 객체를 다룰 수 있게 합니다.</p>
+
+<p><strong>문법:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;jsp:useBean</span> <span class="na">id=</span><span class="s">"beanId"</span> <span class="na">class=</span><span class="s">"com.example.MyBean"</span> <span class="na">scope=</span><span class="s">"page|request|session|application"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">id</code>: JSP 페이지에서 JavaBean 객체를 식별할 <strong>고유한 이름</strong>입니다. 이 이름으로 해당 JavaBean 객체에 접근할 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">class</code>: 사용할 JavaBean 클래스의 <strong>완전한 패키지 경로를 포함한 이름</strong>입니다. (예: <code class="language-plaintext highlighter-rouge">com.example.model.User</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">scope</code>: JavaBean 객체가 유효한 <strong>범위(scope)</strong>를 지정합니다. 스코프는 객체가 어디까지 공유되고 유지될지를 결정합니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">page</code>: <strong>현재 JSP 페이지만 유효</strong>합니다. 다른 페이지로 이동하면 객체는 소멸됩니다. (기본값)</li>
+      <li><code class="language-plaintext highlighter-rouge">request</code>: <strong>현재 HTTP 요청이 유효한 동안만 유효</strong>합니다. 요청이 다른 JSP 페이지로 <strong>포워딩(<code class="language-plaintext highlighter-rouge">forward</code>)</strong>되어도 객체는 유지됩니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">session</code>: <strong>현재 클라이언트의 세션이 유효한 동안 유효</strong>합니다. 사용자가 웹 브라우저를 닫거나 세션이 만료될 때까지 객체가 유지됩니다. 로그인 사용자 정보 관리 등에 사용됩니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">application</code>: <strong>웹 애플리케이션 전체에서 유효</strong>합니다. 모든 클라이언트가 공유하는 데이터(예: 웹사이트 방문자 수)에 사용됩니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>예시:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">User.java</code> (JavaBean 클래스)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.example.model</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">userName</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// public 기본 생성자는 JavaBean의 필수 조건입니다.</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Getter 메서드</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getUserId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Setter 메서드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserId</span><span class="o">(</span><span class="nc">String</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userId</span> <span class="o">=</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getUserName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserName</span><span class="o">(</span><span class="nc">String</span> <span class="n">userName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAge</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useBeanExample.jsp</code></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>jsp:useBean 예제<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>User JavaBean 사용<span class="nt">&lt;/h2&gt;</span>
+
+    <span class="c">&lt;%--
+        com.example.model.User 클래스의 인스턴스를 'user'라는 ID로 생성 또는 참조합니다.
+        scope를 'request'로 설정하여 현재 요청이 유효한 동안 이 객체를 사용할 수 있도록 합니다.
+    --%&gt;</span>
+    <span class="nt">&lt;jsp:useBean </span><span class="na">id=</span><span class="s">"user"</span><span class="na"> class=</span><span class="s">"com.example.model.User"</span><span class="na"> scope=</span><span class="s">"request"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>User 객체가 생성되었습니다 (또는 이미 존재하면 참조되었습니다).<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>이제 이 'user' 객체를 사용하여 속성 값을 설정하거나 가져올 수 있습니다.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="jspsetproperty-javabean-속성-설정"><code class="language-plaintext highlighter-rouge">&lt;jsp:setProperty&gt;</code>: JavaBean 속성 설정</h4>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;jsp:setProperty&gt;</code> 태그는 <code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code>으로 생성되거나 참조된 JavaBean 객체의 속성 값을 설정할 때 사용합니다. HTTP 요청 파라미터 값을 JavaBean 속성에 자동으로 매핑하는 강력한 기능을 제공하여 개발 편의성을 높입니다.</p>
+
+<p><strong>문법:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;jsp:setProperty</span> <span class="na">name=</span><span class="s">"beanId"</span> <span class="na">property=</span><span class="s">"propertyName"</span> <span class="na">value=</span><span class="s">"propertyValue"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;jsp:setProperty</span> <span class="na">name=</span><span class="s">"beanId"</span> <span class="na">property=</span><span class="s">"propertyName"</span> <span class="na">param=</span><span class="s">"parameterName"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;jsp:setProperty</span> <span class="na">name=</span><span class="s">"beanId"</span> <span class="na">property=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code>: 속성을 설정할 JavaBean 객체의 <code class="language-plaintext highlighter-rouge">id</code> (즉, <code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code>에서 지정한 ID)입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">property</code>: 설정할 JavaBean 속성의 이름입니다. 이 속성에 해당하는 <code class="language-plaintext highlighter-rouge">setter</code> 메서드가 호출됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: 속성에 직접 할당할 <strong>리터럴 값</strong> 또는 <strong>EL 표현식</strong>입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">param</code>: HTTP <strong>요청 파라미터의 이름</strong>입니다. 이 파라미터의 값이 JavaBean 속성에 자동으로 설정됩니다. 타입 변환도 자동으로 이루어집니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">*</code>: HTTP 요청의 <strong>모든 파라미터를 JavaBean의 해당 속성에 자동으로 매핑</strong>합니다. 이때, 요청 파라미터의 이름과 JavaBean 속성(property)의 이름이 <strong>같아야</strong> 합니다. 대량의 데이터를 한 번에 설정할 때 유용합니다.</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">setPropertyExample.jsp</code></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>jsp:setProperty 예제<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>User JavaBean 속성 설정<span class="nt">&lt;/h2&gt;</span>
+
+    <span class="nt">&lt;jsp:useBean </span><span class="na">id=</span><span class="s">"user"</span><span class="na"> class=</span><span class="s">"com.example.model.User"</span><span class="na"> scope=</span><span class="s">"request"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;%--
+        1. 직접 값 설정: 'user' 객체의 'userId' 속성에 "johndoe" 값을 설정합니다.
+           내부적으로 user.setUserId("johndoe")가 호출됩니다.
+    --%&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"userId"</span><span class="na"> value=</span><span class="s">"johndoe"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"userName"</span><span class="na"> value=</span><span class="s">"John Doe"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;%--
+        2. 요청 파라미터로 값 설정: HTTP 요청에서 'age' 파라미터의 값을
+           'user' 객체의 'age' 속성에 설정합니다.
+           예: http://localhost:8080/setPropertyExample.jsp?age=30
+           내부적으로 user.setAge(Integer.parseInt(request.getParameter("age")))와 유사하게 동작합니다.
+    --%&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"age"</span><span class="na"> param=</span><span class="s">"age"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;%--
+        3. 모든 요청 파라미터를 자동으로 매핑:
+           주석 처리된 이 코드를 활성화하고, 다음과 같이 요청하면 모든 파라미터가 매핑됩니다.
+           예: http://localhost:8080/setPropertyExample.jsp?userId=jane&amp;userName=Jane%20Doe&amp;age=25
+           &lt;jsp:setProperty name="user" property="*" /&gt;
+    --%&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>User 객체의 속성이 설정되었습니다.<span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;h3&gt;</span>설정된 User 정보 (getProperty로 출력):<span class="nt">&lt;/h3&gt;</span>
+    <span class="c">&lt;%-- 다음 섹션에서 설명할 &lt;jsp:getProperty&gt;를 미리 사용하여 설정된 값을 출력합니다. --%&gt;</span>
+    <span class="nt">&lt;p&gt;</span>ID: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"userId"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>이름: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"userName"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>나이: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"user"</span><span class="na"> property=</span><span class="s">"age"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="jspgetproperty-javabean-속성-값-가져오기"><code class="language-plaintext highlighter-rouge">&lt;jsp:getProperty&gt;</code>: JavaBean 속성 값 가져오기</h4>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;jsp:getProperty&gt;</code> 태그는 <code class="language-plaintext highlighter-rouge">&lt;jsp:useBean&gt;</code>으로 생성되거나 참조된 JavaBean 객체의 속성 값을 가져와서 JSP 페이지에 출력할 때 사용합니다. 이는 스크립트릿에서 <code class="language-plaintext highlighter-rouge">out.print(user.getUserName());</code>과 같은 코드를 대체합니다.</p>
+
+<p><strong>문법:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;jsp:getProperty</span> <span class="na">name=</span><span class="s">"beanId"</span> <span class="na">property=</span><span class="s">"propertyName"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code>: 속성 값을 가져올 JavaBean 객체의 <code class="language-plaintext highlighter-rouge">id</code>입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">property</code>: 가져올 JavaBean 속성의 이름입니다. 이 속성에 해당하는 <code class="language-plaintext highlighter-rouge">getter</code> 메서드가 호출되며, 그 반환 값이 JSP 페이지에 직접 출력됩니다.</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+
+<p>위 <code class="language-plaintext highlighter-rouge">setPropertyExample.jsp</code>에서 <code class="language-plaintext highlighter-rouge">&lt;jsp:getProperty&gt;</code>를 이미 사용하고 있습니다. 다시 한번 예시를 들어 설명합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getPropertyExample.jsp</code></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>jsp:getProperty 예제<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>User JavaBean 속성 가져오기 및 출력<span class="nt">&lt;/h2&gt;</span>
+
+    <span class="nt">&lt;jsp:useBean </span><span class="na">id=</span><span class="s">"activeUser"</span><span class="na"> class=</span><span class="s">"com.example.model.User"</span><span class="na"> scope=</span><span class="s">"session"</span> <span class="nt">/&gt;</span>
+    <span class="c">&lt;%--
+        세션에 "activeUser"라는 User 객체가 없다면 새로 생성하고, 있다면 기존 객체를 참조합니다.
+        여기서는 예시를 위해 직접 값을 설정합니다. 실제 애플리케이션에서는 로그인 후 세션에 저장될 수 있습니다.
+    --%&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"userId"</span><span class="na"> value=</span><span class="s">"admin"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"userName"</span><span class="na"> value=</span><span class="s">"관리자"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;jsp:setProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"age"</span><span class="na"> value=</span><span class="s">"40"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;h3&gt;</span>현재 로그인 사용자 정보:<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>사용자 ID: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"userId"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>사용자 이름: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"userName"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>나이: <span class="nt">&lt;jsp:getProperty </span><span class="na">name=</span><span class="s">"activeUser"</span><span class="na"> property=</span><span class="s">"age"</span> <span class="nt">/&gt;</span> 세<span class="nt">&lt;/p&gt;</span>
+
+    <span class="c">&lt;%-- EL을 사용하여 동일한 정보를 출력할 수도 있습니다. --%&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>EL을 사용한 출력 (참고):<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>사용자 ID: ${activeUser.userId}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>사용자 이름: ${activeUser.userName}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>나이: ${activeUser.age} 세<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>이처럼 JSP 액션 태그를 사용하면 <strong>스크립트릿(<code class="language-plaintext highlighter-rouge">&lt;&amp;#37; %&gt;</code>) 없이도 JavaBean을 쉽게 다루고</strong>, JSP 페이지의 <strong>가독성과 유지보수성을 높일 수 있습니다.</strong> 이는 HTML과 Java 코드의 분리를 촉진하여 프론트엔드와 백엔드 개발자의 협업을 용이하게 합니다.</p>
+
+<hr />
+
+<h3 id="-8-jstl-jsp-standard-tag-library">💡 8. JSTL (JSP Standard Tag Library)</h3>
+
+<p><strong>JSTL</strong>은 JSP 페이지에서 <strong>조건문, 반복문, 국제화, 데이터베이스 처리</strong> 등과 같은 일반적인 기능을 <strong>표준화된 태그 형태</strong>로 제공하는 라이브러리입니다. 스크립트릿의 사용을 최소화하고, JSP 페이지를 더욱 <strong>깔끔하고 유지보수하기 쉽게</strong> 만들어줍니다. JSTL을 사용하려면 해당 라이브러리 파일을 프로젝트에 추가하고 JSP 페이지 상단에 <code class="language-plaintext highlighter-rouge">taglib</code> 지시어를 사용하여 사용할 접두사(prefix)를 선언해야 합니다.</p>
+
+<h4 id="jstl-라이브러리-추가">JSTL 라이브러리 추가</h4>
+
+<p>JSTL을 사용하려면 Apache Tomcat과 같은 서블릿 컨테이너에 <code class="language-plaintext highlighter-rouge">jstl-1.2.jar</code> 또는 그 이상의 버전을 추가해야 합니다. Maven 프로젝트의 경우 <code class="language-plaintext highlighter-rouge">pom.xml</code>에 다음 의존성을 추가합니다:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>jakarta.servlet.jsp.jstl<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jakarta.servlet.jsp.jstl-api<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.glassfish.web<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jakarta.servlet.jsp.jstl<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+<p><em>주의: JSTL 1.2 버전은 <code class="language-plaintext highlighter-rouge">javax.servlet.jsp.jstl</code> 패키지를 사용하며, 서블릿 3.0 이상 환경에서는 <code class="language-plaintext highlighter-rouge">jakarta.servlet.jsp.jstl</code> 패키지를 사용하는 JSTL 2.0 이상을 사용하는 것이 좋습니다. 프로젝트의 서블릿/JSP 버전에 맞춰 의존성을 선택해주세요.</em></p>
+
+<h4 id="jstl-core-태그-c-태그">JSTL Core 태그 (c 태그)</h4>
+
+<p>JSTL은 여러 종류의 태그 라이브러리로 구성되어 있으며, 그 중 가장 많이 사용되는 것이 <strong>Core 태그</strong>입니다. Core 태그는 조건문, 반복문, 변수 설정 등 기본적인 로직 처리에 사용됩니다.</p>
+
+<p>JSTL Core 태그를 사용하기 위해서는 JSP 페이지 상단에 다음 <code class="language-plaintext highlighter-rouge">taglib</code> 지시어를 추가해야 합니다:</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">prefix="c"</code>는 <code class="language-plaintext highlighter-rouge">c:</code>라는 접두사를 사용하여 Core 태그를 호출하겠다는 의미입니다. <code class="language-plaintext highlighter-rouge">uri</code>는 해당 태그 라이브러리의 고유 식별자입니다.</p>
+
+<h4 id="cforeach-반복문-처리"><code class="language-plaintext highlighter-rouge">&lt;c:forEach&gt;</code>: 반복문 처리</h4>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;c:forEach&gt;</code> 태그는 컬렉션(List, Set, 배열 등)의 각 요소에 대해 반복 작업을 수행하거나, 특정 범위 내에서 반복 작업을 수행할 때 사용합니다. 이는 스크립트릿의 <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code> 루프를 대체합니다.</p>
+
+<p><strong>문법:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;c:forEach</span> <span class="na">var=</span><span class="s">"item"</span> <span class="na">items=</span><span class="s">"${collection}"</span> <span class="na">begin=</span><span class="s">"start"</span> <span class="na">end=</span><span class="s">"end"</span> <span class="na">step=</span><span class="s">"interval"</span> <span class="na">varStatus=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/c:forEach&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">var</code>: 현재 반복 회차의 요소가 저장될 <strong>변수 이름</strong>입니다. 이 변수는 EL(Expression Language)로 접근할 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">items</code>: 반복할 <strong>컬렉션 객체</strong>입니다. EL을 사용하여 표현합니다. (예: <code class="language-plaintext highlighter-rouge">${fruitList}</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">begin</code>: 반복 시작 <strong>인덱스</strong> (포함).</li>
+  <li><code class="language-plaintext highlighter-rouge">end</code>: 반복 종료 <strong>인덱스</strong> (포함).</li>
+  <li><code class="language-plaintext highlighter-rouge">step</code>: 반복 시 증가할 <strong>값</strong>입니다. (기본값은 1)</li>
+  <li><code class="language-plaintext highlighter-rouge">varStatus</code>: 현재 반복 상태에 대한 정보를 담는 <code class="language-plaintext highlighter-rouge">LoopTagStatus</code> 객체를 저장할 변수 이름입니다. 이 객체는 반복 관련 유용한 정보(예: <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">count</code>, <code class="language-plaintext highlighter-rouge">first</code>, <code class="language-plaintext highlighter-rouge">last</code>, <code class="language-plaintext highlighter-rouge">current</code>)를 제공합니다.</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">forEachExample.jsp</code></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>c:forEach 예제<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>숫자 반복 (1부터 5까지)<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"i"</span><span class="na"> begin=</span><span class="s">"1"</span><span class="na"> end=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;</span>현재 숫자: ${i}<span class="nt">&lt;/li&gt;</span> <span class="c">&lt;%-- EL을 사용하여 'i' 변수 값 출력 --%&gt;</span>
+        <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;h2&gt;</span>리스트 반복<span class="nt">&lt;/h2&gt;</span>
+    <span class="c">&lt;%--
+        JSP 스크립트릿을 사용하여 List&lt;String&gt;을 생성하고
+        request 스코프에 "fruitList"라는 이름으로 저장합니다.
+        JSTL은 이와 같이 스코프에 저장된 객체에 EL을 통해 접근합니다.
+    --%&gt;</span>
+    <span class="nt">&lt;%</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="err">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">ArrayList</span><span class="o">&lt;</span><span class="err">&gt;</span><span class="o">();</span>
+        <span class="n">fruits</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"사과"</span><span class="o">);</span>
+        <span class="n">fruits</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"바나나"</span><span class="o">);</span>
+        <span class="n">fruits</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"오렌지"</span><span class="o">);</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"fruitList"</span><span class="o">,</span> <span class="n">fruits</span><span class="o">);</span> <span class="c1">// request 스코프에 저장</span>
+    <span class="nt">%&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"fruit"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span><span class="n">fruitList</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- fruitList 컬렉션의 각 요소를 fruit 변수에 할당 --%&gt;</span>
+            <span class="nt">&lt;li&gt;</span>${fruit}<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;h2&gt;</span>인덱스와 함께 리스트 반복 (varStatus 활용)<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"fruit"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span><span class="n">fruitList</span><span class="si">}</span><span class="s">"</span><span class="na"> varStatus=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;%--
+                status 객체는 다음과 같은 속성을 가집니다:
+                - status.index: 0부터 시작하는 현재 인덱스
+                - status.count: 1부터 시작하는 현재 반복 횟수
+                - status.first: 첫 번째 반복인지 여부 (true/false)
+                - status.last: 마지막 반복인지 여부 (true/false)
+                - status.current: 현재 항목 자체 (items의 ${fruit}과 동일)
+            --%&gt;</span>
+            <span class="nt">&lt;li</span> <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">status</span><span class="o">.</span><span class="na">first</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span><span class="na">style=</span><span class="s">"font-weight: bold;"</span><span class="nt">&lt;/c:if&gt;&gt;</span>
+                ${status.index}. ${fruit}
+                (첫 번째: ${status.first}, 마지막: ${status.last}, 반복 횟수: ${status.count})
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="cif-조건문-처리"><code class="language-plaintext highlighter-rouge">&lt;c:if&gt;</code>: 조건문 처리</h4>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;c:if&gt;</code> 태그는 주어진 조건이 참(true)일 경우에만 특정 내용을 실행하는 데 사용됩니다. 이는 스크립트릿의 <code class="language-plaintext highlighter-rouge">if</code> 문을 대체합니다. <strong><code class="language-plaintext highlighter-rouge">else</code> 문을 직접 지원하지는 않습니다.</strong> 그러나 여러 개의 <code class="language-plaintext highlighter-rouge">&lt;c:if&gt;</code> 태그를 사용하거나, <code class="language-plaintext highlighter-rouge">if-else-if</code>와 유사한 복합 조건문은 <code class="language-plaintext highlighter-rouge">&lt;c:choose&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;c:when&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;c:otherwise&gt;</code> 태그를 조합하여 구현할 수 있습니다.</p>
+
+<p><strong>문법:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">"${condition}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">test</code>: 조건을 나타내는 <strong>EL 표현식</strong>입니다. 이 표현식이 <code class="language-plaintext highlighter-rouge">true</code>로 평가되면 <code class="language-plaintext highlighter-rouge">&lt;c:if&gt;</code> 블록 내부의 내용이 실행됩니다. EL 표현식 내에서는 논리 연산자(<code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code>, <code class="language-plaintext highlighter-rouge">not</code>), 비교 연산자(<code class="language-plaintext highlighter-rouge">eq</code>, <code class="language-plaintext highlighter-rouge">ne</code>, <code class="language-plaintext highlighter-rouge">lt</code>, <code class="language-plaintext highlighter-rouge">le</code>, <code class="language-plaintext highlighter-rouge">gt</code>, <code class="language-plaintext highlighter-rouge">ge</code>), <code class="language-plaintext highlighter-rouge">empty</code> 연산자 등을 사용할 수 있습니다.</li>
+</ul>
+
+<p><strong>예시:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">ifExample.jsp</code></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>c:if 예제<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>c:if 조건문<span class="nt">&lt;/h2&gt;</span>
+
+    <span class="c">&lt;%-- request scope에 score 변수 설정 (EL에서 접근하기 위함) --%&gt;</span>
+    <span class="nt">&lt;%</span> <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"score"</span><span class="o">,</span> <span class="mi">85</span><span class="o">);</span> <span class="nt">%&gt;</span>
+
+    <span class="c">&lt;%-- score 변수 값에 따른 조건부 메시지 출력 --%&gt;</span>
+    <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>점수: ${score} - **A 학점**입니다.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+    <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="n">and</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- 논리 연산자 'and' 사용 --%&gt;</span>
+        <span class="nt">&lt;p&gt;</span>점수: ${score} - **B 학점**입니다.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+    <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">score</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>점수: ${score} - **C 학점 이하**입니다.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+
+    <span class="nt">&lt;hr&gt;</span>
+
+    <span class="nt">&lt;h2&gt;</span>null 또는 빈 문자열 체크 (empty 연산자)<span class="nt">&lt;/h2&gt;</span>
+    <span class="c">&lt;%-- request scope에 userName 변수 설정 --%&gt;</span>
+    <span class="nt">&lt;%</span> <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="s">"Alice"</span><span class="o">);</span> <span class="nt">%&gt;</span>
+    <span class="c">&lt;%-- 다음 라인들을 주석 해제하여 테스트해보세요:
+    &lt;%-- request.setAttribute("userName", ""); --%&gt;</span>
+    <span class="c">&lt;%-- request.setAttribute("userName", null); --%&gt;</span>
+    --%&gt;
+
+    <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">not</span> <span class="n">empty</span> <span class="n">userName</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- userName이 null이 아니거나 비어있지 않다면 --%&gt;</span>
+        <span class="nt">&lt;p&gt;</span>환영합니다, <span class="nt">&lt;strong&gt;</span>${userName}<span class="nt">&lt;/strong&gt;</span>님!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+    <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">empty</span> <span class="n">userName</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- userName이 null이거나 비어있다면 --%&gt;</span>
+        <span class="nt">&lt;p&gt;</span>이름을 입력해주세요. 😢<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:if&gt;</span>
+
+    <span class="nt">&lt;hr&gt;</span>
+
+    <span class="nt">&lt;h2&gt;</span>`<span class="nt">&lt;c:choose&gt;</span>`, `<span class="nt">&lt;c:when&gt;</span>`, `<span class="nt">&lt;c:otherwise&gt;</span>`: if-else-if 대체<span class="nt">&lt;/h2&gt;</span>
+    <span class="c">&lt;%-- c:set 태그로 'grade' 변수를 설정합니다. --%&gt;</span>
+    <span class="nt">&lt;c:set </span><span class="na">var=</span><span class="s">"grade"</span><span class="na"> value=</span><span class="s">"B"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;c:choose&gt;</span> <span class="c">&lt;%-- 자바의 switch 또는 if-else if-else와 유사한 구조 --%&gt;</span>
+        <span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">grade</span> <span class="n">eq</span> <span class="l">'A'</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- 'grade'가 'A'와 같다면 --%&gt;</span>
+            <span class="nt">&lt;p&gt;</span>당신의 학점은 **A**입니다. 훌륭해요!<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/c:when&gt;</span>
+        <span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span><span class="n">grade</span> <span class="n">eq</span> <span class="l">'B'</span><span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span> <span class="c">&lt;%-- 'grade'가 'B'와 같다면 --%&gt;</span>
+            <span class="nt">&lt;p&gt;</span>당신의 학점은 **B**입니다. 잘했습니다!<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/c:when&gt;</span>
+        <span class="nt">&lt;c:otherwise&gt;</span> <span class="c">&lt;%-- 위의 모든 조건에 해당하지 않을 경우 (자바의 else 역할) --%&gt;</span>
+            <span class="nt">&lt;p&gt;</span>당신의 학점은 **C 이하**입니다. 더 노력해봅시다.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/c:otherwise&gt;</span>
+    <span class="nt">&lt;/c:choose&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="jstl과-el-expression-language의-강력한-시너지">JSTL과 EL (Expression Language)의 강력한 시너지</h4>
+
+<p>JSTL은 <strong>EL(Expression Language)</strong>과 함께 사용될 때 강력한 시너지를 발휘합니다. EL은 JSP 2.0부터 도입된 표현식 언어로, JSP 페이지에서 <strong>객체의 속성 값이나 컬렉션의 요소를 간편하게 접근하고 출력</strong>할 수 있도록 해주는 표현식 언어입니다. 복잡한 Java 코드 없이도 데이터에 쉽게 접근할 수 있어 가독성을 높이고 코드 양을 줄여줍니다.</p>
+
+<p><strong>EL 문법:</strong> <code class="language-plaintext highlighter-rouge">${expression}</code></p>
+
+<p><strong>EL 예시:</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">${user.userName}</code>: <code class="language-plaintext highlighter-rouge">user</code> 객체의 <code class="language-plaintext highlighter-rouge">userName</code> 속성 값을 가져옵니다. (내부적으로 <code class="language-plaintext highlighter-rouge">user.getUserName()</code> 메서드를 호출합니다.)</li>
+  <li><code class="language-plaintext highlighter-rouge">${requestScope.user.userName}</code>: <code class="language-plaintext highlighter-rouge">request</code> 스코프에서 <code class="language-plaintext highlighter-rouge">user</code> 객체를 찾아 <code class="language-plaintext highlighter-rouge">userName</code> 속성 값을 가져옵니다. (<code class="language-plaintext highlighter-rouge">pageScope</code>, <code class="language-plaintext highlighter-rouge">sessionScope</code>, <code class="language-plaintext highlighter-rouge">applicationScope</code>도 유사하게 사용 가능)</li>
+  <li><code class="language-plaintext highlighter-rouge">${param.userId}</code>: HTTP 요청 파라미터 중 <code class="language-plaintext highlighter-rouge">userId</code> 값을 가져옵니다. (<code class="language-plaintext highlighter-rouge">request.getParameter("userId")</code>와 동일)</li>
+  <li><code class="language-plaintext highlighter-rouge">${10 + 5}</code>: 덧셈 연산 결과를 출력합니다. EL은 기본적인 산술, 논리, 비교 연산자를 지원합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">${empty someVariable}</code>: <code class="language-plaintext highlighter-rouge">someVariable</code>이 <code class="language-plaintext highlighter-rouge">null</code>이거나 비어있는지(<code class="language-plaintext highlighter-rouge">String</code>의 길이가 0, <code class="language-plaintext highlighter-rouge">Collection</code>의 크기가 0, <code class="language-plaintext highlighter-rouge">Map</code>의 크기가 0) 확인합니다. <code class="language-plaintext highlighter-rouge">true</code> 또는 <code class="language-plaintext highlighter-rouge">false</code>를 반환합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">${not empty someVariable}</code>: <code class="language-plaintext highlighter-rouge">empty</code> 연산자의 반대입니다.</li>
+</ul>
+
+<p>JSP 액션 태그와 JSTL은 JSP 페이지에서 <strong>자바 코드를 직접 작성하는 것을 최소화</strong>하고, 웹 애플리케이션의 <strong>프레젠테이션 계층을 더욱 깔끔하고 효율적으로 구성</strong>할 수 있도록 돕는 중요한 도구입니다. 이를 통해 개발자는 <strong>비즈니스 로직과 화면 로직을 분리</strong>하여 웹 애플리케이션의 <strong>유지보수성과 확장성을 크게 향상</strong>시킬 수 있습니다.</p>
+
+<hr />
+
+<h3 id="-마치며">📝 마치며</h3>
+
+<p>본 문서를 통해 JSP 액션 태그와 JSTL의 핵심적인 기능과 활용법을 이해하셨기를 바랍니다. 이 도구들을 효과적으로 사용하여 스크립트릿을 최소화하고, 웹 페이지의 구조와 가독성을 높여 더욱 효율적인 웹 개발을 경험해 보세요!</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp.basic(6)/" class="btn btn--inverse" rel="prev">
+            ← 서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp.basic(8)/" class="btn btn--inverse" rel="next">
+            MVC 패턴의 이해와 JSP, Spring MVC에서의 활용 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/jsp/" class="taxonomy__item">jsp</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-12T05:13:00+00:00">June 12, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=JSP+%EC%95%A1%EC%85%98+%ED%83%9C%EA%B7%B8%EC%99%80+JSTL%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%287%29%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%287%29%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/jsp-basic(7)/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=JSP+%EC%95%A1%EC%85%98+%ED%83%9C%EA%B7%B8%EC%99%80+JSTL%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%287%29%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          64 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(2)/" rel="permalink">자바 객체지향-클래스(2)
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          71 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          64 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(2)/" rel="permalink">자바 객체지향-클래스(2)
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          71 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
