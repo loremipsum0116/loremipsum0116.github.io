@@ -6,29 +6,36 @@
 
   <div class="pagination--container" style="text-align: center;">
 
-    {# 이전 버튼 #}
+    {# 이전 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경) #}
     {% if paginator.previous_page %}
       <a class="pagination--prev" href="{{ site.url }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
     {% endif %}
 
-    {# 페이지 번호 #}
+    {# 페이지 번호 (하드코딩 방식으로 완전한 절대 URL 생성) #}
     {% for i in (1..total_pages) %}
       {% assign final_page_url = '' %}
       
+      {% # 모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성 #}
+      {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
+
       {% if i == 1 %}
-        {# 첫 페이지는 /page1/ 없이 루트 경로로 #}
-        {% assign final_page_url = site.url | append: site.baseurl | append: '/ko/categories/' | append: page.category | append: '/' %}
+        {# 첫 페이지 (page1)는 '/page1/' 없이 카테고리 루트 경로로 이동 #}
+        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part %}
       {% else %}
-        {# 일반 페이지 링크 (i > 1) #}
-        {% assign final_page_url = site.url | append: site.baseurl | append: '/ko/categories/' | append: page.category | append: '/page' | append: i | append: '/' %}
+        {# 2페이지 이상은 '/pageN/'을 포함한 경로로 이동 #}
+        {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part | append: 'page' | append: i | append: '/' %}
       {% endif %}
 
-      <a class="pagination--page" href="{{ final_page_url }}">{{ i }}</a>
+      {% if i == current_page %}
+        <span class="pagination--page current">{{ i }}</span>
+      {% else %}
+        <a class="pagination--page" href="{{ final_page_url }}">{{ i }}</a>
+      {% endif %}
     {% endfor %}
 
-    {# 다음 버튼 #}
+    {# 다음 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경) #}
     {% if paginator.next_page %}
-      <a class="pagination--next" href="{{ site.url }}{{ paginator.next_page_path }}">&raquo; 다음</a>
+      <a class="pagination--next" href="{{ site.url }}{{ paginator.next_page_path }}">다음 &raquo;</a>
     {% endif %}
 
   </div>
