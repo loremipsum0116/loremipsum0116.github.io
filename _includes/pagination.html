@@ -6,18 +6,21 @@
 
   <div class="pagination--container" style="text-align: center;">
 
+    {# 이전 버튼 #}
     {% if paginator.previous_page %}
       <a class="pagination--prev" href="{{ paginator.previous_page_path | relative_url }}">&laquo; 이전</a>
     {% endif %}
 
+    {# 페이지 번호 #}
     {% for i in (1..total_pages) %}
       {% if i == current_page %}
         <span class="pagination--page current">{{ i }}</span>
       {% else %}
-        <a class="pagination--page" href="{{ paginator.page_path | replace: ':num', i | relative_url }}">{{ i }}</a>
+        <a class="pagination--page" href="{{ i | url_for_page | relative_url }}">{{ i }}</a>
       {% endif %}
     {% endfor %}
 
+    {# 다음 버튼 #}
     {% if paginator.next_page %}
       <a class="pagination--next" href="{{ paginator.next_page_path | relative_url }}">다음 &raquo;</a>
     {% endif %}
