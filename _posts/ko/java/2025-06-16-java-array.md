@@ -222,56 +222,11 @@ public class FindMinMaxInArray {
 
 ## 중복 없는 배열 만드는 방법
 
-중복 없는 요소를 가지는 배열을 만들려면, 주로 `Set` 컬렉션을 활용하거나, 배열에 값을 추가하기 전에 이미 존재하는 값인지 확인하는 로직을 구현합니다. `Set`은 본질적으로 중복을 허용하지 않는 컬렉션이므로, 중복 제거에 매우 유용합니다.
+중복 없는 요소를 가지는 배열을 만들려면, 배열에 값을 추가하기 전에 이미 존재하는 값인지 확인하는 로직을 구현합니다.
 
-### 1\. `Set`을 활용하는 방법 (가장 일반적이고 효율적)
 
-임의의 정수형 배열에 중복된 값이 있을 경우, `HashSet`을 사용하여 중복을 제거하고 다시 배열로 변환하는 예시입니다.
+### 1\. 반복문과 조건문을 활용하는 방법 (직접 구현)
 
-```java
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.ArrayList; // ArrayList를 사용하여 Set의 요소를 다시 리스트로 변환
-
-public class UniqueArrayWithSet {
-    public static void main(String[] args) {
-        int[] originalArray = {1, 2, 3, 2, 4, 1, 5, 3};
-
-        // 1. HashSet 생성 및 배열 요소 추가: HashSet은 중복을 자동으로 제거합니다.
-        Set<Integer> uniqueElements = new HashSet<>();
-        for (int number : originalArray) {
-            uniqueElements.add(number); // 중복된 값은 추가되지 않음
-        }
-
-        // 2. Set의 요소를 다시 배열로 변환 (또는 List로 변환)
-        // Set의 크기만큼 새로운 배열 생성
-        int[] uniqueArray = new int[uniqueElements.size()];
-        int index = 0;
-        for (int number : uniqueElements) {
-            uniqueArray[index++] = number;
-        }
-        
-        System.out.println("원본 배열: " + Arrays.toString(originalArray));
-        System.out.println("중복 제거된 배열 (Set 사용): " + Arrays.toString(uniqueArray));
-
-        // 또는 ArrayList로 변환하여 사용:
-        // List<Integer> uniqueList = new ArrayList<>(uniqueElements);
-        // System.out.println("중복 제거된 리스트 (Set 사용): " + uniqueList);
-    }
-}
-```
-
-**출력 결과 (Set의 순서는 보장되지 않음):**
-
-```
-원본 배열: [1, 2, 3, 2, 4, 1, 5, 3]
-중복 제거된 배열 (Set 사용): [1, 2, 3, 4, 5]
-```
-
-### 2\. 반복문과 조건문을 활용하는 방법 (직접 구현)
-
-`Set`을 사용하지 않고 직접 중복을 확인하며 배열에 추가하는 방법입니다. 이 방법은 일반적으로 `Set`을 사용하는 것보다 복잡하고 성능상 불리할 수 있습니다.
 
 ```java
 import java.util.Arrays;
