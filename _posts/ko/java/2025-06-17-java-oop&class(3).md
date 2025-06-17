@@ -227,24 +227,28 @@ public class ConstructorQuiz {
 }
 ```
 
-출력 결과:
-
-```
---- Creating C1 ---
-A's Constructor
-B's Constructor
-C's Constructor
-
---- Creating C2 ---
-A's Constructor
-B's Constructor
-C's Constructor with String: Value: 3.14
-C's Constructor with double: 3.14
-```
 
 <details>
 <summary>정답 보기</summary>
 <br>
+
+
+출력 결과:
+<br><br>
+
+--- Creating C1 ---<br>
+A's Constructor<br>
+B's Constructor<br>
+C's Constructor<br>
+<br>
+--- Creating C2 ---<br>
+A's Constructor<br>
+B's Constructor<br>
+C's Constructor with String: Value: 3.14<br>
+C's Constructor with double: 3.14<br>
+<br>
+<br>
+
 **주의:** 위 퀴즈의 `C(String msg)` 생성자에 대한 주석은 약간 혼란을 줄 수 있습니다. 자바 컴파일러는 `super()`나 `this()`가 없으면 **무조건 `super()`를 삽입**하며, 이는 **부모의 기본 생성자를 호출**합니다. 따라서 `C(String msg)`에서는 `B()`가 호출됩니다.
 
 
