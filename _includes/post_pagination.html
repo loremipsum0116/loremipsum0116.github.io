@@ -6,23 +6,37 @@
 
   <div class="pagination--container" style="text-align: center;">
 
-    {# 이전 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경) #}
+    {% comment %}
+      이전 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경)
+    {% endcomment %}
     {% if paginator.previous_page %}
-      <a class="pagination--prev" href="{{ site.url }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
+      <a class="pagination--prev" href="{{ site.url }}{{ site.baseurl }}{{ paginator.previous_page_path }}">&laquo; 이전</a>
     {% endif %}
 
-    {# 페이지 번호 (하드코딩 방식으로 완전한 절대 URL 생성) #}
+    {% comment %}
+      페이지 번호 (하드코딩 방식으로 완전한 절대 URL 생성)
+    {% endcomment %}
     {% for i in (1..total_pages) %}
       {% assign final_page_url = '' %}
-      
-      {% 모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성 }
-      {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
+
+      {% comment %}
+        모든 카테고리 페이지에서 'page.category'를 사용하여 동적으로 경로 생성
+      {% endcomment %}
+      {% if page.category %}
+        {% assign base_category_path_part = '/ko/categories/' | append: page.category | append: '/' %}
+      {% else %}
+        {% assign base_category_path_part = '/' %}
+      {% endif %}
 
       {% if i == 1 %}
-        {# 첫 페이지 (page1)는 '/page1/' 없이 카테고리 루트 경로로 이동 #}
+        {% comment %}
+          첫 페이지는 '/page1/' 없이 카테고리 루트 경로로 이동
+        {% endcomment %}
         {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part %}
       {% else %}
-        {# 2페이지 이상은 '/pageN/'을 포함한 경로로 이동 #}
+        {% comment %}
+          2페이지 이상은 '/pageN/'을 포함한 경로로 이동
+        {% endcomment %}
         {% assign final_page_url = site.url | append: site.baseurl | append: base_category_path_part | append: 'page' | append: i | append: '/' %}
       {% endif %}
 
@@ -33,9 +47,11 @@
       {% endif %}
     {% endfor %}
 
-    {# 다음 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경) #}
+    {% comment %}
+      다음 버튼 (정상 동작 확인됨, 완전한 절대 URL로 변경)
+    {% endcomment %}
     {% if paginator.next_page %}
-      <a class="pagination--next" href="{{ site.url }}{{ paginator.next_page_path }}">다음 &raquo;</a>
+      <a class="pagination--next" href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}">다음 &raquo;</a>
     {% endif %}
 
   </div>
