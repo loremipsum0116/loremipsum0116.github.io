@@ -1,0 +1,1117 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JSP의 이해 및 기초 - Lorem Tech Blog</title>
+<meta name="description" content="JSP의 이해 및 기초: 동적 웹 페이지 구현 메커니즘">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="JSP의 이해 및 기초">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/jsp-basic(3)/">
+
+
+  <meta property="og:description" content="JSP의 이해 및 기초: 동적 웹 페이지 구현 메커니즘">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-11T08:09:47+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/jsp-basic(3)/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="JSP의 이해 및 기초">
+    
+    
+      <meta itemprop="description" content="JSP의 이해 및 기초: 동적 웹 페이지 구현 메커니즘">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-11T08:09:47+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/jsp-basic(3)/" itemprop="url">JSP의 이해 및 기초</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          46 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <h2 id="jsp의-이해-및-기초-동적-웹-페이지-구현-메커니즘">JSP의 이해 및 기초: 동적 웹 페이지 구현 메커니즘</h2>
+
+<p>본 포스팅에서는 웹 개발의 핵심 기술 중 하나인 <strong>JSP(Java Server Pages)</strong>에 대해 다룹니다. 동적 웹 페이지의 개념과 JSP의 필요성, 서블릿과의 관계, 그리고 JSP 파일의 기본 구조 및 주요 요소를 분석하고자 합니다.</p>
+
+<hr />
+
+<h3 id="-jsp-개요-및-동적-웹-페이지의-이해">🌟 JSP 개요 및 동적 웹 페이지의 이해</h3>
+
+<p>JSP는 <strong>동적 웹 페이지 생성을 위한 Java 기반의 서버측 웹 프로그래밍 기술</strong>입니다. ‘동적’이라는 개념은 웹 페이지의 콘텐츠가 요청 시점에 따라 가변적으로 생성됨을 의미해요.</p>
+
+<ul>
+  <li>
+    <p><strong>정적 웹 페이지</strong>: <code class="language-plaintext highlighter-rouge">.html</code>, <code class="language-plaintext highlighter-rouge">.css</code>, <code class="language-plaintext highlighter-rouge">.js</code> 파일 또는 이미지와 같이 <strong>서버에 저장된 형태 그대로 클라이언트 브라우저에 전송되어 출력</strong>되는 페이지를 지칭합니다. 모든 요청에 대해 동일한 콘텐츠를 제공하며, 콘텐츠의 실시간 변경은 불가해요. 이는 인쇄된 매체와 유사한 특성을 가집니다.</p>
+  </li>
+  <li>
+    <p><strong>동적 웹 페이지</strong>: 동일한 URL로의 접속에도 불구하고 <strong>요청 시마다 콘텐츠가 변경될 수 있는 페이지</strong>를 의미합니다. 서버는 클라이언트 요청을 수신하여 실시간으로 데이터를 처리하고, 그 결과에 기반하여 새로운 HTML 문서를 동적으로 생성하여 브라우저에 전송합니다. 예를 들어, 사용자 로그인 시 개인화된 정보(예: 사용자 이름, 주문 내역)가 표시되는 ‘마이페이지’는 동적 웹 페이지의 전형적인 사례입니다. 은행 잔고 조회, 실시간 뉴스 피드, 전자상거래 장바구니 등은 모두 동적 페이지의 구현 사례에 해당해요.</p>
+  </li>
+</ul>
+
+<p>JSP는 이와 같이 <strong>클라이언트의 요청에 따라 내용이 동적으로 생성되는 웹 페이지를 Java 언어를 활용하여 서버에서 처리하고 브라우저로 전송하는 기능</strong>을 수행합니다.</p>
+
+<hr />
+
+<h3 id="-서블릿servlet과-jsp의-역할-분담">💡 서블릿(Servlet)과 JSP의 역할 분담</h3>
+
+<p>JSP는 서블릿과 함께 동적 웹 페이지를 생성하는 Java 기반 기술이에요. 이 두 기술은 상호 보완적인 관계를 가집니다.</p>
+
+<h4 id="서블릿-servlet"><strong>서블릿 (Servlet)</strong></h4>
+
+<p>서블릿은 “웹 환경에서 실행 가능한 Java 클래스”로 정의됩니다. 순수한 <strong>Java 코드</strong>로 구현되며, <code class="language-plaintext highlighter-rouge">HttpServlet</code> 클래스를 상속받아 웹 요청 처리 및 응답 생성 등 핵심 기능을 수행해요.</p>
+
+<p>그러나 서블릿을 사용하여 HTML 페이지를 직접 생성하는 것은 비효율적입니다. HTML 태그를 <code class="language-plaintext highlighter-rouge">out.println()</code> 등의 Java 코드로 개별적으로 생성하고 조합해야 하므로, 코드의 가독성이 저하되고 HTML 구조 파악이 어렵다는 단점이 있어요. 이는 프로그래밍 작업의 복잡성을 증가시키는 요인으로 작용합니다.</p>
+
+<h4 id="jsp-java-server-pages"><strong>JSP (Java Server Pages)</strong></h4>
+
+<p>JSP는 서블릿의 이러한 비효율성을 개선하기 위해 개발되었습니다. JSP는 <strong>HTML을 기본 구조로 하며, 필요에 따라 Java 코드를 삽입하는 형태</strong>를 채택합니다. 이는 HTML 문서 내에 Java 코드 실행 지시자를 포함하는 방식으로, 개발의 직관성과 편의성을 크게 향상시킵니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">구분</th>
+      <th style="text-align: left">서블릿</th>
+      <th style="text-align: left">JSP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>HTML 생성 방식</strong></td>
+      <td style="text-align: left">Java 코드 내에서 <code class="language-plaintext highlighter-rouge">out.println()</code> 등을 활용하여 전체 HTML 페이지 구성 (생산성 저하)</td>
+      <td style="text-align: left">HTML 코드 내 <code class="language-plaintext highlighter-rouge">&lt;% ... %&gt;</code> 형태의 스크립트 요소를 통해 Java 코드 삽입 (직관성 및 편의성 증대)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>변수 초기화</strong></td>
+      <td style="text-align: left">변수 선언 및 초기화 로직을 직접 구현해야 합니다</td>
+      <td style="text-align: left">웹 컨테이너에서 제공하는 <code class="language-plaintext highlighter-rouge">request</code>, <code class="language-plaintext highlighter-rouge">response</code> 등의 <strong>내장 객체</strong>를 즉시 활용 가능해요</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>주요 용도</strong></td>
+      <td style="text-align: left">클라이언트 요청 처리 및 비즈니스 <strong>로직 구현 (컨트롤러 역할)</strong></td>
+      <td style="text-align: left">처리 결과의 시각적 표현 및 사용자 인터페이스 제공 <strong>(뷰(View/화면) 역할)</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>실제 웹 애플리케이션 개발에서는 서블릿과 JSP를 상호 연동하여 사용합니다. 서블릿이 클라이언트 요청을 수신하고 핵심 비즈니스 로직을 처리하며, JSP는 그 처리 결과를 사용자에게 시각적으로 제공하는 역할을 수행해요. 이는 일반적으로 MVC(Model-View-Controller) 디자인 패턴에서 각자의 역할을 분담하는 형태로 구현됩니다.</p>
+
+<hr />
+
+<h3 id="jsp-파일의-기본-구조">JSP 파일의 기본 구조</h3>
+
+<p>JSP 파일은 외형적으로 HTML 파일과 유사하지만, Java 코드를 실행시키는 특수 ‘요소’들을 포함합니다.</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span> <span class="c">&lt;%-- 💡 1. 지시어: JSP 페이지의 설정 정보 --%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>처음 만들어보는 JSP<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;%!</span> <span class="c1">// 💡 2-1. 스크립트 요소 - 선언부 (멤버 변수/메서드 선언)</span>
+        <span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"JSP"</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getGreeting</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="s">"안녕하세요!"</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="nt">%&gt;</span>
+
+    <span class="nt">&lt;h1&gt;&lt;%=</span> <span class="n">getGreeting</span><span class="o">()</span> <span class="nt">%&gt;</span>, <span class="nt">&lt;%=</span> <span class="n">str1</span> <span class="nt">%&gt;</span>!<span class="nt">&lt;/h1&gt;</span> <span class="c">&lt;%-- 💡 2-2. 스크립트 요소 - 표현식 (값 출력) --%&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;%</span> <span class="c1">// 💡 2-3. 스크립트 요소 - 스크립트릿 (자바 코드 로직)</span>
+            <span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"반갑습니다."</span><span class="o">;</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str2</span> <span class="o">+</span> <span class="s">" 웹 페이지입니다. 함께 공부해요!"</span><span class="o">);</span>
+        <span class="nt">%&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>주요 JSP 요소를 보다 상세하게 설명해 드리겠습니다.</p>
+
+<h3 id="1-jsp-지시어-directives-jsp-페이지의-메타데이터-정의">1. JSP 지시어 (Directives): JSP 페이지의 메타데이터 정의</h3>
+
+<p>지시어는 JSP 페이지가 서블릿 코드로 변환될 때 필요한 메타데이터를 JSP 컨테이너에 제공하는 역할을 합니다. JSP 페이지의 전반적인 설정 정보를 정의하는 데 사용되며, ‘디렉티브(Directive)’라고도 불립니다.</p>
+
+<ul>
+  <li>
+    <p><strong>형식</strong>: <code class="language-plaintext highlighter-rouge">&lt;%@ 지시어이름 속성="값" 속성2="값2" ... %&gt;</code></p>
+  </li>
+  <li>
+    <p><strong>주요 지시어 종류:</strong></p>
+
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">page</code> 지시어</strong>: 현재 JSP 페이지의 전반적인 속성(스크립팅 언어, 콘텐츠 유형, 문자 인코딩, import 등)을 정의합니다. 가장 흔하게 사용되는 지시어입니다.
+        <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+      pageEncoding=</span><span class="s">"UTF-8"</span><span class="na"> import=</span><span class="s">"java.util.List, java.io.IOException"</span> <span class="nt">%&gt;</span>
+</code></pre></div>        </div>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">language</code>: JSP 페이지에서 사용할 스크립팅 언어 (기본값: <code class="language-plaintext highlighter-rouge">java</code>)</li>
+          <li><code class="language-plaintext highlighter-rouge">contentType</code>: HTTP 응답의 MIME 타입과 문자 인코딩 (예: <code class="language-plaintext highlighter-rouge">text/html; charset=UTF-8</code>)</li>
+          <li><code class="language-plaintext highlighter-rouge">pageEncoding</code>: JSP 파일 자체의 문자 인코딩 방식 (소스 파일 저장 인코딩과 동일하게 설정)</li>
+          <li><code class="language-plaintext highlighter-rouge">import</code>: Java의 <code class="language-plaintext highlighter-rouge">import</code> 문과 동일하게 외부 패키지 또는 클래스 선언</li>
+          <li><code class="language-plaintext highlighter-rouge">session</code>: 세션 사용 여부 (기본값: <code class="language-plaintext highlighter-rouge">true</code>)</li>
+          <li><code class="language-plaintext highlighter-rouge">errorPage</code>: 예외 발생 시 이동할 에러 페이지 경로</li>
+          <li><code class="language-plaintext highlighter-rouge">isErrorPage</code>: 현재 페이지가 에러 페이지인지 여부 (<code class="language-plaintext highlighter-rouge">true</code>일 경우 <code class="language-plaintext highlighter-rouge">exception</code> 내장 객체 사용 가능)</li>
+          <li><code class="language-plaintext highlighter-rouge">trimDirectiveWhitespaces="true"</code>: JSP 코드 작성 시 지시어들이 남기는 불필요한 빈 줄이나 공백을 자동으로 제거합니다. 생성되는 HTML 소스 코드의 가독성 향상 및 파일 크기 감소에 기여합니다.
+            <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+      pageEncoding=</span><span class="s">"UTF-8"</span><span class="na"> trimDirectiveWhitespaces=</span><span class="s">"true"</span><span class="nt">%&gt;</span>
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li><strong><code class="language-plaintext highlighter-rouge">include</code> 지시어</strong>: 외부 파일을 현재 JSP 파일 내부에 <strong>정적으로</strong> 삽입할 때 사용합니다. 페이지의 공통 컴포넌트(헤더, 푸터 등)를 재활용하는 데 유용하며, <strong>컴파일 시점</strong>에 파일의 내용이 병합됩니다.
+        <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;%@ include </span><span class="na">file=</span><span class="s">"common/header.jsp"</span> <span class="nt">%&gt;</span>
+</code></pre></div>        </div>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">file</code>: 포함할 파일의 상대 경로</li>
+          <li><strong>장점</strong>: 코드의 재사용성을 극대화하고, 유지보수 효율성을 크게 향상시킵니다.</li>
+        </ul>
+      </li>
+      <li><strong><code class="language-plaintext highlighter-rouge">taglib</code> 지시어</strong>: JSTL(JSP Standard Tag Library)과 같은 외부 라이브러리 태그나 EL(Expression Language)에서 Java 클래스 메서드 호출을 선언하는 데 사용됩니다.
+        <div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"[http://java.sun.com/jsp/jstl/core](http://java.sun.com/jsp/jstl/core)"</span> <span class="nt">%&gt;</span>
+</code></pre></div>        </div>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">prefix</code>: 태그 라이브러리 접두어 (예: <code class="language-plaintext highlighter-rouge">c</code> for JSTL core)</li>
+          <li><code class="language-plaintext highlighter-rouge">uri</code>: 태그 라이브러리의 URI (식별자)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="2-jsp-스크립트-요소-scripting-elements-html-내부에-통합된-자바-코드-블록">2. JSP 스크립트 요소 (Scripting Elements): HTML 내부에 통합된 자바 코드 블록</h3>
+
+<p>JSP의 핵심 문법으로서, HTML 문서 내부에 자바 코드를 직접 삽입하여 동적인 기능을 구현하게 해주는 영역입니다. 크게 세 가지 종류로 구성됩니다.</p>
+
+<ul>
+  <li><strong>선언부 (Declaration)</strong>
+    <ul>
+      <li><strong>형식</strong>: <code class="language-plaintext highlighter-rouge">&lt;%! Java 코드 %&gt;</code></li>
+      <li><strong>역할</strong>: 해당 JSP 페이지(변환된 서블릿 클래스)의 <strong>멤버 변수(필드)</strong>나 <strong>메서드</strong>를 정의하는 영역입니다. JSP 페이지 전체에서 공유하여 사용할 수 있는 변수나 메서드를 정의할 때 사용합니다.</li>
+      <li><strong>특징</strong>: 서블릿으로 변환 시 <code class="language-plaintext highlighter-rouge">_jspService()</code> 메서드 <strong>바깥쪽</strong>에 위치하므로, 선언된 요소들은 전역적으로 접근 가능합니다.</li>
+    </ul>
+
+    <hr />
+
+    <p><strong>💡 _jspService() 메서드란?</strong>
+  JSP(JavaServer Pages) 파일은 웹 서버에서 바로 실행되는 것이 아니라, WAS(Web Application Server, 예를 들어 Tomcat)에 의해 자바 서블릿(Servlet) 파일로 변환된 후 컴파일되어 실행됩니다. 이때, JSP 페이지 안에 작성된 대부분의 HTML 코드와 스크립트릿(스크립트 &lt;% %&gt; 태그 안에 작성된 자바 코드)은 변환된 서블릿의 _jspService() 메서드 안에 들어가게 됩니다.</p>
+
+    <hr />
+
+    <p><strong>간단히 비유하자면:</strong>
+  JSP 페이지를 식당의 메뉴판이라고 생각해 보세요. 손님(클라이언트)이 메뉴판을 보고 음식을 주문(요청)하면, 주방장(WAS의 JSP 컨테이너)이 메뉴판(JSP)을 보고 레시피(변환된 서블릿의 _jspService() 메서드)에 따라 요리(요청 처리)를 해서 손님에게 내놓는(응답) 것과 비슷합니다.</p>
+
+    <hr />
+
+    <p>_jspService() 메서드는 이렇게 웹 요청이 올 때마다 실제로 “요리”를 하는 레시피의 핵심 부분인 거죠.</p>
+
+    <hr />
+  </li>
+  <li><strong>스크립트릿 (Scriptlet)</strong>
+    <ul>
+      <li><strong>형식</strong>: <code class="language-plaintext highlighter-rouge">&lt;% Java 코드 %&gt;</code></li>
+      <li><strong>역할</strong>: 클라이언트의 <strong>요청이 발생할 때마다 실행되어야 할 자바 코드 로직</strong>을 작성하는 영역입니다. 반복문, 조건문, 지역 변수 선언 및 연산 등 대부분의 자바 코드가 이 영역에 작성됩니다.</li>
+      <li><strong>특징</strong>: 서블릿으로 변환될 때 <code class="language-plaintext highlighter-rouge">_jspService()</code> 메서드 <strong>안쪽</strong>에 직접 포함됩니다. 따라서 이곳에 선언된 변수는 해당 스크립트릿 또는 <code class="language-plaintext highlighter-rouge">_jspService()</code> 메서드 내에서만 유효한 <strong>지역 변수</strong>입니다.</li>
+    </ul>
+  </li>
+  <li><strong>표현식 (Expression)</strong>
+    <ul>
+      <li><strong>형식</strong>: <code class="language-plaintext highlighter-rouge">&lt;%= 값 %&gt;</code></li>
+      <li><strong>역할</strong>: 실행 결과로 <strong>하나의 값</strong> (변수, 수식, 상수, 반환 값이 있는 메서드 호출 결과 등)을 <strong>웹 브라우저 화면에 직접 출력</strong>하고자 할 때 사용됩니다. <code class="language-plaintext highlighter-rouge">out.print()</code> 또는 <code class="language-plaintext highlighter-rouge">out.println()</code>을 사용하는 것과 동일한 효과를 냅니다.</li>
+      <li><strong>특징</strong>: 세미콜론(;)을 사용하지 않습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>스크립트 요소 활용 예시 (종합)</strong></p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>JSP 스크립트 요소 총집합<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;%!</span> <span class="c1">// &lt;</span><span class="err">%</span><span class="o">!</span> <span class="o">...</span> <span class="nt">%&gt;</span> 선언부: 멤버 변수와 메서드 선언
+        private int totalAccess = 0; // 이 JSP 페이지의 총 접근 횟수 (멤버 변수)
+
+        public String getWebsiteName() { // 웹사이트 이름 반환 메서드 (멤버 메서드)
+            return "내 멋진 웹사이트";
+        }
+    %&gt;
+
+    <span class="nt">&lt;%</span> <span class="c1">// &lt;</span><span class="err">%</span> <span class="o">...</span> <span class="nt">%&gt;</span> 스크립트릿: 요청마다 실행되는 로직
+        totalAccess++; // 페이지 접근 시마다 totalAccess를 1 증가시킵니다.
+        String userName = "방문객";
+        // 파라미터가 있다면 사용자 이름으로 설정합니다.
+        if (request.getParameter("name") != null <span class="err">&amp;&amp;</span> !request.getParameter("name").isEmpty()) {
+            userName = request.getParameter("name");
+        }
+    %&gt;
+
+    <span class="nt">&lt;h1&gt;&lt;%=</span> <span class="n">getWebsiteName</span><span class="o">()</span> <span class="nt">%&gt;</span>에 오신 것을 환영합니다!<span class="nt">&lt;/h1&gt;</span> <span class="c">&lt;%-- &lt;%= ... %&gt; 표현식: 메서드 결과 출력 --%&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;%=</span> <span class="n">userName</span> <span class="nt">%&gt;</span>님, 안녕하세요!<span class="nt">&lt;/p&gt;</span> <span class="c">&lt;%-- 표현식: 변수 값 출력 --%&gt;</span>
+    <span class="nt">&lt;p&gt;</span>이 페이지는 지금까지 <span class="nt">&lt;%=</span> <span class="n">totalAccess</span> <span class="nt">%&gt;</span>번 방문되었습니다.<span class="nt">&lt;/p&gt;</span> <span class="c">&lt;%-- 표현식: 멤버 변수 출력 --%&gt;</span>
+    <span class="nt">&lt;p&gt;</span>오늘의 행운의 숫자: <span class="nt">&lt;%=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="nt">%&gt;&lt;/p&gt;</span> <span class="c">&lt;%-- 표현식: 수식 결과 출력 --%&gt;</span>
+
+    <span class="nt">&lt;%</span> <span class="c1">// 스크립트릿: 조건문 예시</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">totalAccess</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nt">%&gt;</span>
+        <span class="nt">&lt;p&gt;</span>아직 새로운 방문객이 많아요!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;%</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="nt">%&gt;</span>
+        <span class="nt">&lt;p&gt;</span>꾸준히 찾아주셔서 감사합니다!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;%</span>
+        <span class="o">}</span>
+    <span class="nt">%&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="3-jsp-주석-comments">3. JSP 주석 (Comments)</h3>
+
+<p>JSP 파일 내에서 코드에 대한 설명을 추가하거나 특정 코드를 임시로 비활성화할 때 사용됩니다.</p>
+
+<ul>
+  <li><strong>HTML 주석 (클라이언트 주석)</strong>
+    <ul>
+      <li><strong>형식</strong>: ``</li>
+      <li><strong>기능</strong>: 웹 브라우저의 ‘소스 보기’에서 <strong>확인 가능한 주석</strong>입니다. HTML 코드가 클라이언트(브라우저)로 전송될 때 주석 내용도 함께 전송됩니다.</li>
+    </ul>
+  </li>
+  <li><strong>JSP 주석 (서버 주석)</strong>
+    <ul>
+      <li><strong>형식</strong>: <code class="language-plaintext highlighter-rouge">&lt;%-- 주석 내용 --%&gt;</code></li>
+      <li><strong>기능</strong>: JSP가 서블릿으로 변환될 때 <strong>제외되는 주석</strong>입니다. 따라서 클라이언트(브라우저)에게는 전송되지 않으므로, 웹 브라우저의 ‘소스 보기’에서는 확인할 수 없습니다. 보안상 민감한 정보나 개발자 내부 주석을 작성할 때 유용합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-마치며">📝 마치며</h3>
+
+<p>본 문서에서는 <strong>JSP</strong>의 핵심 개념부터 시작하여, <strong>동적 웹 페이지</strong>의 작동 원리, <strong>서블릿</strong>과의 역할 분담, 그리고 <strong>JSP 파일의 기본 구조와 주요 요소(지시어, 스크립트 요소, 주석)</strong>를 상세히 살펴보았습니다. JSP가 HTML에 자바 코드를 효율적으로 통합하여 동적인 콘텐츠를 생성하는 메커니즘을 이해하는 데 중점을 두었어요.</p>
+
+<p>특히, JSP <strong>지시어(Directive)</strong>의 다양한 속성들이 JSP 페이지의 동작을 어떻게 제어하는지, 그리고 <strong>스크립트 요소</strong>를 통해 실제 자바 코드를 HTML 내부에 어떻게 효과적으로 포함하는지를 알아보았습니다. 이러한 기본 지식은 JSP 기반 웹 애플리케이션 개발의 견고한 토대가 될 것입니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp-basic(2)/" class="btn btn--inverse" rel="prev">
+            ← 웹 개발 기초 개념 정리
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp-basic(3-2)/" class="btn btn--inverse" rel="next">
+            JSP의 이해 및 기초 (2) →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/jsp/" class="taxonomy__item">jsp</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-11T08:09:47+00:00">June 11, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=JSP%EC%9D%98+%EC%9D%B4%ED%95%B4+%EB%B0%8F+%EA%B8%B0%EC%B4%88%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%283%29%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%283%29%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/jsp-basic(3)/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=JSP%EC%9D%98+%EC%9D%B4%ED%95%B4+%EB%B0%8F+%EA%B8%B0%EC%B4%88%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%283%29%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

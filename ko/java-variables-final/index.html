@@ -1,0 +1,1193 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 변수 - Lorem Tech Blog</title>
+<meta name="description" content="변수(Variable), 이 단어를 들었을 때 여러분은 무엇을 떠올리시나요?">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 변수">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-variables-final/">
+
+
+  <meta property="og:description" content="변수(Variable), 이 단어를 들었을 때 여러분은 무엇을 떠올리시나요?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-10T01:06:48+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-variables-final/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 변수">
+    
+    
+      <meta itemprop="description" content="변수(Variable), 이 단어를 들었을 때 여러분은 무엇을 떠올리시나요?">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-10T01:06:48+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-variables-final/" itemprop="url">자바 변수</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          57 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <h2 id="변수variable-이-단어를-들었을-때-여러분은-무엇을-떠올리시나요"><strong>변수(Variable)</strong>, 이 단어를 들었을 때 여러분은 무엇을 떠올리시나요?</h2>
+
+<p>아마 학창 시절 수학 시간에 만났던 ‘미지수 x’처럼, <strong>‘아직 정해지지 않은 값’</strong>을 먼저 떠올리는 분도 계실 거예요. 하지만 자바(Java)를 비롯한 대부분의 프로그래밍 언어에서 변수는 조금 더 실용적이고 구체적인 의미를 가집니다. 바로 <strong>“데이터를 저장하기 위해 컴퓨터 메모리 공간에 붙여진 이름”</strong>입니다.<br /><br />
+코드를 작성할 때 변수를 얼마나 잘 이해하고 활용하느냐에 따라 코드의 <strong>구조, 안정성, 그리고 가장 중요한 가독성</strong>이 크게 달라집니다. ‘변수’라는 개념이 너무 기초적이라서 대수롭지 않게 생각할 수도 있지만, 탄탄한 집을 짓기 위한 튼튼한 주춧돌처럼, 안정적인 프로그램을 만들기 위한 첫걸음은 바로 변수에 대한 정확한 이해에서 시작됩니다.</p>
+
+<hr />
+
+<h2 id="변수의-종류와-생명-주기-언제-태어나고-사라지는가">변수의 종류와 생명 주기: 언제 태어나고 사라지는가?</h2>
+
+<p>자바에서 변수는 선언되는 위치와 목적, 그리고 프로그램 내에서 살아있는 기간(생명 주기)에 따라 크게 네 가지 종류로 나눌 수 있습니다. 각 변수는 저마다의 역할과 존재 범위를 가지고 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>선언 위치</th>
+      <th>생명 주기</th>
+      <th>특징 및 역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>지역 변수 (Local Variable)</strong></td>
+      <td>메서드, 생성자, 또는 특정 블록 내부</td>
+      <td>해당 블록이 종료될 때까지 유지, 블록 종료 시 소멸</td>
+      <td>이름 그대로 <strong>특정 지역(블록) 안에서만 유효</strong>한 변수입니다. 메서드나 <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">for</code>와 같은 제어문의 <code class="language-plaintext highlighter-rouge">{}</code> 블록 안에서 선언됩니다. 해당 블록을 벗어나면 더 이상 접근할 수 없고, 메모리에서 자동으로 해제됩니다. 따라서 <code class="language-plaintext highlighter-rouge">printAge</code> 메서드 안에서 선언된 <code class="language-plaintext highlighter-rouge">age</code> 변수는 오직 그 <code class="language-plaintext highlighter-rouge">printAge</code> 메서드 안에서만 사용 가능하며, 다른 메서드에서는 접근할 수 없습니다. 중요한 점은, <strong>사용 전에 반드시 개발자가 직접 초기화해야 합니다.</strong></td>
+    </tr>
+    <tr>
+      <td><strong>인스턴스 변수 (Instance Variable)</strong></td>
+      <td>클래스 내부, <code class="language-plaintext highlighter-rouge">static</code> 키워드 없음</td>
+      <td>객체(인스턴스)가 소멸될 때까지 유지</td>
+      <td><strong>클래스가 가진 ‘속성’</strong>을 표현할 때 사용됩니다. <code class="language-plaintext highlighter-rouge">static</code> 키워드 없이 클래스 내부에 선언되며, 클래스로부터 <strong>객체(인스턴스)가 생성될 때 함께 생성</strong>됩니다. 각 객체마다 고유한 인스턴스 변수 값을 가질 수 있습니다. 예를 들어, <code class="language-plaintext highlighter-rouge">Person</code> 클래스의 <code class="language-plaintext highlighter-rouge">age</code> 변수는 각 <code class="language-plaintext highlighter-rouge">Person</code> 객체마다 다른 나이를 가질 수 있게 해줍니다. 이 변수들은 객체가 메모리에서 사라질 때 함께 소멸합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>클래스 변수 (Class Variable)</strong></td>
+      <td>클래스 내부, <code class="language-plaintext highlighter-rouge">static</code> 키워드 사용</td>
+      <td>프로그램 종료 시까지 유지</td>
+      <td><code class="language-plaintext highlighter-rouge">static</code> 키워드를 사용하여 클래스 내부에 선언됩니다. 인스턴스 변수와 달리, 객체 생성과 무관하게 <strong>프로그램이 시작될 때 메모리에 로드되어 프로그램이 종료될 때까지 유지</strong>됩니다. 모든 객체가 이 변수 하나를 공유하며, 클래스 이름을 통해 직접 접근할 수 있습니다. 예를 들어, <code class="language-plaintext highlighter-rouge">Person</code> 클래스의 <code class="language-plaintext highlighter-rouge">count</code> 변수는 모든 <code class="language-plaintext highlighter-rouge">Person</code> 객체의 수를 세는 데 사용될 수 있으며, 모든 <code class="language-plaintext highlighter-rouge">Person</code> 객체가 동일한 <code class="language-plaintext highlighter-rouge">count</code> 값을 참조하게 됩니다.</td>
+    </tr>
+    <tr>
+      <td><strong>매개변수 (Parameter)</strong></td>
+      <td>메서드 또는 생성자의 괄호 안</td>
+      <td>메서드/생성자 실행 중 유지</td>
+      <td>메서드나 생성자가 호출될 때 외부로부터 값을 전달받기 위해 사용되는 변수입니다. 메서드 시그니처의 괄호 <code class="language-plaintext highlighter-rouge">()</code> 안에 선언되며, 해당 메서드나 생성자가 실행되는 동안에만 유효합니다. 지역 변수와 마찬가지로, 이들은 호출 시점에 값이 할당되므로 따로 초기화할 필요는 없습니다. <code class="language-plaintext highlighter-rouge">public void speak(String message)</code>에서 <code class="language-plaintext highlighter-rouge">message</code>가 바로 매개변수입니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>⚠️ <strong>잠깐!</strong></p>
+
+  <p>이 글은 자바 변수의 기본 개념에 집중하고 있습니다.</p>
+
+  <p><strong>클래스 기반 변수(인스턴스 변수, 클래스 변수)</strong>에 대한 더 깊이 있는 내용은 자바의 꽃이라고 할 수 있는 <strong>객체 지향 프로그래밍(OOP)</strong>을 다루는 포스팅에서 상세히 설명해 드릴 예정입니다. 그때까지는 ‘변수가 이런 종류로 나뉘는구나’ 정도로 이해하셔도 충분합니다!</p>
+</blockquote>
+
+<hr />
+
+<h2 id="변수-선언과-초기화-예시-코드로-보는-변수의-자리">변수 선언과 초기화 예시: 코드로 보는 변수의 자리</h2>
+
+<p>이제 위에서 살펴본 변수들이 실제 코드에서는 어떻게 선언되고 초기화되는지 간단한 예시를 통해 살펴보겠습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="c1">// 인스턴스 변수: 각 Person 객체마다 고유한 나이를 가집니다.</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span> 
+
+    <span class="c1">// 클래스 변수: 모든 Person 객체가 공유하는, 생성된 사람의 총수를 나타냅니다.</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> 
+
+    <span class="c1">// 생성자: 객체가 생성될 때 호출되며, 인스턴스 변수를 초기화하거나 클래스 변수를 증가시키는 데 사용됩니다.</span>
+    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="kt">int</span> <span class="n">initialAge</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">initialAge</span><span class="o">;</span> <span class="c1">// 매개변수 initialAge를 사용하여 인스턴스 변수 age를 초기화</span>
+        <span class="n">count</span><span class="o">++;</span> <span class="c1">// Person 객체가 하나 생성될 때마다 count를 1씩 증가</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 메서드: 매개변수와 지역 변수를 활용하는 예시입니다.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// message는 매개변수입니다.</span>
+        <span class="c1">// 지역 변수: speak 메서드 안에서만 유효하며, 메시지에 느낌표를 추가하는 용도로 사용됩니다.</span>
+        <span class="nc">String</span> <span class="n">localMessage</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">;</span> 
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"🗣️ "</span> <span class="o">+</span> <span class="n">localMessage</span><span class="o">);</span> 
+    <span class="o">}</span>
+
+    <span class="c1">// 인스턴스 변수와 클래스 변수 값을 출력하는 메서드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">displayInfo</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나이: "</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">+</span> <span class="s">"세"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"총 생성된 사람 수: "</span> <span class="o">+</span> <span class="nc">Person</span><span class="o">.</span><span class="na">count</span> <span class="o">+</span> <span class="s">"명"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span> <span class="c1">// Person 객체 p1 생성, age=30, count=1</span>
+        <span class="n">p1</span><span class="o">.</span><span class="na">speak</span><span class="o">(</span><span class="s">"안녕하세요"</span><span class="o">);</span> <span class="c1">// localMessage = "안녕하세요!"</span>
+        <span class="n">p1</span><span class="o">.</span><span class="na">displayInfo</span><span class="o">();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--- 다음 사람 ---"</span><span class="o">);</span>
+
+        <span class="nc">Person</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span> <span class="c1">// Person 객체 p2 생성, age=20, count=2</span>
+        <span class="n">p2</span><span class="o">.</span><span class="na">speak</span><span class="o">(</span><span class="s">"반갑습니다"</span><span class="o">);</span> <span class="c1">// localMessage = "반갑습니다!"</span>
+        <span class="n">p2</span><span class="o">.</span><span class="na">displayInfo</span><span class="o">();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--- 클래스 변수 확인 ---"</span><span class="o">);</span>
+        <span class="c1">// 클래스 변수는 클래스 이름으로 직접 접근할 수 있습니다.</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"현재까지 총 사람 수: "</span> <span class="o">+</span> <span class="nc">Person</span><span class="o">.</span><span class="na">count</span> <span class="o">+</span> <span class="s">"명"</span><span class="o">);</span> 
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>실행 결과:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🗣️ 안녕하세요!
+나이: 30세
+총 생성된 사람 수: 1명
+--- 다음 사람 ---
+🗣️ 반갑습니다!
+나이: 20세
+총 생성된 사람 수: 2명
+--- 클래스 변수 확인 ---
+현재까지 총 사람 수: 2명
+</code></pre></div></div>
+
+<p>이 예시를 통해 각 변수의 선언 위치와 사용 범위가 어떻게 다른지 좀 더 명확하게 이해할 수 있을 거예요.</p>
+
+<hr />
+
+<h2 id="️-지역-변수는-반드시-초기화-초기화하지-않으면-컴파일-에러가-발생합니다">⚠️ 지역 변수는 반드시 초기화! 초기화하지 않으면 컴파일 에러가 발생합니다</h2>
+
+<p>지역 변수(Local Variable)는 앞서 설명했듯이, 특정 블록 안에서 선언되고 그 블록 안에서만 사용 가능한 변수입니다. 그리고 이 지역 변수에는 아주 중요한 규칙이 하나 있습니다. 바로 <strong>사용하기 전에 반드시 초기화(값을 할당)해야 한다</strong>는 것입니다.</p>
+
+<p>자바는 매우 안전 지향적인 언어입니다. 만약 초기화되지 않은 변수를 사용하게 되면, 그 변수에는 메모리에 남아있던 알 수 없는 ‘쓰레기 값’이 들어있을 수 있고, 이는 프로그램의 예측 불가능한 동작이나 심각한 오류로 이어질 수 있습니다. 자바 컴파일러는 이러한 위험을 사전에 방지하기 위해, 초기화되지 않은 지역 변수를 사용하려 하면 가차 없이 <strong>컴파일 에러</strong>를 발생시킵니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalVariableExample</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printAge</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span> <span class="c1">// age 변수 선언. 아직 초기화되지 않았습니다.</span>
+
+        <span class="c1">// System.out.println(age); // ❌ 컴파일 에러 발생!</span>
+                                  <span class="c1">// "variable age might not have been initialized" (변수 age가 초기화되지 않았을 수 있습니다.)</span>
+                                  <span class="c1">// 자바는 컴파일 시점에 이 변수에 어떤 값이 들어있을지 알 수 없기 때문에 오류를 냅니다.</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInitializedAge</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>     <span class="c1">// age 변수 선언</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="mi">26</span><span class="o">;</span>    <span class="c1">// ✨ 선언 후 26이라는 값으로 초기화! 이제 age 변수에는 26이 확실하게 들어있습니다.</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"제 나이는 "</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s">"살입니다."</span><span class="o">);</span> <span class="c1">// ✅ 초기화 되었으므로 정상 출력!</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">LocalVariableExample</span> <span class="n">example</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalVariableExample</span><span class="o">();</span>
+        <span class="n">example</span><span class="o">.</span><span class="na">printInitializedAge</span><span class="o">();</span>
+        <span class="c1">// example.printAge(); // 이 메서드를 호출하면 컴파일 에러가 발생합니다.</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>출력 결과:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>제 나이는 26살입니다.
+</code></pre></div></div>
+
+<p>보셨나요? 지역 변수는 값이 확정되어야만 사용할 수 있습니다. 개발자가 명시적으로 값을 지정해주는 것은 선택이 아니라 필수입니다.</p>
+
+<hr />
+
+<h2 id="자바의-기본형-변수-primitive-types-데이터의-크기와-종류를-이해하다">자바의 기본형 변수 (Primitive Types): 데이터의 크기와 종류를 이해하다</h2>
+
+<p>자바에서 변수는 크게 <strong>기본형(Primitive Type)</strong>과 <strong>참조형(Reference Type)</strong>으로 나뉩니다. 이 두 가지는 데이터를 메모리에 저장하는 방식이 다릅니다. 기본형 변수는 실제 데이터 값을 메모리에 직접 저장하는 반면, 참조형 변수는 객체의 메모리 주소를 저장합니다.</p>
+
+<p>이 섹션에서는 자바의 8가지 기본형(Primitive Type) 변수에 대해 자세히 알아보겠습니다. 이들은 정수, 실수, 문자, 논리값 등 가장 기본적인 데이터 타입을 표현하며, 각 타입마다 저장할 수 있는 값의 범위와 크기가 정해져 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>📂 분류</th>
+      <th>🧪 타입</th>
+      <th>📏 크기</th>
+      <th>📊 기본값</th>
+      <th>📖 설명</th>
+      <th>범위 (근사치)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>정수형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">byte</code></td>
+      <td>1 byte</td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+      <td>가장 작은 정수형. 네트워크 데이터나 파일 처리 시 주로 사용됩니다.</td>
+      <td>-128 ~ 127</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">short</code></td>
+      <td>2 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+      <td><code class="language-plaintext highlighter-rouge">byte</code>보다 큰 정수형.</td>
+      <td>-32,768 ~ 32,767</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td>4 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+      <td><strong>정수형의 기본</strong>입니다. 가장 많이 사용되는 정수형 타입입니다.</td>
+      <td>약 -20억 ~ 20억</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">long</code></td>
+      <td>8 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">0L</code></td>
+      <td>매우 큰 정수를 다룰 때 사용됩니다. 숫자 뒤에 <code class="language-plaintext highlighter-rouge">L</code> 또는 <code class="language-plaintext highlighter-rouge">l</code>을 붙여 <code class="language-plaintext highlighter-rouge">long</code> 타입임을 명시합니다.</td>
+      <td>약 -900경 ~ 900경</td>
+    </tr>
+    <tr>
+      <td><strong>실수형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>4 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">0.0f</code></td>
+      <td>단정밀도 부동소수점 수. 숫자 뒤에 <code class="language-plaintext highlighter-rouge">F</code> 또는 <code class="language-plaintext highlighter-rouge">f</code>를 붙여 <code class="language-plaintext highlighter-rouge">float</code> 타입임을 명시합니다.</td>
+      <td>약 $\pm 3.4 \times 10^{38}$</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">double</code></td>
+      <td>8 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">0.0d</code></td>
+      <td><strong>실수형의 기본</strong>이자 배정밀도 부동소수점 수. <code class="language-plaintext highlighter-rouge">float</code>보다 훨씬 정밀하고 넓은 범위를 가집니다. 일반적으로 실수 연산에 사용됩니다. 숫자 뒤에 <code class="language-plaintext highlighter-rouge">D</code> 또는 <code class="language-plaintext highlighter-rouge">d</code>를 붙이거나 생략할 수 있습니다.</td>
+      <td>약 $\pm 1.8 \times 10^{308}$</td>
+    </tr>
+    <tr>
+      <td><strong>문자형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">char</code></td>
+      <td>2 bytes</td>
+      <td><code class="language-plaintext highlighter-rouge">\u0000</code></td>
+      <td>단일 문자를 저장합니다. 유니코드 문자를 표현할 수 있습니다. 작은따옴표(<code class="language-plaintext highlighter-rouge">' '</code>)로 감싸서 사용합니다.</td>
+      <td><code class="language-plaintext highlighter-rouge">\u0000</code> (0) ~ <code class="language-plaintext highlighter-rouge">\uffff</code> (65,535)</td>
+    </tr>
+    <tr>
+      <td><strong>논리형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">boolean</code></td>
+      <td>1 byte (JVM에 따라 다름)</td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>참(<code class="language-plaintext highlighter-rouge">true</code>) 또는 거짓(<code class="language-plaintext highlighter-rouge">false</code>) 두 가지 값만 가집니다. 조건문(<code class="language-plaintext highlighter-rouge">if</code>), 반복문(<code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code>)에서 논리적 판단을 할 때 사용됩니다.</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code>, <code class="language-plaintext highlighter-rouge">false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>💡 <strong>참고:</strong></p>
+
+  <ul>
+    <li><strong>기본형 변수</strong>는 메모리의 <strong>스택(Stack) 영역</strong>에 직접 값을 저장합니다.</li>
+    <li><strong>참조형 변수</strong>는 메모리의 <strong>힙(Heap) 영역</strong>에 생성된 객체의 <strong>주소(Reference)</strong>를 스택 영역에 저장합니다. <code class="language-plaintext highlighter-rouge">String</code> 타입이 대표적인 참조형입니다.
+위 내용에 대해서는 마찬가지로 <strong>객체지향</strong> 포스팅에서 자세히 다룰 것입니다.</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h2 id="변수-이름-짓는-규칙-개발자의-언어-명확함이-핵심">변수 이름 짓는 규칙: 개발자의 언어, 명확함이 핵심!</h2>
+
+<p>변수 이름은 단순히 데이터를 식별하는 것을 넘어, 코드의 <strong>가독성과 유지보수성</strong>에 지대한 영향을 미칩니다. 자바에서 변수 이름을 지을 때는 몇 가지 규칙과 권장 사항이 있습니다. 이를 잘 지키면 다른 개발자가 여러분의 코드를 더 쉽게 이해하고, 나중에 여러분 스스로도 코드를 수정할 때 훨씬 수월할 거예요.</p>
+
+<h3 id="필수-규칙-이것만큼은-꼭-지켜야-합니다">필수 규칙: 이것만큼은 꼭 지켜야 합니다!</h3>
+
+<ol>
+  <li><strong>첫 글자는 영문자, ‘_‘(언더스코어), ‘$’ 중 하나로 시작:</strong> 숫자로 시작할 수 없습니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int age;</code> (O)</li>
+      <li><code class="language-plaintext highlighter-rouge">int _name;</code> (O)</li>
+      <li><code class="language-plaintext highlighter-rouge">int $money;</code> (O)</li>
+      <li><code class="language-plaintext highlighter-rouge">int 1stNumber;</code> (X)</li>
+    </ul>
+  </li>
+  <li><strong>두 번째 글자부터는 숫자, 영문자, ‘_‘(언더스코어), ‘$’ 사용 가능:</strong> 공백이나 특수문자(+, -, *, /, # 등)는 사용할 수 없습니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int user_id;</code> (O)</li>
+      <li><code class="language-plaintext highlighter-rouge">int user id;</code> (X)</li>
+    </ul>
+  </li>
+  <li><strong>자바 예약어(Reserved Words) 사용 불가:</strong> <code class="language-plaintext highlighter-rouge">public</code>, <code class="language-plaintext highlighter-rouge">class</code>, <code class="language-plaintext highlighter-rouge">static</code>, <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">void</code> 등 자바에서 특별한 의미로 사용되는 단어는 변수 이름으로 사용할 수 없습니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int public;</code> (X)</li>
+      <li><code class="language-plaintext highlighter-rouge">int class;</code> (X)</li>
+    </ul>
+  </li>
+  <li><strong>대소문자 구별:</strong> 자바는 대소문자를 엄격히 구별합니다. <code class="language-plaintext highlighter-rouge">myVariable</code>과 <code class="language-plaintext highlighter-rouge">myvariable</code>은 서로 다른 변수로 인식됩니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int totalCount;</code> 와 <code class="language-plaintext highlighter-rouge">int totalcount;</code> 는 다른 변수입니다.</li>
+    </ul>
+  </li>
+  <li><strong>길이 제한 없음:</strong> 이론적으로는 변수 이름의 길이에 제한이 없지만, 너무 길면 가독성이 떨어집니다.</li>
+</ol>
+
+<h3 id="권장-사항-좋은-코드를-위한-약속">권장 사항: 좋은 코드를 위한 약속!</h3>
+
+<ol>
+  <li><strong>의미 있는 이름 사용 (가장 중요!):</strong> 변수가 어떤 데이터를 저장하는지 명확하게 알 수 있도록 이름을 짓는 것이 중요합니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int a;</code> (X) 보다는 <code class="language-plaintext highlighter-rouge">int studentAge;</code> (O)</li>
+      <li><code class="language-plaintext highlighter-rouge">int x;</code> (X) 보다는 <code class="language-plaintext highlighter-rouge">int numberOfItems;</code> (O)</li>
+    </ul>
+  </li>
+  <li><strong>카멜 케이스 (Camel Case) 사용:</strong> 첫 단어는 소문자로 시작하고, 이후 단어의 첫 글자는 대문자로 쓰는 방식입니다. 자바에서 변수 이름을 지을 때 일반적으로 사용하는 규칙입니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">userName</code>, <code class="language-plaintext highlighter-rouge">totalPrice</code>, <code class="language-plaintext highlighter-rouge">employeeId</code></li>
+    </ul>
+  </li>
+  <li><strong>상수(final 변수) 이름은 모두 대문자, 단어는 언더스코어로 연결:</strong> 변경되지 않는 값(상수)을 나타내는 변수는 관례적으로 모두 대문자로 쓰고, 단어 사이는 언더스코어(<code class="language-plaintext highlighter-rouge">_</code>)로 구분합니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">final double PI = 3.14159;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">final int MAX_ATTEMPTS = 5;</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-변수-퀴즈">💡 변수 퀴즈</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">instanceVar</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>            <span class="c1">// 인스턴스 변수</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>       <span class="c1">// 클래스 변수</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">paramVar</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 매개변수</span>
+        <span class="kt">int</span> <span class="n">localVar</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>           <span class="c1">// 지역 변수</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">localVar</span> <span class="o">+</span> <span class="n">paramVar</span> <span class="o">+</span> <span class="n">instanceVar</span> <span class="o">+</span> <span class="n">staticVar</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>위 코드에서 <strong>paramVar</strong>에 대입한 숫자가 <strong>40</strong>이라고 가정해 봅시다. 그렇다면 4가지 변수를 모두 더한 값은 얼마일까요?</p>
+
+<details>
+  <summary>정답 보기</summary>
+<br />
+instanceVar, staticVar, paramVar localVar 각각 10, 20, 40, 30의 값이 대입되어 있으므로 정답은 100입니다.
+
+</details>
+
+<hr />
+
+<h2 id="마치며-변수-개발-여정의-든든한-동반자">마치며: 변수, 개발 여정의 든든한 동반자</h2>
+
+<p>지금까지 자바의 <strong>변수</strong>에 대해 깊이 있게 알아보았습니다. 변수가 단순히 데이터를 담는 그릇이 아니라, 코드의 구조와 가독성, 그리고 프로그램의 안정성까지 책임지는 중요한 요소라는 것을 이해하셨기를 바랍니다.</p>
+
+<ul>
+  <li><strong>변수의 종류</strong>를 이해함으로써 각 데이터가 언제, 어디서, 어떻게 사용되어야 하는지 명확하게 파악할 수 있습니다.</li>
+  <li><strong>지역 변수의 초기화 규칙</strong>은 프로그램의 안정성을 높이는 중요한 안전장치임을 기억하세요.</li>
+  <li><strong>기본형 변수</strong>에 대한 이해는 메모리 관리와 데이터 타입 선택에 대한 감각을 키워줍니다.</li>
+  <li><strong>변수 이름 짓는 규칙과 관례</strong>는 여러분의 코드를 다른 개발자들과 소통하는 강력한 도구로 만들어 줄 것입니다.</li>
+</ul>
+
+<p>변수는 자바 개발자로서 첫걸음을 내딛는 데 가장 기본이 되면서도 핵심적인 개념입니다. 이 기초를 튼튼히 다진다면, 앞으로 만나게 될 더욱 복잡한 개념들도 훨씬 수월하게 익힐 수 있을 거예요.</p>
+
+<p>다음 글에서는 자바의 또 다른 중요한 개념인 <strong>데이터 타입의 형 변환(Type Casting)</strong>에 대해 다룰 예정입니다. 오늘 배운 변수의 개념을 바탕으로, 데이터가 어떻게 변환되고 다루어지는지 함께 알아보는 시간을 갖겠습니다.</p>
+
+<hr />
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-operators/" class="btn btn--inverse" rel="next">
+            자바 변수와 연산자 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-10T01:06:48+00:00">June 10, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+%EB%B3%80%EC%88%98%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-variables-final%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-variables-final%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-variables-final/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+%EB%B3%80%EC%88%98%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-variables-final%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

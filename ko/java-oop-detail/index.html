@@ -1,0 +1,1314 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 핵심 클래스 및 객체 동등 비교 - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 핵심 클래스 및 객체 동등 비교">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-oop-detail/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-25T05:47:51+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-oop-detail/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 핵심 클래스 및 객체 동등 비교">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-25T05:47:51+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-oop-detail/" itemprop="url">자바 핵심 클래스 및 객체 동등 비교</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          64 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="자바-핵심-클래스-object와-유용한-유틸리티-클래스">자바 핵심 클래스: <code class="language-plaintext highlighter-rouge">Object</code>와 유용한 유틸리티 클래스</h2>
+
+<p>지금까지 자바의 기본 문법과 배열과 같은 데이터 구조를 살펴보았습니다. 이제 모든 자바 클래스의 조상인 <strong><code class="language-plaintext highlighter-rouge">java.lang.Object</code></strong> 클래스의 중요한 역할과, 객체지향 프로그래밍에서 필수적인 <strong>객체 동등 비교</strong> 방법에 대해 심도 있게 알아보겠습니다. 또한, 기본 타입을 객체로 다루게 해주는 <strong>포장(Wrapper) 클래스</strong>, 수학 연산을 위한 <code class="language-plaintext highlighter-rouge">Math</code> 클래스, 그리고 날짜와 시간을 처리하는 클래스까지 자바 프로그래밍에 유용한 핵심 클래스들을 함께 다룰 것입니다.</p>
+
+<p>객체지향의 근간을 이루는 객체 간의 관계와 동작 방식을 이해하는 것은 효과적인 자바 애플리케이션 개발의 핵심입니다.</p>
+
+<hr />
+
+<h2 id="javalangobject-모듈-모든-클래스의-조상"><code class="language-plaintext highlighter-rouge">java.lang.Object</code> 모듈: 모든 클래스의 조상</h2>
+
+<p><code class="language-plaintext highlighter-rouge">java.lang.Object</code> 클래스는 자바의 모든 클래스가 명시적으로 상속받지 않아도 <strong>자동으로 상속받는 최상위 클래스</strong>입니다. 따라서 모든 객체는 <code class="language-plaintext highlighter-rouge">Object</code> 클래스에 정의된 메소드들을 사용할 수 있습니다. 이 중 가장 중요한 메소드들은 객체의 동등성을 비교하거나 객체를 문자열로 표현할 때 사용됩니다.</p>
+
+<h3 id="-객체-동등-비교-hashcode와-equals">✅ 객체 동등 비교: <code class="language-plaintext highlighter-rouge">hashCode()</code>와 <code class="language-plaintext highlighter-rouge">equals()</code></h3>
+
+<p>객체지향 프로그래밍에서 두 객체가 ‘같은지’를 판단하는 것은 매우 중요합니다. 자바에서 객체의 동등성 비교는 크게 두 가지 방법으로 이루어집니다.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">==</code> 연산자</strong>: 두 변수가 <strong>동일한 객체(동일한 메모리 주소)</strong>를 참조하는지를 비교합니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">equals()</code> 메소드</strong>: 두 객체의 <strong>내용(값)이 동일한지</strong>를 비교합니다. 기본적으로 <code class="language-plaintext highlighter-rouge">Object</code> 클래스의 <code class="language-plaintext highlighter-rouge">equals()</code>는 <code class="language-plaintext highlighter-rouge">==</code>와 동일하게 주소를 비교하지만, 대부분의 클래스에서는 이 메소드를 재정의하여 객체의 논리적 동등성을 판단합니다.</li>
+</ul>
+
+<p><strong><code class="language-plaintext highlighter-rouge">hashCode()</code>와 <code class="language-plaintext highlighter-rouge">equals()</code>의 관계:</strong></p>
+
+<p>자바 컬렉션 프레임워크(특히 <code class="language-plaintext highlighter-rouge">HashSet</code>, <code class="language-plaintext highlighter-rouge">HashMap</code> 등)에서 객체를 저장하거나 검색할 때 <code class="language-plaintext highlighter-rouge">hashCode()</code>와 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드를 함께 사용합니다. 중요한 규칙은 다음과 같습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hashCode()</code> 값이 같은 두 객체는 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드가 <code class="language-plaintext highlighter-rouge">true</code>를 반환할 <strong>필요는 없습니다.</strong> (서로 다른 객체라도 해시 충돌로 인해 <code class="language-plaintext highlighter-rouge">hashCode()</code>가 같을 수 있습니다.)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">equals()</code> 메소드가 <code class="language-plaintext highlighter-rouge">true</code>를 반환하는 두 객체는 반드시 <code class="language-plaintext highlighter-rouge">hashCode()</code> 값도 같아야 합니다.</strong> (만약 그렇지 않으면 <code class="language-plaintext highlighter-rouge">Set</code>에 동일한 객체가 두 번 저장되거나 <code class="language-plaintext highlighter-rouge">Map</code>에서 객체를 찾지 못하는 문제가 발생할 수 있습니다.)</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjectEqualityExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"hello"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"hello"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="n">str1</span><span class="o">;</span> <span class="c1">// 같은 객체를 참조</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str1 == str2: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="o">));</span> <span class="c1">// false (다른 객체)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str1.equals(str2): "</span> <span class="o">+</span> <span class="n">str1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str2</span><span class="o">));</span> <span class="c1">// true (내용 동일)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str1.hashCode(): "</span> <span class="o">+</span> <span class="n">str1</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str2.hashCode(): "</span> <span class="o">+</span> <span class="n">str2</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str1 == str3: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str3</span><span class="o">));</span> <span class="c1">// true (동일 객체)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str1.equals(str3): "</span> <span class="o">+</span> <span class="n">str1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str3</span><span class="o">));</span> <span class="c1">// true (내용 동일)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>출력 결과:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>str1 == str2: false
+str1.equals(str2): true
+str1.hashCode(): 99162322
+str2.hashCode(): 99162322
+str1 == str3: true
+str1.equals(str3): true
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="-객체-정의-패턴-pojo-클래스-설계의-기초">✅ 객체 정의 패턴 (POJO): 클래스 설계의 기초</h3>
+
+<p>자바에서 일반적인 객체를 정의할 때는 다음과 같은 패턴을 따르는 경우가 많습니다.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">private</code> 인스턴스 변수</strong>: 객체의 **상태(데이터)**를 저장하는 변수들은 일반적으로 외부에서 직접 접근할 수 없도록 <code class="language-plaintext highlighter-rouge">private</code> 접근 제한자를 사용합니다. 이는 객체 지향의 <strong>캡슐화(Encapsulation)</strong> 원칙을 따르는 것입니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">getter</code>, <code class="language-plaintext highlighter-rouge">setter</code> 메소드 정의</strong>: <code class="language-plaintext highlighter-rouge">private</code> 변수에 안전하게 접근하고 값을 변경할 수 있도록 <code class="language-plaintext highlighter-rouge">public</code> 메소드인 <code class="language-plaintext highlighter-rouge">getter</code> (값을 가져옴)와 <code class="language-plaintext highlighter-rouge">setter</code> (값을 설정함)를 정의합니다.</li>
+  <li><strong>필드 생성자 (All-args Constructor)</strong>: 객체를 생성할 때 모든 필드의 값을 초기화할 수 있는 생성자입니다.</li>
+  <li><strong>기본 생성자 (No-args Constructor)</strong>: 매개변수가 없는 생성자로, 객체를 기본 상태로 생성할 때 사용됩니다. 필드 생성자와 함께 오버로딩하여 제공될 수 있습니다.</li>
+</ul>
+
+<!-- end list -->
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Product</span> <span class="o">{</span>
+    <span class="c1">// private 인스턴스 변수 (필드)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">stock</span><span class="o">;</span> <span class="c1">// 재고 수량 (자주 변하는 값)</span>
+
+    <span class="c1">// 기본 생성자</span>
+    <span class="kd">public</span> <span class="nf">Product</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 기본 초기화 로직 (선택 사항)</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 필드 생성자</span>
+    <span class="kd">public</span> <span class="nf">Product</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">,</span> <span class="kt">int</span> <span class="n">stock</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">stock</span> <span class="o">=</span> <span class="n">stock</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// getter 메소드</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPrice</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">price</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStock</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">stock</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// setter 메소드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrice</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStock</span><span class="o">(</span><span class="kt">int</span> <span class="n">stock</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">stock</span> <span class="o">=</span> <span class="n">stock</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// toString() 메소드 재정의 (Object 클래스로부터 상속)</span>
+    <span class="c1">// 객체의 상태를 문자열로 쉽게 확인할 수 있도록 합니다.</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Product{"</span> <span class="o">+</span>
+               <span class="s">"name='"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+               <span class="s">", price="</span> <span class="o">+</span> <span class="n">price</span> <span class="o">+</span>
+               <span class="s">", stock="</span> <span class="o">+</span> <span class="n">stock</span> <span class="o">+</span>
+               <span class="sc">'}'</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// hashCode() 및 equals() 메소드 재정의 (Object 클래스로부터 상속)</span>
+    <span class="c1">// 객체의 논리적 동등성을 판단할 때 사용됩니다.</span>
+    <span class="c1">// 자주 변하는 값(예: stock)은 equals/hashCode 비교에서 제외하는 것이 일반적입니다.</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="nc">Product</span> <span class="n">product</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Product</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">price</span> <span class="o">==</span> <span class="n">product</span><span class="o">.</span><span class="na">price</span> <span class="o">&amp;&amp;</span> <span class="c1">// price는 비교에 포함</span>
+               <span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">);</span> <span class="c1">// name은 비교에 포함</span>
+               <span class="c1">// stock은 자주 변하는 값이므로 equals 비교에서 제외하는 경우가 많음</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// name과 price를 기반으로 해시코드 생성</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">price</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+        <span class="c1">// stock은 hashCode 계산에서 제외하는 경우가 많음</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="string-클래스-주요-메소드"><code class="language-plaintext highlighter-rouge">String</code> 클래스 주요 메소드</h2>
+
+<p>자바의 문자열(<code class="language-plaintext highlighter-rouge">String</code>)은 불변(immutable) 객체이며, 문자열 조작과 분석을 위한 다양한 유용한 메소드를 제공합니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">char charAt(int index)</code>: 문자열에서 특정 <strong>인덱스</strong>의 위치에 있는 문자를 리턴합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">char[] toCharArray()</code>: 문자열을 **문자 배열(char[])**로 변환합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">String(char[] value)</code>: <code class="language-plaintext highlighter-rouge">char</code> 배열을 다시 문자열로 생성합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">int indexOf(String searchStr)</code>: 문자열이 포함되어 있다면 해당 문자열의 <strong>시작 인덱스</strong>를 리턴하고, 포함되어 있지 않으면 <code class="language-plaintext highlighter-rouge">-1</code>을 리턴합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">boolean contains(CharSequence s)</code>: 문자열이 포함되어 있으면 <code class="language-plaintext highlighter-rouge">true</code>, 포함되어 있지 않으면 <code class="language-plaintext highlighter-rouge">false</code>를 리턴합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">String substring(int beginIndex)</code>: <code class="language-plaintext highlighter-rouge">beginIndex</code>부터 문자열 끝까지의 부분 문자열을 <strong>추출</strong>합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">String substring(int beginIndex, int endIndex)</code>: <code class="language-plaintext highlighter-rouge">beginIndex</code>부터 <code class="language-plaintext highlighter-rouge">endIndex - 1</code>까지의 부분 문자열을 추출합니다 (<code class="language-plaintext highlighter-rouge">beginIndex &lt;= 인덱스 &lt; endIndex</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">String replace(CharSequence target, CharSequence replacement)</code>: 문자열 내에서 <code class="language-plaintext highlighter-rouge">target</code> 문자열을 <code class="language-plaintext highlighter-rouge">replacement</code> 문자열로 <strong>교체</strong>합니다.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"자바 프로그래밍은 자바입니다."</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">newStr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"자바"</span><span class="o">,</span> <span class="s">"JAVA"</span><span class="o">);</span> <span class="c1">// "JAVA 프로그래밍은 JAVA입니다."</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">String trim()</code>: 문자열의 <strong>양 끝 공백을 제거</strong>합니다.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"             010"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">newStr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span> <span class="c1">// "010"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="포장wrapper-클래스-기본-타입을-객체로">포장(Wrapper) 클래스: 기본 타입을 객체로</h2>
+
+<p>자바의 <strong>기본(Primitive) 타입</strong>(예: <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">double</code>, <code class="language-plaintext highlighter-rouge">boolean</code>)은 객체가 아니므로, 객체 지향적인 특성을 가질 수 없고 컬렉션 프레임워크(예: <code class="language-plaintext highlighter-rouge">ArrayList</code>)에서 직접 사용할 수 없습니다. 이를 해결하기 위해 기본 타입에 해당하는 <strong>포장(Wrapper) 클래스</strong>가 제공됩니다.</p>
+
+<ul>
+  <li><strong>박싱(Boxing)</strong>: 기본 타입의 값을 포장 클래스의 객체로 변환하는 과정.</li>
+  <li><strong>언박싱(Unboxing)</strong>: 포장 클래스의 객체에서 기본 타입의 값을 추출하는 과정.</li>
+</ul>
+
+<p>자바 5부터는 **오토 박싱(Auto-boxing)**과 <strong>오토 언박싱(Auto-unboxing)</strong> 기능이 도입되어 기본 타입과 포장 클래스 간의 변환이 매우 자유로워졌습니다.</p>
+
+<p><strong>포장 클래스 비교 시 주의사항:</strong></p>
+
+<p>포장 클래스는 객체이므로 <code class="language-plaintext highlighter-rouge">==</code> 연산자는 객체의 주소값을 비교합니다. 따라서 <code class="language-plaintext highlighter-rouge">-128</code>에서 <code class="language-plaintext highlighter-rouge">127</code> 범위 외의 값은 <code class="language-plaintext highlighter-rouge">==</code> 비교 시 예상과 다른 결과를 낼 수 있으므로, 반드시 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드를 사용하여 값을 비교해야 합니다. (JVM이 이 범위의 <code class="language-plaintext highlighter-rouge">Integer</code> 객체들을 캐싱하기 때문입니다.)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WrapperClassExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 자동 박싱 (int -&gt; Integer)</span>
+        <span class="nc">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"자동 박싱된 Integer i: "</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+
+        <span class="c1">// 명시적 박싱 (int -&gt; Integer)</span>
+        <span class="nc">Integer</span> <span class="n">i2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Integer</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span> <span class="c1">// Deprecated</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"명시적 박싱된 Integer i2: "</span> <span class="o">+</span> <span class="n">i2</span><span class="o">);</span>
+
+        <span class="c1">// 자동 언박싱 (Integer -&gt; int)</span>
+        <span class="kt">int</span> <span class="n">i3</span> <span class="o">=</span> <span class="n">i2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"자동 언박싱된 int i3: "</span> <span class="o">+</span> <span class="n">i3</span><span class="o">);</span>
+
+        <span class="c1">// 포장 클래스 비교 시 주의 (== vs equals)</span>
+        <span class="nc">Integer</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+        <span class="nc">Integer</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"a == b (100): "</span> <span class="o">+</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">));</span> <span class="c1">// true (캐싱 범위 내)</span>
+
+        <span class="nc">Integer</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span><span class="o">;</span>
+        <span class="nc">Integer</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">200</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"x == y (200): "</span> <span class="o">+</span> <span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="o">));</span> <span class="c1">// false (캐싱 범위 밖, 다른 객체)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"x.equals(y) (200): "</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">y</span><span class="o">));</span> <span class="c1">// true (값 비교)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>출력 결과:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>자동 박싱된 Integer i: 10
+명시적 박싱된 Integer i2: 10
+자동 언박싱된 int i3: 10
+a == b (100): true
+x == y (200): false
+x.equals(y) (200): true
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="math-클래스-수학-계산-유틸리티"><code class="language-plaintext highlighter-rouge">Math</code> 클래스: 수학 계산 유틸리티</h2>
+
+<p><code class="language-plaintext highlighter-rouge">java.lang.Math</code> 클래스는 수학에서 자주 사용하는 함수들을 제공하는 유틸리티 클래스입니다. 모든 메소드가 <strong><code class="language-plaintext highlighter-rouge">static</code> 메소드</strong>로 구성되어 있어, 객체를 생성할 필요 없이 <code class="language-plaintext highlighter-rouge">Math.메소드명()</code> 형태로 직접 호출하여 사용할 수 있습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Math.round(double a)</code>: 소수점 첫째 자리에서 <strong>반올림</strong>하여 정수(<code class="language-plaintext highlighter-rouge">long</code> 또는 <code class="language-plaintext highlighter-rouge">int</code>)로 리턴합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Math.random()</code>: <code class="language-plaintext highlighter-rouge">0.0</code> (포함) 이상 <code class="language-plaintext highlighter-rouge">1.0</code> (미포함) 미만의 <strong>실수형 난수</strong>(<code class="language-plaintext highlighter-rouge">double</code>)를 리턴합니다.</li>
+</ul>
+
+<!-- end list -->
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="mf">3.64</span><span class="o">;</span>
+        <span class="kt">long</span> <span class="n">roundedValue</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">round</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> <span class="c1">// 3.64를 반올림</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">value</span> <span class="o">+</span> <span class="s">"의 반올림 값: "</span> <span class="o">+</span> <span class="n">roundedValue</span><span class="o">);</span> <span class="c1">// 4</span>
+
+        <span class="kt">double</span> <span class="n">randomValue</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">();</span> <span class="c1">// 0.0 이상 1.0 미만의 난수</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"랜덤 값 (0.0 &lt;= x &lt; 1.0): "</span> <span class="o">+</span> <span class="n">randomValue</span><span class="o">);</span>
+
+        <span class="c1">// 1부터 100까지의 정수 난수 생성 예시</span>
+        <span class="kt">int</span> <span class="n">randomInt</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">100</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1부터 100까지의 랜덤 정수: "</span> <span class="o">+</span> <span class="n">randomInt</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>출력 결과 (예시):</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.64의 반올림 값: 4
+랜덤 값 (0.0 &lt;= x &lt; 1.0): 0.7329487...
+1부터 100까지의 랜덤 정수: 42
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="날짜와-시간-클래스-date-simpledateformat-localdate">날짜와 시간 클래스: <code class="language-plaintext highlighter-rouge">Date</code>, <code class="language-plaintext highlighter-rouge">SimpleDateFormat</code>, <code class="language-plaintext highlighter-rouge">LocalDate</code></h2>
+
+<p>자바에서 날짜와 시간을 다루는 방법은 여러 가지가 있습니다. 크게 <code class="language-plaintext highlighter-rouge">java.util.Date</code> 계열과 자바 8부터 도입된 <code class="language-plaintext highlighter-rouge">java.time</code> 패키지 계열이 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DateTimeExample</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// 1. java.util.Date (오래된 방식)</span>
+		<span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span><span class="o">();</span> <span class="c1">// 실행 시점의 날짜, 시간을 리턴 (util 패키지)</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"현재 날짜와 시간 (Date): "</span> <span class="o">+</span> <span class="n">date</span><span class="o">);</span>
+
+		<span class="c1">// SimpleDateFormat: Date 객체와 문자열 간 변환 (포매팅/파싱)</span>
+		<span class="n">java</span><span class="o">.</span><span class="na">text</span><span class="o">.</span><span class="na">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">text</span><span class="o">.</span><span class="na">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy년 MM월 dd일 E요일"</span><span class="o">);</span>
+		<span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span> <span class="c1">// 날짜시간 객체 -&gt; 문자열 (예: 2025년 04월 15일 화요일)</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SimpleDateFormat으로 포매팅된 날짜: "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+
+		<span class="k">try</span> <span class="o">{</span>
+		    <span class="n">str</span> <span class="o">=</span> <span class="s">"2025-04-15"</span><span class="o">;</span>
+		    <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">text</span><span class="o">.</span><span class="na">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
+			<span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span> <span class="n">newDate</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">str</span><span class="o">);</span> <span class="c1">// 문자열 -&gt; 날짜시간 객체</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"문자열로부터 파싱된 Date: "</span> <span class="o">+</span> <span class="n">newDate</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">text</span><span class="o">.</span><span class="na">ParseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+		
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--------------------"</span><span class="o">);</span>
+
+		<span class="c1">// 2. java.time 패키지 (Java 8 이후의 새로운 방식, 권장)</span>
+		<span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">LocalDate</span> <span class="n">ld</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span> <span class="c1">// 날짜 정보만 저장 - now() 실행 시점 / of() 특정 날짜</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"현재 날짜 (LocalDate): "</span> <span class="o">+</span> <span class="n">ld</span><span class="o">);</span>
+		
+		<span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">format</span><span class="o">.</span><span class="na">DateTimeFormatter</span> <span class="n">df</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">format</span><span class="o">.</span><span class="na">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">"yyyy년 MM월 dd일"</span><span class="o">);</span>
+		<span class="n">str</span> <span class="o">=</span> <span class="n">ld</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">df</span><span class="o">);</span> <span class="c1">// LocalDate 객체 -&gt; 문자열 (예: 2025년 4월 15일)</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"DateTimeFormatter로 포매팅된 날짜: "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+		
+		<span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">LocalDate</span> <span class="n">newLocalDate</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">time</span><span class="o">.</span><span class="na">LocalDate</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">df</span><span class="o">);</span> <span class="c1">// 문자열, 포맷팅 규칙으로 파싱</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"문자열로부터 파싱된 LocalDate: "</span> <span class="o">+</span> <span class="n">newLocalDate</span><span class="o">);</span> <span class="c1">// newLocalDate.toString()</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>출력 결과 (예시):</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>현재 날짜와 시간 (Date): Wed Jun 25 14:47:51 KST 2025
+SimpleDateFormat으로 포매팅된 날짜: 2025년 06월 25일 수요일
+문자열로부터 파싱된 Date: Mon Apr 15 00:00:00 KST 2025
+--------------------
+현재 날짜 (LocalDate): 2025-06-25
+DateTimeFormatter로 포매팅된 날짜: 2025년 06월 25일
+문자열로부터 파싱된 LocalDate: 2025-06-25
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="-요약-정리-자바-핵심-클래스">📌 요약 정리: 자바 핵심 클래스</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>요소</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Object</code> 클래스</strong></td>
+      <td>모든 자바 클래스의 <strong>최상위 조상</strong>. 모든 객체가 기본적으로 가지는 <code class="language-plaintext highlighter-rouge">equals()</code>, <code class="language-plaintext highlighter-rouge">hashCode()</code>, <code class="language-plaintext highlighter-rouge">toString()</code> 등의 메소드를 정의.</td>
+    </tr>
+    <tr>
+      <td><strong>객체 동등 비교</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">==</code> (주소 비교)와 <code class="language-plaintext highlighter-rouge">equals()</code> (내용 비교)로 나뉪. &lt;br&gt; <code class="language-plaintext highlighter-rouge">equals()</code>가 <code class="language-plaintext highlighter-rouge">true</code>면 <code class="language-plaintext highlighter-rouge">hashCode()</code>도 같아야 함.</td>
+    </tr>
+    <tr>
+      <td><strong>객체 정의 패턴</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">private</code> 인스턴스 변수, <code class="language-plaintext highlighter-rouge">getter</code>/<code class="language-plaintext highlighter-rouge">setter</code> 메소드, 필드/기본 생성자, &lt;br&gt; <code class="language-plaintext highlighter-rouge">toString()</code>/<code class="language-plaintext highlighter-rouge">hashCode()</code>/<code class="language-plaintext highlighter-rouge">equals()</code> 재정의를 포함. &lt;br&gt; <code class="language-plaintext highlighter-rouge">hashCode()</code>/<code class="language-plaintext highlighter-rouge">equals()</code> 재정의 시 자주 변하는 값은 제외 권장.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">String</code> 클래스</strong></td>
+      <td>불변(immutable) 객체로, 문자열 조작을 위한 다양한 메소드 제공. &lt;br&gt; (<code class="language-plaintext highlighter-rouge">charAt</code>, <code class="language-plaintext highlighter-rouge">indexOf</code>, <code class="language-plaintext highlighter-rouge">contains</code>, <code class="language-plaintext highlighter-rouge">substring</code>, <code class="language-plaintext highlighter-rouge">replace</code>, <code class="language-plaintext highlighter-rouge">trim</code> 등)</td>
+    </tr>
+    <tr>
+      <td><strong>포장(Wrapper) 클래스</strong></td>
+      <td>기본 타입을 객체로 다루기 위해 사용. &lt;br&gt; <code class="language-plaintext highlighter-rouge">Integer</code>, <code class="language-plaintext highlighter-rouge">Double</code>, <code class="language-plaintext highlighter-rouge">Boolean</code> 등. &lt;br&gt; <strong>박싱</strong> (기본 → 포장), <strong>언박싱</strong> (포장 → 기본). &lt;br&gt; <code class="language-plaintext highlighter-rouge">-128~127</code> 범위 외 <code class="language-plaintext highlighter-rouge">Integer</code> 비교 시 <code class="language-plaintext highlighter-rouge">==</code> 대신 반드시 <code class="language-plaintext highlighter-rouge">equals()</code> 사용.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Math</code> 클래스</strong></td>
+      <td>모든 메소드가 <code class="language-plaintext highlighter-rouge">static</code>으로 이루어진 수학 관련 유틸리티 클래스. &lt;br&gt; (<code class="language-plaintext highlighter-rouge">round</code>, <code class="language-plaintext highlighter-rouge">random</code> 등)</td>
+    </tr>
+    <tr>
+      <td><strong>날짜/시간 클래스</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">java.util.Date</code> (구 방식)과 <code class="language-plaintext highlighter-rouge">java.time</code> 패키지 (Java 8 이후 권장). &lt;br&gt; <code class="language-plaintext highlighter-rouge">SimpleDateFormat</code> / <code class="language-plaintext highlighter-rouge">DateTimeFormatter</code>를 통해 문자열과 날짜/시간 객체 간 변환 가능.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-object-메소드-퀴즈">💡 <code class="language-plaintext highlighter-rouge">Object</code> 메소드 퀴즈</h3>
+
+<p>다음 코드를 실행했을 때, 출력 결과로 가장 적절한 것은 무엇일까요?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Book</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// equals와 hashCode는 재정의하지 않음</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookComparison</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Book</span> <span class="n">book1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Book</span><span class="o">(</span><span class="s">"어린 왕자"</span><span class="o">,</span> <span class="s">"앙투안 드 생텍쥐페리"</span><span class="o">);</span>
+        <span class="nc">Book</span> <span class="n">book2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Book</span><span class="o">(</span><span class="s">"어린 왕자"</span><span class="o">,</span> <span class="s">"앙투안 드 생텍쥐페리"</span><span class="o">);</span>
+        <span class="nc">Book</span> <span class="n">book3</span> <span class="o">=</span> <span class="n">book1</span><span class="o">;</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"book1 == book2: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">book1</span> <span class="o">==</span> <span class="n">book2</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"book1.equals(book2): "</span> <span class="o">+</span> <span class="n">book1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">book2</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"book1 == book3: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">book1</span> <span class="o">==</span> <span class="n">book3</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+출력 결과:<br /><br />
+
+book1 == book2: false<br />
+book1.equals(book2): false<br />
+book1 == book3: true<br />
+
+<br />
+설명:
+<br />
+
+1.  book1 == book2: new Book(...)을 두 번 호출했으므로, book1과 book2는 서로 다른 메모리 공간에 있는 별개의 객체입니다. 따라서 false가 출력됩니다.<br />
+2.  book1.equals(book2): Book 클래스에서 equals() 메소드를 재정의하지 않았습니다. 자바의 모든 클래스는 Object 클래스를 상속받는데, Object 클래스의 equals() 메소드는 기본적으로 == 연산자와 동일하게 객체의 메모리 주소(참조)를 비교합니다. book1과 book2는 다른 객체이므로 false가 출력됩니다.<br />
+3.  book1 == book3: book3 = book1 코드를 통해 book3 변수는 book1이 참조하는 동일한 객체를 참조하게 됩니다. 따라서 true가 출력됩니다.
+
+</details>
+
+<hr />
+
+<h3 id="-마치며-객체지향-심화의-시작">🔚 마치며: 객체지향 심화의 시작</h3>
+
+<p>이번 글에서는 자바의 모든 객체가 기반이 되는 <code class="language-plaintext highlighter-rouge">Object</code> 클래스의 중요성을 이해하고, 객체의 <strong>동등성 비교 (<code class="language-plaintext highlighter-rouge">equals()</code>와 <code class="language-plaintext highlighter-rouge">hashCode()</code>)</strong> 원칙에 대해 깊이 있게 다루었습니다. 또한, 실제 자바 클래스를 설계할 때 활용되는 <strong>POJO 패턴</strong>을 익히고, 문자열(<code class="language-plaintext highlighter-rouge">String</code>), 숫자(<code class="language-plaintext highlighter-rouge">Wrapper</code>), 수학(<code class="language-plaintext highlighter-rouge">Math</code>), 날짜/시간(<code class="language-plaintext highlighter-rouge">Date</code>, <code class="language-plaintext highlighter-rouge">LocalDate</code>)과 같이 자주 사용되는 핵심 유틸리티 클래스들의 기능과 사용법을 살펴보았습니다.</p>
+
+<p>이러한 내용들은 자바에서 데이터를 올바르게 모델링하고, 효율적으로 처리하며, 안정적인 애플리케이션을 개발하는 데 필수적인 지식입니다. 특히 <code class="language-plaintext highlighter-rouge">equals()</code>와 <code class="language-plaintext highlighter-rouge">hashCode()</code>의 올바른 재정의는 컬렉션 사용 시 예상치 못한 문제를 방지하는 데 결정적인 역할을 합니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-interface/" class="btn btn--inverse" rel="prev">
+            ← 자바 객체지향-인터페이스
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-threads/" class="btn btn--inverse" rel="next">
+            자바 쓰레드: 프로그램, 프로세스 그리고 동시성 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-25T05:47:51+00:00">June 25, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+%ED%95%B5%EC%8B%AC+%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%B0%8F+%EA%B0%9D%EC%B2%B4+%EB%8F%99%EB%93%B1+%EB%B9%84%EA%B5%90%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop-detail%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop-detail%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-oop-detail/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+%ED%95%B5%EC%8B%AC+%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%B0%8F+%EA%B0%9D%EC%B2%B4+%EB%8F%99%EB%93%B1+%EB%B9%84%EA%B5%90%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop-detail%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          40 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          47 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          61 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          40 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          47 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          61 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

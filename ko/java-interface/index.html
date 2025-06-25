@@ -1,0 +1,1158 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 객체지향-인터페이스 - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 객체지향-인터페이스">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-interface/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-17T03:02:21+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-interface/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 객체지향-인터페이스">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-17T03:02:21+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-interface/" itemprop="url">자바 객체지향-인터페이스</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          40 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="자바-객체지향-인터페이스-interface">자바 객체지향: 인터페이스 (Interface)</h2>
+
+<p>자바 객체지향 프로그래밍에서 **인터페이스(Interface)**는 클래스들이 구현해야 하는 <strong>메소드의 집합을 정의하는 특별한 종류의 추상 클래스</strong>라고 볼 수 있습니다. 인터페이스는 객체의 **행위(Behavior)**를 정의하고, 다양한 클래스들이 동일한 행위를 가지도록 <strong>표준을 제시</strong>하는 데 사용됩니다.</p>
+
+<p>인터페이스는 클래스와는 다르게 객체를 직접 생성할 수 없으며, 주로 **다형성(Polymorphism)**을 높이고, 여러 클래스에 걸쳐 공통된 기능을 강제하거나, 느슨한 결합(Loose Coupling)을 통한 유연한 설계를 가능하게 합니다.</p>
+
+<hr />
+
+<h2 id="1-인터페이스의-특징과-역할">1. 인터페이스의 특징과 역할</h2>
+
+<p>인터페이스는 다음과 같은 주요 특징과 역할을 가집니다.</p>
+
+<ul>
+  <li><strong>추상 메소드의 집합</strong>: 인터페이스는 기본적으로 **추상 메소드(Abstract Method)**로만 구성됩니다. 자바 8부터는 <code class="language-plaintext highlighter-rouge">default</code> 메소드와 <code class="language-plaintext highlighter-rouge">static</code> 메소드도 포함할 수 있게 되었지만, 본질적인 목적은 <strong>구현할 클래스에게 어떤 기능을 제공해야 하는지 정의</strong>하는 것입니다.</li>
+  <li><strong>다중 상속의 대안</strong>: 자바는 클래스의 다중 상속을 허용하지 않습니다. 하지만 인터페이스는 **다중 구현(Multiple Implementation)**을 허용하여, 하나의 클래스가 여러 인터페이스를 구현함으로써 다중 상속과 유사한 효과를 낼 수 있습니다.</li>
+  <li><strong>상수(Constant) 정의</strong>: 인터페이스 내에 정의되는 모든 필드(변수)는 <strong><code class="language-plaintext highlighter-rouge">public static final</code></strong> 특성을 가집니다. 즉, <strong>상수만 정의할 수 있으며, 인스턴스 변수나 static 변수는 직접 정의할 수 없습니다.</strong></li>
+  <li><strong>느슨한 결합</strong>: 인터페이스를 사용하면 구현 클래스 간의 의존성을 줄여서 시스템을 더욱 유연하고 확장 가능하게 만듭니다.</li>
+  <li><strong>설계 명세</strong>: 인터페이스는 특정 기능을 제공하는 클래스가 가져야 할 ‘계약’ 또는 ‘명세’의 역할을 합니다. 이는 협업 시 개발자 간의 약속을 명확히 합니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="2-인터페이스-선언-및-구현">2. 인터페이스 선언 및 구현</h2>
+
+<h3 id="2-1-인터페이스-선언">2-1. 인터페이스 선언</h3>
+
+<p>인터페이스는 <code class="language-plaintext highlighter-rouge">interface</code> 키워드를 사용하여 선언합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Soundable</span> <span class="o">{</span>
+    <span class="c1">// 상수 정의 (public static final은 생략 가능)</span>
+    <span class="nc">String</span> <span class="no">DEFAULT_SOUND_TYPE</span> <span class="o">=</span> <span class="s">"General Sound"</span><span class="o">;</span>
+
+    <span class="c1">// 추상 메소드 (public abstract은 생략 가능)</span>
+    <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">playMusic</span><span class="o">(</span><span class="nc">String</span> <span class="n">songName</span><span class="o">);</span>
+
+    <span class="c1">// Java 8부터 추가된 default 메소드 (구현부가 있음)</span>
+    <span class="k">default</span> <span class="kt">void</span> <span class="nf">describe</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"이 객체는 소리를 낼 수 있습니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Java 8부터 추가된 static 메소드 (인터페이스 이름으로 직접 호출)</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showSoundCapability</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"모든 Soundable 객체는 소리를 내는 능력을 가집니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>특징:</strong></p>
+
+<ul>
+  <li><strong>메소드</strong>: 인터페이스의 모든 메소드는 자바 8 이전에는 <strong><code class="language-plaintext highlighter-rouge">public abstract</code></strong> 이었으며, 이 키워드는 생략 가능합니다. 자바 8부터는 <strong><code class="language-plaintext highlighter-rouge">default</code></strong> 메소드와 <strong><code class="language-plaintext highlighter-rouge">static</code></strong> 메소드도 추가되어 구현부를 가질 수 있게 되었습니다.</li>
+  <li><strong>변수</strong>: 인터페이스에 선언되는 모든 변수는 <strong><code class="language-plaintext highlighter-rouge">public static final</code></strong> 상수로 간주되며, 이 키워드 역시 생략 가능합니다. <strong>인스턴스 변수나 단순한 static 변수는 정의할 수 없습니다.</strong> 즉, 상태(State)를 가질 수 없고 오직 상수만 가질 수 있습니다.</li>
+</ul>
+
+<h3 id="2-2-인터페이스-구현-implements">2-2. 인터페이스 구현 (implements)</h3>
+
+<p>클래스는 <code class="language-plaintext highlighter-rouge">implements</code> 키워드를 사용하여 하나 이상의 인터페이스를 구현할 수 있습니다. 인터페이스를 구현하는 클래스는 해당 인터페이스에 정의된 <strong>모든 추상 메소드를 반드시 오버라이딩하여 구현</strong>해야 합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Soundable 인터페이스를 구현하는 Dog 클래스</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Soundable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Soundable 인터페이스의 추상 메소드 구현</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">"가 멍멍 짖습니다!"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playMusic</span><span class="o">(</span><span class="nc">String</span> <span class="n">songName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">"는 "</span> <span class="o">+</span> <span class="n">songName</span> <span class="o">+</span> <span class="s">" 노래를 들으면 꼬리를 흔듭니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// default 메소드는 구현하지 않아도 되지만, 필요하면 오버라이딩 가능</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">describe</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">"는 "</span> <span class="o">+</span> <span class="no">DEFAULT_SOUND_TYPE</span> <span class="o">+</span> <span class="s">" 타입의 소리를 낼 수 있는 동물입니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Soundable 인터페이스를 구현하는 Car 클래스</span>
+<span class="kd">class</span> <span class="nc">Car</span> <span class="kd">implements</span> <span class="nc">Soundable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">model</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="nc">String</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Soundable 인터페이스의 추상 메소드 구현</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"가 빵빵 경적을 울립니다!"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playMusic</span><span class="o">(</span><span class="nc">String</span> <span class="n">songName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"에서 "</span> <span class="o">+</span> <span class="n">songName</span> <span class="o">+</span> <span class="s">" 노래가 흘러나옵니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InterfaceExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 인터페이스 다형성 활용</span>
+        <span class="nc">Soundable</span> <span class="n">myDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="s">"바둑이"</span><span class="o">);</span>
+        <span class="nc">Soundable</span> <span class="n">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">(</span><span class="s">"테슬라 모델3"</span><span class="o">);</span>
+
+        <span class="n">myDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span> <span class="c1">// 바둑이가 멍멍 짖습니다!</span>
+        <span class="n">myDog</span><span class="o">.</span><span class="na">playMusic</span><span class="o">(</span><span class="s">"강아지 송"</span><span class="o">);</span> <span class="c1">// 바둑이는 강아지 송 노래를 들으면 꼬리를 흔듭니다.</span>
+        <span class="n">myDog</span><span class="o">.</span><span class="na">describe</span><span class="o">();</span> <span class="c1">// 바둑이는 General Sound 타입의 소리를 낼 수 있는 동물입니다.</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"---"</span><span class="o">);</span>
+
+        <span class="n">myCar</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span> <span class="c1">// 테슬라 모델3가 빵빵 경적을 울립니다!</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">playMusic</span><span class="o">(</span><span class="s">"드라이브 송"</span><span class="o">);</span> <span class="c1">// 테슬라 모델3에서 드라이브 송 노래가 흘러나옵니다.</span>
+        <span class="c1">// myCar.carDescription(); // 컴파일 에러: Soundable 타입에는 carDescription 메소드가 없음</span>
+        <span class="c1">// (myCar는 Soundable 인터페이스 타입으로 선언되었기 때문에 Soundable에 정의된 메소드만 호출 가능)</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">describe</span><span class="o">();</span> <span class="c1">// 이 객체는 소리를 낼 수 있습니다. (기본 default 메소드 호출)</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"---"</span><span class="o">);</span>
+
+        <span class="c1">// 인터페이스의 static 메소드 호출</span>
+        <span class="nc">Soundable</span><span class="o">.</span><span class="na">showSoundCapability</span><span class="o">();</span> <span class="c1">// 모든 Soundable 객체는 소리를 내는 능력을 가집니다.</span>
+
+        <span class="c1">// 인터페이스에 정의된 상수 사용</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"기본 사운드 타입: "</span> <span class="o">+</span> <span class="nc">Soundable</span><span class="o">.</span><span class="na">DEFAULT_SOUND_TYPE</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3-인터페이스의-핵심-개념-추상-메소드-집합-및-변수-제한">3. 인터페이스의 핵심 개념: 추상 메소드 집합 및 변수 제한</h2>
+
+<h3 id="3-1-추상-메소드의-집합-abstract-method-collection">3-1. 추상 메소드의 집합 (Abstract Method Collection)</h3>
+
+<p>인터페이스의 가장 본질적인 역할은 **클래스가 따라야 할 행위의 청사진(Blueprint)**을 제공하는 것입니다. 이 청사진은 <strong>오직 추상 메소드</strong>로만 이루어져 있었습니다 (자바 8 이전).</p>
+
+<ul>
+  <li>인터페이스에 선언된 추상 메소드는 **메소드 시그니처(이름, 매개변수, 반환 타입)**만 있고, <strong>구현부(Body)가 없습니다.</strong></li>
+  <li>인터페이스를 구현하는 모든 클래스는 이 추상 메소드들을 <strong>반드시 자신의 목적에 맞게 구현</strong>해야 합니다. 이를 통해 다양한 클래스들이 동일한 인터페이스를 구현함으로써 <strong>다형성</strong>을 활용할 수 있게 됩니다.</li>
+  <li>예시: <code class="language-plaintext highlighter-rouge">Soundable</code> 인터페이스의 <code class="language-plaintext highlighter-rouge">makeSound()</code> 메소드를 <code class="language-plaintext highlighter-rouge">Dog</code> 클래스는 “멍멍”으로, <code class="language-plaintext highlighter-rouge">Car</code> 클래스는 “빵빵”으로 다르게 구현하지만, 두 객체 모두 <code class="language-plaintext highlighter-rouge">Soundable</code> 타입으로 <code class="language-plaintext highlighter-rouge">makeSound()</code>를 호출할 수 있습니다.</li>
+</ul>
+
+<h3 id="3-2-인스턴스-변수-및-static-변수-정의-불가">3-2. 인스턴스 변수 및 static 변수 정의 불가</h3>
+
+<p>인터페이스는 클래스와 달리 <strong>객체의 상태(State)를 가질 수 없습니다.</strong></p>
+
+<ul>
+  <li>인터페이스 내부에 **인스턴스 변수(non-static field)**를 선언하는 것은 허용되지 않습니다.
+    <ul>
+      <li>이는 인터페이스가 <strong>구현 객체들의 공통적인 행위 명세</strong>를 위한 것이지, <strong>개별 객체의 데이터를 저장</strong>하기 위한 것이 아니기 때문입니다.</li>
+    </ul>
+  </li>
+  <li>인터페이스 내부에 <strong>일반적인 static 변수</strong>를 선언하는 것도 허용되지 않습니다.
+    <ul>
+      <li>인터페이스에 선언되는 모든 변수는 컴파일 시 자동으로 <strong><code class="language-plaintext highlighter-rouge">public static final</code></strong> 특성을 부여받아 **상수(Constant)**로 처리됩니다. 이는 인터페이스가 특정 값을 공유하는 데 사용될 수 있지만, 변하는 상태를 가지는 필드는 정의할 수 없다는 의미입니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>이러한 제한은 인터페이스가 <strong>행위의 추상화</strong>에만 집중하고, 데이터 관리의 책임은 이를 구현하는 클래스에게 위임하여 설계의 <strong>단순성과 명확성</strong>을 유지하도록 돕습니다.</p>
+
+<hr />
+
+<h2 id="-요약-정리-인터페이스">📌 요약 정리: 인터페이스</h2>
+
+<ul>
+  <li><strong>인터페이스</strong>: 클래스들이 구현해야 할 <strong>추상 메소드의 집합</strong>을 정의하는 특별한 형태의 추상 클래스.</li>
+  <li><strong>주요 역할</strong>: 다형성 증진, 다중 구현을 통한 다중 상속 효과, 느슨한 결합, 설계 명세 제시.</li>
+  <li><strong>특징</strong>:
+    <ul>
+      <li>기본적으로 <strong><code class="language-plaintext highlighter-rouge">public abstract</code> 메소드</strong>로 구성 (Java 8부터 <code class="language-plaintext highlighter-rouge">default</code>, <code class="language-plaintext highlighter-rouge">static</code> 메소드 추가).</li>
+      <li>선언된 모든 필드는 <strong><code class="language-plaintext highlighter-rouge">public static final</code> 상수</strong>이다.</li>
+      <li><strong>인스턴스 변수 및 일반적인 static 변수는 정의할 수 없다.</strong> (오직 상수만 가능)</li>
+    </ul>
+  </li>
+  <li><strong>구현</strong>: <code class="language-plaintext highlighter-rouge">implements</code> 키워드를 사용하며, 인터페이스의 모든 추상 메소드를 반드시 구현해야 한다.</li>
+</ul>
+
+<hr />
+
+<h2 id="-인터페이스-심화-퀴즈">💡 인터페이스 심화 퀴즈</h2>
+
+<p>다음 자바 코드와 설명에 대한 질문입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Flyable</span> <span class="o">{</span>
+    <span class="c1">// #1</span>
+    <span class="kt">int</span> <span class="no">MAX_ALTITUDE</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">;</span>
+
+    <span class="c1">// #2</span>
+    <span class="kt">void</span> <span class="nf">takeOff</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">land</span><span class="o">();</span>
+
+    <span class="c1">// #3</span>
+    <span class="k">default</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가속합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// #4</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">describeFlight</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"비행 객체의 공통 특성."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// #5</span>
+    <span class="c1">// private String type; // 인터페이스 내 인스턴스 변수 선언 시도</span>
+<span class="o">}</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicle</span> <span class="kd">implements</span> <span class="nc">Flyable</span> <span class="o">{</span>
+    <span class="c1">// #6</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">;</span> <span class="c1">// 이 선언은 가능할까?</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">takeOff</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"차량이 이륙합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// land 메소드는 추상으로 남겨둘 수 있다.</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Airplane</span> <span class="kd">extends</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">land</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"비행기가 착륙합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>질문:</strong> 위 코드에서 컴파일 에러가 발생하거나, 인터페이스의 본질적 특성(메소드 및 변수 정의 제한)을 위배하는 주석 처리된 라인은 몇 번일까요? (정답은 하나 이상일 수 있습니다.)</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">#1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#3</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#5</code></li>
+  <li><code class="language-plaintext highlighter-rouge">#6</code></li>
+</ol>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+**정답:** 5번<br /><br />
+
+**설명:**<br /><br />
+
+  * **\#5는 컴파일 에러를 발생**시킵니다. 인터페이스는 **인스턴스 변수를 가질 수 없습니다.** 인터페이스 내의 모든 필드는 암묵적으로 `public static final` 상수가 됩니다.<br />
+  * 나머지 옵션들은 유효한 선언입니다:<br />
+      * `#1`은 인터페이스 내 유효한 상수 선언입니다.<br />
+      * `#2`는 인터페이스 내 유효한 추상 메소드 선언입니다.<br />
+      * `#3`은 자바 8부터 허용되는 `default` 메소드 선언입니다.<br />
+      * `#4`는 자바 8부터 허용되는 `static` 메소드 선언입니다.<br />
+      * `#6`은 추상 클래스 `Vehicle` 내의 인스턴스 변수 선언입니다. **추상 클래스는 상태(인스턴스 변수)를 가질 수 있습니다.** 이는 인터페이스와 추상 클래스의 중요한 차이점 중 하나입니다.<br /><br />
+
+</details>
+
+<hr />
+
+<h2 id="-마치며-설계의-유연성을-위한-인터페이스">🔚 마치며: 설계의 유연성을 위한 인터페이스</h2>
+
+<p>이번 글에서는 자바 객체지향의 중요한 요소인 <strong>인터페이스</strong>에 대해 깊이 있게 다루었습니다. 인터페이스가 어떻게 <strong>클래스의 행위를 표준화</strong>하고, <strong>다형성을 활용</strong>하여 유연하고 확장 가능한 설계를 가능하게 하는지 이해하셨을 것입니다. 특히 <strong>인터페이스가 추상 메소드의 집합으로 구성되며, 인스턴스 변수나 static 변수를 직접 정의할 수 없고 오직 상수만을 가질 수 있다는 점</strong>은 인터페이스의 본질적인 목적을 이해하는 데 핵심적인 부분입니다.</p>
+
+<p>클래스의 상속이 ‘is-a’ 관계(A는 B이다)를 나타내며 객체의 상태(필드)를 가질 수 있는 반면, 인터페이스의 구현은 ‘can-do’ 관계(A는 ~를 할 수 있다)를 나타내며 오직 행위(메소드)의 명세만을 제공합니다. 이러한 차이를 명확히 이해하면 객체지향 설계에서 인터페이스를 언제, 왜 사용해야 하는지 명확히 판단할 수 있습니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-oop&class(3)/" class="btn btn--inverse" rel="prev">
+            ← 자바 생성자 호출 순서
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-oop-detail/" class="btn btn--inverse" rel="next">
+            자바 핵심 클래스 및 객체 동등 비교 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-17T03:02:21+00:00">June 17, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-interface%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-interface%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-interface/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-interface%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          47 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          61 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          47 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&inheritance/" rel="permalink">자바 객체지향-상속, 다형성, 추상 클래스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          61 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1098 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>웹 개발 기초 개념 정리 - Lorem Tech Blog</title>
+<meta name="description" content="📘 웹 개발 기초 개념 정리 소프트웨어 개발 초기 단계에서 전문 용어에 대한 명확한 이해는 중요한 선행 과제입니다. 특히 웹 기반 애플리케이션 개발 시에는 방대한 개념들을 습득해야 합니다. 본 문서에서는 소프트웨어 발전 과정부터 HTTP, 클라이언트-서버 구조, 웹 서버와 WAS의 차이점, 웹 컨테이너, 그리고 서블릿에 이르는 핵심 용어들을 상세히 설명합니다.">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="웹 개발 기초 개념 정리">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/jsp-basic(2)/">
+
+
+  <meta property="og:description" content="📘 웹 개발 기초 개념 정리 소프트웨어 개발 초기 단계에서 전문 용어에 대한 명확한 이해는 중요한 선행 과제입니다. 특히 웹 기반 애플리케이션 개발 시에는 방대한 개념들을 습득해야 합니다. 본 문서에서는 소프트웨어 발전 과정부터 HTTP, 클라이언트-서버 구조, 웹 서버와 WAS의 차이점, 웹 컨테이너, 그리고 서블릿에 이르는 핵심 용어들을 상세히 설명합니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-11T07:48:25+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/jsp-basic(2)/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="웹 개발 기초 개념 정리">
+    
+    
+      <meta itemprop="description" content="📘 웹 개발 기초 개념 정리소프트웨어 개발 초기 단계에서 전문 용어에 대한 명확한 이해는 중요한 선행 과제입니다. 특히 웹 기반 애플리케이션 개발 시에는 방대한 개념들을 습득해야 합니다. 본 문서에서는 소프트웨어 발전 과정부터 HTTP, 클라이언트-서버 구조, 웹 서버와 WAS의 차이점, 웹 컨테이너, 그리고 서블릿에 이르는 핵심 용어들을 상세히 설명합니다.">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-11T07:48:25+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/jsp-basic(2)/" itemprop="url">웹 개발 기초 개념 정리</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          53 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+<h2 id="-웹-개발-기초-개념-정리">📘 웹 개발 기초 개념 정리</h2>
+<p>소프트웨어 개발 초기 단계에서 전문 용어에 대한 명확한 이해는 중요한 선행 과제입니다. 특히 웹 기반 애플리케이션 개발 시에는 방대한 개념들을 습득해야 합니다. 본 문서에서는 소프트웨어 발전 과정부터 <strong>HTTP</strong>, <strong>클라이언트-서버 구조</strong>, <strong>웹 서버와 WAS의 차이점</strong>, <strong>웹 컨테이너</strong>, 그리고 <strong>서블릿</strong>에 이르는 핵심 용어들을 상세히 설명합니다.</p>
+
+<hr />
+
+<h3 id="-프로그램-발전사-개인-컴퓨팅-환경에서-글로벌-웹-서비스로의-전환">💡 프로그램 발전사: 개인 컴퓨팅 환경에서 글로벌 웹 서비스로의 전환</h3>
+<p>소프트웨어는 사용자 편의성 및 보안 강화를 목표로 지속적으로 진화해 왔습니다. 이러한 발전의 중심에는 ‘데이터 처리 및 사용자 전달 방식’에 대한 심도 깊은 고찰이 존재합니다.</p>
+
+<h4 id="1-클라이언트-pc-기반-프로그램-초기-모델">1. 클라이언트 PC 기반 프로그램 (초기 모델)</h4>
+<p>초기 소프트웨어는 사용자 개인 컴퓨터(클라이언트 PC)에 직접 설치되어 실행되는 형태였습니다. 예를 들어, Java로 개발된 ‘계산기’ 애플리케이션을 개인 PC에 설치하여 사용하는 방식이 이에 해당합니다.</p>
+
+<ul>
+  <li>
+    <p><strong>클라이언트</strong>: 사용자 PC에서 직접 모든 기능(데이터 입력, 계산, 결과 출력)을 수행하는 방식이에요.</p>
+  </li>
+  <li>
+    <p><strong>문제점</strong>:</p>
+    <ul>
+      <li><strong>유지보수의 비효율성</strong>: 기능 변경 또는 버그 발생 시, 전 세계 사용자 PC에 설치된 프로그램을 일일이 업데이트하거나 재설치해야 하는 심각한 비효율성이 존재했습니다. 이는 관리 측면에서 매우 번거로운 작업입니다.</li>
+      <li><strong>보안 취약성</strong>: 만약 프로그램 내에 민감한 정보(예: 데이터베이스 접속 정보)가 포함되어 있다면, 클라이언트 PC 해킹 시 해당 정보가 그대로 노출될 수 있어 보안에 매우 취약했습니다.
+이러한 한계점들을 극복하기 위해 <strong>클라이언트-서버 기반 프로그램</strong> 모델이 도입되었습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="2-클라이언트-서버-기반-프로그램-역할-분담-모델">2. 클라이언트-서버 기반 프로그램 (역할 분담 모델)</h4>
+<p>클라이언트 PC 기반 프로그램의 단점을 해소하고자, 프로그램의 핵심 기능 및 데이터 처리를 전담하는 ‘서버’ 개념이 도입되었습니다. 이는 업무 분담을 통한 효율성 증대를 목표로 합니다.</p>
+
+<ul>
+  <li>
+    <p><strong>클라이언트</strong>: 사용자 PC는 이제 단순화된 역할을 수행합니다. 데이터를 서버로 ‘전송’하고, 서버가 처리한 결과를 ‘수신’하여 화면에 표시하는 기능, 즉 ‘화면’ 출력만을 담당하게 됩니다.</p>
+  </li>
+  <li>
+    <p><strong>서버</strong>: 서버는 클라이언트로부터 데이터를 수신하여 실질적인 계산, 복잡한 비즈니스 로직 처리 등 모든 핵심 기능을 수행하며, 그 결과를 클라이언트에 다시 전송하는 역할을 합니다. ‘핵심 기능’을 전담하는 모델이라고 이해하시면 됩니다.</p>
+  </li>
+  <li><strong>동작 방식</strong>:
+    <ul>
+      <li>클라이언트에서 처리할 데이터가 발생하면, <strong>네트워크(인터넷)</strong>를 통해 서버에 전송됩니다.</li>
+      <li>서버는 해당 데이터를 처리한 후, 처리된 결과를 다시 네트워크를 통해 클라이언트에 반환하며, 클라이언트는 이를 화면에 시각적으로 표현하는 방식이에요.</li>
+    </ul>
+  </li>
+  <li><strong>장점</strong>:
+    <ul>
+      <li><strong>유지보수의 효율성 증대</strong>: 기능(로직) 변경 시 서버만 업데이트하면 되므로, 클라이언트 프로그램의 개별적인 수정이 불필요합니다. 이는 관리 측면에서 상당한 개선을 의미합니다.</li>
+      <li><strong>보안 강화</strong>: 중요한 데이터 및 핵심 로직이 서버에만 존재하므로, 클라이언트 PC의 해킹 시 보안 위험이 현저히 감소했습니다.</li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>: 화면 디자인 또는 구조 변경 시 여전히 클라이언트 프로그램을 수정해야 하는 제약이 존재했습니다.</li>
+</ul>
+
+<hr />
+
+<h4 id="3-웹-기반-프로그램-현재의-인터넷-환경">3. 웹 기반 프로그램 (현재의 인터넷 환경)</h4>
+<p>클라이언트-서버 모델에서 더욱 발전하여, 현재 우리가 일상적으로 사용하는 웹 브라우저를 클라이언트로 활용하는 형태가 정립되었습니다.</p>
+
+<ul>
+  <li>
+    <p><strong>클라이언트</strong>: 별도의 프로그램 설치가 필요 없습니다. 사용자는 기본적인 <strong>웹 브라우저(Chrome, Edge, Safari 등)</strong>를 실행하여 원하는 웹사이트의 URL을 입력하기만 하면 됩니다. 브라우저는 자동으로 서버에 필요한 HTML 문서를 요청하고 수신하여 화면에 표시합니다.</p>
+  </li>
+  <li>
+    <p><strong>서버</strong>: 클라이언트(브라우저)가 요청한 HTML 문서를 브라우저에 전송하여 화면 출력을 가능하게 합니다. 사용자가 화면에서 데이터를 입력하고 ‘확인’ 버튼을 클릭하면, 서버는 해당 데이터를 수신하여 처리하고, 처리된 결과를 웹 브라우저로 재전송하여 화면 변경을 유도하는 방식이에요.</p>
+  </li>
+  <li><strong>동작 방식</strong>:
+    <ul>
+      <li>사용자가 주소창에 <code class="language-plaintext highlighter-rouge">www.naver.com</code>과 같은 URL을 입력합니다.</li>
+      <li>웹 브라우저는 네이버 서버에 HTML 문서 요청을 전송합니다.</li>
+      <li>네이버 서버는 요청된 HTML 문서를 브라우저에 전송하고, 브라우저는 이를 파싱하여 네이버 웹페이지를 사용자에게 표시합니다.</li>
+      <li>만약 검색창에 내용을 입력하고 검색 버튼을 클릭하면, 해당 데이터가 다시 서버로 전송되어 처리되고, 검색 결과가 포함된 새로운 HTML이 브라우저로 반환되어 화면이 갱신되는 거예요.</li>
+    </ul>
+
+    <p><img src="/assets/images/jsp/web-based-program.webp" alt="웹 기반 프로그램 이미지" /></p>
+  </li>
+  <li><strong>장점</strong>:
+    <ul>
+      <li><strong>최적의 유지보수성</strong>: 사용자 프로그램의 기능 또는 화면이 변경되더라도, 대부분의 처리가 서버에서 이루어지기 때문에 클라이언트(웹 브라우저)는 업데이트할 필요가 없습니다.</li>
+      <li><strong>높은 접근성</strong>: 웹 브라우저만 있다면 언제 어디서든 서비스에 접근 가능합니다.</li>
+      <li><strong>우수한 보안</strong>: 중요한 데이터와 로직은 서버에서 안전하게 관리됩니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-http-웹-통신의-표준-프로토콜">💡 HTTP: 웹 통신의 표준 프로토콜</h3>
+<p>웹 기반 프로그램의 핵심 요소 중 하나는 <strong>HTTP(HyperText Transfer Protocol)</strong>입니다. HTTP는 웹 환경에서 정보 교환을 위한 <strong>가장 기본적인 ‘통신 규칙’</strong>을 의미합니다. 웹 리소스(HTML 문서, 이미지 등)를 송수신하기 위해서는 HTTP 규약을 준수해야 합니다.</p>
+
+<p><img src="/assets/images/jsp/http.webp" alt="HTTP 통신 이미지" /></p>
+
+<h4 id="http의-특징">HTTP의 특징:</h4>
+<ul>
+  <li><strong>간결한 구조</strong>: HTTP 메시지 구조는 가독성이 높도록 설계되어 웹 개발의 빠른 발전에 기여했습니다.</li>
+  <li><strong>확장성</strong>: 웹 환경의 지속적인 발전에 맞춰 새로운 기능 추가 및 프로토콜 개선이 용이하도록 유연하게 설계되었습니다.</li>
+  <li><strong>무상태성 및 세션 관리</strong>:
+    <ul>
+      <li><strong>무상태성 (Stateless)</strong>: HTTP의 가장 중요한 특징 중 하나입니다. 기본적으로 HTTP는 <strong>이전에 주고받은 요청/응답에 대한 ‘상태’를 전혀 기억하지 못합니다.</strong> 즉, 클라이언트가 서버에 요청을 두 번 보냈다고 해도, 서버는 이 두 요청이 동일한 클라이언트에서 발생한 것인지, 이전에 어떤 상호작용이 있었는지 전혀 인지하지 못합니다. 각 요청은 완전히 독립적인 ‘새로운’ 요청으로 간주됩니다.</li>
+      <li><strong>세션 (Session)</strong>: 그러나 실제 웹 서비스에서는 사용자의 로그인 상태나 장바구니 정보처럼 <strong>‘상태’를 유지</strong>해야 할 필요가 있습니다. HTTP가 ‘무상태’ 특성으로 인해 이를 기억하지 못하므로, 이를 보완하기 위해 <strong>쿠키(Cookie)</strong>나 <strong>세션(Session)</strong>과 같은 기술이 도입되었습니다. 이들이 바로 HTTP의 무상태성을 보완하는 역할을 합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-클라이언트와-서버-웹-서비스의-핵심-구성요소">💡 클라이언트와 서버: 웹 서비스의 핵심 구성요소</h3>
+
+<p>웹 기반 프로그램에서 클라이언트와 서버는 서로 상호작용하며 서비스를 제공합니다.</p>
+
+<h4 id="클라이언트--브라우저"><strong>클라이언트 (≈ 브라우저)</strong></h4>
+<ul>
+  <li>클라이언트(주로 웹 브라우저)는 항상 <strong>‘요청(Request)’</strong>을 보내는 주체입니다.</li>
+  <li>웹 페이지를 표시하기 위해, 브라우저는 먼저 페이지의 <strong>HTML 문서</strong>를 가져오기 위한 요청을 서버에 보냅니다.</li>
+  <li>HTML 문서를 수신한 브라우저는 이를 해석하여 그림, 텍스트, 동영상 등과 같은 요소를 화면에 배치하고 표시합니다. 이때 필요한 이미지, CSS(스타일 정보), JavaScript(동적인 기능)와 같은 하위 리소스들도 서버에 추가로 ‘요청’하여 가져옵니다. 이 모든 요소들을 결합하여 하나의 완성된 웹 페이지를 사용자에게 제공하는 거예요.</li>
+</ul>
+
+<h4 id="서버"><strong>서버</strong></h4>
+<ul>
+  <li>서버는 클라이언트(브라우저)로부터의 요청에 대한 <strong>‘응답(Response)’</strong> 메시지를 전송하는 개체입니다.</li>
+  <li>클라이언트가 ‘이 데이터 좀 처리해주세요’라고 요청하면 서버는 이를 수신하여 필요한 작업을 수행한 다음, 처리된 결과물을 다시 클라이언트에게 반환합니다.</li>
+</ul>
+
+<h4 id="http-메시지-구성-요청응답-공통"><strong>HTTP 메시지 구성 (요청/응답 공통)</strong></h4>
+<p>클라이언트와 서버가 주고받는 HTTP 메시지는 크게 두 부분으로 나뉩니다.</p>
+
+<ul>
+  <li><strong>헤더 (Headers)</strong>: 통신에 필요한 <strong>추가 정보</strong>를 담고 있습니다. (예: 메시지의 종류, 인코딩 방식, 쿠키 정보 등)</li>
+  <li><strong>바디 (Body)</strong>: 실제로 주고받을 <strong>핵심 데이터</strong>가 이 안에 포함됩니다.</li>
+</ul>
+
+<hr />
+
+<h4 id="-요청-request-메시지-클라이언트의-서버-요청">📩 요청 (Request) 메시지: 클라이언트의 서버 요청</h4>
+
+<p>클라이언트가 서버에 요청을 보낼 때는 다음과 같은 정보들을 포함합니다.</p>
+
+<ul>
+  <li><strong>HTTP 메서드</strong>: <strong><code class="language-plaintext highlighter-rouge">GET</code></strong> (정보 요청 시), <strong><code class="language-plaintext highlighter-rouge">POST</code></strong> (정보 제출 시)와 같이 요청의 ‘목적’을 나타내는 방식입니다.</li>
+  <li><strong>PATH</strong>: 가져오려는 리소스의 경로 (예: <code class="language-plaintext highlighter-rouge">/users</code>, <code class="language-plaintext highlighter-rouge">/products/123</code>).</li>
+  <li><strong>Headers</strong>: 서버에 대한 추가 정보를 전달하는 헤더.</li>
+  <li><strong>바디</strong>: <code class="language-plaintext highlighter-rouge">POST</code> 방식으로 서버에 사용자 입력값과 같은 추가적인 데이터를 보낼 때, 이 바디 부분에 실제 데이터가 담깁니다. 헤더와 바디 사이에는 항상 빈 줄(<code class="language-plaintext highlighter-rouge">\r\n</code>)이 하나 포함됩니다.</li>
+</ul>
+
+<p><img src="/assets/images/jsp/asking.webp" alt="요청 메시지 이미지" /></p>
+
+<hr />
+
+<h4 id="-응답-response-메시지-서버의-클라이언트-응답">📬 응답 (Response) 메시지: 서버의 클라이언트 응답</h4>
+
+<p>서버가 클라이언트 요청을 처리하고 전송하는 응답 메시지에는 다음과 같은 정보들이 포함됩니다.</p>
+
+<ul>
+  <li><strong>Status Code (상태 코드)</strong>: 세 자리 숫자로 이루어진 코드로, ‘클라이언트 요청의 성공 여부’, ‘문제 발생 여부’를 알려주는 <strong>결과 보고서</strong>와 같습니다.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">2xx</code> (성공)</strong>: 요청이 성공적으로 처리되었습니다.
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">200 OK</code></strong>: 가장 일반적인 성공 코드입니다. ‘완벽하게 성공!’을 의미해요.</li>
+        </ul>
+      </li>
+      <li><strong><code class="language-plaintext highlighter-rouge">3xx</code> (리다이렉션)</strong>: 요청을 완료하기 위해 추가적인 조치가 필요합니다. (예: 다른 URL로 이동)</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">4xx</code> (클라이언트 오류)</strong>: 클라이언트의 요청에 문제가 있습니다.
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">404 Not Found</code></strong>: 요청한 리소스(경로)를 서버에서 찾을 수 없습니다. (경로상의 문제)</li>
+          <li><strong><code class="language-plaintext highlighter-rouge">405 Method Not Allowed</code></strong>: 요청에 사용된 HTTP 메서드를 리소스가 허용하지 않습니다. (요청 방식의 문제)</li>
+        </ul>
+      </li>
+      <li><strong><code class="language-plaintext highlighter-rouge">5xx</code> (서버 오류)</strong>: 서버가 요청을 수행하지 못했습니다.
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">500 Internal Server Error</code></strong>: 서버 내부에서 오류가 발생했습니다. (일반적으로 코드상의 문제)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/jsp/response.webp" alt="응답 메시지 이미지" /></p>
+
+<p><strong>렌더링</strong>: HTML, CSS, JavaScript 등 개발자가 작성한 문서가 웹 브라우저에서 최종적으로 사용자에게 보여지는 형태로 변환되어 출력되는 과정을 의미합니다. (예: 티스토리 블로그 홈페이지에 대한 요청과 응답을 통해 브라우저가 화면을 렌더링하는 방식이에요.)</p>
+
+<p><img src="/assets/images/jsp/Tstory.webp" alt="티스토리 블로그 렌더링 이미지" /></p>
+
+<hr />
+
+<h3 id="-web-server-vs-was-정적-및-동적-콘텐츠-처리-역할-분담">🏡 Web Server vs WAS: 정적 및 동적 콘텐츠 처리 역할 분담</h3>
+<p>웹 서비스를 제공하는 서버는 크게 두 가지 종류로 분류할 수 있습니다. 이 둘의 역할이 상이하여 종종 함께 사용됩니다.</p>
+
+<h4 id="web-server"><strong>Web Server</strong></h4>
+<ul>
+  <li><strong>Web</strong>: 인터넷 기반 서비스 (URL(주소), HTTP(통신 규칙), HTML(내용)으로 구성)</li>
+  <li><strong>Server</strong>: 클라이언트에게 네트워크를 통해 정보나 시스템을 제공하는 컴퓨터 시스템</li>
+  <li><strong>Web Server</strong>: 인터넷을 기반으로 클라이언트에게 웹 서비스를 제공하는 컴퓨터 또는 해당 소프트웨어를 지칭합니다.</li>
+  <li><strong>주요 역할</strong>: 요청이 있을 때 <strong>정적인 웹 페이지</strong> (HTML, CSS, JavaScript 파일, 이미지, 동영상 파일 등)를 클라이언트에게 제공하는 소프트웨어입니다.</li>
+  <li><strong>동작 방식</strong>: 웹 브라우저에 URL을 입력하면 브라우저는 웹 서버에 요청을 보내고, 웹 서버는 요청된 파일을 찾아 브라우저에게 그대로 전송하는 방식이에요.</li>
+  <li><strong>예시</strong>: Apache HTTP Server, Nginx</li>
+</ul>
+
+<p><img src="/assets/images/jsp/web-based-program.webp" alt="웹 서버 이미지" /></p>
+
+<hr />
+
+<h4 id="was-web-application-server"><strong>WAS (Web Application Server)</strong></h4>
+<ul>
+  <li><strong>Web Application</strong>: 웹에서 실행되는 응용 프로그램 (데이터베이스 조회, 로직 처리 등 동적인 기능 수행)</li>
+  <li><strong>WAS</strong>: 웹 애플리케이션 서버 환경을 구축하고 애플리케이션을 동작시키는 기능을 제공하는 소프트웨어 프레임워크입니다.</li>
+  <li><strong>주요 역할</strong>: 웹 애플리케이션을 실행시켜 필요한 기능을 수행하고 그 결과를 웹 서버에게 전달하거나, 직접 클라이언트에게 동적인 콘텐츠를 제공합니다. <strong>PHP, JSP, ASP.NET</strong>과 같이 동적으로 페이지를 생성해야 할 때 사용됩니다.</li>
+  <li><strong>동작 방식</strong>: 클라이언트의 요청을 수신하면, 웹 애플리케이션을 실행하여 데이터를 처리하고, 데이터베이스에 접근하며, 비즈니스 로직을 수행하여 동적인 HTML 페이지를 생성한 후 이를 클라이언트(또는 웹 서버)에게 전송합니다.</li>
+  <li><strong>Web Server와 WAS의 차이</strong>: 가장 큰 차이는 <strong>상황에 따라 변하는 정보를 제공할 수 있는지 여부</strong>입니다.
+    <ul>
+      <li><strong>웹 서버</strong>: 정적 콘텐츠 (항상 동일한 내용)를 제공해요.</li>
+      <li><strong>WAS</strong>: 동적 콘텐츠 (요청에 따라 내용이 달라지는)를 제공합니다.</li>
+    </ul>
+  </li>
+  <li><strong>예시</strong>: Apache Tomcat (JSP 학습 시 활용될 대표적인 WAS입니다), JBoss, WebLogic, WebSphere
+실제 서비스 환경에서는 일반적으로 <strong>‘웹 서버 + WAS’</strong> 조합을 사용합니다. 웹 서버는 정적인 파일을 효율적으로 처리하고, WAS는 복잡한 동적 요청들을 담당하여 전체 시스템의 효율성을 극대화하는 전략이에요.</li>
+</ul>
+
+<p><img src="/assets/images/jsp/WAS.webp" alt="WAS 이미지" /></p>
+
+<hr />
+
+<h3 id="-web-container-servlet-container---서블릿-관리의-핵심-요소">📦 Web Container (Servlet Container) - 서블릿 관리의 핵심 요소</h3>
+<p><strong>웹 컨테이너(Web Container)</strong>는 WAS 내부에 존재하는 핵심 구성 요소입니다. WAS가 하나의 큰 시스템이라면, 웹 컨테이너는 서블릿(Servlet)이라는 컴포넌트들을 관리하는 ‘관리자’ 또는 ‘컨테이너’ 역할을 수행합니다.</p>
+
+<ul>
+  <li><strong>서블릿 생명주기 관리</strong>: 자바 서블릿은 일반적인 자바 프로그램과 달리 <code class="language-plaintext highlighter-rouge">main</code> 메서드를 가지고 있지 않으므로, 웹 컨테이너가 서블릿의 <strong>생성부터 소멸까지의 과정(생명주기)</strong>을 전적으로 담당합니다.</li>
+  <li><strong>요청/응답 처리의 중재</strong>: 사용자의 HTTP 요청이 유입되면, 웹 컨테이너는 이 요청을 분석하여 적절한 서블릿에 전달하고, 서블릿이 처리한 응답을 다시 클라이언트에게 전달하는 역할을 수행합니다.</li>
+  <li><strong>URL 매핑 및 권한 관리</strong>: 특정 URL 요청이 발생했을 때 어떤 서블릿을 실행할지 매핑하며, 필요한 경우 접근 권한을 보장하는 역할도 담당합니다.</li>
+  <li><strong>데이터베이스 접근 지원</strong>: 서블릿이 데이터베이스에 접근하여 응답을 생성하는 과정 또한 웹 컨테이너의 관리 하에 이루어집니다.</li>
+  <li><strong>예시</strong>: Apache Tomcat (톰캣은 대표적인 WAS이자 웹 컨테이너입니다.)</li>
+</ul>
+
+<p><img src="/assets/images/jsp/Web-Container.webp" alt="웹 컨테이너 이미지" /></p>
+
+<hr />
+
+<h3 id="-servlet-서블릿---웹-애플리케이션을-위한-자바-클래스">👩‍💻 Servlet (서블릿) - 웹 애플리케이션을 위한 자바 클래스</h3>
+<p>이제 서블릿에 대해 다시 설명합니다. <strong>서블릿(Servlet)</strong>은 HTML과 같은 정적인 콘텐츠가 아니라, 사용자의 요청에 따라 동적으로 웹 페이지를 생성하고 데이터를 처리하기 위해 자바 언어로 작성된 클래스를 지칭합니다.</p>
+
+<ul>
+  <li><strong>역할</strong>: 클라이언트의 요청을 수신하여 비즈니스 로직을 처리하고, 동적인 웹 페이지를 생성하여 클라이언트에게 응답하는 역할을 수행합니다.</li>
+  <li><strong>생명주기(Lifecycle)</strong>: 모든 서블릿은 웹 컨테이너에 의해 특별한 ‘생명주기’를 가집니다.
+    <ol>
+      <li><strong><code class="language-plaintext highlighter-rouge">init()</code></strong>: 서블릿 객체가 웹 컨테이너에 의해 처음으로 생성될 때(또는 웹 컨테이너 시작 시) <strong>단 한 번</strong> 호출되어 초기화 작업을 수행합니다.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">service()</code></strong>: 클라이언트로부터 요청이 들어올 때마다 <strong>반복적으로 호출</strong>되어 실제 비즈니스 로직을 처리하고 응답을 생성합니다. (내부적으로 <code class="language-plaintext highlighter-rouge">doGet()</code>, <code class="language-plaintext highlighter-rouge">doPost()</code> 등을 호출합니다.)</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">destroy()</code></strong>: 서블릿이 메모리에서 소멸될 때(예: 웹 컨테이너 종료 시) <strong>단 한 번</strong> 호출되어 자원을 해제하는 작업을 수행합니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="-마치며">🔚 마치며</h3>
+
+<p>지금까지 프로그램의 발전 과정부터 웹 통신의 기본이 되는 HTTP, 클라이언트/서버 개념, 그리고 웹 서버와 WAS의 차이, WAS의 핵심 구성요소인 웹 컨테이너와 서블릿에 대해 상세히 살펴보았습니다. 이 용어들은 자바 기반의 웹 애플리케이션 개발, 특히 JSP/Servlet 기반 개발을 이해하는 데 필수적인 기초 지식입니다.</p>
+
+<p>이 개념들을 잘 이해하고 나면, 웹 서비스가 어떻게 동작하고 클라이언트와 서버가 어떻게 소통하는지 큰 그림을 그릴 수 있을 거예요. 앞으로 배울 JSP와 같은 기술들이 이러한 기반 위에서 어떻게 작동하는지 이해하는 데 큰 도움이 될 겁니다.</p>
+
+<hr />
+<p>```</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp-basic(1)/" class="btn btn--inverse" rel="prev">
+            ← JSP 기본 셋팅
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp-basic(3)/" class="btn btn--inverse" rel="next">
+            JSP의 이해 및 기초 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/jsp/" class="taxonomy__item">jsp</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-11T07:48:25+00:00">June 11, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9B%B9+%EA%B0%9C%EB%B0%9C+%EA%B8%B0%EC%B4%88+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%282%29%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%282%29%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/jsp-basic(2)/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9B%B9+%EA%B0%9C%EB%B0%9C+%EA%B8%B0%EC%B4%88+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp-basic%282%29%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

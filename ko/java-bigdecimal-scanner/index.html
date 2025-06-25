@@ -1,0 +1,1056 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 BigDecimal과 Scanner - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 BigDecimal과 Scanner">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-bigdecimal-scanner/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-10T02:30:31+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-bigdecimal-scanner/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 BigDecimal과 Scanner">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-10T02:30:31+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-bigdecimal-scanner/" itemprop="url">자바 BigDecimal과 Scanner</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          30 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="자바의-핵심-유틸리티-bigdecimal과-scanner-깊이-이해하기">자바의 핵심 유틸리티: <code class="language-plaintext highlighter-rouge">BigDecimal</code>과 <code class="language-plaintext highlighter-rouge">Scanner</code> 깊이 이해하기</h2>
+
+<p>자바 프로그래밍에서 숫자를 다루고 사용자로부터 입력을 받는 것은 매우 흔한 작업입니다. 특히 금융 시스템처럼 <strong>고정밀 계산</strong>이 필수적이거나, 사용자 친화적인 <strong>입력 처리</strong>가 필요한 상황에서는 특정 클래스들을 적절히 활용하는 것이 중요합니다.
+<br /><br />
+이번 글에서는 자바의 표준 라이브러리 중 이러한 목적에 특화된 두 가지 핵심 클래스, **<code class="language-plaintext highlighter-rouge">BigDecimal</code>**과 **<code class="language-plaintext highlighter-rouge">Scanner</code>**에 대해 자세히 알아보겠습니다. 이들이 왜 필요하며, 어떻게 사용해야 하는지 명확한 예시와 함께 설명해 드릴게요.</p>
+
+<hr />
+
+<h3 id="bigdecimal-고정밀-숫자-계산의-표준"><code class="language-plaintext highlighter-rouge">BigDecimal</code>: 고정밀 숫자 계산의 표준</h3>
+
+<p>일반적으로 자바에서 실수를 표현할 때는 <code class="language-plaintext highlighter-rouge">float</code>이나 <code class="language-plaintext highlighter-rouge">double</code> 타입을 사용합니다. 하지만 이 부동소수점 타입들은 특정 상황에서 예상치 못한 정밀도 문제를 일으킬 수 있습니다. 특히 금융, 과학, 공학 분야처럼 <strong>정확한 소수점 계산</strong>이 필수적인 경우에는 <code class="language-plaintext highlighter-rouge">BigDecimal</code>을 사용하는 것이 안전하고 권장됩니다.</p>
+
+<h4 id="왜-bigdecimal을-사용해야-할까요">왜 <code class="language-plaintext highlighter-rouge">BigDecimal</code>을 사용해야 할까요?</h4>
+
+<p>다음 예시를 통해 <code class="language-plaintext highlighter-rouge">double</code>이 가진 부동소수점 문제를 확인해 보세요.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoublePrecisionIssue</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">);</span> <span class="c1">// 예상: 0.3</span>
+        <span class="c1">// 실제 출력: 0.30000000000000004</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">0.1 + 0.2</code>의 결과가 정확히 <code class="language-plaintext highlighter-rouge">0.3</code>이 아닌 것을 확인할 수 있습니다. 이는 컴퓨터가 부동소수점을 2진수로 표현하는 방식의 한계 때문에 발생하는 현상입니다. 이러한 미세한 오차가 금융 계산에서는 큰 문제로 이어질 수 있습니다.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">BigDecimal</code>은 이러한 부동소수점 오류 없이 정확한 소수 계산을 가능하게 합니다.</strong> 숫자를 내부적으로 문자열 형태로 관리하여 정밀도를 잃지 않기 때문입니다.</p>
+
+<h4 id="bigdecimal-선언-및-연산-방법"><code class="language-plaintext highlighter-rouge">BigDecimal</code> 선언 및 연산 방법</h4>
+
+<p><code class="language-plaintext highlighter-rouge">BigDecimal</code>을 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">java.math.BigDecimal</code> 패키지를 import 해야 합니다. 숫자를 생성할 때는 <strong>문자열 형태</strong>로 전달하는 것이 가장 중요합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BigDecimalExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// ✨ 중요: BigDecimal은 문자열로 초기화해야 정확한 값을 유지합니다.</span>
+        <span class="nc">BigDecimal</span> <span class="n">num1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDecimal</span><span class="o">(</span><span class="s">"0.1"</span><span class="o">);</span>
+        <span class="nc">BigDecimal</span> <span class="n">num2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDecimal</span><span class="o">(</span><span class="s">"0.2"</span><span class="o">);</span>
+
+        <span class="c1">// BigDecimal은 일반적인 연산자(+, -, *, /)를 사용할 수 없습니다.</span>
+        <span class="c1">// 반드시 전용 메서드를 사용해야 합니다.</span>
+        <span class="nc">BigDecimal</span> <span class="n">sumResult</span> <span class="o">=</span> <span class="n">num1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num2</span><span class="o">);</span>       <span class="c1">// 덧셈</span>
+        <span class="nc">BigDecimal</span> <span class="n">diffResult</span> <span class="o">=</span> <span class="n">num1</span><span class="o">.</span><span class="na">subtract</span><span class="o">(</span><span class="n">num2</span><span class="o">);</span>  <span class="c1">// 뺄셈</span>
+        <span class="nc">BigDecimal</span> <span class="n">multResult</span> <span class="o">=</span> <span class="n">num1</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">num2</span><span class="o">);</span>  <span class="c1">// 곱셈</span>
+        <span class="c1">// 나눗셈은 RoundingMode를 지정하는 것이 안전합니다.</span>
+        <span class="nc">BigDecimal</span> <span class="n">divResult</span> <span class="o">=</span> <span class="n">num1</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="n">num2</span><span class="o">,</span> <span class="nc">BigDecimal</span><span class="o">.</span><span class="na">ROUND_HALF_UP</span><span class="o">);</span> <span class="c1">// 나눗셈 (반올림 모드 지정)</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"0.1 + 0.2 = "</span> <span class="o">+</span> <span class="n">sumResult</span><span class="o">);</span>   <span class="c1">// 출력: 0.3</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"0.1 - 0.2 = "</span> <span class="o">+</span> <span class="n">diffResult</span><span class="o">);</span>  <span class="c1">// 출력: -0.1</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"0.1 * 0.2 = "</span> <span class="o">+</span> <span class="n">multResult</span><span class="o">);</span>  <span class="c1">// 출력: 0.02</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"0.1 / 0.2 = "</span> <span class="o">+</span> <span class="n">divResult</span><span class="o">);</span>   <span class="c1">// 출력: 0.5</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="-bigdecimal-사용-시-주의점">⚠ <code class="language-plaintext highlighter-rouge">BigDecimal</code> 사용 시 주의점</h4>
+
+<ul>
+  <li><strong>실수형 리터럴 직접 넘기지 않기</strong>: <code class="language-plaintext highlighter-rouge">new BigDecimal(0.1)</code>처럼 <code class="language-plaintext highlighter-rouge">double</code> 타입의 <code class="language-plaintext highlighter-rouge">0.1</code>을 직접 생성자에 넘기면, 이미 <code class="language-plaintext highlighter-rouge">double</code>로 변환되는 과정에서 오차가 발생하여 <code class="language-plaintext highlighter-rouge">BigDecimal</code>의 장점을 잃게 됩니다. 반드시 **<code class="language-plaintext highlighter-rouge">new BigDecimal("0.1")</code>**과 같이 <strong>문자열로 전달</strong>해야 합니다.</li>
+  <li><strong>연산자 사용 불가</strong>: <code class="language-plaintext highlighter-rouge">BigDecimal</code> 객체끼리는 <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code>와 같은 산술 연산자를 직접 사용할 수 없습니다. 반드시 <code class="language-plaintext highlighter-rouge">add()</code>, <code class="language-plaintext highlighter-rouge">subtract()</code>, <code class="language-plaintext highlighter-rouge">multiply()</code>, <code class="language-plaintext highlighter-rouge">divide()</code> 등의 <strong>전용 메서드</strong>를 사용해야 합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="scanner-사용자-입력-처리의-문지기"><code class="language-plaintext highlighter-rouge">Scanner</code>: 사용자 입력 처리의 문지기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Scanner</code> 클래스는 자바 프로그램에서 <strong>표준 입력 스트림(System.in)</strong>, 즉 키보드로부터 문자열, 정수, 실수 등 다양한 형태의 데이터를 쉽게 입력받을 수 있도록 도와주는 유틸리티 클래스입니다.</p>
+
+<h4 id="기본-사용-예시">기본 사용 예시</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Scanner</code>를 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">java.util.Scanner</code> 패키지를 import 해야 합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span> <span class="c1">// Scanner 클래스 임포트</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScannerExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Scanner 객체 생성: System.in(표준 입력, 즉 키보드)으로부터 입력받도록 설정</span>
+        <span class="nc">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span> 
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"당신의 이름은 무엇인가요? "</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">// 사용자가 엔터를 누를 때까지 한 줄 전체를 문자열로 읽어옴</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"안녕하세요, "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"님! 만나서 반갑습니다."</span><span class="o">);</span>
+
+        <span class="c1">// 스캐너 사용이 끝나면 반드시 close()하여 자원을 반환해야 합니다.</span>
+        <span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> 
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>실행 및 출력 예시:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>당신의 이름은 무엇인가요? 효재  &lt;- 사용자 입력
+안녕하세요, 효재님! 만나서 반갑습니다.
+</code></pre></div></div>
+
+<h4 id="scanner의-주요-입력-메서드"><code class="language-plaintext highlighter-rouge">Scanner</code>의 주요 입력 메서드</h4>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">nextLine()</code></strong>: 공백을 포함하여 <strong>한 줄 전체</strong>를 읽어옵니다. 엔터를 누르면 입력이 종료됩니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">next()</code></strong>: 공백 이전의 <strong>한 단어</strong>만 읽어옵니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">nextInt()</code></strong>: 입력된 문자열을 <strong><code class="language-plaintext highlighter-rouge">int</code> 타입</strong>으로 변환하여 읽어옵니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">nextDouble()</code></strong>: 입력된 문자열을 <strong><code class="language-plaintext highlighter-rouge">double</code> 타입</strong>으로 변환하여 읽어옵니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">hasNextLine()</code>, <code class="language-plaintext highlighter-rouge">hasNextInt()</code> 등</strong>: 다음에 읽을 데이터가 해당 타입인지 확인하는 메서드 (반복문 등에서 유용).</li>
+</ul>
+
+<hr />
+
+<h3 id="-scanner-퀴즈">💡 <code class="language-plaintext highlighter-rouge">Scanner</code> 퀴즈</h3>
+
+<p>다음 코드는 <code class="language-plaintext highlighter-rouge">Scanner</code>를 사용하여 나이를 입력받고 내년 나이를 계산하여 출력합니다. <code class="language-plaintext highlighter-rouge">age</code>에 <code class="language-plaintext highlighter-rouge">25</code>를 입력했다고 가정했을 때, 위 코드의 출력 결과는 무엇일까요?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScannerQuiz</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"나이를 입력하세요: "</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span> <span class="c1">// 정수 입력 받기</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"내년이면 "</span> <span class="o">+</span> <span class="o">(</span><span class="n">age</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">"살이 됩니다."</span><span class="o">);</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+입력: 25
+<br />
+출력: 내년이면 26살이 됩니다.
+<br />
+설명:
+<br />
+1.  System.out.print("나이를 입력하세요: ");가 출력됩니다.<br />
+2.  사용자가 25를 입력하고 엔터를 누릅니다.<br />
+3.  int age = sc.nextInt();를 통해 25가 age변수에 정수형으로 저장됩니다.<br />
+4.  System.out.println("내년이면 " + (age + 1) + "살이 됩니다.");에서 (age + 1)은 (25 + 1)이 되어 26이 됩니다.<br />
+5.  최종적으로 내년이면 26살이 됩니다.가 출력됩니다.<br />
+
+</details>
+
+<hr />
+
+<h3 id="-요약-정리">📌 요약 정리</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>설명</th>
+      <th>주요 사용처</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">BigDecimal</code></strong></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">double</code>의 부동소수점 오차 없이 <strong>정확한 소수점 계산</strong>을 위한 클래스. 숫자를 <strong>문자열로 초기화</strong>하고 <strong>메서드를 통해 연산</strong>해야 함.</td>
+      <td>금융 시스템, 과학 계산, 정밀한 수치 연산이 필요한 모든 분야.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Scanner</code></strong></td>
+      <td>표준 입력(키보드)으로부터 <strong>다양한 타입의 데이터를 입력받는</strong> 유틸리티 클래스. 사용 후에는 반드시 <code class="language-plaintext highlighter-rouge">close()</code>하여 자원 해제.</td>
+      <td>콘솔 기반 프로그램에서 사용자 입력 받기, 파일에서 데이터 읽기.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-실무-팁">🛠 실무 팁</h3>
+
+<ul>
+  <li>
+    <p><strong>돈 계산할 땐 무조건 <code class="language-plaintext highlighter-rouge">BigDecimal</code>!</strong>: 금액, 이자율 등 단 1원, 1센트의 오차도 허용되지 않는 계산에서는 반드시 <code class="language-plaintext highlighter-rouge">BigDecimal</code>을 사용해야 합니다.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">Scanner</code>의 <code class="language-plaintext highlighter-rouge">nextInt()</code>, <code class="language-plaintext highlighter-rouge">nextDouble()</code> 뒤에 <code class="language-plaintext highlighter-rouge">nextLine()</code> 사용 주의</strong>: <code class="language-plaintext highlighter-rouge">nextInt()</code>나 <code class="language-plaintext highlighter-rouge">nextDouble()</code> 등 숫자를 읽는 메서드는 숫자만 읽고 **엔터(개행 문자)**는 버퍼에 남겨둡니다. 그 뒤에 <code class="language-plaintext highlighter-rouge">nextLine()</code>을 사용하면 버퍼에 남아있는 엔터를 읽어버려 의도치 않게 빈 문자열이 입력되는 문제가 발생할 수 있습니다. 이를 방지하려면 숫자 입력 후 <code class="language-plaintext highlighter-rouge">scanner.nextLine();</code>을 한 번 더 호출하여 개행 문자를 비워주는 것이 좋습니다.</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"나이: "</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span> <span class="c1">// 숫자만 읽고 엔터는 버퍼에 남음</span>
+<span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">// 버퍼에 남은 엔터를 소비하여 비워줌</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"이름: "</span><span class="o">);</span>
+<span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">// 이제 제대로 이름을 입력받음</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"이름: "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">", 나이: "</span> <span class="o">+</span> <span class="n">age</span><span class="o">);</span>
+<span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-마치며">🔚 마치며</h3>
+
+<p><code class="language-plaintext highlighter-rouge">BigDecimal</code>과 <code class="language-plaintext highlighter-rouge">Scanner</code>는 자바 개발자가 일상적으로 접하고 활용하는 매우 중요한 클래스입니다. <code class="language-plaintext highlighter-rouge">BigDecimal</code>을 통해 정밀한 수치 계산의 안정성을 확보하고, <code class="language-plaintext highlighter-rouge">Scanner</code>를 통해 사용자 친화적인 입력 처리를 구현할 수 있습니다.
+<br />
+이 두 클래스의 올바른 사용법을 익히는 것은 효율적이고 견고한 자바 애플리케이션을 개발하는 데 큰 도움이 될 것입니다. 다음 시간에는 분기점에 따라 
+로직을 처리하는 <strong>조건문</strong>에 대해 알아보겠습니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-operators-summary/" class="btn btn--inverse" rel="prev">
+            ← 자바 연산자 도표
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-if-switch/" class="btn btn--inverse" rel="next">
+            자바 조건문: if문과 switch문 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-10T02:30:31+00:00">June 10, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+BigDecimal%EA%B3%BC+Scanner%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-bigdecimal-scanner%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-bigdecimal-scanner%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-bigdecimal-scanner/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+BigDecimal%EA%B3%BC+Scanner%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-bigdecimal-scanner%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

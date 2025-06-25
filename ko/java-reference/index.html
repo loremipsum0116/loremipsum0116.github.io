@@ -1,0 +1,1143 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 참조타입 - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 참조타입">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-reference/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-16T07:30:46+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-reference/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 참조타입">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-16T07:30:46+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-reference/" itemprop="url">자바 참조타입</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          51 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="자바-참조-타입의-메모리-사용-변수가-데이터를-품는-방식-이해하기">자바 참조 타입의 메모리 사용: 변수가 데이터를 품는 방식 이해하기</h2>
+
+<p>자바의 데이터 타입은 **기본 타입(Primitive Type)**과 **참조 타입(Reference Type)**으로 나뉩니다. 이 두 타입은 단순히 데이터를 다루는 방식만 다른 게 아니라, <strong>메모리에 저장되고 관리되는 방식에서도 근본적인 차이</strong>를 보입니다. 특히, 이 차이는 두 변수가 <strong>동일한지 비교할 때 사용하는 <code class="language-plaintext highlighter-rouge">==</code> 연산자의 동작 방식</strong>에서 명확하게 드러납니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>기본 타입 (Primitive Type)</th>
+      <th>참조 타입 (Reference Type)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>저장 값</strong></td>
+      <td>변수 자체에 <strong>실제 데이터 값</strong>을 직접 저장합니다.</td>
+      <td>변수에는 실제 데이터가 저장된 **메모리 ‘주소’(번지)**를 저장하고, 실제 데이터(객체)는 별도의 메모리 공간에 저장됩니다.</td>
+    </tr>
+    <tr>
+      <td><strong>메모리 영역</strong></td>
+      <td>주로 <strong>스택(Stack) 영역</strong>에 저장됩니다.</td>
+      <td>변수는 <strong>스택(Stack) 영역</strong>에, 실제 데이터(객체/배열)는 <strong>힙(Heap) 영역</strong>에 저장됩니다.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">==</code> 연산자</strong></td>
+      <td><strong>두 변수에 저장된 실제 값</strong>이 같은지를 비교합니다.</td>
+      <td>**두 변수에 저장된 ‘메모리 주소’**가 같은지를 비교합니다. 즉, 두 변수가 <strong>동일한 객체를 참조</strong>하는지 여부를 판단합니다. 실제 객체 내부의 값이 같은지는 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드로 비교해야 합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>데이터 크기</strong></td>
+      <td>데이터 타입별로 정해진 고정된 크기(예: <code class="language-plaintext highlighter-rouge">int</code>는 4바이트, <code class="language-plaintext highlighter-rouge">double</code>은 8바이트)를 가집니다.</td>
+      <td>객체의 내용에 따라 가변적인 크기를 가집니다. 변수 자체는 주소값을 저장하므로 고정된 크기(4 또는 8바이트)를 가집니다.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">new</code> 키워드</strong></td>
+      <td>객체 생성이 아니므로 <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하지 않습니다.</td>
+      <td>객체를 생성할 때 주로 <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용합니다.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">null</code> 값</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">null</code> 값을 가질 수 없습니다. (초기화하지 않으면 기본값 가짐)</td>
+      <td>객체를 참조하지 않는다는 의미로 <code class="language-plaintext highlighter-rouge">null</code> 값을 가질 수 있습니다.</td>
+    </tr>
+    <tr>
+      <td><strong>예시</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">double</code>, <code class="language-plaintext highlighter-rouge">boolean</code>, <code class="language-plaintext highlighter-rouge">char</code>, <code class="language-plaintext highlighter-rouge">byte</code>, <code class="language-plaintext highlighter-rouge">short</code>, <code class="language-plaintext highlighter-rouge">long</code>, <code class="language-plaintext highlighter-rouge">float</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code>, 배열 (<code class="language-plaintext highlighter-rouge">int[]</code>, <code class="language-plaintext highlighter-rouge">String[]</code>), 클래스, 인터페이스, <code class="language-plaintext highlighter-rouge">enum</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이번 글에서는 이 ‘참조’라는 개념이 자바 내부의 메모리 공간에서 어떻게 동작하는지, 그리고 왜 이러한 구분이 중요한지 자세히 알아보겠습니다.</p>
+
+<p>자바 프로그램이 실행될 때, 운영체제로부터 할당받는 메모리 영역은 크게 <strong>메소드 영역(Method Area), 힙 영역(Heap Area), 스택 영역(Stack Area)</strong> 세 가지로 나뉩니다. 이 세 영역이 서로 유기적으로 작동하며 자바 변수와 데이터의 생명 주기를 관리합니다. 마치 도서관에서 책(데이터)이 보관되는 서가(힙), 책을 빌리고 반납하는 절차(스택), 도서관의 운영 규칙(메소드 영역)이 나뉘어 있는 것과 비슷합니다.</p>
+
+<hr />
+
+<h2 id="자바-메모리-영역-구조와-역할">자바 메모리 영역 구조와 역할</h2>
+
+<h3 id="1--메소드-영역-method-area">1. 📚 메소드 영역 (Method Area)</h3>
+
+<p><strong>메소드 영역</strong>은 프로그램이 시작될 때 가장 먼저 로드되는 영역입니다. 이 공간에는 모든 클래스의 <strong>코드(<code class="language-plaintext highlighter-rouge">Bytecode</code>)</strong>, <strong>메소드(Method) 정보</strong>, <strong>필드(Field) 정보</strong>, <strong>상수(Constant)</strong> 등의 정적인 정보들이 저장됩니다. 프로그램이 종료될 때까지 메모리에 남아있으며, 모든 스레드가 공유하는 영역입니다.</p>
+
+<ul>
+  <li><strong>저장되는 것</strong>: 클래스 파일(.class) 내용, static 변수, 상수 풀(Constant Pool) 등</li>
+  <li><strong>특징</strong>: 프로그램 시작 시 로드되며, 프로그램 종료 시 해제됩니다. 모든 스레드가 공유합니다.</li>
+</ul>
+
+<h3 id="2--힙-영역-heap-area">2. 📦 힙 영역 (Heap Area)</h3>
+
+<p><strong>힙 영역</strong>은 자바에서 객체(인스턴스)가 생성되는 유일한 공간입니다. <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하여 객체를 생성하면, 이 객체의 실제 데이터는 모두 힙 영역에 저장됩니다. 힙 영역은 프로그램 실행 중에 동적으로 할당되고 해제됩니다. 이 영역은 모든 스레드가 공유하며, 더 이상 참조되지 않는 객체들은 자바의 **가비지 컬렉터(Garbage Collector)**에 의해 자동으로 메모리에서 제거됩니다.</p>
+
+<ul>
+  <li><strong>저장되는 것</strong>: <code class="language-plaintext highlighter-rouge">new</code> 연산자로 생성된 **객체(Object)**와 **배열(Array)**의 실제 데이터</li>
+  <li><strong>특징</strong>: 동적으로 할당/해제됩니다. 가비지 컬렉션의 대상이 됩니다. 모든 스레드가 공유합니다.</li>
+</ul>
+
+<h3 id="3--스택-영역-stack-area">3. 🏃 스택 영역 (Stack Area)</h3>
+
+<p><strong>스택 영역</strong>은 메소드 호출과 관련된 정보와 **지역 변수(Local Variable)**가 저장되는 공간입니다. 메소드가 호출될 때마다 해당 메소드를 위한 스택 프레임(Stack Frame)이 스택에 쌓이고, 메소드 실행이 끝나면 스택 프레임은 자동으로 제거됩니다. 스택 영역은 각 스레드마다 독립적으로 생성됩니다.</p>
+
+<ul>
+  <li><strong>저장되는 것</strong>: 메소드 호출 정보, 메소드 내의 <strong>지역 변수(매개변수 포함)</strong>, 메소드 실행을 위한 임시 데이터</li>
+  <li><strong>특징</strong>: LIFO(Last-In, First-Out) 구조로 데이터가 쌓이고 해제됩니다. 메소드 호출이 끝나면 자동으로 해제됩니다. 스레드마다 독립적입니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="참조-타입-변수의-메모리-동작-방식">참조 타입 변수의 메모리 동작 방식</h2>
+
+<p>이제 각 메모리 영역을 이해했으니, 참조 타입 변수가 이 영역들을 어떻게 활용하는지 구체적인 예시를 통해 살펴보겠습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReferenceTypeMemory</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// 기본 타입 변수</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"Java"</span><span class="o">;</span> <span class="c1">// 참조 타입 변수 (String은 클래스이므로 참조 타입)</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="o">{</span><span class="mi">90</span><span class="o">,</span> <span class="mi">80</span><span class="o">,</span> <span class="mi">70</span><span class="o">};</span> <span class="c1">// 참조 타입 변수 (배열도 객체)</span>
+
+        <span class="n">calculateSum</span><span class="o">(</span><span class="n">scores</span><span class="o">);</span> <span class="c1">// 메소드 호출</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">calculateSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 지역 변수</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">score</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">score</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"점수 합계: "</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위 코드를 실행했을 때 메모리에서 어떤 일이 일어나는지 단계별로 살펴보겠습니다.</p>
+
+<h3 id="1-메소드-영역-method-area">1. 메소드 영역 (Method Area)</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ReferenceTypeMemory</code> 클래스의 <strong>바이트코드</strong>와 <code class="language-plaintext highlighter-rouge">main()</code> 메소드, <code class="language-plaintext highlighter-rouge">calculateSum()</code> 메소드의 <strong>코드 정보</strong>가 메소드 영역에 로드됩니다.</li>
+  <li>클래스 내부의 **상수 문자열 “Java”**와 같이 코드에 직접 명시된 리터럴 상수들도 이 영역의 **상수 풀(Constant Pool)**에 저장될 수 있습니다.</li>
+</ul>
+
+<h3 id="2-스택-영역-stack-area">2. 스택 영역 (Stack Area)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">main</code> 메소드가 호출되면서 스택 영역에 <code class="language-plaintext highlighter-rouge">main()</code> 메소드를 위한 <strong>스택 프레임</strong>이 생성됩니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int num = 10;</code>
+    <ul>
+      <li>**기본 타입 변수 <code class="language-plaintext highlighter-rouge">num</code>**은 실제 값 <code class="language-plaintext highlighter-rouge">10</code>을 스택 프레임 내부에 직접 저장합니다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">String name = "Java";</code>
+    <ul>
+      <li>**참조 타입 변수 <code class="language-plaintext highlighter-rouge">name</code>**은 스택에 생성됩니다.</li>
+      <li>하지만 <code class="language-plaintext highlighter-rouge">name</code> 변수는 실제 문자열 “Java”를 직접 저장하지 않고, 이 문자열 객체가 <strong>힙 영역에 생성된 주소값</strong>을 저장합니다. (문자열 리터럴은 특수한 경우 상수 풀에 존재할 수도 있지만, 일반적인 객체 생성의 관점에서 힙에 비유할 수 있습니다.)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">int[] scores = {90, 80, 70};</code>
+    <ul>
+      <li><strong>참조 타입 변수 <code class="language-plaintext highlighter-rouge">scores</code></strong> 또한 스택에 생성됩니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">scores</code> 변수는 실제 배열 데이터 <code class="language-plaintext highlighter-rouge">{90, 80, 70}</code>을 직접 저장하는 것이 아니라, 이 <strong>배열 객체가 힙 영역에 할당된 메모리 주소</strong>를 저장합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-힙-영역-heap-area">3. 힙 영역 (Heap Area)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하거나 배열 리터럴을 통해 객체가 생성되면, 해당 객체의 실제 데이터는 힙 영역에 저장됩니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">String name = "Java";</code> 에 의해 생성된 <strong>“Java” 문자열 객체</strong>의 실제 데이터가 힙 영역에 저장됩니다. 스택의 <code class="language-plaintext highlighter-rouge">name</code> 변수는 이 힙 영역의 주소를 가리킵니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">int[] scores = {90, 80, 70};</code> 에 의해 생성된 <strong>정수 배열 객체</strong> <code class="language-plaintext highlighter-rouge">[90][80][70]</code>의 실제 데이터가 힙 영역에 저장됩니다. 스택의 <code class="language-plaintext highlighter-rouge">scores</code> 변수는 이 힙 영역의 주소를 가리킵니다.</li>
+</ul>
+
+<h3 id="4-calculatesum-메소드-호출-시-스택-및-힙-동작">4. <code class="language-plaintext highlighter-rouge">calculateSum()</code> 메소드 호출 시 스택 및 힙 동작</h3>
+
+<p><code class="language-plaintext highlighter-rouge">calculateSum(scores);</code>가 호출되면 스택 영역에 <code class="language-plaintext highlighter-rouge">calculateSum()</code> 메소드를 위한 새로운 <strong>스택 프레임</strong>이 생성됩니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">calculateSum</code> 메소드의 매개변수 <code class="language-plaintext highlighter-rouge">int[] arr</code>은 <strong>지역 변수</strong>이므로 스택 프레임 내에 생성됩니다.</li>
+  <li>이때 <code class="language-plaintext highlighter-rouge">arr</code>은 <code class="language-plaintext highlighter-rouge">main</code> 메소드의 <code class="language-plaintext highlighter-rouge">scores</code> 변수가 가지고 있던 <strong>힙 영역의 배열 객체 주소</strong>를 <strong>복사</strong>하여 저장합니다. 즉, <code class="language-plaintext highlighter-rouge">arr</code>과 <code class="language-plaintext highlighter-rouge">scores</code>는 서로 다른 스택 공간에 있지만, <strong>동일한 힙 영역의 배열 객체를 참조</strong>하게 됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">int sum = 0;</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">calculateSum</code> 메소드 내의 **기본 타입 지역 변수 <code class="language-plaintext highlighter-rouge">sum</code>**은 스택 프레임 내부에 실제 값 <code class="language-plaintext highlighter-rouge">0</code>을 저장합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">calculateSum()</code> 메소드 실행이 끝나면, <code class="language-plaintext highlighter-rouge">calculateSum()</code> 스택 프레임과 그 안에 있던 모든 지역 변수(<code class="language-plaintext highlighter-rouge">arr</code>, <code class="language-plaintext highlighter-rouge">sum</code>)는 스택에서 자동으로 사라집니다. 그러나 <code class="language-plaintext highlighter-rouge">arr</code>이 참조하고 있던 <strong>힙 영역의 배열 객체</strong>는 여전히 <code class="language-plaintext highlighter-rouge">main</code> 메소드의 <code class="language-plaintext highlighter-rouge">scores</code> 변수에 의해 참조되고 있으므로, <strong>메모리에서 제거되지 않습니다.</strong></p>
+
+<hr />
+
+<h2 id="-연산자의-차이-기본-타입-vs-참조-타입"><code class="language-plaintext highlighter-rouge">==</code> 연산자의 차이: 기본 타입 vs 참조 타입</h2>
+
+<p><code class="language-plaintext highlighter-rouge">==</code> 연산자는 두 피연산자의 값이 같은지를 비교할 때 사용됩니다. 하지만 기본 타입과 참조 타입에서 이 ‘값’이 의미하는 바가 다르기 때문에, <code class="language-plaintext highlighter-rouge">==</code> 연산자의 동작 방식에도 중요한 차이가 있습니다.</p>
+
+<h3 id="1-기본-타입에서의--연산">1. 기본 타입에서의 <code class="language-plaintext highlighter-rouge">==</code> 연산</h3>
+
+<p>기본 타입 변수들은 변수 자체에 실제 값을 저장합니다. 따라서 <code class="language-plaintext highlighter-rouge">==</code> 연산자는 단순히 <strong>두 변수가 가진 실제 값</strong>이 같은지를 비교합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span> <span class="c1">// true (a와 b의 값 10이 같음)</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="o">);</span> <span class="c1">// false (a의 값 10과 c의 값 20이 다름)</span>
+</code></pre></div></div>
+
+<h3 id="2-참조-타입에서의--연산">2. 참조 타입에서의 <code class="language-plaintext highlighter-rouge">==</code> 연산</h3>
+
+<p>참조 타입 변수들은 실제 객체가 아닌 **객체의 메모리 주소(번지)**를 저장합니다. 따라서 참조 타입에서 <code class="language-plaintext highlighter-rouge">==</code> 연산자는 <strong>두 변수가 참조하는 ‘메모리 주소’가 같은지</strong>를 비교합니다. 즉, 두 변수가 <strong>동일한 하나의 객체를 가리키고 있는지</strong>를 판단하는 것입니다. 객체 내부의 실제 데이터(값)가 같은지는 중요하지 않습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="o">;</span>         <span class="c1">// 문자열 리터럴은 상수 풀에서 관리될 수 있어 특수함</span>
+<span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="o">;</span>         <span class="c1">// str1과 동일한 "Hello" 문자열 객체를 참조할 가능성 높음</span>
+<span class="nc">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span> <span class="c1">// 'new'로 새로운 String 객체를 힙에 생성</span>
+<span class="nc">String</span> <span class="n">str4</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"World"</span><span class="o">);</span> <span class="c1">// 'new'로 또 다른 String 객체를 힙에 생성</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="o">);</span> <span class="c1">// true (대부분의 JVM에서 상수 풀의 동일한 "Hello" 객체 참조)</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str3</span><span class="o">);</span> <span class="c1">// false (str1은 상수 풀의 "Hello", str3은 힙의 다른 "Hello" 객체 참조)</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str4</span><span class="o">);</span> <span class="c1">// false (서로 다른 힙의 객체 참조)</span>
+
+<span class="c1">// 배열 예시</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span> <span class="c1">// arr1과 같은 값을 가지지만, 'new'로 다른 객체 생성됨</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr3</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">;</span>      <span class="c1">// arr3은 arr1이 참조하는 객체와 '동일한' 객체를 참조</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr1</span> <span class="o">==</span> <span class="n">arr2</span><span class="o">);</span> <span class="c1">// false (arr1과 arr2는 값은 같지만 서로 다른 메모리 주소의 객체)</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr1</span> <span class="o">==</span> <span class="n">arr3</span><span class="o">);</span> <span class="c1">// true (arr1과 arr3은 동일한 메모리 주소의 객체를 참조)</span>
+</code></pre></div></div>
+
+<p><strong>중요</strong>: 참조 타입 객체의 <strong>실제 내용(값)이 같은지</strong>를 비교하려면, 일반적으로 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드를 사용해야 합니다. 예를 들어, <code class="language-plaintext highlighter-rouge">String</code> 클래스는 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드를 오버라이딩하여 문자열의 내용을 비교하도록 구현되어 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+<span class="nc">String</span> <span class="n">str5</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str5</span><span class="o">);</span>   <span class="c1">// false (서로 다른 객체)</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str3</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str5</span><span class="o">));</span> <span class="c1">// true (객체 내용은 같음)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-요약-메모리-사용의-핵심">📌 요약: 메모리 사용의 핵심</h2>
+
+<ul>
+  <li><strong>메소드 영역</strong>: 클래스 코드, 메소드, <code class="language-plaintext highlighter-rouge">static</code> 변수 등 <strong>정적 정보</strong> 저장.</li>
+  <li><strong>힙 영역</strong>: <code class="language-plaintext highlighter-rouge">new</code>로 생성된 <strong>모든 객체(인스턴스)와 배열의 실제 데이터</strong> 저장. 가비지 컬렉터의 대상.</li>
+  <li><strong>스택 영역</strong>: 메소드 호출 정보, <strong>지역 변수</strong> 저장. 메소드 종료 시 자동 해제.</li>
+  <li><strong>기본 타입 변수</strong>: <strong>실제 값</strong>을 스택에 직접 저장.</li>
+  <li><strong>참조 타입 변수</strong>: **힙 영역에 있는 실제 객체의 ‘주소’**를 스택에 저장. 이 주소를 통해 실제 객체에 접근(참조)합니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">==</code> 연산자</strong>:
+    <ul>
+      <li><strong>기본 타입</strong>: <strong>실제 값</strong>이 같은지 비교.</li>
+      <li><strong>참조 타입</strong>: **참조하는 메모리 주소(동일한 객체)**가 같은지 비교. 실제 내용 비교는 <code class="language-plaintext highlighter-rouge">equals()</code> 메소드 사용.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-메모리-사용-퀴즈-변수의-종류와-값">💡 메모리 사용 퀴즈: 변수의 종류와 값</h2>
+
+<p>다음 코드가 실행될 때 각 변수의 ‘값’과 ‘저장되는 메모리 영역’을 생각해 보세요.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemoryQuiz</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">city</span> <span class="o">=</span> <span class="s">"Seoul"</span><span class="o">;</span>
+        <span class="nc">MemoryQuiz</span> <span class="n">mq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MemoryQuiz</span><span class="o">();</span> <span class="c1">// MemoryQuiz 객체 생성</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+
+1.  **`int count = 5;`**
+      * **값**: `5` (실제 정수 값)
+      * **저장 영역**: **스택 영역** (기본 타입 변수는 값을 직접 저장)
+        <br /><br />
+2.  **`String city = &quot;Seoul&quot;;`**
+      * **값**: `city` 변수 자체에는 문자열 "Seoul"이 저장된 **힙 영역의 주소값**이 저장됩니다.
+      * **저장 영역**: `city` 변수는 **스택 영역**에, 실제 문자열 객체 "Seoul"은 **힙 영역** (또는 문자열 상수 풀)에 저장됩니다.
+        <br /><br />
+3.  **`MemoryQuiz mq = new MemoryQuiz();`**
+      * **값**: `mq` 변수 자체에는 새로 생성된 `MemoryQuiz` **객체의 힙 영역 주소값**이 저장됩니다.
+      * **저장 영역**: `mq` 변수는 **스택 영역**에, 실제 `MemoryQuiz` 객체는 **힙 영역**에 저장됩니다.
+        <br /><br />
+        </details>
+
+<hr />
+
+<h2 id="-마치며-메모리-관리는-자바의-핵심">🔚 마치며: 메모리 관리는 자바의 핵심!</h2>
+
+<p>자바에서 기본 타입과 참조 타입이 메모리에서 어떻게 다르게 동작하는지 이해하는 것은 매우 중요합니다. 특히 참조 타입이 힙 영역에 객체를 생성하고, 스택에 그 객체를 가리키는 주소를 저장한다는 개념은 자바의 객체 지향 프로그래밍과 <strong>가비지 컬렉션</strong> 메커니즘을 이해하는 데 필수적인 기초 지식입니다.</p>
+
+<p>이러한 메모리 구조를 정확히 파악하면 프로그램의 성능을 최적화하거나, <code class="language-plaintext highlighter-rouge">NullPointerException</code>과 같은 흔한 오류를 예방하고 디버깅하는 데 큰 도움이 됩니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-enhanced-for/" class="btn btn--inverse" rel="prev">
+            ← 자바 향상된 for문
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-array/" class="btn btn--inverse" rel="next">
+            자바 참조타입 - 일차원 배열 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-16T07:30:46+00:00">June 16, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+%EC%B0%B8%EC%A1%B0%ED%83%80%EC%9E%85%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-reference%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-reference%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-reference/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+%EC%B0%B8%EC%A1%B0%ED%83%80%EC%9E%85%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-reference%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1203 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 객체지향-클래스 - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="자바 객체지향-클래스">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/java-oop&class/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-17T02:18:56+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/java-oop&class/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="자바 객체지향-클래스">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-17T02:18:56+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/java-oop&class/" itemprop="url">자바 객체지향-클래스</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="자바-객체지향-프로그래밍-현실-세계를-코드로-담다">자바 객체지향 프로그래밍: 현실 세계를 코드로 담다</h2>
+
+<p>지금까지 우리는 자바의 기본적인 데이터 타입, 변수, 연산자, 조건문 등 프로그램을 구성하는 개별적인 요소들을 배워왔습니다. 하지만 실제 복잡한 소프트웨어를 만들 때는 단순히 이러한 요소들을 나열하는 것만으로는 부족합니다. 마치 건물을 지을 때 벽돌 하나하나를 놓는 것을 넘어, 전체적인 설계도와 각 부분의 역할을 이해해야 하는 것과 같습니다.</p>
+
+<p>여기서 등장하는 핵심 개념이 바로 <strong>객체지향 프로그래밍(Object-Oriented Programming, OOP)</strong> 입니다. 자바는 대표적인 객체지향 언어로, 현실 세계의 사물과 개념을 코드 속 ‘객체’로 모델링하여 프로그램을 만드는 방식을 지향합니다. 이러한 접근 방식은 코드의 <strong>재사용성, 유지보수성, 확장성</strong>을 크게 향상시킵니다.</p>
+
+<p>이번 글에서는 객체지향 프로그래밍의 가장 기본적이면서도 중요한 요소인 <strong>클래스(Class)</strong>, <strong>객체(Object)</strong>, 그리고 **인스턴스(Instance)**가 무엇인지, 그리고 이들이 어떻게 서로 연관되어 프로그램 속에서 동작하는지 자세히 알아보겠습니다. 또한, 클래스 내부에 선언되는 **변수의 종류(인스턴스 변수, static 변수, 지역 변수)**가 어떻게 클래스, 객체와 연결되는지도 함께 살펴보겠습니다.</p>
+
+<hr />
+
+<h2 id="객체지향-프로그래밍oop이란">객체지향 프로그래밍(OOP)이란?</h2>
+
+<p>**객체지향 프로그래밍(OOP)**은 프로그램을 여러 개의 독립적인 ‘객체’ 단위로 나누어 설계하고 구현하는 프로그래밍 패러다임입니다. 각 객체는 고유한 **상태(데이터)**와 그 상태를 조작하는 **행동(메소드)**을 가집니다.</p>
+
+<p>예를 들어, 현실 세계의 ‘자동차’를 생각해 봅시다.</p>
+
+<ul>
+  <li><strong>상태</strong>: 색상, 모델, 속도, 연식 등</li>
+  <li><strong>행동</strong>: 시동 걸기, 가속하기, 정지하기, 방향 바꾸기 등</li>
+</ul>
+
+<p>객체지향 프로그래밍은 이러한 현실 세계의 사물이나 개념을 컴퓨터 프로그램 속으로 그대로 가져와 표현하는 방식입니다.</p>
+
+<h2 id="클래스class-객체를-만들기-위한-설계도">클래스(Class): 객체를 만들기 위한 ‘설계도’</h2>
+
+<p><strong>클래스</strong>는 객체를 생성하기 위한 <strong>‘틀’</strong> 또는 <strong>‘설계도’</strong> 역할을 합니다. 클래스 자체는 객체가 아닙니다. 마치 자동차를 만들기 위한 설계도면이 실제 자동차가 아닌 것처럼 말이죠. 클래스에는 객체가 가질 **속성(변수, Field)**과 객체가 수행할 **행동(메소드, Method)**이 정의됩니다.</p>
+
+<ul>
+  <li><strong>속성(Field)</strong>: 객체가 가질 데이터나 상태를 나타냅니다. 예를 들어, <code class="language-plaintext highlighter-rouge">Car</code> 클래스라면 <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">speed</code> 등이 속성이 됩니다. 클래스 내에서 선언된 변수를 ‘멤버 변수’ 또는 ‘필드’라고 부릅니다.</li>
+  <li><strong>행동(Method)</strong>: 객체가 수행할 동작이나 기능을 나타냅니다. 예를 들어, <code class="language-plaintext highlighter-rouge">Car</code> 클래스라면 <code class="language-plaintext highlighter-rouge">startEngine()</code>, <code class="language-plaintext highlighter-rouge">accelerate()</code>, <code class="language-plaintext highlighter-rouge">stop()</code> 등이 메소드가 됩니다.</li>
+</ul>
+
+<!-- end list -->
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Car 클래스 선언 (자동차의 설계도)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+    <span class="c1">// 1. 속성 (Field, 멤버 변수) 정의</span>
+    <span class="nc">String</span> <span class="n">color</span><span class="o">;</span> <span class="c1">// 인스턴스 변수: 각 자동차(객체)마다 다른 색상을 가집니다.</span>
+    <span class="nc">String</span> <span class="n">model</span><span class="o">;</span> <span class="c1">// 인스턴스 변수: 각 자동차(객체)마다 다른 모델명을 가집니다.</span>
+    <span class="kt">int</span> <span class="n">speed</span><span class="o">;</span>    <span class="c1">// 인스턴스 변수: 각 자동차(객체)마다 현재 속도가 다릅니다.</span>
+
+    <span class="c1">// static 변수 (클래스 변수): 모든 자동차(객체)가 공유하는 속성</span>
+    <span class="c1">// 이 클래스로부터 만들어지는 모든 자동차가 공유하는 제조사 이름이라고 가정해 봅시다.</span>
+    <span class="kd">static</span> <span class="nc">String</span> <span class="n">manufacturer</span> <span class="o">=</span> <span class="s">"JavaMotors"</span><span class="o">;</span> 
+
+    <span class="c1">// 2. 행동 (Method) 정의</span>
+    <span class="c1">// 시동을 거는 메소드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startEngine</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"의 시동을 겁니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 가속하는 메소드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerate</span><span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">speed</span> <span class="o">+=</span> <span class="n">amount</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"이(가) "</span> <span class="o">+</span> <span class="n">speed</span> <span class="o">+</span> <span class="s">"km/h로 가속합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 정지하는 메소드</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">speed</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"이(가) 정지합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="c1">// 제조사 정보를 출력하는 메소드 (static 변수 활용)</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printManufacturer</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"모든 "</span> <span class="o">+</span> <span class="n">manufacturer</span> <span class="o">+</span> <span class="s">" 자동차의 총 생산 대수는 아직 미정입니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위 코드에서 <code class="language-plaintext highlighter-rouge">Car</code>는 클래스이며, 이 클래스는 <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">speed</code>라는 속성과 <code class="language-plaintext highlighter-rouge">startEngine()</code>, <code class="language-plaintext highlighter-rouge">accelerate()</code>, <code class="language-plaintext highlighter-rouge">stop()</code>, <code class="language-plaintext highlighter-rouge">printManufacturer()</code>이라는 행동을 가질 것이라고 정의하고 있습니다.</p>
+
+<hr />
+
+<h2 id="클래스-내-변수의-종류-인스턴스-static-지역-변수">클래스 내 변수의 종류: 인스턴스, static, 지역 변수</h2>
+
+<p>클래스 내부에서 선언되는 변수는 그 위치와 <code class="language-plaintext highlighter-rouge">static</code> 키워드 유무에 따라 세 가지 종류로 나뉩니다.</p>
+
+<ol>
+  <li>
+    <p><strong>인스턴스 변수 (Instance Variable)</strong></p>
+
+    <ul>
+      <li><strong>선언 위치</strong>: 클래스 내부, 메소드 외부에 선언됩니다.</li>
+      <li><strong>생명 주기</strong>: 객체(인스턴스)가 생성될 때 함께 생성되고, 해당 객체가 메모리에서 사라질 때 함께 사라집니다.</li>
+      <li><strong>공유 범위</strong>: 각 객체(인스턴스)마다 <strong>고유한 값</strong>을 가집니다. 즉, <code class="language-plaintext highlighter-rouge">myCar</code>의 <code class="language-plaintext highlighter-rouge">color</code>와 <code class="language-plaintext highlighter-rouge">yourCar</code>의 <code class="language-plaintext highlighter-rouge">color</code>는 다를 수 있습니다.</li>
+      <li><strong>메모리</strong>: <strong>힙(Heap) 영역</strong>에 저장됩니다.</li>
+      <li><strong>예시</strong>: 위 <code class="language-plaintext highlighter-rouge">Car</code> 클래스의 <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">speed</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>클래스 변수 (Class Variable) 또는 static 변수</strong></p>
+
+    <ul>
+      <li><strong>선언 위치</strong>: 클래스 내부, 메소드 외부에 <code class="language-plaintext highlighter-rouge">static</code> 키워드와 함께 선언됩니다.</li>
+      <li><strong>생명 주기</strong>: 프로그램 시작 시 클래스가 메모리에 로드될 때 함께 생성되고, 프로그램이 종료될 때 해제됩니다. 객체 생성 여부와 관계없이 존재합니다.</li>
+      <li><strong>공유 범위</strong>: 해당 클래스로부터 생성된 <strong>모든 객체가 공유하는 값</strong>입니다. 어떤 객체에서 이 변수 값을 변경하면, 다른 모든 객체에도 그 변경 내용이 반영됩니다.</li>
+      <li><strong>메모리</strong>: **메소드 영역(Method Area)**에 저장됩니다.</li>
+      <li><strong>접근 방법</strong>: <code class="language-plaintext highlighter-rouge">클래스명.변수명</code> 또는 <code class="language-plaintext highlighter-rouge">객체참조변수.변수명</code>으로 접근 가능하나, 일반적으로 <code class="language-plaintext highlighter-rouge">클래스명.변수명</code>으로 접근하는 것을 권장합니다.</li>
+      <li><strong>예시</strong>: 위 <code class="language-plaintext highlighter-rouge">Car</code> 클래스의 <code class="language-plaintext highlighter-rouge">manufacturer</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>지역 변수 (Local Variable)</strong></p>
+
+    <ul>
+      <li><strong>선언 위치</strong>: 메소드, 생성자, 또는 초기화 블록 내부에 선언됩니다.</li>
+      <li><strong>생명 주기</strong>: 해당 블록이 실행될 때 생성되고, 블록의 실행이 끝나면 자동으로 소멸됩니다.</li>
+      <li><strong>공유 범위</strong>: 선언된 블록 내에서만 유효하며, 다른 블록이나 객체와는 무관합니다.</li>
+      <li><strong>메모리</strong>: <strong>스택(Stack) 영역</strong>에 저장됩니다.</li>
+      <li><strong>예시</strong>: 아래 <code class="language-plaintext highlighter-rouge">main</code> 메소드의 <code class="language-plaintext highlighter-rouge">myCar</code>, <code class="language-plaintext highlighter-rouge">yourCar</code> 또는 <code class="language-plaintext highlighter-rouge">accelerate</code> 메소드의 <code class="language-plaintext highlighter-rouge">amount</code> 변수</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="객체object와-인스턴스instance-설계도로-만들어진-실체">객체(Object)와 인스턴스(Instance): 설계도로 만들어진 ‘실체’</h2>
+
+<p><strong>객체</strong>는 클래스를 기반으로 메모리에 실제로 만들어진 **‘실체’**를 의미합니다. 즉, 설계도(<code class="language-plaintext highlighter-rouge">클래스</code>)를 바탕으로 만들어진 실제 ‘자동차’입니다. 객체는 생성될 때마다 독립적인 속성값을 가질 수 있습니다.</p>
+
+<p><strong>인스턴스</strong>는 ‘객체’와 거의 같은 의미로 사용되지만, 좀 더 관계에 초점을 맞춘 용어입니다. 특정 클래스로부터 생성된 객체를 그 클래스의 **‘인스턴스’**라고 부릅니다.
+예를 들어, “myCar는 <code class="language-plaintext highlighter-rouge">Car</code> 클래스의 객체이다”라고 말할 수도 있지만, “myCar는 <code class="language-plaintext highlighter-rouge">Car</code> 클래스의 인스턴스이다”라고 말하는 것이 더 정확한 표현입니다.</p>
+
+<h3 id="-클래스로-객체인스턴스-생성하기">✅ 클래스로 객체(인스턴스) 생성하기</h3>
+
+<p>객체를 생성하는 과정은 다음 두 단계로 이루어집니다.</p>
+
+<ol>
+  <li><strong>클래스 타입의 변수 선언</strong>: 객체의 주소값을 저장할 변수를 선언합니다.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">클래스명</span> <span class="n">변수명</span><span class="o">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">new</code> 연산자를 사용하여 객체 생성 및 할당</strong>: <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하여 클래스의 생성자를 호출하고, 힙(Heap) 메모리 영역에 실제 객체를 생성한 후, 그 객체의 메모리 주소를 선언된 변수에 할당합니다.</li>
+</ol>
+
+<!-- end list -->
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 지역 변수: main 메소드 안에서만 유효한 변수</span>
+        <span class="c1">// 1. Car 클래스 타입의 변수 선언 (아직 객체는 생성되지 않음)</span>
+        <span class="nc">Car</span> <span class="n">myCar</span><span class="o">;</span> <span class="c1">// myCar는 Car 객체를 '참조'할 지역 변수입니다.</span>
+
+        <span class="c1">// 2. new 연산자를 사용하여 Car 클래스의 객체(인스턴스)를 생성하고 변수에 할당</span>
+        <span class="n">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span> <span class="c1">// 힙 메모리에 Car 객체가 생성되고, 그 주소가 myCar에 저장됩니다.</span>
+
+        <span class="c1">// myCar 인스턴스의 인스턴스 변수에 접근하고 값 설정</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="s">"Red"</span><span class="o">;</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">model</span> <span class="o">=</span> <span class="s">"Tesla Model 3"</span><span class="o">;</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"내 차의 제조사: "</span> <span class="o">+</span> <span class="nc">Car</span><span class="o">.</span><span class="na">manufacturer</span><span class="o">);</span> <span class="c1">// static 변수는 클래스명으로 접근</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"내 차의 색상: "</span> <span class="o">+</span> <span class="n">myCar</span><span class="o">.</span><span class="na">color</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"내 차의 모델: "</span> <span class="o">+</span> <span class="n">myCar</span><span class="o">.</span><span class="na">model</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"내 차의 현재 속도: "</span> <span class="o">+</span> <span class="n">myCar</span><span class="o">.</span><span class="na">speed</span> <span class="o">+</span> <span class="s">"km/h"</span><span class="o">);</span>
+
+        <span class="n">myCar</span><span class="o">.</span><span class="na">startEngine</span><span class="o">();</span> <span class="c1">// 메소드 호출</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">accelerate</span><span class="o">(</span><span class="mi">50</span><span class="o">);</span> <span class="c1">// 메소드 호출 (amount는 이 메소드 내의 지역 변수)</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>        <span class="c1">// 메소드 호출</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--------------------"</span><span class="o">);</span>
+
+        <span class="c1">// 또 다른 Car 객체(인스턴스) 생성</span>
+        <span class="nc">Car</span> <span class="n">yourCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span> <span class="c1">// 힙 메모리에 새로운 Car 객체가 생성됩니다.</span>
+        <span class="n">yourCar</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="s">"Blue"</span><span class="o">;</span>
+        <span class="n">yourCar</span><span class="o">.</span><span class="na">model</span> <span class="o">=</span> <span class="s">"Hyundai Sonata"</span><span class="o">;</span>
+        <span class="n">yourCar</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"네 차의 제조사: "</span> <span class="o">+</span> <span class="nc">Car</span><span class="o">.</span><span class="na">manufacturer</span><span class="o">);</span> <span class="c1">// static 변수는 클래스명으로 접근</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"네 차의 색상: "</span> <span class="o">+</span> <span class="n">yourCar</span><span class="o">.</span><span class="na">color</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"네 차의 모델: "</span> <span class="o">+</span> <span class="n">yourCar</span><span class="o">.</span><span class="na">model</span><span class="o">);</span>
+        <span class="n">yourCar</span><span class="o">.</span><span class="na">accelerate</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
+
+        <span class="c1">// myCar와 yourCar는 서로 독립적인 객체입니다.</span>
+        <span class="c1">// 각자의 인스턴스 변수 속성을 가지고, 각자의 행동을 수행합니다.</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"myCar의 최종 속도: "</span> <span class="o">+</span> <span class="n">myCar</span><span class="o">.</span><span class="na">speed</span> <span class="o">+</span> <span class="s">"km/h"</span><span class="o">);</span> <span class="c1">// 0 (stop() 호출 후)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"yourCar의 최종 속도: "</span> <span class="o">+</span> <span class="n">yourCar</span><span class="o">.</span><span class="na">speed</span> <span class="o">+</span> <span class="s">"km/h"</span><span class="o">);</span> <span class="c1">// 30</span>
+
+        <span class="c1">// static 변수 값 변경 (모든 객체에 영향)</span>
+        <span class="nc">Car</span><span class="o">.</span><span class="na">manufacturer</span> <span class="o">=</span> <span class="s">"Global Motors"</span><span class="o">;</span> <span class="c1">// 클래스 변수 값 변경</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--------------------"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"제조사 변경 후 myCar의 제조사: "</span> <span class="o">+</span> <span class="n">myCar</span><span class="o">.</span><span class="na">manufacturer</span><span class="o">);</span> <span class="c1">// 변경된 값 출력</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"제조사 변경 후 yourCar의 제조사: "</span> <span class="o">+</span> <span class="n">yourCar</span><span class="o">.</span><span class="na">manufacturer</span><span class="o">);</span> <span class="c1">// 변경된 값 출력</span>
+        <span class="nc">Car</span><span class="o">.</span><span class="na">printManufacturer</span><span class="o">();</span> <span class="c1">// static 메소드도 클래스명으로 호출</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>실행 결과:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>내 차의 제조사: JavaMotors
+내 차의 색상: Red
+내 차의 모델: Tesla Model 3
+내 차의 현재 속도: 0km/h
+Tesla Model 3의 시동을 겁니다.
+Tesla Model 3이(가) 50km/h로 가속합니다.
+Tesla Model 3이(가) 정지합니다.
+--------------------
+네 차의 제조사: JavaMotors
+네 차의 색상: Blue
+네 차의 모델: Hyundai Sonata
+Hyundai Sonata이(가) 30km/h로 가속합니다.
+myCar의 최종 속도: 0km/h
+yourCar의 최종 속도: 30km/h
+--------------------
+제조사 변경 후 myCar의 제조사: Global Motors
+제조사 변경 후 yourCar의 제조사: Global Motors
+모든 Global Motors 자동차의 총 생산 대수는 아직 미정입니다.
+</code></pre></div></div>
+
+<p>위 예시에서 <code class="language-plaintext highlighter-rouge">myCar</code>와 <code class="language-plaintext highlighter-rouge">yourCar</code>는 모두 <code class="language-plaintext highlighter-rouge">Car</code>라는 **동일한 설계도(클래스)**로부터 만들어졌지만, 각각 고유한 <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">speed</code> 값(인스턴스 변수)을 가집니다. 반면 <code class="language-plaintext highlighter-rouge">manufacturer</code>(static 변수)는 모든 <code class="language-plaintext highlighter-rouge">Car</code> 객체가 <strong>공유</strong>하며, 어느 한 곳에서 값을 바꾸면 모든 객체에 영향을 미치는 것을 확인할 수 있습니다. <code class="language-plaintext highlighter-rouge">main</code> 메소드 안에서 선언된 <code class="language-plaintext highlighter-rouge">myCar</code>, <code class="language-plaintext highlighter-rouge">yourCar</code> 변수들은 메소드 실행이 끝나면 사라지는 <strong>지역 변수</strong>입니다.</p>
+
+<hr />
+
+<h2 id="-요약-정리-클래스-객체-인스턴스-그리고-변수의-종류">📌 요약 정리: 클래스, 객체, 인스턴스 그리고 변수의 종류</h2>
+
+<ul>
+  <li>
+    <p><strong>클래스(Class)</strong>: 객체를 만들기 위한 <strong>설계도</strong>. 객체가 가질 속성(필드)과 행동(메소드)을 정의합니다. 클래스 자체는 메모리에 실제 데이터를 저장하지 않습니다.</p>
+  </li>
+  <li>
+    <p><strong>객체(Object)</strong>: 클래스 설계도를 바탕으로 <strong>메모리에 생성된 실제 실체</strong>. 독립적인 속성 값을 가지며, 정의된 행동을 수행할 수 있습니다.</p>
+  </li>
+  <li>
+    <p><strong>인스턴스(Instance)</strong>: 특정 클래스로부터 생성된 <strong>객체</strong>를 지칭할 때 사용되는 용어. “myCar는 <code class="language-plaintext highlighter-rouge">Car</code> 클래스의 인스턴스이다” 와 같이 특정 클래스와의 관계를 강조합니다.</p>
+  </li>
+  <li>
+    <p><strong>생성</strong>: <code class="language-plaintext highlighter-rouge">new</code> 연산자를 통해 클래스로부터 객체(인스턴스)를 생성합니다. 이때 실제 데이터는 <strong>힙 영역</strong>에 저장되고, 객체를 참조하는 변수는 <strong>스택 영역</strong>에 그 주소값을 가집니다.</p>
+  </li>
+  <li>
+    <p><strong>변수의 종류</strong>:</p>
+
+    <ul>
+      <li><strong>인스턴스 변수</strong>: 각 <strong>객체(인스턴스)마다 고유</strong>하게 값을 가집니다. (<code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">model</code>, <code class="language-plaintext highlighter-rouge">speed</code>)</li>
+      <li><strong>클래스 변수 (static 변수)</strong>: <strong>모든 객체가 공유</strong>하는 값입니다. 클래스 로드 시점에 메모리(메소드 영역)에 할당됩니다. (<code class="language-plaintext highlighter-rouge">manufacturer</code>)</li>
+      <li><strong>지역 변수</strong>: 메소드/블록 내에서 선언되며, 해당 블록이 끝나면 사라집니다. (<code class="language-plaintext highlighter-rouge">myCar</code>, <code class="language-plaintext highlighter-rouge">yourCar</code>, <code class="language-plaintext highlighter-rouge">amount</code>)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-클래스객체-퀴즈-동물-농장">💡 클래스/객체 퀴즈: 동물 농장</h2>
+
+<p>다음 <code class="language-plaintext highlighter-rouge">Animal</code> 클래스와 <code class="language-plaintext highlighter-rouge">main</code> 메소드를 보고, 어떤 결과가 출력될지 예상해 보세요.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span> <span class="c1">// public 키워드를 붙이지 않으면 파일명과 달라도 됩니다.</span>
+    <span class="nc">String</span> <span class="n">name</span><span class="o">;</span> <span class="c1">// 인스턴스 변수</span>
+    <span class="nc">String</span> <span class="n">sound</span><span class="o">;</span> <span class="c1">// 인스턴스 변수</span>
+    <span class="kd">static</span> <span class="nc">String</span> <span class="n">kingdom</span> <span class="o">=</span> <span class="s">"동물계"</span><span class="o">;</span> <span class="c1">// 클래스 변수 (static 변수)</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">"이(가) "</span> <span class="o">+</span> <span class="n">sound</span> <span class="o">+</span> <span class="s">" 소리를 냅니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printKingdom</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"모든 생명체는 "</span> <span class="o">+</span> <span class="n">kingdom</span> <span class="o">+</span> <span class="s">"에 속합니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnimalFarm</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">();</span> <span class="c1">// 지역 변수 dog</span>
+        <span class="n">dog</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"바둑이"</span><span class="o">;</span>
+        <span class="n">dog</span><span class="o">.</span><span class="na">sound</span> <span class="o">=</span> <span class="s">"멍멍"</span><span class="o">;</span>
+
+        <span class="nc">Animal</span> <span class="n">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">();</span> <span class="c1">// 지역 변수 cat</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"나비"</span><span class="o">;</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">sound</span> <span class="o">=</span> <span class="s">"야옹"</span><span class="o">;</span>
+
+        <span class="n">dog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--- Static 변수 확인 ---"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"강아지의 종: "</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="na">kingdom</span><span class="o">);</span> <span class="c1">// 객체를 통해서도 static 변수 접근 가능</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"고양이의 종: "</span> <span class="o">+</span> <span class="n">cat</span><span class="o">.</span><span class="na">kingdom</span><span class="o">);</span> <span class="c1">// 객체를 통해서도 static 변수 접근 가능</span>
+        <span class="nc">Animal</span><span class="o">.</span><span class="na">printKingdom</span><span class="o">();</span> <span class="c1">// static 메소드는 클래스명으로 호출</span>
+
+        <span class="nc">Animal</span><span class="o">.</span><span class="na">kingdom</span> <span class="o">=</span> <span class="s">"생물계"</span><span class="o">;</span> <span class="c1">// static 변수 값 변경</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--- Static 변수 변경 후 확인 ---"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"강아지의 종: "</span> <span class="o">+</span> <span class="n">dog</span><span class="o">.</span><span class="na">kingdom</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"고양이의 종: "</span> <span class="o">+</span> <span class="n">cat</span><span class="o">.</span><span class="na">kingdom</span><span class="o">);</span>
+        <span class="nc">Animal</span><span class="o">.</span><span class="na">printKingdom</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+출력 결과:<br /><br />
+
+
+바둑이이(가) 멍멍 소리를 냅니다.<br />
+나비이(가) 야옹 소리를 냅니다.<br />
+--- Static 변수 확인 ---<br />
+강아지의 종: 동물계<br />
+고양이의 종: 동물계<br />
+모든 생명체는 동물계에 속합니다.<br />
+--- Static 변수 변경 후 확인 ---<br />
+강아지의 종: 생물계<br />
+고양이의 종: 생물계<br />
+모든 생명체는 생물계에 속합니다.<br />
+
+
+<br />
+설명:
+<br />
+
+1.  `Animal` 클래스는 `name`, `sound` (인스턴스 변수)와 `kingdom` (static 변수), `makeSound()` (인스턴스 메소드), `printKingdom()` (static 메소드)를 가집니다.<br />
+2.  `main` 메소드에서 `dog`와 `cat`이라는 두 개의 `Animal` 인스턴스를 생성하고 각각의 `name`과 `sound`를 설정합니다. 이들은 각 객체에 독립적으로 저장됩니다.<br />
+3.  `dog.makeSound()`와 `cat.makeSound()`는 각 인스턴스의 고유한 `name`과 `sound` 값을 사용하여 출력합니다.<br />
+4.  `kingdom`은 `static` 변수이므로 `dog.kingdom`이든 `cat.kingdom`이든 `Animal.kingdom`이든 모두 동일한 메모리 공간을 참조합니다. 따라서 처음에는 "동물계"가 출력됩니다.<br />
+5.  `Animal.printKingdom()`도 `static` 메소드이므로 `kingdom` 변수의 현재 값을 출력합니다.<br />
+6.  `Animal.kingdom = &quot;생물계&quot;;` 코드를 통해 `static` 변수 `kingdom`의 값을 "생물계"로 변경합니다. 이 변경은 `dog`와 `cat` 등 **모든 `Animal` 인스턴스에 즉시 반영**됩니다.<br />
+7.  변경 후 다시 `dog.kingdom`, `cat.kingdom`, `Animal.printKingdom()`을 호출하면 모두 변경된 "생물계"가 출력되는 것을 확인할 수 있습니다.
+    </details>
+
+<hr />
+
+<h2 id="-마치며-객체지향의-첫걸음">🔚 마치며: 객체지향의 첫걸음</h2>
+
+<p>이번 글에서는 자바 객체지향 프로그래밍의 핵심 축인 <strong>클래스, 객체, 인스턴스</strong> 개념을 알아보았습니다. 이 개념들은 자바를 넘어 대부분의 현대 프로그래밍 언어에서 매우 중요하게 다뤄지는 기초입니다. 클래스가 설계도이고, 객체/인스턴스는 그 설계도를 통해 만들어진 실제 사물이라는 비유를 기억한다면 이해하기 쉬울 것입니다. 또한, 클래스 내부에 선언되는 변수의 종류(인스턴스, static, 지역 변수)와 그 특징을 이해하는 것은 객체지향 설계에 있어 매우 중요합니다.</p>
+
+<p>이러한 객체지향의 기본 개념을 이해하는 것은 앞으로 배우게 될 상속, 다형성, 캡슐화 등 더 깊이 있는 객체지향 특성들을 이해하는 데 필수적인 토대가 됩니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-array(2)/" class="btn btn--inverse" rel="prev">
+            ← 자바 참조타입 - 다차원 배열
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/java-oop&method/" class="btn btn--inverse" rel="next">
+            자바 객체지향-메소드 →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+      <a href="/ko/categories/java/"
+         class="btn btn--primary"
+         style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.1rem; background-color: #007acc; color: #fff; border-radius: 6px; text-decoration: none;">
+        Java 목록으로 이동
+      </a>
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/java/" class="taxonomy__item">java</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-17T02:18:56+00:00">June 17, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%9E%90%EB%B0%94+%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%81%B4%EB%9E%98%EC%8A%A4%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop%26class%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop%26class%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/java-oop&class/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%9E%90%EB%B0%94+%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%81%B4%EB%9E%98%EC%8A%A4%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjava-oop%26class%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

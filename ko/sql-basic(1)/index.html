@@ -1,0 +1,1145 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MySQL 기초 문법(1) - Lorem Tech Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="MySQL 기초 문법(1)">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/sql-basic(1)/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-11T01:31:49+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/sql-basic(1)/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="MySQL 기초 문법(1)">
+    
+    
+      <meta itemprop="description" content="">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-11T01:31:49+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/sql-basic(1)/" itemprop="url">MySQL 기초 문법(1)</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          46 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <hr />
+
+<h2 id="-1단계-mysql-기초-문법---데이터-정의어ddl-및-데이터-조작어dml">📘 1단계: MySQL 기초 문법 - 데이터 정의어(DDL) 및 데이터 조작어(DML)</h2>
+
+<p>프로그래밍의 핵심이 특정 로직을 구현하는 것이라면, 데이터베이스의 핵심은 <strong>데이터를 효율적으로 저장하고 관리</strong>하는 것입니다. MySQL을 포함한 관계형 데이터베이스는 <strong>SQL(Structured Query Language)</strong>이라는 언어를 사용하여 데이터와 상호작용합니다. SQL은 크게 데이터베이스의 구조를 정의하는 <strong>DDL(Data Definition Language)</strong>과 데이터를 조작하는 <strong>DML(Data Manipulation Language)</strong>로 나뉩니다.<br /><br /></p>
+
+<p>이번 글에서는 MySQL 기초 문법의 첫 단계로, 데이터베이스에 테이블을 생성하고 삭제하는 DDL 명령어인 <code class="language-plaintext highlighter-rouge">CREATE TABLE</code>과 <code class="language-plaintext highlighter-rouge">DROP TABLE</code>에 대해 알아보겠습니다. 이어서, 테이블에 데이터를 추가, 수정, 삭제하는 DML 명령어인 <code class="language-plaintext highlighter-rouge">INSERT INTO</code>,<code class="language-plaintext highlighter-rouge">UPDATE</code>,<code class="language-plaintext highlighter-rouge">DELETE</code>를 자세히 살펴보며 데이터 CRUD(Create, Read, Update, Delete) 조작의 기본을 다져보겠습니다.</p>
+
+<blockquote>
+  <p>💡MySQL 다운로드 및 설치하기 방법은 다음 링크를 참고하시기 바랍니다. https://hongong.hanbit.co.kr/mysql-%eb%8b%a4%ec%9a%b4%eb%a1%9c%eb%93%9c-%eb%b0%8f-%ec%84%a4%ec%b9%98%ed%95%98%ea%b8%b0mysql-community-8-0/</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-create-table-새로운-테이블-생성하기-ddl">🔹 <code class="language-plaintext highlighter-rouge">CREATE TABLE</code>: 새로운 테이블 생성하기 (DDL)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">CREATE TABLE</code> 명령어는 데이터베이스 내에 새로운 테이블(표)을 정의하고 생성할 때 사용합니다. 테이블을 생성할 때는 테이블의 이름과 각 컬럼(열)의 이름, 데이터 타입(정수, 문자열, 날짜 등), 그리고 제약 조건(필수 값 여부, 기본 키 등)을 명시해야 합니다.</p>
+
+<h4 id="기본-구조">기본 구조</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="err">테이블이름</span> <span class="p">(</span>
+    <span class="err">컬럼이름</span><span class="mi">1</span> <span class="err">데이터타입</span><span class="mi">1</span> <span class="err">제약조건</span><span class="mi">1</span><span class="p">,</span>
+    <span class="err">컬럼이름</span><span class="mi">2</span> <span class="err">데이터타입</span><span class="mi">2</span> <span class="err">제약조건</span><span class="mi">2</span><span class="p">,</span>
+    <span class="p">...</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="err">컬럼이름</span><span class="p">)</span> <span class="c1">-- 기본 키(Primary Key) 설정 (선택 사항)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">테이블이름</code></strong>: 생성할 테이블의 고유한 이름 (예: <code class="language-plaintext highlighter-rouge">users</code>, <code class="language-plaintext highlighter-rouge">products</code>).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">컬럼이름</code></strong>: 테이블의 각 열에 대한 이름 (예: <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">email</code>).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">데이터타입</code></strong>: 해당 컬럼에 저장될 데이터의 종류 (예: <code class="language-plaintext highlighter-rouge">INT</code>, <code class="language-plaintext highlighter-rouge">VARCHAR(255)</code>, <code class="language-plaintext highlighter-rouge">DATE</code>).
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">INT</code></strong>: 정수</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">VARCHAR(길이)</code></strong>: 가변 길이 문자열 (최대 <code class="language-plaintext highlighter-rouge">길이</code>만큼 저장)</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">TEXT</code></strong>: 긴 텍스트</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">DATE</code></strong>: 날짜 (YYYY-MM-DD)</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">DATETIME</code></strong>: 날짜 및 시간 (YYYY-MM-DD HH:MM:SS)</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">DECIMAL(p, s)</code></strong>: 정확한 소수점 숫자 (p는 전체 자릿수, s는 소수점 이하 자릿수)</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">제약조건</code></strong>: 컬럼에 대한 추가적인 규칙 설정 (예: <code class="language-plaintext highlighter-rouge">NOT NULL</code>, <code class="language-plaintext highlighter-rouge">PRIMARY KEY</code>, <code class="language-plaintext highlighter-rouge">UNIQUE</code>).
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">NOT NULL</code></strong>: 이 컬럼은 NULL 값을 허용하지 않습니다 (반드시 값이 있어야 함).</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">DEFAULT 값</code></strong>: 값을 명시하지 않았을 때 기본으로 저장될 값.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">AUTO_INCREMENT</code></strong>: 숫자가 자동으로 1씩 증가합니다 (주로 기본 키에 사용).</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">PRIMARY KEY</code></strong>: 기본 키 설정. 테이블의 각 행을 고유하게 식별하는 컬럼(들). <code class="language-plaintext highlighter-rouge">NOT NULL</code>과 <code class="language-plaintext highlighter-rouge">UNIQUE</code> 속성을 가집니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="예제-users-테이블-생성">예제: <code class="language-plaintext highlighter-rouge">users</code> 테이블 생성</h4>
+
+<p>다음은 사용자 정보를 저장할 <code class="language-plaintext highlighter-rouge">users</code> 테이블을 생성하는 예시입니다.</p>
+
+<p><img src="/assets/images/sql/image.png" alt="SQL 예제 이미지" />
+<strong>해석:</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">id</code>: <code class="language-plaintext highlighter-rouge">INT</code> 타입이며, <code class="language-plaintext highlighter-rouge">AUTO_INCREMENT</code>로 값이 자동으로 증가하고 <code class="language-plaintext highlighter-rouge">PRIMARY KEY</code>로 설정되어 각 사용자를 고유하게 식별합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">username</code>: <code class="language-plaintext highlighter-rouge">VARCHAR(50)</code> 타입으로 최대 50자의 문자열을 저장하며, <code class="language-plaintext highlighter-rouge">NOT NULL</code>로 반드시 값이 있어야 하고, <code class="language-plaintext highlighter-rouge">UNIQUE</code>로 중복된 사용자 이름을 허용하지 않습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">email</code>: <code class="language-plaintext highlighter-rouge">VARCHAR(100)</code> 타입으로 최대 100자의 문자열을 저장하며, <code class="language-plaintext highlighter-rouge">NOT NULL</code>로 필수 값입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">created_at</code>: <code class="language-plaintext highlighter-rouge">DATETIME</code> 타입으로 날짜와 시간을 저장하며, <code class="language-plaintext highlighter-rouge">DEFAULT CURRENT_TIMESTAMP</code>로 값이 입력되지 않으면 현재 시간을 자동으로 설정합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="-drop-table-테이블-삭제하기-ddl">🔹 <code class="language-plaintext highlighter-rouge">DROP TABLE</code>: 테이블 삭제하기 (DDL)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">DROP TABLE</code> 명령어는 데이터베이스에서 기존에 생성된 테이블을 완전히 삭제할 때 사용합니다. 테이블을 삭제하면 해당 테이블의 구조와 그 안에 저장된 <strong>모든 데이터가 영구적으로 삭제되므로 매우 주의해야 합니다.</strong></p>
+
+<h4 id="기본-구조-1">기본 구조</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">TABLE</span> <span class="err">테이블이름</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="예제-users-테이블-삭제">예제: <code class="language-plaintext highlighter-rouge">users</code> 테이블 삭제</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">users</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>해석:</strong> <code class="language-plaintext highlighter-rouge">users</code>라는 이름의 테이블과 그 안에 있던 모든 데이터를 삭제합니다.</p>
+
+<h4 id="실제-삭제-예시">실제 삭제 예시:</h4>
+<p><img src="/assets/images/sql/image2.png" alt="SQL 예제 이미지2" /></p>
+
+<p>위 사진을 보시면 왼쪽 <code class="language-plaintext highlighter-rouge">SCHEMAS</code>라고 적힌 목록에 있는 <code class="language-plaintext highlighter-rouge">market_db</code>에 속한 테이블 중 맨 아래에 <code class="language-plaintext highlighter-rouge">users</code>라는 테이블이 추가된 것을 볼 수 있습니다. 사진이 잘 안보이시면 <code class="language-plaintext highlighter-rouge">ctrl</code> + 마우스 휠 업으로 사진을 확대 해 주시길 부탁드립니다. (포스팅 상단부에서 생성한 <code class="language-plaintext highlighter-rouge">users</code> 테이블 맞습니다!)</p>
+
+<p><img src="/assets/images/sql/image3.png" alt="SQL 예제 이미지3" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">DROP TABLE users;</code> 라는 명령어에 커서가 위치한 것이 보이시나요? 해당 명령어는 이미 실행된 상태입니다. 왼쪽에 <code class="language-plaintext highlighter-rouge">users</code> 테이블이 위치했던 곳을 보시면 말끔히 사라진 것을 확인할 수 있습니다. <br /><br /><code class="language-plaintext highlighter-rouge">SCHMAS</code> 목록 아래에 있는 <code class="language-plaintext highlighter-rouge">Information</code> 란에는 <code class="language-plaintext highlighter-rouge">No object selected</code>라는 문구가 출력되는데, 말 그대로 전에 select 중이던 테이블이 사라져 더 이상 select 된 것이 없다는 뜻입니다. ⚠️ <strong>앞서 언급했듯, 삭제되면 복구 할 방법이 없으니 DROP TABLE은 매우 신중하게 다루어야 하는 명령어 입니다.</strong></p>
+
+<hr />
+
+<h3 id="-insert-into-테이블에-새로운-데이터-추가하기-dml">🔹 <code class="language-plaintext highlighter-rouge">INSERT INTO</code>: 테이블에 새로운 데이터 추가하기 (DML)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">INSERT INTO</code> 명령어는 테이블에 새로운 행(row)의 데이터를 추가할 때 사용합니다.</p>
+
+<h4 id="기본-구조-2">기본 구조</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 방법 1: 모든 컬럼에 값을 추가할 때 (컬럼 이름 생략 가능)</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">테이블이름</span> <span class="k">VALUES</span> <span class="p">(</span><span class="err">값</span><span class="mi">1</span><span class="p">,</span> <span class="err">값</span><span class="mi">2</span><span class="p">,</span> <span class="p">...);</span>
+
+<span class="c1">-- 방법 2: 특정 컬럼에만 값을 추가할 때 (컬럼 이름 명시)</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">테이블이름</span> <span class="p">(</span><span class="err">컬럼이름</span><span class="mi">1</span><span class="p">,</span> <span class="err">컬럼이름</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="err">값</span><span class="mi">1</span><span class="p">,</span> <span class="err">값</span><span class="mi">2</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">테이블이름</code></strong>: 데이터를 추가할 테이블의 이름.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">컬럼이름</code></strong>: 값을 추가할 컬럼들의 이름 (순서를 지켜야 함).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">값</code></strong>: 해당 컬럼에 추가할 실제 데이터. 문자열이나 날짜는 작은따옴표(<code class="language-plaintext highlighter-rouge">'</code>)로 묶어야 합니다.</li>
+</ul>
+
+<h4 id="예제-users-테이블에-데이터-추가">예제: <code class="language-plaintext highlighter-rouge">users</code> 테이블에 데이터 추가</h4>
+
+<p><code class="language-plaintext highlighter-rouge">CREATE TABLE users</code>로 생성한 테이블에 데이터를 추가하는 예시입니다.</p>
+
+<p><img src="/assets/images/sql/image4.png" alt="SQL 예제 이미지4" /></p>
+
+<p><strong>해석:</strong></p>
+
+<ul>
+  <li>첫 번째 <code class="language-plaintext highlighter-rouge">INSERT</code>: <code class="language-plaintext highlighter-rouge">id</code> 컬럼은 <code class="language-plaintext highlighter-rouge">AUTO_INCREMENT</code>이므로 <code class="language-plaintext highlighter-rouge">NULL</code> 또는 <code class="language-plaintext highlighter-rouge">0</code>을 넣으면 자동으로 값이 할당됩니다. <code class="language-plaintext highlighter-rouge">created_at</code> 컬럼도 <code class="language-plaintext highlighter-rouge">DEFAULT CURRENT_TIMESTAMP</code>가 설정되어 있으므로 <code class="language-plaintext highlighter-rouge">NULL</code>로 두면 현재 시간이 자동으로 입력됩니다.</li>
+  <li>두 번째 <code class="language-plaintext highlighter-rouge">INSERT</code>: <code class="language-plaintext highlighter-rouge">username</code>과 <code class="language-plaintext highlighter-rouge">email</code> 컬럼에만 명시적으로 값을 지정합니다. <code class="language-plaintext highlighter-rouge">id</code>와 <code class="language-plaintext highlighter-rouge">created_at</code>은 각각 <code class="language-plaintext highlighter-rouge">AUTO_INCREMENT</code>와 <code class="language-plaintext highlighter-rouge">DEFAULT</code> 제약 조건에 따라 값이 자동으로 설정됩니다.</li>
+  <li>세 번째 <code class="language-plaintext highlighter-rouge">INSERT</code>: 여러 행의 데이터를 한 번의 <code class="language-plaintext highlighter-rouge">INSERT</code> 문으로 추가할 수 있습니다.</li>
+</ul>
+
+<hr />
+
+<p>한번 잘 추가되었나 볼까요?</p>
+
+<p><img src="/assets/images/sql/image5.png" alt="SQL 예제 이미지4" /></p>
+
+<p>아직 배운 적은 없지만 <code class="language-plaintext highlighter-rouge">select</code>라는 명령어를 사용하여 <code class="language-plaintext highlighter-rouge">users</code> 테이블을 확인해 보면 <code class="language-plaintext highlighter-rouge">INSERT INTO</code> 명령어로 추가했던 정보들이 해당되는 컬럼에 맞게 잘 삽입되어 있는 것을 확인할 수 있습니다.</p>
+
+<hr />
+
+<h3 id="-update-테이블의-기존-데이터-수정하기-dml">🔹 <code class="language-plaintext highlighter-rouge">UPDATE</code>: 테이블의 기존 데이터 수정하기 (DML)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">UPDATE</code> 명령어는 테이블에 저장된 기존 데이터의 값을 수정할 때 사용합니다. 특정 조건을 만족하는 행만 수정하거나, 모든 행을 수정할 수 있습니다.</p>
+
+<h4 id="기본-구조-3">기본 구조</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="err">테이블이름</span>
+<span class="k">SET</span> <span class="err">컬럼이름</span><span class="mi">1</span> <span class="o">=</span> <span class="err">새로운값</span><span class="mi">1</span><span class="p">,</span> <span class="err">컬럼이름</span><span class="mi">2</span> <span class="o">=</span> <span class="err">새로운값</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span>
+<span class="k">WHERE</span> <span class="err">조건</span><span class="p">;</span> <span class="c1">-- (선택 사항) 수정할 행을 지정하는 조건</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">테이블이름</code></strong>: 데이터를 수정할 테이블의 이름.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">SET</code></strong>: 수정할 컬럼과 새로운 값을 지정. 여러 컬럼을 콤마(<code class="language-plaintext highlighter-rouge">,</code>)로 구분하여 지정할 수 있습니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">WHERE 조건</code></strong>: <strong>매우 중요!</strong> 어떤 행을 수정할지 조건을 명시합니다. <code class="language-plaintext highlighter-rouge">WHERE</code> 절을 생략하면 <strong>테이블의 모든 행이 수정되므로 극히 주의해야 합니다.</strong> (<code class="language-plaintext highlighter-rouge">WHERE</code>에 대해서는 다음 포스팅에서 자세히 다룰 예정입니다.)</li>
+</ul>
+
+<h4 id="예제-users-테이블-데이터-수정">예제: <code class="language-plaintext highlighter-rouge">users</code> 테이블 데이터 수정</h4>
+
+<p><img src="/assets/images/sql/image6.png" alt="SQL 예제 이미지4" /></p>
+
+<p><strong>해석:</strong></p>
+
+<ul>
+  <li>첫 번째 <code class="language-plaintext highlighter-rouge">UPDATE</code>: <code class="language-plaintext highlighter-rouge">id</code>가 <code class="language-plaintext highlighter-rouge">1</code>인 행(row)만을 찾아 <code class="language-plaintext highlighter-rouge">email</code> 컬럼의 값을 변경합니다.</li>
+  <li>두 번째 <code class="language-plaintext highlighter-rouge">UPDATE</code>: <code class="language-plaintext highlighter-rouge">username</code>이 <code class="language-plaintext highlighter-rouge">'jane_smith'</code>인 행을 찾아 <code class="language-plaintext highlighter-rouge">username</code>과 <code class="language-plaintext highlighter-rouge">email</code> 두 컬럼의 값을 동시에 변경합니다.</li>
+  <li>주석 처리된 마지막 <code class="language-plaintext highlighter-rouge">UPDATE</code>: <code class="language-plaintext highlighter-rouge">WHERE</code> 절이 없으면 <strong>테이블의 모든 행</strong>이 영향을 받습니다. 이처럼 실수로 모든 데이터를 수정하는 것을 방지하기 위해 <code class="language-plaintext highlighter-rouge">WHERE</code> 절 사용은 필수적입니다.</li>
+</ul>
+
+<hr />
+
+<p><img src="/assets/images/sql/image5.png" alt="SQL 예제 이미지4" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">UPDATE</code>명령어 사용 전 <code class="language-plaintext highlighter-rouge">users</code>테이블 정보</p>
+
+<p><img src="/assets/images/sql/image7.png" alt="SQL 예제 이미지4" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">UPDATE</code>명령어 사용 후 <code class="language-plaintext highlighter-rouge">users</code>테이블 정보
+<br /><br />
+어떠신가요? 차이가 눈에 보이시나요?</p>
+
+<hr />
+
+<h3 id="-delete-테이블의-데이터-삭제하기-dml">🔹 <code class="language-plaintext highlighter-rouge">DELETE</code>: 테이블의 데이터 삭제하기 (DML)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE</code> 명령어는 테이블에 저장된 기존 행의 데이터를 삭제할 때 사용합니다. 특정 조건을 만족하는 행만 삭제하거나, 모든 행을 삭제할 수 있습니다.</p>
+
+<h4 id="기본-구조-4">기본 구조</h4>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="err">테이블이름</span>
+<span class="k">WHERE</span> <span class="err">조건</span><span class="p">;</span> <span class="c1">-- (선택 사항) 삭제할 행을 지정하는 조건</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">테이블이름</code></strong>: 데이터를 삭제할 테이블의 이름.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">FROM</code></strong>: 선택 사항이지만 가독성을 위해 흔히 사용됩니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">WHERE 조건</code></strong>: <strong>매우 중요!</strong> 어떤 행을 삭제할지 조건을 명시합니다. <code class="language-plaintext highlighter-rouge">WHERE</code> 절을 생략하면 <strong>테이블의 모든 행이 삭제되므로 극히 주의해야 합니다.</strong></li>
+</ul>
+
+<h4 id="실제-삭제-예제-users-테이블-데이터-삭제">실제 삭제 예제: <code class="language-plaintext highlighter-rouge">users</code> 테이블 데이터 삭제</h4>
+
+<p><img src="/assets/images/sql/image8.png" alt="SQL 예제 이미지4" /></p>
+
+<p><strong>해석:</strong></p>
+
+<ul>
+  <li>첫 번째 <code class="language-plaintext highlighter-rouge">DELETE</code>: <code class="language-plaintext highlighter-rouge">id</code>가 <code class="language-plaintext highlighter-rouge">2</code>인 행을 찾아 삭제합니다.</li>
+  <li>두 번째 <code class="language-plaintext highlighter-rouge">DELETE</code>: <code class="language-plaintext highlighter-rouge">email</code> 주소가 <code class="language-plaintext highlighter-rouge">'bob.parker@example.com'</code>인 행을 찾아 삭제합니다.</li>
+  <li>주석 처리된 마지막 <code class="language-plaintext highlighter-rouge">DELETE</code>: <code class="language-plaintext highlighter-rouge">WHERE</code> 절이 없으면 테이블의 모든 데이터가 삭제됩니다. <code class="language-plaintext highlighter-rouge">TRUNCATE TABLE</code>과 유사하지만, <code class="language-plaintext highlighter-rouge">DELETE</code>는 트랜잭션 로그를 남기기 때문에 롤백이 가능하고 <code class="language-plaintext highlighter-rouge">TRUNCATE</code>보다 느릴 수 있습니다. (하지만 보통은 <code class="language-plaintext highlighter-rouge">DELETE FROM 테이블이름;</code> 대신 <code class="language-plaintext highlighter-rouge">TRUNCATE TABLE 테이블이름;</code>을 사용하여 테이블의 모든 데이터를 빠르게 삭제합니다.)</li>
+</ul>
+
+<hr />
+
+<p><img src="/assets/images/sql/image7.png" alt="SQL 예제 이미지4" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE</code>명령어 사용 전 <code class="language-plaintext highlighter-rouge">users</code>테이블 정보</p>
+
+<p><img src="/assets/images/sql/image9.png" alt="SQL 예제 이미지4" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE</code>명령어 사용 후 <code class="language-plaintext highlighter-rouge">users</code>테이블 정보
+<br /><br />
+눈에 띄는 점 하나는, 두 번째 행의 id 값이 2로 자동 갱신되지 않는다는 점입니다. 기본적으로 AUTO_INCREMENT는 삭제된 ID를 재사용하지 않고 증가된 채 유지된다는 특징이 있습니다.</p>
+
+<hr />
+
+<h3 id="-mysql-기초-문법-퀴즈">💡 MySQL 기초 문법 퀴즈</h3>
+
+<p>다음 빈칸에 들어갈 SQL 키워드는 무엇일까요?</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 1. 'students' 테이블을 생성하고 'student_id' 컬럼을 기본 키로 설정합니다.</span>
+<span class="n">_____</span> <span class="k">TABLE</span> <span class="n">students</span> <span class="p">(</span>
+    <span class="n">student_id</span> <span class="nb">INT</span> <span class="n">AUTO_INCREMENT</span> <span class="n">_____</span><span class="p">,</span>
+    <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">_____</span><span class="p">,</span>
+    <span class="n">age</span> <span class="nb">INT</span>
+<span class="p">);</span>
+
+<span class="c1">-- 2. 'students' 테이블에 새로운 학생을 추가합니다.</span>
+<span class="n">_____</span> <span class="k">INTO</span> <span class="n">students</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'홍길동'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+<span class="c1">-- 3. 'students' 테이블에서 'student_id'가 1인 학생의 나이를 21로 변경합니다.</span>
+<span class="n">_____</span> <span class="n">students</span>
+<span class="k">SET</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="k">WHERE</span> <span class="n">student_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- 4. 'students' 테이블에서 'name'이 '홍길동'인 학생을 삭제합니다.</span>
+<span class="n">_____</span> <span class="k">FROM</span> <span class="n">students</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'홍길동'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<details>
+<summary>정답 보기</summary>
+<br />
+정답:
+<br />
+1.  CREATE, PRIMARY KEY, NOT NULL<br />
+2.  INSERT<br />
+3.  UPDATE<br />
+4.  DELETE<br />
+
+</details>
+
+<hr />
+
+<h3 id="-요약-정리">📌 요약 정리</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>명령어</th>
+      <th>분류</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">CREATE TABLE</code></strong></td>
+      <td>DDL</td>
+      <td>새로운 테이블 정의 및 생성</td>
+      <td><code class="language-plaintext highlighter-rouge">CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50));</code></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">DROP TABLE</code></strong></td>
+      <td>DDL</td>
+      <td>테이블 구조와 데이터 영구 삭제</td>
+      <td><code class="language-plaintext highlighter-rouge">DROP TABLE users;</code></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">INSERT INTO</code></strong></td>
+      <td>DML</td>
+      <td>테이블에 새로운 행(데이터) 추가</td>
+      <td><code class="language-plaintext highlighter-rouge">INSERT INTO users (name) VALUES ('John');</code></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">UPDATE</code></strong></td>
+      <td>DML</td>
+      <td>테이블의 기존 데이터 수정</td>
+      <td><code class="language-plaintext highlighter-rouge">UPDATE users SET name = 'Jane' WHERE id = 1;</code></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">DELETE</code></strong></td>
+      <td>DML</td>
+      <td>테이블의 기존 행(데이터) 삭제</td>
+      <td><code class="language-plaintext highlighter-rouge">DELETE FROM users WHERE id = 1;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-실무-팁">🛠 실무 팁</h3>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">WHERE</code> 절의 중요성</strong>: <code class="language-plaintext highlighter-rouge">UPDATE</code>와 <code class="language-plaintext highlighter-rouge">DELETE</code> 명령어를 사용할 때는 <code class="language-plaintext highlighter-rouge">WHERE</code> 절을 빠뜨리지 않도록 각별히 주의해야 합니다. <code class="language-plaintext highlighter-rouge">WHERE</code> 절이 없으면 모든 데이터가 영향을 받아 치명적인 결과를 초래할 수 있습니다.</li>
+  <li><strong>트랜잭션 활용</strong>: 실무에서는 <code class="language-plaintext highlighter-rouge">INSERT</code>, <code class="language-plaintext highlighter-rouge">UPDATE</code>, <code class="language-plaintext highlighter-rouge">DELETE</code>와 같은 DML 작업을 수행할 때 **트랜잭션(Transaction)**을 함께 사용하는 것이 일반적입니다. 트랜잭션을 사용하면 여러 SQL 작업을 하나의 논리적인 단위로 묶어, 모든 작업이 성공해야만 데이터베이스에 반영(<code class="language-plaintext highlighter-rouge">COMMIT</code>)하고, 하나라도 실패하면 모든 작업을 되돌릴 수(<code class="language-plaintext highlighter-rouge">ROLLBACK</code>) 있어 데이터의 일관성과 무결성을 보장할 수 있습니다. (트랜잭션은 추후 고급 문법에서 다룰 예정입니다.)</li>
+  <li><strong>백업의 중요성</strong>: 중요한 데이터베이스 작업을 하기 전에는 항상 백업을 생활화하세요!</li>
+</ul>
+
+<hr />
+
+<h3 id="-마치며">🔚 마치며</h3>
+
+<p>이번 글에서는 MySQL의 가장 기본적인 DDL 명령어인 <code class="language-plaintext highlighter-rouge">CREATE TABLE</code>, <code class="language-plaintext highlighter-rouge">DROP TABLE</code>과 DML 명령어인 <code class="language-plaintext highlighter-rouge">INSERT INTO</code>, <code class="language-plaintext highlighter-rouge">UPDATE</code>, <code class="language-plaintext highlighter-rouge">DELETE</code>에 대해 자세히 알아보았습니다. 이 명령어들은 데이터베이스를 다루는 데 있어 가장 기본적이면서도 핵심적인 요소들입니다.<br /></p>
+
+<p>테이블을 만들고, 데이터를 추가하고, 수정하고, 삭제하는 이 과정은 모든 데이터베이스 애플리케이션의 기본이 됩니다. 개념을 이해하는 것을 넘어, 직접 MySQL 워크벤치나 콘솔에서 이 명령어들을 실행해보면서 손에 익히는 것이 중요합니다. 다음 단계에서는 <code class="language-plaintext highlighter-rouge">SELECT</code>, <code class="language-plaintext highlighter-rouge">WHERE</code>, <code class="language-plaintext highlighter-rouge">ORDER BY</code>, <code class="language-plaintext highlighter-rouge">LIMIT</code> 문을 통해 특정 데이터를 조회하고, 조건에 제약을 가하는 방법을 배워 보겠습니다!</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/sql/" class="taxonomy__item">sql</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-11T01:31:49+00:00">June 11, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=MySQL+%EA%B8%B0%EC%B4%88+%EB%AC%B8%EB%B2%95%281%29%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fsql-basic%281%29%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fsql-basic%281%29%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/sql-basic(1)/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=MySQL+%EA%B8%B0%EC%B4%88+%EB%AC%B8%EB%B2%95%281%29%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fsql-basic%281%29%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1178 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송 - Lorem Tech Blog</title>
+<meta name="description" content="서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송">
+
+
+  <meta name="author" content="Lorem">
+  
+  <meta property="article:author" content="Lorem">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="Lorem Tech Blog">
+<meta property="og:title" content="서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송">
+<meta property="og:url" content="https://loremipsum0116.github.io/ko/jsp.basic(6)/">
+
+
+  <meta property="og:description" content="서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-11T09:09:47+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://loremipsum0116.github.io/ko/jsp.basic(6)/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Lorem Tech Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Lorem Tech Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/java/"
+                
+                
+              >Java</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jpa/"
+                
+                
+              >JPA</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/jsp/"
+                
+                
+              >JSP</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/spring/"
+                
+                
+              >Spring</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/categories/sql/"
+                
+                
+              >SQL</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/ko/"
+                
+                
+              >기술 인덱스</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://loremipsum0116.github.io/">
+        <img src="/assets/images/lorem_avatar.png" alt="Lorem" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://loremipsum0116.github.io/" itemprop="url">Lorem</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요, 배우며 성장하는 백엔드 개발자입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:loremipsum0115@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="loremipsum0115@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+      <meta itemprop="headline" content="서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송">
+    
+    
+      <meta itemprop="description" content="서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송">
+    
+    
+      <meta itemprop="datePublished" content="2025-06-11T09:09:47+00:00">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="https://loremipsum0116.github.io/ko/jsp.basic(6)/" itemprop="url">서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송</a>
+            </h1>
+          
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          39 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+
+        <h2 id="서블릿에서-클라이언트-요청-데이터-처리-및-응답-전송">서블릿에서 클라이언트 요청 데이터 처리 및 응답 전송</h2>
+
+<p>웹 애플리케이션에서 클라이언트와 서버 간의 상호작용은 HTTP 요청과 응답을 통해 이루어집니다. 서블릿은 이 과정의 핵심 주체로서, 클라이언트로부터 들어오는 요청 데이터를 정확히 파싱하고, 그에 맞는 적절한 응답을 생성하여 다시 클라이언트에게 보내는 역할을 합니다. 이 문서에서는 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code>와 <code class="language-plaintext highlighter-rouge">HttpServletResponse</code> 객체가 제공하는 주요 메서드들을 코드 예시와 함께 상세히 설명합니다.</p>
+
+<hr />
+
+<h3 id="-6-서블릿jsp에서-클라이언트의-요청을-얻는-방법">🌟 6. 서블릿(JSP)에서 클라이언트의 요청을 얻는 방법</h3>
+
+<p>클라이언트가 <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> 태그를 통해 전송한 데이터나 URL의 쿼리 스트링(Query String)을 통해 전송한 파라미터는 서블릿의 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code> 객체를 통해 접근할 수 있습니다. <code class="language-plaintext highlighter-rouge">HttpServletRequest</code>는 클라이언트의 요청에 대한 모든 정보를 담고 있는 객체입니다.</p>
+
+<h4 id="httpservletrequest의-주요-파라미터-획득-메서드"><code class="language-plaintext highlighter-rouge">HttpServletRequest</code>의 주요 파라미터 획득 메서드</h4>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">String getParameter(String name)</code></strong>
+    <ul>
+      <li><strong>역할</strong>: 클라이언트가 <code class="language-plaintext highlighter-rouge">name=value</code> 형태로 전송한 데이터 중, 특정 <code class="language-plaintext highlighter-rouge">name</code>에 해당하는 <strong>단일 값</strong>을 <code class="language-plaintext highlighter-rouge">String</code> 타입으로 반환합니다. 가장 일반적으로 사용되는 메서드입니다.</li>
+      <li><strong>사용 시점</strong>: 입력 필드(<code class="language-plaintext highlighter-rouge">input type="text"</code>, <code class="language-plaintext highlighter-rouge">input type="password"</code>, <code class="language-plaintext highlighter-rouge">textarea</code>, <code class="language-plaintext highlighter-rouge">select</code>의 단일 선택 옵션 등)가 단일 값을 가질 때 사용합니다.</li>
+      <li><strong>주의</strong>: 해당 <code class="language-plaintext highlighter-rouge">name</code>으로 전송된 값이 없으면 <code class="language-plaintext highlighter-rouge">null</code>을 반환합니다. 반환 타입은 항상 <code class="language-plaintext highlighter-rouge">String</code>이므로, 숫자나 다른 타입으로 사용하려면 형 변환(예: <code class="language-plaintext highlighter-rouge">Integer.parseInt()</code>)이 필요합니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jakarta.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span> <span class="c1">// POST 요청 데이터 한글 깨짐 방지</span>
+
+        <span class="c1">// &lt;form&gt; 태그에서 name="userId"와 name="password"로 전송된 값을 받음</span>
+        <span class="nc">String</span> <span class="n">userId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"userId"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"password"</span><span class="o">);</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html;charset=UTF-8"</span><span class="o">);</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;html&gt;&lt;body&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;h1&gt;로그인 정보&lt;/h1&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;아이디: "</span> <span class="o">+</span> <span class="n">userId</span> <span class="o">+</span> <span class="s">"&lt;/p&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;비밀번호: "</span> <span class="o">+</span> <span class="n">password</span> <span class="o">+</span> <span class="s">"&lt;/p&gt;"</span><span class="o">);</span>
+
+        <span class="c1">// 간단한 로그인 로직 (실제로는 DB 연동)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="s">"admin"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">userId</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="s">"1234"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p style='color: green;'&gt;로그인 성공!&lt;/p&gt;"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p style='color: red;'&gt;아이디 또는 비밀번호가 잘못되었습니다.&lt;/p&gt;"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/body&gt;&lt;/html&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p><strong>HTML 폼 예시:</strong></p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/login"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    아이디: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"userId"</span><span class="nt">&gt;&lt;br&gt;</span>
+    비밀번호: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span><span class="nt">&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"로그인"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">String[] getParameterValues(String name)</code></strong>
+    <ul>
+      <li><strong>역할</strong>: 같은 <code class="language-plaintext highlighter-rouge">name</code> 속성을 가진 입력 요소(예: 다중 선택 가능한 <code class="language-plaintext highlighter-rouge">&lt;select multiple&gt;</code>, 여러 개의 체크박스 <code class="language-plaintext highlighter-rouge">input type="checkbox"</code>)가 여러 개의 값을 전송했을 때, 이 값들을 <code class="language-plaintext highlighter-rouge">String</code> 배열로 반환합니다.</li>
+      <li><strong>사용 시점</strong>: 하나의 파라미터 이름에 여러 값이 연결될 수 있는 경우에 사용합니다.</li>
+      <li><strong>주의</strong>: 해당 <code class="language-plaintext highlighter-rouge">name</code>으로 전송된 값이 없으면 <code class="language-plaintext highlighter-rouge">null</code>을 반환합니다. 단일 값이라도 이 메서드를 사용하면 길이가 1인 배열이 반환됩니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jakarta.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/survey"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SurveyServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+
+        <span class="c1">// 좋아하는 과일 (체크박스)</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">fruits</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">"fruit"</span><span class="o">);</span>
+        <span class="c1">// 관심 분야 (다중 선택 select)</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">interests</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">"interest"</span><span class="o">);</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html;charset=UTF-8"</span><span class="o">);</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;html&gt;&lt;body&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;h1&gt;설문 결과&lt;/h1&gt;"</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;좋아하는 과일:&lt;/p&gt;&lt;ul&gt;"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">fruits</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">fruit</span> <span class="o">:</span> <span class="n">fruits</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;li&gt;"</span> <span class="o">+</span> <span class="n">fruit</span> <span class="o">+</span> <span class="s">"&lt;/li&gt;"</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;li&gt;선택된 과일 없음&lt;/li&gt;"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/ul&gt;"</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;관심 분야:&lt;/p&gt;&lt;ul&gt;"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">interests</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">interest</span> <span class="o">:</span> <span class="n">interests</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;li&gt;"</span> <span class="o">+</span> <span class="n">interest</span> <span class="o">+</span> <span class="s">"&lt;/li&gt;"</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;li&gt;선택된 관심 분야 없음&lt;/li&gt;"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/ul&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/body&gt;&lt;/html&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p><strong>HTML 폼 예시:</strong></p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/survey"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>좋아하는 과일 (복수 선택):<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"fruit"</span> <span class="na">value=</span><span class="s">"apple"</span><span class="nt">&gt;</span> 사과
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"fruit"</span> <span class="na">value=</span><span class="s">"banana"</span><span class="nt">&gt;</span> 바나나
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"fruit"</span> <span class="na">value=</span><span class="s">"orange"</span><span class="nt">&gt;</span> 오렌지
+    <span class="nt">&lt;br&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;p&gt;</span>관심 분야 (Ctrl/Cmd 누르고 복수 선택):<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"interest"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"programming"</span><span class="nt">&gt;</span>프로그래밍<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"design"</span><span class="nt">&gt;</span>디자인<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"marketing"</span><span class="nt">&gt;</span>마케팅<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;br&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"제출"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Enumeration&lt;String&gt; getParameterNames()</code></strong>
+    <ul>
+      <li><strong>역할</strong>: 클라이언트가 전송한 모든 파라미터의 <code class="language-plaintext highlighter-rouge">name</code> (이름)들을 <code class="language-plaintext highlighter-rouge">Enumeration</code> 객체로 반환합니다. <code class="language-plaintext highlighter-rouge">name</code> 값을 미리 알지 못할 때 모든 파라미터를 동적으로 처리해야 하는 경우에 유용합니다.</li>
+      <li><strong>사용 시점</strong>: 파라미터의 이름이 동적으로 생성되거나, 모든 파라미터를 일반적인 방식으로 처리해야 할 때 사용합니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jakarta.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Enumeration</span><span class="o">;</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/allParams"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AllParamsServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html;charset=UTF-8"</span><span class="o">);</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;html&gt;&lt;body&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;h1&gt;전송된 모든 파라미터&lt;/h1&gt;"</span><span class="o">);</span>
+
+        <span class="c1">// 모든 파라미터 이름 가져오기</span>
+        <span class="nc">Enumeration</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">paramNames</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterNames</span><span class="o">();</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">paramNames</span><span class="o">.</span><span class="na">hasMoreElements</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">paramName</span> <span class="o">=</span> <span class="n">paramNames</span><span class="o">.</span><span class="na">nextElement</span><span class="o">();</span>
+            <span class="nc">String</span><span class="o">[]</span> <span class="n">paramValues</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="n">paramName</span><span class="o">);</span> <span class="c1">// 해당 이름의 모든 값 가져오기</span>
+
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="n">paramName</span> <span class="o">+</span> <span class="s">":&lt;/strong&gt; "</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">paramValues</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paramValues</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"["</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">paramValues</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paramValues</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">paramValues</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">?</span> <span class="s">", "</span> <span class="o">:</span> <span class="s">""</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"]"</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/p&gt;"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/body&gt;&lt;/html&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p><strong>URL 예시:</strong>
+<code class="language-plaintext highlighter-rouge">http://localhost:8080/allParams?name=John&amp;age=30&amp;hobby=reading&amp;hobby=coding</code></p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="7-httpservletresponse의-여러-가지-메서드">7. <code class="language-plaintext highlighter-rouge">HttpServletResponse</code>의 여러 가지 메서드</h3>
+
+<p><code class="language-plaintext highlighter-rouge">HttpServletResponse</code> 객체는 서버가 클라이언트에게 <strong>응답을 보낼 때 사용되는 다양한 메서드</strong>를 제공합니다. HTML 콘텐츠를 직접 작성하는 것 외에도, 클라이언트를 다른 페이지로 이동시키거나 쿠키를 설정하는 등의 기능을 수행할 수 있습니다.</p>
+
+<h4 id="httpservletresponse의-주요-응답-관련-메서드"><code class="language-plaintext highlighter-rouge">HttpServletResponse</code>의 주요 응답 관련 메서드</h4>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">void addCookie(Cookie cookie)</code></strong>
+    <ul>
+      <li><strong>역할</strong>: HTTP 응답 헤더에 특정 <strong>쿠키(Cookie)</strong>를 추가합니다. 쿠키는 클라이언트 웹 브라우저에 저장되는 작은 데이터 조각으로, 사용자 세션 관리, 개인화 설정 등에 사용됩니다.</li>
+      <li><strong>사용 시점</strong>: 로그인 유지, 사용자 설정 저장 등 클라이언트 측에 데이터를 저장해야 할 때 사용합니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jakarta.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.Cookie</span><span class="o">;</span> <span class="c1">// Cookie 클래스 임포트</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/setCookie"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SetCookieServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html;charset=UTF-8"</span><span class="o">);</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="c1">// 새로운 쿠키 생성</span>
+        <span class="nc">Cookie</span> <span class="n">userCookie</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cookie</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"webuser"</span><span class="o">);</span>
+        <span class="n">userCookie</span><span class="o">.</span><span class="na">setMaxAge</span><span class="o">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span><span class="o">);</span> <span class="c1">// 쿠키 유효 기간 1일 (초 단위)</span>
+        <span class="n">userCookie</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/"</span><span class="o">);</span> <span class="c1">// 모든 경로에서 유효하도록 설정</span>
+
+        <span class="c1">// 응답에 쿠키 추가</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">addCookie</span><span class="o">(</span><span class="n">userCookie</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;html&gt;&lt;body&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;h1&gt;쿠키가 설정되었습니다.&lt;/h1&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;유저 이름: webuser&lt;/p&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;p&gt;&lt;a href='/getCookie'&gt;쿠키 확인하기&lt;/a&gt;&lt;/p&gt;"</span><span class="o">);</span> <span class="c1">// 쿠키를 읽는 다른 서블릿으로 이동</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;/body&gt;&lt;/html&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">String encodeURL(String url)</code></strong>
+    <ul>
+      <li><strong>역할</strong>: 주어진 URL에 세션 ID를 포함하여 인코딩합니다. 클라이언트 브라우저가 쿠키를 지원하지 않거나 비활성화했을 때, <strong>URL 재작성(URL Rewriting)</strong>을 통해 세션 정보를 유지하는 데 사용됩니다.</li>
+      <li><strong>사용 시점</strong>: 세션 트래킹이 필요한 링크나 폼 액션에 적용하여 쿠키 없이도 세션이 유지되도록 합니다. Spring MVC와 같은 현대 프레임워크에서는 자동으로 처리되는 경우가 많아 직접 사용할 일은 드뭅니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예를 들어, 세션 ID가 포함된 링크를 만들 때</span>
+<span class="c1">// response.getWriter().println("&lt;a href='" + response.encodeURL("/myApp/profile") + "'&gt;내 프로필&lt;/a&gt;");</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">void sendRedirect(String location)</code></strong>
+    <ul>
+      <li><strong>역할</strong>: 클라이언트에게 특정 <code class="language-plaintext highlighter-rouge">location</code> (URL)으로 <strong>재요청(Redirect)</strong>하도록 지시합니다. 서버는 302 Found (혹은 303 See Other, 307 Temporary Redirect) 상태 코드와 함께 <code class="language-plaintext highlighter-rouge">Location</code> 헤더에 새 URL을 담아 응답합니다. 클라이언트는 이 응답을 받고 즉시 새로운 URL로 다시 요청을 보냅니다.</li>
+      <li><strong>사용 시점</strong>:
+        <ul>
+          <li>폼 제출 후 중복 제출을 방지하기 위해 사용합니다. (PRG: Post-Redirect-Get 패턴)</li>
+          <li>로그인 후 메인 페이지로 이동하거나, 작업 완료 후 다른 페이지로 이동시킬 때 사용합니다.</li>
+          <li>서버 내부적으로 처리할 수 없는 외부 URL로 이동시킬 때도 사용합니다.</li>
+        </ul>
+      </li>
+      <li><strong>주의</strong>: 리다이렉트 시에는 <code class="language-plaintext highlighter-rouge">request</code> 스코프에 저장된 데이터는 유실됩니다. 새로운 요청이 발생하기 때문입니다.</li>
+    </ul>
+
+    <p><strong>예시:</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jakarta.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/processOrder"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderProcessServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">item</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"item"</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">quantity</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"quantity"</span><span class="o">));</span>
+
+        <span class="c1">// 주문 처리 로직 (예: 데이터베이스에 주문 정보 저장)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"주문 처리됨: "</span> <span class="o">+</span> <span class="n">item</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">quantity</span> <span class="o">+</span> <span class="s">"개"</span><span class="o">);</span>
+
+        <span class="c1">// 주문 처리 후 클라이언트를 주문 완료 페이지로 리다이렉트</span>
+        <span class="c1">// request.getContextPath()를 사용하여 애플리케이션의 루트 경로를 얻음</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/orderConfirmation.jsp?item="</span> <span class="o">+</span> <span class="n">item</span><span class="o">);</span>
+        <span class="c1">// 리다이렉트 후에는 현재 서블릿의 코드 실행이 중단되므로, 이후에 out.println 등을 사용하지 않는 것이 좋습니다.</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p><strong>HTML 폼 예시:</strong></p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/processOrder"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    상품: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"item"</span> <span class="na">value=</span><span class="s">"책"</span><span class="nt">&gt;&lt;br&gt;</span>
+    수량: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"quantity"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"주문하기"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="-결론">📝 결론</h3>
+
+<p><code class="language-plaintext highlighter-rouge">HttpServletRequest</code>와 <code class="language-plaintext highlighter-rouge">HttpServletResponse</code> 객체는 서블릿 API의 핵심이며, 웹 애플리케이션에서 클라이언트와 서버 간의 HTTP 통신을 담당합니다. <code class="language-plaintext highlighter-rouge">HttpServletRequest</code>를 통해 클라이언트의 요청 데이터를 정확하게 읽어내고, <code class="language-plaintext highlighter-rouge">HttpServletResponse</code>를 통해 적절한 응답을 생성하고 전송함으로써 동적이고 상호작용적인 웹 서비스를 구현할 수 있습니다. 이 메서드들을 능숙하게 다루는 것은 모든 자바 웹 개발자에게 필수적인 역량입니다.</p>
+
+
+        
+        
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+      
+      
+
+  <nav class="pagination" style="margin-top: 2rem;">
+    <ul>
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp.basic(5)/" class="btn btn--inverse" rel="prev">
+            ← 웹 브라우저와 서블릿 간 데이터 전송 방식 및 비즈니스 로직 처리
+          </a>
+        </li>
+      
+
+      
+        <li class="pagination--pager">
+          <a href="/ko/jsp-basic(7)/" class="btn btn--inverse" rel="next">
+            JSP 액션 태그와 JSTL →
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+
+      </section>
+      
+
+      <footer class="page__meta">
+        
+        <!-- 
+
+
+  
+
+<div class="category-button-wrapper" style="margin-top: 1.5rem;">
+  
+    
+  
+</div>
+
+ -->
+
+
+
+<div class="taxonomy__categories">
+  
+    <a href="/ko/categories/jsp/" class="taxonomy__item">jsp</a>
+  
+</div>
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2025-06-11T09:09:47+00:00">June 11, 2025</time></p>
+
+      </footer>
+
+      
+        <section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=%EC%84%9C%EB%B8%94%EB%A6%BF%EC%97%90%EC%84%9C+%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8+%EC%9A%94%EC%B2%AD+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%B2%98%EB%A6%AC+%EB%B0%8F+%EC%9D%91%EB%8B%B5+%EC%A0%84%EC%86%A1%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp.basic%286%29%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp.basic%286%29%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://loremipsum0116.github.io/ko/jsp.basic(6)/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=%EC%84%9C%EB%B8%94%EB%A6%BF%EC%97%90%EC%84%9C+%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8+%EC%9A%94%EC%B2%AD+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%B2%98%EB%A6%AC+%EB%B0%8F+%EC%9D%91%EB%8B%B5+%EC%A0%84%EC%86%A1%20https%3A%2F%2Floremipsum0116.github.io%2Fko%2Fjsp.basic%286%29%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+      
+
+      
+    </div>
+  </article>
+
+  
+    <!-- 
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div> -->
+
+
+
+
+
+  <div class="page__related">
+    
+    <h2 class="page__related-title">참고</h2>
+    <div class="grid__wrapper">
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-threads/" rel="permalink">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          31 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바 쓰레드: 프로그램, 프로세스 그리고 동시성
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop-detail/" rel="permalink">자바 핵심 클래스 및 객체 동등 비교
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          56 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-interface/" rel="permalink">자바 객체지향-인터페이스
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          42 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork" lang="ko">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ko/java-oop&class(3)/" rel="permalink">자바 생성자 호출 순서
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          48 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/loremipsum0116" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://loremipsum0116.github.io">Lorem Tech Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
